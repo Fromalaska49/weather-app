@@ -24,7 +24,7 @@ public class View extends JFrame {
 		 * Creates the panels and components for the JFrame
 		 */
 		public View() {
-			super("Simple Calculator");
+			super("Simple weather app");
 			font = new Font("SanSerif", Font.BOLD, 30); 
 			
 			// create the menu
@@ -74,7 +74,7 @@ public class View extends JFrame {
 		 * and the buttons.
 		 * @param controller The event handler for the calculator
 		 */
-		public void registerListener(CalculatorController controller) {
+		public void registerListener(Controller controller) {
 			Component[] components = buttonsPanel.getComponents();
 			for (Component component : components) {
 				if (component instanceof AbstractButton) {
@@ -93,12 +93,9 @@ public class View extends JFrame {
 				}
 			}
 		}
-		
 		/**
-		 * Display the value in the JLabel of the calculator.
-		 * Round off the number of digits if needed.
-		 * 
-		 * @param value the value to be displayed
+		 * Display the option in the JLabel of the app.
+		 *
 		 */
 		public void update(String value) {
 			if (digits < 0) {
@@ -121,4 +118,4 @@ public class View extends JFrame {
 		}
 	}
 
-}
+
