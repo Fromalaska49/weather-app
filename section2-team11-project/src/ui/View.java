@@ -8,20 +8,16 @@ public class View extends JFrame {
 		private JLabel display;
 		
 		/**
-		 *  the buttons of the calculator
+		 *  the buttons of the options
 		 */
 		private JPanel buttonsPanel;
 		
 		/**
-		 *  the menu of the calculator
+		 *  the menu of the app
 		 */
 		private JMenu exampleMenu;
 		
-		/**
-		 *  the number of fractional digits to show or -1 
-		 */
-		private int digits;
-		
+
 		private Font font;
 		
 		/**
@@ -65,11 +61,7 @@ public class View extends JFrame {
 			buttonsPanel.setLayout(new GridLayout(5, 5, 0, 0));
 
 			String[] buttonStrings = {
-					"C", "1",  "2",  "3",  "+", 
-					"^", "4",  "5",  "6",  "-", 
-					"^2","7",  "8",  "9",  "*", 
-					"%", "0",  ".",  "=",  "/",
-					"¹", "sin","cos","tan","+/-"
+					"C", "1",  "2",
 			};
 			
 			for (String s : buttonStrings) {
