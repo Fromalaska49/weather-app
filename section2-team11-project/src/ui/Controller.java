@@ -35,7 +35,7 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 		if (command.equals("Exit")) {
-			System.exit(0);
+			System.exit(0);    
 		} else if (command.equals("Two Decimal Digits")) {
 			view.setDigits(2);
 			view.update(model.getValue());
