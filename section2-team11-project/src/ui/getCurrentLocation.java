@@ -18,6 +18,12 @@ public class getCurrentLocation {
 	private String stateN;
 	private Int zip;
 	
+	public void getCurrentLocation(){
+		stateI = "";
+		stateN = "";
+		zip = 0;
+	}
+	
 	public void setLocation(int zipC){
 		zip = zipC;
 	}
