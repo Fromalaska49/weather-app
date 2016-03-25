@@ -16,7 +16,7 @@ public class getCurrentLocation {
 	
 	private String stateI;
 	private String stateN;
-	private Int zip;
+	private int zip;
 	
 	public void getCurrentLocation(){
 		stateI = "";
@@ -33,11 +33,13 @@ public class getCurrentLocation {
 		stateN = stateNa;
 	}
 	public String getLocation(){
-		return "/" + zip;
+		if(zip != 0){
+			return "/" + zip;
+		}
+		else{
+			return "/" + stateI + "/" + stateN;
+		}
+		}
 	}
 	
-	public String getLocation(){
-		return "/" + stateI + "/" + stateN;
-	}
-	}
-}
+
