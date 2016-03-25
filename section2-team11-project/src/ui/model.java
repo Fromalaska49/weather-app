@@ -1,6 +1,6 @@
-package goodluck;
+package ui;
 
-public class model {
+public class Model {
 
 		private String displayString;
 
@@ -10,7 +10,7 @@ public class model {
 
 	    private boolean dot;
 
-		public CalculatorModel() {
+		public Model() {
 			displayValue = 0.0;
 			displayString = "" + displayValue;
 			internalValue = 0;
