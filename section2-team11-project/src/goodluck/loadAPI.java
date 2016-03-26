@@ -10,6 +10,10 @@ public class loadAPI{
 		return;
 	}
 	
+	/* getWeatherJSON fetches data from the weather API
+	 * in JSON format and returns the API response as a
+	 * String value
+	 */
 	public String getWeatherJSON(String location){
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".json";
 		String targetURLContents = "undefined";
@@ -24,7 +28,12 @@ public class loadAPI{
 		}
 		return targetURLContents;
 	}
+
 	
+	/* getWeatherXML fetches data from the weather API
+	 * in XML format and returns the API response as a
+	 * String value
+	 */
 	public String getWeatherXML(String location){
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
 		String targetURLContents = "undefined";
