@@ -3,7 +3,7 @@ package weather;
  * @author Admin
  *
  */
-public class getCurrentLocation {
+public class GetCurrentLocation {
 	/*
 	 * Needs to return current city in format: "TX/San_Antonio" or
 	 * zipcode (possibly 2 separate functions)
