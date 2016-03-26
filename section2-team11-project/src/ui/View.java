@@ -35,12 +35,6 @@ public class View extends JFrame {
 			exampleMenu = new JMenu("Menu");
 			menuBar.add(exampleMenu);
 
-			JMenuItem twoDigitsButton = new JMenuItem("Two Decimal Digits");
-			exampleMenu.add(twoDigitsButton);
-
-			JMenuItem anyDigitsButton = new JMenuItem("Any Decimal Digits");
-			exampleMenu.add(anyDigitsButton);
-
 			JMenuItem exitButton = new JMenuItem("Exit");
 			exampleMenu.add(exitButton);
 
