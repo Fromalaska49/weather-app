@@ -1,6 +1,9 @@
 package weather;
 
+import weather.frontEnd.LocationScreen;
+
 public class Weather {
+	
 	public static void main(String[] args) {
 		System.out.println("Good luck to Team Rocket!!!");
 		LoadAPI thingy = new LoadAPI();
@@ -8,5 +11,9 @@ public class Weather {
 		//String location = "78249";
 		System.out.println(thingy.getWeatherJSON(location));
 		System.out.println(thingy.getWeatherXML(location));
+		
+		LocationScreen view = new LocationScreen();
+		
+
 	}
 }
