@@ -1,6 +1,6 @@
 package weather;
 
-public class GoodLuck {
+public class weather {
 	public static void main(String[] args) {
 		System.out.println("Good luck to Team Rocket!");
 		loadAPI thingy = new loadAPI();
