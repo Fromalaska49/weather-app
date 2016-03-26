@@ -24,4 +24,19 @@ public class loadAPI{
 		}
 		return targetURLContents;
 	}
+	
+	public String getWeatherXML(String location){
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
+		String targetURLContents = "undefined";
+		try {
+			targetURLContents = IOUtils.toString(new URL(targetURL), "UTF-8");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return targetURLContents;
+	}
 }
