@@ -9,6 +9,7 @@ public class Weather {
 		LoadAPI thingy = new LoadAPI();
 		//String location = "TX/San_Antonio";
 		String location = "99508";
+		thingy.downloadXML(location);
 		//System.out.println(thingy.getWeatherJSON(location));
 		//System.out.println(thingy.getWeatherXML(location));
 		//ProcessData city = new ProcessData();
