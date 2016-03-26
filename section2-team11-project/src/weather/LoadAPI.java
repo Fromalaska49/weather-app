@@ -5,12 +5,12 @@ import java.net.*;
 import java.lang.*;
 import org.apache.commons.io.IOUtils;
 
-public class loadAPI{
+public class LoadAPI{
 	public static void loadAPI(){
 		return;
 	}
 	
-	/* getWeatherJSON fetches data from the weather API
+	/* getWeatherJSON fetches data from the Weather API
 	 * in JSON format and returns the API response as a
 	 * String value
 	 */
@@ -30,7 +30,7 @@ public class loadAPI{
 	}
 
 	
-	/* getWeatherXML fetches data from the weather API
+	/* getWeatherXML fetches data from the Weather API
 	 * in XML format and returns the API response as a
 	 * String value
 	 */
