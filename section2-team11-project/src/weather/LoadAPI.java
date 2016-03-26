@@ -46,13 +46,12 @@ public class LoadAPI{
 			
 		return true;
 	}
-
 	
-	/* getWeatherXML fetches data from the Weather API
-	 * in XML format and returns the API response as a
+	/* getWeatherJSON fetches data from the Weather API
+	 * in JSON format and returns the API response as a
 	 * String value
 	 */
-	public String downloadXML(String location){
+	public boolean downloadXML(String location){
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
 		String targetURLContents = "undefined";
 		try {
@@ -64,6 +63,24 @@ public class LoadAPI{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return targetURLContents;
+		BufferedWriter out = null;
+		try{
+			FileWriter fstream = new FileWriter("data.xml", false);
+			out = new BufferedWriter(fstream);
+			out.write(targetURLContents);
+		}catch(IOException e){
+			System.err.println("Error: " + e.getMessage());
+		}finally{
+			if(out != null) {
+				try {
+					out.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+			
+		return true;
 	}
 }
