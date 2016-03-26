@@ -28,7 +28,7 @@ public class LoadAPI{
 		}
 		BufferedWriter out = null;
 		try{
-			FileWriter fstream = new FileWriter("data.xml", false);
+			FileWriter fstream = new FileWriter("data.json", false);
 			out = new BufferedWriter(fstream);
 			out.write(targetURLContents);
 		}catch(IOException e){
