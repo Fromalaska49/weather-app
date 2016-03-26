@@ -1,4 +1,4 @@
-package goodluck;
+package weather;
 
 public class GoodLuck {
 	public static void main(String[] args) {
@@ -6,6 +6,6 @@ public class GoodLuck {
 		loadAPI thingy = new loadAPI();
 		String location = "TX/San_Antonio";
 		//String location = "78249";
-		System.out.println(thingy.getWeatherJSON(location));
+		System.out.println(thingy.getWeatherXML(location));
 	}
 }
