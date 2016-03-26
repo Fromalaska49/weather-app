@@ -2,6 +2,11 @@ package weather;
 
 import java.io.*;
 import java.net.*;
+import java.nio.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.lang.*;
 import org.apache.commons.io.IOUtils;
 
@@ -26,22 +31,13 @@ public class LoadAPI{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		BufferedWriter out = null;
-		try{
-			FileWriter fstream = new FileWriter("data.json", false);
-			out = new BufferedWriter(fstream);
-			out.write(targetURLContents);
-		}catch(IOException e){
-			System.err.println("Error: " + e.getMessage());
-		}finally{
-			if(out != null) {
-				try {
-					out.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+		
+		Path file = Paths.get("data-json.txt");
+		Charset charset = Charset.forName("UTF-8");
+		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
+		    writer.write(targetURLContents, 0, targetURLContents.length());
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
 		}
 			
 		return true;
@@ -63,22 +59,13 @@ public class LoadAPI{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		BufferedWriter out = null;
-		try{
-			FileWriter fstream = new FileWriter("data.xml", false);
-			out = new BufferedWriter(fstream);
-			out.write(targetURLContents);
-		}catch(IOException e){
-			System.err.println("Error: " + e.getMessage());
-		}finally{
-			if(out != null) {
-				try {
-					out.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+		
+		Path file = Paths.get("data-xml.txt");
+		Charset charset = Charset.forName("UTF-8");
+		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
+		    writer.write(targetURLContents, 0, targetURLContents.length());
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
 		}
 			
 		return true;
