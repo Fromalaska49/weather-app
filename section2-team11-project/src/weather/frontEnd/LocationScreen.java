@@ -20,14 +20,24 @@ public class LocationScreen extends JFrame {
 		JPanel south = new JPanel();
 		JPanel west = new JPanel();
 		JPanel east = new JPanel();
+		JPanel center = new JPanel();
 		add(north,BorderLayout.NORTH);
 		add(south,BorderLayout.SOUTH);
 		add(west,BorderLayout.WEST);
 		add(east,BorderLayout.EAST);
-		this.setTitle("Team Rocket's US Weather App");
-		JLabel title = new JLabel("US Weather App");
+		add(center, BorderLayout.CENTER);
+		this.setTitle("Team Rocket's Weather App");
+		JLabel title = new JLabel("Weather App");
 		north.add(title);
-		
+		north.setLayout(new GridLayout(2,2));
+		JLabel cityLabel = new JLabel("City:");
+		center.add(cityLabel);
+		JTextField cityInput = new JTextField();
+		center.add(cityInput);
+		JLabel stateLabel = new JLabel("State:");
+		center.add(stateLabel);
+		JTextField stateInput = new JTextField();
+		center.add(stateInput);
 		/*
 		Title title = new Title(" Weather App");
 		this.add(title);
