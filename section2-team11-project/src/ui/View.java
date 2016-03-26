@@ -2,6 +2,7 @@ package ui;
 import java.awt.*;
 import javax.swing.*;
 
+
 public class View extends JFrame {
 
 	
@@ -43,24 +44,10 @@ public class View extends JFrame {
 			JPanel displayPanel = new JPanel();
 			add(displayPanel, BorderLayout.NORTH);
 
-			display = new JLabel("0.0");
+			display = new JLabel("US Weather App");
 			display.setFont(font);
 			displayPanel.add(display);
-			digits = -1;
 
-			// create the buttons
-			
-			buttonsPanel = new JPanel();
-			add(buttonsPanel, BorderLayout.CENTER);
-			buttonsPanel.setLayout(new GridLayout(5, 5, 0, 0));
-
-			String[] buttonStrings = {
-					"C", "1",  "2",
-			};
-			
-			for (String s : buttonStrings) {
-				buttonsPanel.add(new JButton(s));
-			}
 		}
 		
 		/**
@@ -70,14 +57,7 @@ public class View extends JFrame {
 		 */
 		public void registerListener(Controller controller) {
 			Component[] components = buttonsPanel.getComponents();
-			for (Component component : components) {
-				if (component instanceof AbstractButton) {
-					AbstractButton button = (AbstractButton) component;
-					button.addActionListener(controller);
-					button.setFont(font);
-				}
-			}
-
+	
 			components = exampleMenu.getMenuComponents();
 			for (Component component : components) {
 				if (component instanceof AbstractButton) {
@@ -87,29 +67,7 @@ public class View extends JFrame {
 				}
 			}
 		}
-		/**
-		 * Display the option in the JLabel of the app.
-		 *
-		 */
-		public void update(String value) {
-			if (digits < 0) {
-				display.setText(value);
-			} else {
-				String format = "%." + digits + "f";
-				String text = String.format(format, Double.valueOf(value));
-				display.setText(text);
-			}
-		}
 		
-		/**
-		 * Set the number of fractional digits to display.
-		 * -1 means display them all.
-		 * 
-		 * @param digits the number of fractional digits to display or -1
-		 */
-		public void setDigits(int digits) {
-			this.digits = digits;
-		}
 	}
 
 
