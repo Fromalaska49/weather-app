@@ -1,4 +1,4 @@
-package goodluck;
+package weather;
 
 public class GoodLuck {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package goodluck;
+package weather;
 
 import java.io.*;
 import java.net.*;
