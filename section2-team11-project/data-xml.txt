@@ -38,22 +38,22 @@
 		<estimated>
 		</estimated>
 		<station_id>KAKANCHO21</station_id>
-		<observation_time>Last Updated on March 26, 5:42 PM AKDT</observation_time>
-		<observation_time_rfc822>Sat, 26 Mar 2016 17:42:05 -0800</observation_time_rfc822>
-		<observation_epoch>1459042925</observation_epoch>
-		<local_time_rfc822>Sat, 26 Mar 2016 17:42:07 -0800</local_time_rfc822>
-		<local_epoch>1459042927</local_epoch>
+		<observation_time>Last Updated on March 26, 5:53 PM AKDT</observation_time>
+		<observation_time_rfc822>Sat, 26 Mar 2016 17:53:35 -0800</observation_time_rfc822>
+		<observation_epoch>1459043615</observation_epoch>
+		<local_time_rfc822>Sat, 26 Mar 2016 17:53:41 -0800</local_time_rfc822>
+		<local_epoch>1459043621</local_epoch>
 		<local_tz_short>AKDT</local_tz_short>
 		<local_tz_long>America/Anchorage</local_tz_long>
 		<local_tz_offset>-0800</local_tz_offset>
 		<weather>Overcast</weather>
-		<temperature_string>39.2 F (4.0 C)</temperature_string>
-		<temp_f>39.2</temp_f>
-		<temp_c>4.0</temp_c>
+		<temperature_string>39.4 F (4.1 C)</temperature_string>
+		<temp_f>39.4</temp_f>
+		<temp_c>4.1</temp_c>
 		<relative_humidity>73%</relative_humidity>
 		<wind_string>Calm</wind_string>
 		<wind_dir>NNW</wind_dir>
-		<wind_degrees>330</wind_degrees>
+		<wind_degrees>344</wind_degrees>
 		<wind_mph>0.0</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
 		<wind_kph>0.0</wind_kph>
@@ -62,8 +62,8 @@
 		<pressure_in>29.61</pressure_in>
 		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>31 F (-0 C)</dewpoint_string>
-		<dewpoint_f>31</dewpoint_f>
+		<dewpoint_string>32 F (-0 C)</dewpoint_string>
+		<dewpoint_f>32</dewpoint_f>
 		<dewpoint_c>-0</dewpoint_c>
 		
 		
@@ -81,7 +81,7 @@
         <feelslike_c>4</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
-		<solarradiation>109</solarradiation>
+		<solarradiation>104</solarradiation>
 		<UV>1.0</UV>
 		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>0.00</precip_1hr_in>
