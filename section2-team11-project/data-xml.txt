@@ -38,33 +38,33 @@
 		<estimated>
 		</estimated>
 		<station_id>KAKANCHO21</station_id>
-		<observation_time>Last Updated on March 26, 3:04 PM AKDT</observation_time>
-		<observation_time_rfc822>Sat, 26 Mar 2016 15:04:31 -0800</observation_time_rfc822>
-		<observation_epoch>1459033471</observation_epoch>
-		<local_time_rfc822>Sat, 26 Mar 2016 15:05:00 -0800</local_time_rfc822>
-		<local_epoch>1459033500</local_epoch>
+		<observation_time>Last Updated on March 26, 4:58 PM AKDT</observation_time>
+		<observation_time_rfc822>Sat, 26 Mar 2016 16:58:55 -0800</observation_time_rfc822>
+		<observation_epoch>1459040335</observation_epoch>
+		<local_time_rfc822>Sat, 26 Mar 2016 16:58:56 -0800</local_time_rfc822>
+		<local_epoch>1459040336</local_epoch>
 		<local_tz_short>AKDT</local_tz_short>
 		<local_tz_long>America/Anchorage</local_tz_long>
 		<local_tz_offset>-0800</local_tz_offset>
 		<weather>Overcast</weather>
-		<temperature_string>39.6 F (4.2 C)</temperature_string>
-		<temp_f>39.6</temp_f>
-		<temp_c>4.2</temp_c>
-		<relative_humidity>76%</relative_humidity>
-		<wind_string>From the SW at 4.5 MPH Gusting to 9.8 MPH</wind_string>
-		<wind_dir>SW</wind_dir>
-		<wind_degrees>220</wind_degrees>
-		<wind_mph>4.5</wind_mph>
-		<wind_gust_mph>9.8</wind_gust_mph>
-		<wind_kph>7.2</wind_kph>
-		<wind_gust_kph>15.8</wind_gust_kph>
+		<temperature_string>38.1 F (3.4 C)</temperature_string>
+		<temp_f>38.1</temp_f>
+		<temp_c>3.4</temp_c>
+		<relative_humidity>77%</relative_humidity>
+		<wind_string>From the West at 1.1 MPH Gusting to 2.5 MPH</wind_string>
+		<wind_dir>West</wind_dir>
+		<wind_degrees>267</wind_degrees>
+		<wind_mph>1.1</wind_mph>
+		<wind_gust_mph>2.5</wind_gust_mph>
+		<wind_kph>1.8</wind_kph>
+		<wind_gust_kph>4.0</wind_gust_kph>
 		<pressure_mb>1003</pressure_mb>
 		<pressure_in>29.61</pressure_in>
 		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>33 F (0 C)</dewpoint_string>
-		<dewpoint_f>33</dewpoint_f>
-		<dewpoint_c>0</dewpoint_c>
+		<dewpoint_string>32 F (-0 C)</dewpoint_string>
+		<dewpoint_f>32</dewpoint_f>
+		<dewpoint_c>-0</dewpoint_c>
 		
 		
 		<heat_index_string>NA</heat_index_string>
@@ -72,16 +72,16 @@
 		<heat_index_c>NA</heat_index_c>
 		
 		
-		<windchill_string>36 F (2 C)</windchill_string>
-		<windchill_f>36</windchill_f>
-		<windchill_c>2</windchill_c>
+		<windchill_string>38 F (3 C)</windchill_string>
+		<windchill_f>38</windchill_f>
+		<windchill_c>3</windchill_c>
 		
-        <feelslike_string>36 F (2 C)</feelslike_string>
-        <feelslike_f>36</feelslike_f>
-        <feelslike_c>2</feelslike_c>
+        <feelslike_string>38 F (3 C)</feelslike_string>
+        <feelslike_f>38</feelslike_f>
+        <feelslike_c>3</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
-		<solarradiation>259</solarradiation>
+		<solarradiation>90</solarradiation>
 		<UV>1.0</UV>
 		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>0.00</precip_1hr_in>

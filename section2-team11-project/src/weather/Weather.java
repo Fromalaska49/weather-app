@@ -12,7 +12,7 @@ public class Weather {
 		thingy.downloadXML(location);
 		//System.out.println(thingy.getWeatherJSON(location));
 		//System.out.println(thingy.getWeatherXML(location));
-		//ProcessData city = new ProcessData();
+		ProcessData city = new ProcessData();
 		//System.out.println(city.getCurrentCondition(location));
 		
 		LocationScreen view = new LocationScreen();

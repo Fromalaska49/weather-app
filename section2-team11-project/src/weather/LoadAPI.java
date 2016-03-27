@@ -36,18 +36,18 @@ public class LoadAPI{
 		Charset charset = Charset.forName("UTF-8");
 		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 		    writer.write(targetURLContents, 0, targetURLContents.length());
+		    return true;
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
 		}
-			
-		return true;
+		return false;
 	}
 	
 	/* getWeatherJSON fetches data from the Weather API
 	 * in JSON format and returns the API response as a
 	 * String value
 	 */
-	public boolean downloadXML(String location){
+	public boolean downloadXML(String location) {
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
 		String targetURLContents = "undefined";
 		try {
@@ -64,10 +64,11 @@ public class LoadAPI{
 		Charset charset = Charset.forName("UTF-8");
 		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 		    writer.write(targetURLContents, 0, targetURLContents.length());
+		    return true;
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
 		}
 			
-		return true;
+		return false;
 	}
 }
