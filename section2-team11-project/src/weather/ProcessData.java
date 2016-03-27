@@ -1,7 +1,11 @@
 package weather;
 
 import org.w3c.dom.*;
+
+import java.io.File;
+
 import javax.xml.parsers.*;
+import javax.xml.xpath.*;
 
 
 public class ProcessData {
@@ -12,24 +16,19 @@ public class ProcessData {
 	
 	public String getCurrentCondition(String location) {
 		String currentCondition = "undefined";
-		
 		try {
-	        DocumentBuilderFactory dbFactory = 
-	           DocumentBuilderFactory.newInstance();
-	        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse("data-xml.txt");
+			File inputFile = new File("data-xml.txt");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder;
+			dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(inputFile);
 			doc.getDocumentElement().normalize();
-			
-			Element root = doc.getDocumentElement();
-			NodeList currentObservationList = root.getElementsByTagName("current_observation");
-			Element currentObservation = (Element) currentObservationList.item(0);
-			NodeList cityList = currentObservation.getElementsByTagName("weather");
-			Element city = (Element) cityList.item(0);
-			currentCondition = city.getTextContent();
+			XPath xPath =  XPathFactory.newInstance().newXPath();
+			String expression = "/response/current_observation/weather/text()";
+			currentCondition = (String) xPath.compile(expression).evaluate(doc, XPathConstants.STRING);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 		return currentCondition;
 	}
 }

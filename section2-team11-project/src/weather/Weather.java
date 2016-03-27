@@ -13,10 +13,10 @@ public class Weather {
 		//System.out.println(thingy.getWeatherJSON(location));
 		//System.out.println(thingy.getWeatherXML(location));
 		ProcessData city = new ProcessData();
-		//System.out.println(city.getCurrentCondition(location));
-		
+		System.out.println(city.getCurrentCondition(location));
 		LocationScreen view = new LocationScreen();
 		
-
+		System.out.println("Nishant, don't use Eclipse on VDI.");
+		return;
 	}
 }
