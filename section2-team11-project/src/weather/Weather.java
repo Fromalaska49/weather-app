@@ -10,10 +10,7 @@ public class Weather {
 		//String location = "TX/San_Antonio";
 		String location = "99508";
 		thingy.downloadXML(location);
-		//System.out.println(thingy.getWeatherJSON(location));
-		//System.out.println(thingy.getWeatherXML(location));
-		ProcessData city = new ProcessData();
-		System.out.println(city.getCurrentWeather());
+		ProcessData weather = new ProcessData();
 		LocationScreen view = new LocationScreen();
 		
 		System.out.println("Nishant, don't use Eclipse on VDI.");
