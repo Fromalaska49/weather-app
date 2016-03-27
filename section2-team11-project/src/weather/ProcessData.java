@@ -14,8 +14,8 @@ public class ProcessData {
 		return;
 	}
 	
-	public String getCurrentCondition(String location) {
-		String currentCondition = "undefined";
+	private String getNode(String XPath) {
+		String value = "undefined";
 		try {
 			File inputFile = new File("data-xml.txt");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -24,11 +24,15 @@ public class ProcessData {
 			Document doc = dBuilder.parse(inputFile);
 			doc.getDocumentElement().normalize();
 			XPath xPath =  XPathFactory.newInstance().newXPath();
-			String expression = "/response/current_observation/weather/text()";
-			currentCondition = (String) xPath.compile(expression).evaluate(doc, XPathConstants.STRING);
+			value = (String) xPath.compile(XPath).evaluate(doc, XPathConstants.STRING);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return currentCondition;
+		return value;
+	}
+	
+	public String getCurrentCondition() {
+		String XPath = "/response/current_observation/weather/text()";
+		return getNode(XPath);
 	}
 }
