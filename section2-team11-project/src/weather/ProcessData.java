@@ -1,9 +1,7 @@
 package weather;
 
 import org.w3c.dom.*;
-
 import java.io.File;
-
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 
