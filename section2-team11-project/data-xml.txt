@@ -38,33 +38,33 @@
 		<estimated>
 		</estimated>
 		<station_id>KAKANCHO21</station_id>
-		<observation_time>Last Updated on March 26, 7:24 PM AKDT</observation_time>
-		<observation_time_rfc822>Sat, 26 Mar 2016 19:24:32 -0800</observation_time_rfc822>
-		<observation_epoch>1459049072</observation_epoch>
-		<local_time_rfc822>Sat, 26 Mar 2016 19:24:36 -0800</local_time_rfc822>
-		<local_epoch>1459049076</local_epoch>
+		<observation_time>Last Updated on March 28, 9:54 PM AKDT</observation_time>
+		<observation_time_rfc822>Mon, 28 Mar 2016 21:54:14 -0800</observation_time_rfc822>
+		<observation_epoch>1459230854</observation_epoch>
+		<local_time_rfc822>Mon, 28 Mar 2016 21:54:28 -0800</local_time_rfc822>
+		<local_epoch>1459230868</local_epoch>
 		<local_tz_short>AKDT</local_tz_short>
 		<local_tz_long>America/Anchorage</local_tz_long>
 		<local_tz_offset>-0800</local_tz_offset>
-		<weather>Mostly Cloudy</weather>
-		<temperature_string>40.6 F (4.8 C)</temperature_string>
-		<temp_f>40.6</temp_f>
-		<temp_c>4.8</temp_c>
-		<relative_humidity>68%</relative_humidity>
-		<wind_string>Calm</wind_string>
-		<wind_dir>WNW</wind_dir>
-		<wind_degrees>292</wind_degrees>
-		<wind_mph>0.9</wind_mph>
+		<weather>Light Rain</weather>
+		<temperature_string>36.3 F (2.4 C)</temperature_string>
+		<temp_f>36.3</temp_f>
+		<temp_c>2.4</temp_c>
+		<relative_humidity>89%</relative_humidity>
+		<wind_string>From the NE at 1.1 MPH Gusting to 2.5 MPH</wind_string>
+		<wind_dir>NE</wind_dir>
+		<wind_degrees>34</wind_degrees>
+		<wind_mph>1.1</wind_mph>
 		<wind_gust_mph>2.5</wind_gust_mph>
-		<wind_kph>1.4</wind_kph>
+		<wind_kph>1.8</wind_kph>
 		<wind_gust_kph>4.0</wind_gust_kph>
-		<pressure_mb>1002</pressure_mb>
-		<pressure_in>29.60</pressure_in>
+		<pressure_mb>1004</pressure_mb>
+		<pressure_in>29.66</pressure_in>
 		<pressure_trend>-</pressure_trend>
 		
-		<dewpoint_string>31 F (-1 C)</dewpoint_string>
-		<dewpoint_f>31</dewpoint_f>
-		<dewpoint_c>-1</dewpoint_c>
+		<dewpoint_string>33 F (1 C)</dewpoint_string>
+		<dewpoint_f>33</dewpoint_f>
+		<dewpoint_c>1</dewpoint_c>
 		
 		
 		<heat_index_string>NA</heat_index_string>
@@ -72,28 +72,28 @@
 		<heat_index_c>NA</heat_index_c>
 		
 		
-		<windchill_string>41 F (5 C)</windchill_string>
-		<windchill_f>41</windchill_f>
-		<windchill_c>5</windchill_c>
+		<windchill_string>36 F (2 C)</windchill_string>
+		<windchill_f>36</windchill_f>
+		<windchill_c>2</windchill_c>
 		
-        <feelslike_string>41 F (5 C)</feelslike_string>
-        <feelslike_f>41</feelslike_f>
-        <feelslike_c>5</feelslike_c>
+        <feelslike_string>36 F (2 C)</feelslike_string>
+        <feelslike_f>36</feelslike_f>
+        <feelslike_c>2</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
-		<solarradiation>231</solarradiation>
-		<UV>1.0</UV>
+		<solarradiation>0</solarradiation>
+		<UV>0.0</UV>
 		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>0.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
-		<precip_today_string>0.00 in (0 mm)</precip_today_string>
-		<precip_today_in>0.00</precip_today_in>
-		<precip_today_metric>0</precip_today_metric>
+		<precip_today_string> in ( mm)</precip_today_string>
+		<precip_today_in></precip_today_in>
+		<precip_today_metric></precip_today_metric>
 		
 		
 		
-		<icon>mostlycloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/mostlycloudy.gif</icon_url>
+		<icon>rain</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_rain.gif</icon_url>
 		<forecast_url>http://www.wunderground.com/US/AK/Anchorage.html</forecast_url>
         
         <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KAKANCHO21</history_url>
