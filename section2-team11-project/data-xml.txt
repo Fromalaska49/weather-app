@@ -38,14 +38,23 @@
 		<estimated>
 		</estimated>
 		<station_id>KAKANCHO21</station_id>
+<<<<<<< HEAD
 		<observation_time>Last Updated on March 30, 9:29 AM AKDT</observation_time>
 		<observation_time_rfc822>Wed, 30 Mar 2016 09:29:47 -0800</observation_time_rfc822>
 		<observation_epoch>1459358987</observation_epoch>
 		<local_time_rfc822>Wed, 30 Mar 2016 09:29:57 -0800</local_time_rfc822>
 		<local_epoch>1459358997</local_epoch>
+=======
+		<observation_time>Last Updated on March 28, 9:54 PM AKDT</observation_time>
+		<observation_time_rfc822>Mon, 28 Mar 2016 21:54:14 -0800</observation_time_rfc822>
+		<observation_epoch>1459230854</observation_epoch>
+		<local_time_rfc822>Mon, 28 Mar 2016 21:54:28 -0800</local_time_rfc822>
+		<local_epoch>1459230868</local_epoch>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		<local_tz_short>AKDT</local_tz_short>
 		<local_tz_long>America/Anchorage</local_tz_long>
 		<local_tz_offset>-0800</local_tz_offset>
+<<<<<<< HEAD
 		<weather>Mostly Cloudy</weather>
 		<temperature_string>38.3 F (3.5 C)</temperature_string>
 		<temp_f>38.3</temp_f>
@@ -54,17 +63,39 @@
 		<wind_string>From the ESE at 1.1 MPH Gusting to 2.5 MPH</wind_string>
 		<wind_dir>ESE</wind_dir>
 		<wind_degrees>119</wind_degrees>
+=======
+		<weather>Light Rain</weather>
+		<temperature_string>36.3 F (2.4 C)</temperature_string>
+		<temp_f>36.3</temp_f>
+		<temp_c>2.4</temp_c>
+		<relative_humidity>89%</relative_humidity>
+		<wind_string>From the NE at 1.1 MPH Gusting to 2.5 MPH</wind_string>
+		<wind_dir>NE</wind_dir>
+		<wind_degrees>34</wind_degrees>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		<wind_mph>1.1</wind_mph>
 		<wind_gust_mph>2.5</wind_gust_mph>
 		<wind_kph>1.8</wind_kph>
 		<wind_gust_kph>4.0</wind_gust_kph>
+<<<<<<< HEAD
 		<pressure_mb>1018</pressure_mb>
 		<pressure_in>30.05</pressure_in>
 		<pressure_trend>0</pressure_trend>
+=======
+		<pressure_mb>1004</pressure_mb>
+		<pressure_in>29.66</pressure_in>
+		<pressure_trend>-</pressure_trend>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		
+<<<<<<< HEAD
 		<dewpoint_string>37 F (3 C)</dewpoint_string>
 		<dewpoint_f>37</dewpoint_f>
 		<dewpoint_c>3</dewpoint_c>
+=======
+		<dewpoint_string>33 F (1 C)</dewpoint_string>
+		<dewpoint_f>33</dewpoint_f>
+		<dewpoint_c>1</dewpoint_c>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		
 		
 		<heat_index_string>NA</heat_index_string>
@@ -72,28 +103,50 @@
 		<heat_index_c>NA</heat_index_c>
 		
 		
+<<<<<<< HEAD
 		<windchill_string>38 F (3 C)</windchill_string>
 		<windchill_f>38</windchill_f>
 		<windchill_c>3</windchill_c>
+=======
+		<windchill_string>36 F (2 C)</windchill_string>
+		<windchill_f>36</windchill_f>
+		<windchill_c>2</windchill_c>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		
+<<<<<<< HEAD
         <feelslike_string>38 F (3 C)</feelslike_string>
         <feelslike_f>38</feelslike_f>
         <feelslike_c>3</feelslike_c>
+=======
+        <feelslike_string>36 F (2 C)</feelslike_string>
+        <feelslike_f>36</feelslike_f>
+        <feelslike_c>2</feelslike_c>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
+<<<<<<< HEAD
 		<solarradiation>36</solarradiation>
+=======
+		<solarradiation>0</solarradiation>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		<UV>0.0</UV>
 		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>0.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
+<<<<<<< HEAD
 		<precip_today_string>0.07 in (2 mm)</precip_today_string>
 		<precip_today_in>0.07</precip_today_in>
 		<precip_today_metric>2</precip_today_metric>
+=======
+		<precip_today_string> in ( mm)</precip_today_string>
+		<precip_today_in></precip_today_in>
+		<precip_today_metric></precip_today_metric>
+>>>>>>> branch 'master' of https://github.com/UTSA-CS-3443/section2-team11.git
 		
 		
 		
-		<icon>mostlycloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/mostlycloudy.gif</icon_url>
+		<icon>rain</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_rain.gif</icon_url>
 		<forecast_url>http://www.wunderground.com/US/AK/Anchorage.html</forecast_url>
         
         <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KAKANCHO21</history_url>
