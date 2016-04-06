@@ -191,7 +191,7 @@ public class LoadAPI{
 		if(alreadyLoaded(location, 3600)){
 			return true;
 		}
-		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/hourly10day/q/" + location + ".xml";
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/forecast10day/q/" + location + ".xml";
 		String targetURLContents = "undefined";
 		try {
 			targetURLContents = IOUtils.toString(new URL(targetURL), "UTF-8");

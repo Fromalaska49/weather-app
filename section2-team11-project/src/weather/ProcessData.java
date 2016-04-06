@@ -34,6 +34,170 @@ public class ProcessData {
 	}
 	
 	/*
+	 * Gets the data from the forecast
+	 * Returns the day of the week at the given index
+	 * i.e. if today is Wednesday, and index=0, then "Friday" will be returned
+	 */
+	public String getForecastDayOfWeek(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/weekday/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the day of the week at the given index
+	 * i.e. if today is Wednesday, and index=0, then "Fri" will be returned
+	 */
+	public String getForecastDayOfWeekShort(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/weekday_short/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the year at the given index
+	 */
+	public String getForecastYear(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/year/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the month number at the given index
+	 */
+	public String getForecastMonth(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/month/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the day of the month at the given index
+	 */
+	public String getForecastDay(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/day/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the month at the given index
+	 */
+	public String getForecastMonthName(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/monthname/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the month abbreviation at the given index
+	 */
+	public String getForecastMonthNameShort(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/date/monthname_short/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the high in Farenheit at the given index
+	 */
+	public String getForecastHighF(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/high/farenheit/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the high in Celsius at the given index
+	 */
+	public String getForecastHighC(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/high/celsius/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the low in Farenheit at the given index
+	 */
+	public String getForecastLowF(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/low/farenheit/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the low in Celsius at the given index
+	 */
+	public String getForecastLowC(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/low/celsius/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the average windspeed in MPH at the given index
+	 */
+	public String getForecastWindMPH(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/avewind/mph/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the average windspeed in KPH at the given index
+	 */
+	public String getForecastWindKPH(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/avewind/kph/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the forecast wind direction at the given index
+	 */
+	public String getForecastWindDirection(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/avewind/dir/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the forecast humidity at the given index
+	 */
+	public String getForecastHumidity(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/avehumidity/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the forecast conditions at the given index
+	 */
+	public String getForecastConditions(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/conditions/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the icon name at the given index
+	 */
+	public String getForecastIcon(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/icon/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
+	 * Gets the data from the forecast
+	 * Returns the url of the icon name at the given index
+	 */
+	public String getForecastIconURL(int index) {
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/icon_url/text()";
+		return getNode(XPath, "data-forecast-xml.txt");
+	}
+	
+	/*
 	 * Gets the URL of the weather icon
 	 */
 	public String getIconURL() {
@@ -214,7 +378,7 @@ public class ProcessData {
 	 */
 	public String getVisibilityMi() {
 		String XPath = "/response/current_observation/visibility_mi/text()";
-		return getNode(XPath);
+		return getNode(XPath, "data-xml.txt");
 	}
 	
 	/*
@@ -222,6 +386,6 @@ public class ProcessData {
 	 */
 	public String getVisibilityKm() {
 		String XPath = "/response/current_observation/visibility_km/text()";
-		return getNode(XPath);
+		return getNode(XPath, "data-xml.txt");
 	}
 }
