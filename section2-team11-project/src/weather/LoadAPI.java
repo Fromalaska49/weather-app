@@ -73,7 +73,7 @@ public class LoadAPI{
 	}
 	
 	/*
-	 * Gets the location of the last API call
+	 * Gets the location from the last API call
 	 */
 	private String getLocation(){
 		String location = "";
@@ -90,7 +90,15 @@ public class LoadAPI{
 		}
 		return location;
 	}
-	
+
+	/*
+	 * alreadyLoaded returns true if two conditions have been met:
+	 * the cache has been loaded within 15 minutes
+	 * the location has not changed
+	 */
+	private boolean alreadyLoaded(String location){
+		return Instant.now().getEpochSecond() - getUpdateTime() < 900 && location.equals(getLocation());
+	}
 	
 	/* 
 	 * getWeatherJSON fetches data from the Weather API
@@ -98,9 +106,7 @@ public class LoadAPI{
 	 * String value
 	 */
 	public boolean downloadJSON(String location){
-		if(Instant.now().getEpochSecond() - getUpdateTime() < 900 && location.equals(getLocation())){
-			//less than 15 minutes since last API request
-			//and same location
+		if(alreadyLoaded(location)){
 			return true;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".json";
@@ -134,9 +140,7 @@ public class LoadAPI{
 	 * String value
 	 */
 	public boolean downloadXML(String location) {
-		if(Instant.now().getEpochSecond() - getUpdateTime() < 900 && location.equals(getLocation())){
-			//less than 15 minutes since last API request
-			//and same location
+		if(alreadyLoaded(location)){
 			return true;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
@@ -165,28 +169,46 @@ public class LoadAPI{
 		return false;
 	}
 	
+	/*
+	 * downloadRadar just downloads the radar as a gif
+	 */
 	public boolean downloadRadar(String location){
-		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
+		if(alreadyLoaded(location)){
+			return true;
+		}
+		
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif";
+		targetURL += "?newmaps=" + "1";
+		targetURL += "&timelabel=" + "1";
+		targetURL += "&timelabel.y=" + "10";
+		targetURL += "&num=" + "5";
+		targetURL += "&delay=" + "50";
+		
 		URL url = null;
 		try {
 			url = new URL(targetURL);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
+		
 		InputStream in = null;
 		try {
 			in = new BufferedInputStream(url.openStream());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
+		
 		OutputStream out = null;
 		try {
 			out = new BufferedOutputStream(new FileOutputStream("radar.gif"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 
 		try {
@@ -196,19 +218,25 @@ public class LoadAPI{
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
+		
 		try {
 			in.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
+		
 		try {
 			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
+		
 		return true;
 	}
 }
