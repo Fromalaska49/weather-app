@@ -96,8 +96,9 @@ public class LoadAPI{
 	 * the cache has been loaded within 15 minutes
 	 * the location has not changed
 	 */
-	private boolean alreadyLoaded(String location){
-		return Instant.now().getEpochSecond() - getUpdateTime() < 900 && location.equals(getLocation());
+	private boolean alreadyLoaded(String location, int cacheTime){
+		//System.out.println(Instant.now().getEpochSecond() - getUpdateTime()+" < "+cacheTime+" && " +location.equals(getLocation()));
+		return Instant.now().getEpochSecond() - getUpdateTime() < cacheTime && location.equals(getLocation());
 	}
 	
 	/*
@@ -106,7 +107,12 @@ public class LoadAPI{
 	public boolean loadData(String location){
 		boolean success = true;
 		success &= downloadXML(location);
+		success &= downloadForecastXML(location);
 		success &= downloadRadar(location);
+		if(success){
+			setUpdateTime();
+		    setLocation(location);
+		}
 		return success;
 	}
 	
@@ -116,7 +122,7 @@ public class LoadAPI{
 	 * String value
 	 */
 	private boolean downloadJSON(String location){
-		if(alreadyLoaded(location)){
+		if(alreadyLoaded(location, 900)){
 			return true;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".json";
@@ -135,8 +141,6 @@ public class LoadAPI{
 		Charset charset = Charset.forName("UTF-8");
 		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 		    writer.write(targetURLContents, 0, targetURLContents.length());
-		    setUpdateTime();
-		    setLocation(location);
 		    return true;
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
@@ -150,7 +154,7 @@ public class LoadAPI{
 	 * String value
 	 */
 	private boolean downloadXML(String location) {
-		if(alreadyLoaded(location)){
+		if(alreadyLoaded(location, 900)){
 			return true;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
@@ -169,8 +173,37 @@ public class LoadAPI{
 		Charset charset = Charset.forName("UTF-8");
 		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 		    writer.write(targetURLContents, 0, targetURLContents.length());
-		    setUpdateTime();
-		    setLocation(location);
+		    return true;
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		}
+		
+		return false;
+	}
+	
+	/*
+	 * 
+	 */
+	private boolean downloadForecastXML(String location){
+		if(alreadyLoaded(location, 3600)){
+			return true;
+		}
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/hourly10day/q/" + location + ".xml";
+		String targetURLContents = "undefined";
+		try {
+			targetURLContents = IOUtils.toString(new URL(targetURL), "UTF-8");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Path file = Paths.get("data-forecast-xml.txt");
+		Charset charset = Charset.forName("UTF-8");
+		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
+		    writer.write(targetURLContents, 0, targetURLContents.length());
 		    return true;
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
@@ -183,8 +216,8 @@ public class LoadAPI{
 	 * downloadRadar just downloads the radar as a gif
 	 */
 	private boolean downloadRadar(String location){
-		if(alreadyLoaded(location)){
-			//return true;
+		if(alreadyLoaded(location, 900)){
+			return true;
 		}
 		
 		String
