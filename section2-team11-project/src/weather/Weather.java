@@ -10,6 +10,7 @@ public class Weather {
 		//String location = "TX/San_Antonio";
 		String location = "99508";
 		thingy.downloadXML(location);
+		thingy.downloadRadar(location);
 		ProcessData weather = new ProcessData();
 		LocationScreen view = new LocationScreen();
 		

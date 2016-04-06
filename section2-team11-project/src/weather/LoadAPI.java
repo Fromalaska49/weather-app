@@ -1,5 +1,6 @@
 package weather;
 
+import java.awt.Image;
 import java.io.*;
 import java.net.*;
 import java.nio.*;
@@ -162,5 +163,52 @@ public class LoadAPI{
 		}
 		
 		return false;
+	}
+	
+	public boolean downloadRadar(String location){
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50";
+		URL url = null;
+		try {
+			url = new URL(targetURL);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		InputStream in = null;
+		try {
+			in = new BufferedInputStream(url.openStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		OutputStream out = null;
+		try {
+			out = new BufferedOutputStream(new FileOutputStream("radar.gif"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			for ( int i; (i = in.read()) != -1; ) {
+			    out.write(i);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			in.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
 	}
 }
