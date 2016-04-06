@@ -182,7 +182,10 @@ public class LoadAPI{
 	}
 	
 	/*
-	 * 
+	 * downloads the hourly forecast data for the next 10 days
+	 * Yes, you read that right.
+	 * You get an hourly forecast,
+	 * FOR THE NEXT 10 DAYS!
 	 */
 	private boolean downloadForecastXML(String location){
 		if(alreadyLoaded(location, 3600)){
