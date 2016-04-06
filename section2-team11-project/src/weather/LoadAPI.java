@@ -174,15 +174,21 @@ public class LoadAPI{
 	 */
 	public boolean downloadRadar(String location){
 		if(alreadyLoaded(location)){
-			return true;
+			//return true;
 		}
 		
-		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif";
-		targetURL += "?newmaps=" + "1";
-		targetURL += "&timelabel=" + "1";
-		targetURL += "&timelabel.y=" + "10";
-		targetURL += "&num=" + "5";
-		targetURL += "&delay=" + "50";
+		String
+			width = "300", // Width of image in pixels: int
+			height = "300", // Height of image in pixels: int
+			newmaps = "1", // Transparent image (default) or show basemap: 0 (default), or 1
+			rainsnow = "1", // Use a different color palette to show rain/mix/snow: 0 (default), or 1
+			num = "10", // Number of frames in the animation: 1 (default) to 15
+			delay = "50", // The duration of a radar frame in an animation, in hundredths of a second: 25 (default) to 100
+			timelabel = "0", // Display the time of the radar frame: 0 (default) or 1
+			timelabelx = "0", // Pixels from left: 0 (default) to image width
+			timelabely = "0"; // Pixels from top: 0 (default) to image height
+		
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif?width=" + width + "&height=" + height + "&newmaps=" + newmaps + "&rainsnow=" + rainsnow + "&timelabel=" + timelabel + "&timelabel.x=" + timelabelx + "&timelabel.y=" + timelabely + "&num=" + num + "&delay=" + delay;
 		
 		URL url = null;
 		try {

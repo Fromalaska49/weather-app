@@ -12,59 +12,59 @@
 		<link>http://www.wunderground.com</link>
 		</image>
 		<display_location>
-		<full>Anchorage, AK</full>
-		<city>Anchorage</city>
-		<state>AK</state>
-		<state_name>Alaska</state_name>
+		<full>Tacoma, WA</full>
+		<city>Tacoma</city>
+		<state>WA</state>
+		<state_name>Washington</state_name>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<zip>99508</zip>
+		<zip>98439</zip>
 		<magic>1</magic>
 		<wmo>99999</wmo>
-		<latitude>61.20191956</latitude>
-		<longitude>-149.81645203</longitude>
-		<elevation>52.00000000</elevation>
+		<latitude>47.12321854</latitude>
+		<longitude>-122.52005768</longitude>
+		<elevation>115.00000000</elevation>
 		</display_location>
 		<observation_location>
-		<full>The Spurlocks at Airport Heights, Anchorage, Alaska</full>
-		<city>The Spurlocks at Airport Heights, Anchorage</city>
-		<state>Alaska</state>
+		<full>Tillicum, Lakewood, Washington</full>
+		<city>Tillicum, Lakewood</city>
+		<state>Washington</state>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<latitude>61.207767</latitude>
-		<longitude>-149.817322</longitude>
-		<elevation>124 ft</elevation>
+		<latitude>47.123520</latitude>
+		<longitude>-122.563698</longitude>
+		<elevation>272 ft</elevation>
 		</observation_location>
 		<estimated>
 		</estimated>
-		<station_id>KAKANCHO21</station_id>
-		<observation_time>Last Updated on April 5, 9:11 PM AKDT</observation_time>
-		<observation_time_rfc822>Tue, 05 Apr 2016 21:11:08 -0800</observation_time_rfc822>
-		<observation_epoch>1459919468</observation_epoch>
-		<local_time_rfc822>Tue, 05 Apr 2016 21:11:20 -0800</local_time_rfc822>
-		<local_epoch>1459919480</local_epoch>
-		<local_tz_short>AKDT</local_tz_short>
-		<local_tz_long>America/Anchorage</local_tz_long>
-		<local_tz_offset>-0800</local_tz_offset>
-		<weather>Overcast</weather>
-		<temperature_string>46.8 F (8.2 C)</temperature_string>
-		<temp_f>46.8</temp_f>
-		<temp_c>8.2</temp_c>
-		<relative_humidity>61%</relative_humidity>
+		<station_id>KWALAKEW18</station_id>
+		<observation_time>Last Updated on April 5, 10:31 PM PDT</observation_time>
+		<observation_time_rfc822>Tue, 05 Apr 2016 22:31:20 -0700</observation_time_rfc822>
+		<observation_epoch>1459920680</observation_epoch>
+		<local_time_rfc822>Tue, 05 Apr 2016 22:31:23 -0700</local_time_rfc822>
+		<local_epoch>1459920683</local_epoch>
+		<local_tz_short>PDT</local_tz_short>
+		<local_tz_long>America/Los_Angeles</local_tz_long>
+		<local_tz_offset>-0700</local_tz_offset>
+		<weather>Partly Cloudy</weather>
+		<temperature_string>48.6 F (9.2 C)</temperature_string>
+		<temp_f>48.6</temp_f>
+		<temp_c>9.2</temp_c>
+		<relative_humidity>92%</relative_humidity>
 		<wind_string>Calm</wind_string>
-		<wind_dir>North</wind_dir>
-		<wind_degrees>6</wind_degrees>
+		<wind_dir>WNW</wind_dir>
+		<wind_degrees>301</wind_degrees>
 		<wind_mph>0.0</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
 		<wind_kph>0.0</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1001</pressure_mb>
-		<pressure_in>29.57</pressure_in>
-		<pressure_trend>+</pressure_trend>
+		<pressure_mb>1033</pressure_mb>
+		<pressure_in>30.50</pressure_in>
+		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>34 F (1 C)</dewpoint_string>
-		<dewpoint_f>34</dewpoint_f>
-		<dewpoint_c>1</dewpoint_c>
+		<dewpoint_string>46 F (8 C)</dewpoint_string>
+		<dewpoint_f>46</dewpoint_f>
+		<dewpoint_c>8</dewpoint_c>
 		
 		
 		<heat_index_string>NA</heat_index_string>
@@ -72,13 +72,13 @@
 		<heat_index_c>NA</heat_index_c>
 		
 		
-		<windchill_string>47 F (8 C)</windchill_string>
-		<windchill_f>47</windchill_f>
-		<windchill_c>8</windchill_c>
+		<windchill_string>49 F (9 C)</windchill_string>
+		<windchill_f>49</windchill_f>
+		<windchill_c>9</windchill_c>
 		
-        <feelslike_string>47 F (8 C)</feelslike_string>
-        <feelslike_f>47</feelslike_f>
-        <feelslike_c>8</feelslike_c>
+        <feelslike_string>49 F (9 C)</feelslike_string>
+        <feelslike_f>49</feelslike_f>
+        <feelslike_c>9</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation>0</solarradiation>
@@ -86,19 +86,19 @@
 		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>0.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
-		<precip_today_string>0.02 in (1 mm)</precip_today_string>
-		<precip_today_in>0.02</precip_today_in>
-		<precip_today_metric>1</precip_today_metric>
+		<precip_today_string>0.00 in (0 mm)</precip_today_string>
+		<precip_today_in>0.00</precip_today_in>
+		<precip_today_metric>0</precip_today_metric>
 		
 		
 		
-		<icon>cloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/nt_cloudy.gif</icon_url>
-		<forecast_url>http://www.wunderground.com/US/AK/Anchorage.html</forecast_url>
+		<icon>partlycloudy</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_partlycloudy.gif</icon_url>
+		<forecast_url>http://www.wunderground.com/US/WA/Tacoma.html</forecast_url>
         
-        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KAKANCHO21</history_url>
+        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KWALAKEW18</history_url>
         
-		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=61.207767,-149.817322</ob_url>
+		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=47.123520,-122.563698</ob_url>
 	</current_observation>
 
 		
