@@ -8,9 +8,8 @@ public class Weather {
 		System.out.println("Good luck to Team Rocket!!!");
 		LoadAPI thingy = new LoadAPI();
 		//String location = "TX/San_Antonio";
-		String location = "98439";
-		thingy.downloadXML(location);
-		thingy.downloadRadar(location);
+		String location = "99508";
+		thingy.loadData(location);
 		ProcessData weather = new ProcessData();
 		LocationScreen view = new LocationScreen();
 		

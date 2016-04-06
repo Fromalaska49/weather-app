@@ -100,6 +100,16 @@ public class LoadAPI{
 		return Instant.now().getEpochSecond() - getUpdateTime() < 900 && location.equals(getLocation());
 	}
 	
+	/*
+	 * loads all needed data automatically
+	 */
+	public boolean loadData(String location){
+		boolean success = true;
+		success &= downloadXML(location);
+		success &= downloadRadar(location);
+		return success;
+	}
+	
 	/* 
 	 * getWeatherJSON fetches data from the Weather API
 	 * in JSON format and returns the API response as a
