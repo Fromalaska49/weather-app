@@ -115,7 +115,7 @@ public class LoadAPI{
 	 * in JSON format and returns the API response as a
 	 * String value
 	 */
-	public boolean downloadJSON(String location){
+	private boolean downloadJSON(String location){
 		if(alreadyLoaded(location)){
 			return true;
 		}
@@ -149,7 +149,7 @@ public class LoadAPI{
 	 * in JSON format and returns the API response as a
 	 * String value
 	 */
-	public boolean downloadXML(String location) {
+	private boolean downloadXML(String location) {
 		if(alreadyLoaded(location)){
 			return true;
 		}
@@ -182,7 +182,7 @@ public class LoadAPI{
 	/*
 	 * downloadRadar just downloads the radar as a gif
 	 */
-	public boolean downloadRadar(String location){
+	private boolean downloadRadar(String location){
 		if(alreadyLoaded(location)){
 			//return true;
 		}
