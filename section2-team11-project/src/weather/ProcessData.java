@@ -34,6 +34,20 @@ public class ProcessData {
 	}
 	
 	/*
+	 * 
+	 * For all of the forecast methods below, the index
+	 * parameter is the number of days in the future that
+	 * you want to get the forecasted data for.
+	 * Example: If you wanted to get the forecasted high
+	 * temperature for tomorrow, you would call:
+	 * String highTomorrow = getForecastHighF(1);
+	 * 
+	 */
+	
+	
+	
+	
+	/*
 	 * Gets the data from the forecast
 	 * Returns the day of the week at the given index
 	 * i.e. if today is Wednesday, and index=0, then "Friday" will be returned
