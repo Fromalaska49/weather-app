@@ -1,9 +1,15 @@
 package weather.frontEnd;
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import weather.MainApp;
 import model.LocationScreenModel;
@@ -15,7 +21,7 @@ public class LocationScreenController {
 	@FXML
 	private Button okButton;
 	
-	// Reference to the main application.
+	Stage prevStage;
     private MainApp mainApp;
     private LocationScreenModel model;
 	private boolean okClicked = false;
@@ -25,6 +31,11 @@ public class LocationScreenController {
      */
     public LocationScreenController() {
     	zipField = new TextField();
+    }
+    
+
+    public void setPrevStage(Stage stage){
+         this.prevStage = stage;
     }
     
     /**
@@ -48,14 +59,16 @@ public class LocationScreenController {
     
     /**
      * Called when the user clicks on the ok button.
+     * @throws IOException 
      */
     @FXML
-    private void handleOk() {
+    private void handleOk() throws IOException {
     	System.out.println("Ok button clicked. Screen change call should be placed here..maybe");
     	Integer zip = Integer.valueOf(zipField.getText()); // test variable
     	if (isInputValid()) {
     		model.setZipCode(Integer.parseInt(zipField.getText())); 
     		okClicked = true;
+    		gotoWeatherScreen();
     		System.out.println("Input is valid. Zip code entered is: " + zip);
     		System.out.println("Now model's zip code has been set to.. " + model.getZipCode());
     	}
@@ -89,6 +102,16 @@ public class LocationScreenController {
             alert.showAndWait();
             return false;
         } 
+    }
+    
+    public void gotoWeatherScreen() throws IOException {
+    	Stage stage = new Stage();
+        stage.setTitle("Weather");
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("WeatherScreen.fxml"));
+        Scene scene = new Scene(myPane);
+        stage.setScene(scene);
+        stage.show();
     }
     
     /**
