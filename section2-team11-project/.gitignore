@@ -4,3 +4,5 @@ doc/
 # ignore class files and html files
 *.class
 *.html
+/.classpath
+*.DS_Store
