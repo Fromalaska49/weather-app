@@ -1,7 +1,5 @@
 package weather;
 
-import weather.frontEnd.LocationScreen;
-
 public class Weather {
 	
 	public static void main(String[] args) {

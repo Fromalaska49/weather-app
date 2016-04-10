@@ -1,7 +1,7 @@
 /**
  * 
  */
-package weather.frontEnd;
+package weather;
 
 import java.awt.*;
 import javax.swing.*;

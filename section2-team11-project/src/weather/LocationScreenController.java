@@ -1,4 +1,4 @@
-package weather.frontEnd;
+package weather;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import weather.MainApp;
 import model.LocationScreenModel;
 
 public class LocationScreenController {
