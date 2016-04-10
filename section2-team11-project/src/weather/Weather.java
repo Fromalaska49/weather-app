@@ -11,7 +11,7 @@ public class Weather {
 		ProcessData weather = new ProcessData();
 		LocationScreen view = new LocationScreen();
 		
-		System.out.println("Nishant and Lupe, don't use Eclipse on VDI.");
+		System.out.println("Nishant perhaps the problem is that you're using VDI?");
 		return;
 	}
 }
