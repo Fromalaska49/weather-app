@@ -6,3 +6,5 @@ doc/
 *.html
 /.classpath
 *.DS_Store
+/.classpath
+*.DS_Store
