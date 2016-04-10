@@ -28,6 +28,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+    	LocationScreen loc = new LocationScreen();
+    	primaryStage.setMaximized(true);
+    	loc.start(primaryStage);
     	
     		/*root = new BorderPane();
 
@@ -42,59 +45,9 @@ public class MainApp extends Application {
         //this.primaryStage.setTitle("Weather App");
         //initRootLayout();
         //showLocationScreen();
-    	
-    	GridPane root = new GridPane();
-        root.setHgap(6);
-        root.setVgap(6);
-        root.setPadding(new Insets(5));
-        
-        ColumnConstraints cons1 = new ColumnConstraints();
-        cons1.setHgrow(Priority.NEVER);
-        root.getColumnConstraints().add(cons1);
 
-        ColumnConstraints cons2 = new ColumnConstraints();
-        cons2.setHgrow(Priority.ALWAYS);
-        
-        root.getColumnConstraints().addAll(cons1, cons2);
-        
-        RowConstraints rcons1 = new RowConstraints();
-        rcons1.setVgrow(Priority.NEVER);
-        
-        RowConstraints rcons2 = new RowConstraints();
-        rcons2.setVgrow(Priority.ALWAYS);  
-        
-        root.getRowConstraints().addAll(rcons1, rcons2);
-        
-        Label lbl = new Label("Name:");
-        TextField field = new TextField();
-        ListView view = new ListView();
-        Button okBtn = new Button("OK");
-        Button closeBtn = new Button("Close");
-
-        GridPane.setHalignment(okBtn, HPos.LEFT);
-
-        root.add(lbl, 0, 0);
-        root.add(field, 1, 0, 3, 1);
-        root.add(view, 0, 1, 4, 2);
-        root.add(okBtn, 2, 3);
-        root.add(closeBtn, 3, 3);
-        
-        Scene scene = new Scene(root, 280, 300);
-
-        primaryStage.setTitle("New folder");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
     
-    private Label getTopLabel() {
-
-        Label lbl = new Label("Weather App");
-        lbl.setPrefHeight(SIZE);
-        lbl.prefWidthProperty().bind(root.widthProperty());
-        lbl.setStyle("-fx-border-style: dotted; -fx-border-width: 0 0 1 0;-fx-border-color: gray; -fx-font-weight: bold;-fx-padding:30");        
-        
-        return lbl;
-    }
+  
 
 
     /**
@@ -147,6 +100,7 @@ public class MainApp extends Application {
      * Returns the main stage.
      * @return
      */
+    }
     public Stage getPrimaryStage() {
         return primaryStage;
     }
