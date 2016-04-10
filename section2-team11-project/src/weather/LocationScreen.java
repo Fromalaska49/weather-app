@@ -44,6 +44,7 @@ public class LocationScreen extends Application  {
 		double width = primaryStage.getMaxWidth();
 		System.out.println(height+ ""+ width);
 		Label headerTextField = new Label("Weather App");
+		Label cityLabel = new Label("City");
 		Button btn = new Button();
 
 		btn.setText("Toggle C / F");
@@ -60,8 +61,10 @@ public class LocationScreen extends Application  {
 		});
 		StackPane root = new StackPane();
 		root.setAlignment(headerTextField, Pos.TOP_CENTER);
+		root.setAlignment(cityLabel, Pos.BOTTOM_LEFT);
 		root.getChildren().add(btn);
 		root.getChildren().add(headerTextField);
+		root.getChildren().add(cityLabel);
 		Scene scene = new Scene(root, 300, 250);
 
 		primaryStage.setTitle("Weather App");
