@@ -11,7 +11,7 @@ public class Weather {
 		ProcessData weather = new ProcessData();
 		LocationScreen view = new LocationScreen();
 		
-		System.out.println("Nishant perhaps the problem is that you're using VDI?");
+		System.out.println("Maybe it was the classpath...");
 		return;
 	}
 }
