@@ -9,7 +9,7 @@ public class Weather {
 		String location = "99508";
 		thingy.loadData(location);
 		ProcessData weather = new ProcessData();
-		LocationScreen view = new LocationScreen();
+		//LocationScreen view = new LocationScreen();
 		
 		System.out.println("Maybe it was the classpath...");
 		return;
