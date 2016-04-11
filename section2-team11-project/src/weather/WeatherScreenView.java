@@ -74,6 +74,7 @@ public class WeatherScreenView {
 		
 
 		Scene scene = new Scene(border, 300, 250);
+    	scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		
 
 		secondStage.setTitle("Weather App");
