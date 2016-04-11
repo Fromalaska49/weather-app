@@ -71,4 +71,17 @@ public class LocationScreenModel {
         this.state = s;
     }
 	
+	public String getLocation(){
+		String location = "";
+		if(this.zipCode > 0){
+			location += this.zipCode;
+		}
+		else if(this.state.length() > 0 && this.city.length() > 0){
+			location = this.state + "\\" + this.city;
+		}
+		else{
+			System.out.println("Error: no location found (in LocationScreenModel)");
+		}
+		return location;
+	}
 }
