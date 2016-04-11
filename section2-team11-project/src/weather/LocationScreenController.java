@@ -22,7 +22,7 @@ public class LocationScreenController {
 	private Button okButton;
 	
     private MainApp mainApp;
-    private LocationScreenView app;
+    private LocationScreenView view;
     private LocationScreenModel model;
 	private boolean okClicked = false;
     
@@ -33,7 +33,6 @@ public class LocationScreenController {
 	//this needs to have 1 parameter, the model
     public LocationScreenController(LocationScreenModel m) {
     		this.model = m;
-    		zipField = new TextField();
     }
     
     
@@ -121,8 +120,7 @@ public class LocationScreenController {
 
 				@Override
 				public void handle(Event event) {
-					System.out.println("Ok button was clicked");
-					//model.getZipCode();
+					System.out.println("Ok button was clicked. City entered was: " + model.getCity() + " " + model.getState());
 				}
 		};
 		return handler; 

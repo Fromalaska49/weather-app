@@ -41,7 +41,6 @@ public class LocationScreenView extends Application  {
 		
 		
 		private LocationScreenController controller;
-		private Button okBtn = new Button();
 		private Text headerText;
 		private BorderPane border;
 		private GridPane grid;
@@ -50,8 +49,9 @@ public class LocationScreenView extends Application  {
 		private Label zipLabel;
 		private Label orLabel;
 		private TextField zipField;
-		private TextField cityField = new TextField();
-		private TextField stateField;
+		private static TextField cityField = new TextField();
+		private static TextField stateField;
+		private Button okBtn = new Button();
 
 	public LocationScreenView(LocationScreenController c){
 		controller = c;
@@ -106,8 +106,12 @@ public class LocationScreenView extends Application  {
 
 	}
 	
-	String getCity(){
+	public static String getCity(){
 		return cityField.getText();
+	}
+	
+	public static String getState(){
+		return stateField.getText();
 	}
 	
 

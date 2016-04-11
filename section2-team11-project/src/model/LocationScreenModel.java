@@ -6,31 +6,49 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.TextField;
+import weather.LocationScreenView;
 
 
 public class LocationScreenModel {
 	private int zipCode;
-	//private final StringProperty city;    // once we add city and state functionality
-	//private final StringProperty state;
+	private String city;
+	private String state;
+	
 	
 	
 	/**
-	 * Constructor with zip code, need to add constructors with city/state
+	 * LocationScreenModel Constructor
 	 */
 	public LocationScreenModel() {
 		zipCode = 0;
+		city = "";
+		state = "";
 
 	}
-
-
+	
 	public int getZipCode() {
 		return zipCode;
 	}
 	
-	public void setZipCode(int zipField) {
-        this.zipCode = zipField;;
+	public String getCity() {
+		return LocationScreenView.getCity();
+	}
+	
+	public String getState() {
+		return LocationScreenView.getState();
+	}
+	
+	public void setZipCode(int z) {
+        this.zipCode = z;
     }
-
-   
-
+	
+	
+	public void setCity(String s) {
+        this.city = s;
+    }
+	
+	public void setState(String s) {
+        this.state = s;
+    }
+	
 }
