@@ -75,6 +75,8 @@ public class test extends Application {
         grid.add(actiontarget, 1, 6);
         actiontarget.setId("actiontarget");
 
+        //btn.setId("");
+        
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
