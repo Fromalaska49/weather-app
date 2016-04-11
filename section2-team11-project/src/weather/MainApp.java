@@ -28,8 +28,9 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
     	LocationScreenModel model = new LocationScreenModel();
-    	LocationScreenController controller = new LocationScreenController(model);
-    	LocationScreenView view = new LocationScreenView(controller);
+    	LocationScreenView view = new LocationScreenView();
+    	LocationScreenController controller = new LocationScreenController(model, view);
+    
     	
   
     	primaryStage.setMaximized(true);

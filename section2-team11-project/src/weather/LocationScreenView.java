@@ -48,14 +48,13 @@ public class LocationScreenView extends Application  {
 		private Label stateLabel;
 		private Label zipLabel;
 		private Label orLabel;
-		private TextField zipField;
-		private static TextField cityField = new TextField();
+		private static TextField zipField;
+		private static TextField cityField;;
 		private static TextField stateField;
 		private Button okBtn = new Button();
 
-	public LocationScreenView(LocationScreenController c){
-		controller = c;
-		okBtn.setOnAction(controller.getOkListener());
+	public LocationScreenView(){
+		
 	}
 	public void start(Stage primaryStage) {
 		primaryStage.setMaximized(true);
@@ -67,6 +66,7 @@ public class LocationScreenView extends Application  {
 		stateLabel = new Label("State:  ");
 		zipLabel = new Label("Zip Code:  ");
 		orLabel = new Label(" -OR-");
+		cityField = new TextField();
 		stateField = new TextField();
 		zipField = new TextField();
 		stateField.setPrefWidth(80);
@@ -74,7 +74,7 @@ public class LocationScreenView extends Application  {
 		okBtn.setText("OK");
 		
 		
-		
+		okBtn.setOnAction(LocationScreenController .getOkListener());
 		
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
@@ -85,7 +85,6 @@ public class LocationScreenView extends Application  {
 		grid.add(stateField, 3, 1);
 		grid.add(zipField, 3, 4);
 		grid.setAlignment(Pos.CENTER);
-		
 		
 		
 		border = new BorderPane();
@@ -112,6 +111,10 @@ public class LocationScreenView extends Application  {
 	
 	public static String getState(){
 		return stateField.getText();
+	}
+	
+	public static String getZipCode(){
+		return zipField.getText();
 	}
 	
 

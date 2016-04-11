@@ -22,17 +22,19 @@ public class LocationScreenController {
 	private Button okButton;
 	
     private MainApp mainApp;
-    private LocationScreenView view;
-    private LocationScreenModel model;
+    private static LocationScreenView view;
+    private static LocationScreenModel model;
 	private boolean okClicked = false;
     
     /**
      * The constructor is called before the initialize() method.
+     * @param v 
      */
 	
 	//this needs to have 1 parameter, the model
-    public LocationScreenController(LocationScreenModel m) {
+    public LocationScreenController(LocationScreenModel m, LocationScreenView v) {
     		this.model = m;
+    		this.view = v;
     }
     
     
@@ -50,50 +52,49 @@ public class LocationScreenController {
         return okClicked;
     }
     
-    /**
-     * Called when the user clicks on the ok button.
-     * @throws IOException 
-     */
-    @FXML void handleOk() throws IOException {
-    	Integer zip = Integer.valueOf(zipField.getText()); // test variable
-    	if (isInputValid()) {
-    		model.setZipCode(Integer.parseInt(zipField.getText())); 
-    		okClicked = true;
-    		gotoWeatherScreen();
-    		System.out.println("Input is valid. Zip code entered is: " + zip);
-    		System.out.println("Now model's zip code has been set to.. " + model.getZipCode());
-    	}
-    }
-    
 
     /**
-     * Validates the user input in the text fields.
+     * Determines if user entered valid city and state
      * @return true if the input is valid
      */
-    private boolean isInputValid() {
+    private static boolean isCSValid(String s) {
         String errorMessage = "";
         
-        if (zipField.getText() == null) {  // these need to be fixed, currently throws an exception
-            errorMessage += "Did not enter a valid zip code.\n"; 
-        } else {
-            // try to parse the postal code into an int.
-            try {
-                Integer.parseInt(zipField.getText());
-            } catch (NumberFormatException e) {
-                errorMessage += "Zip code must be an integer.\n"; 
-            }
-        }
+        if (s == null || s.isEmpty()) {  
+            errorMessage += "Did not enter a city and/or a state.\n"; 
+        }   
         if (errorMessage.length() == 0) {
-            return true;
-        } else {                                 // need to get this to work
+            return true;        
+        } else {                                 
             // Show the error message.
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Invalid Field.");
-            alert.setHeaderText("Please enter a correct field.");
+            alert.setHeaderText("Please enter a city and a state.");
             alert.setContentText(errorMessage);
             alert.showAndWait();
             return false;
         } 
+    }
+    
+    private static boolean isZipValid(String s) {
+    		String errorMessage = "";
+    		if (s == null || s.isEmpty()) 
+    			errorMessage += "Did not enter a zip code.";
+    		
+    		if (s.length() != 5)
+    			errorMessage += "Please enter a five digit zip code.";
+    		
+    		if (errorMessage.length() == 0) {
+                return true;    
+    		} else {                                 
+                // Show the error message.
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Invalid Field.");
+                alert.setHeaderText("Please enter a five digit zip code.");
+                alert.setContentText(errorMessage);
+                alert.showAndWait();
+                return false;
+            } 
     }
     
     public void gotoWeatherScreen() throws IOException {
@@ -115,12 +116,20 @@ public class LocationScreenController {
     }
 
 
-	public EventHandler<ActionEvent> getOkListener() {
+	public static EventHandler<ActionEvent> getOkListener() {
 		EventHandler handler = new EventHandler<Event>() {
 
 				@Override
 				public void handle(Event event) {
-					System.out.println("Ok button was clicked. City entered was: " + model.getCity() + " " + model.getState());
+					//if(isZipValid(view.getZipCode())) 
+						model.setZipCode(Integer.valueOf(view.getZipCode()));
+					//else if(isCSValid(view.getCity()) && isCSValid(view.getState())) {
+						model.setCity(view.getCity());
+						model.setState(view.getState());
+					//}
+					
+					System.out.println("Ok button was clicked. You entered: " + model.getCity() + " " + model.getState() + " " +
+							model.getZipCode());
 				}
 		};
 		return handler; 

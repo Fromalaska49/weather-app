@@ -31,11 +31,11 @@ public class LocationScreenModel {
 	}
 	
 	public String getCity() {
-		return LocationScreenView.getCity();
+		return city;
 	}
 	
 	public String getState() {
-		return LocationScreenView.getState();
+		return state;
 	}
 	
 	public void setZipCode(int z) {
