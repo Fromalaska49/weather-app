@@ -1,7 +1,10 @@
 package weather;
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,42 +17,34 @@ import javafx.stage.Stage;
 import model.LocationScreenModel;
 
 public class LocationScreenController {
-	@FXML
-    private TextField zipField;
 	
-	@FXML
+    private TextField zipField;
 	private Button okButton;
 	
-	Stage prevStage;
     private MainApp mainApp;
+    private LocationScreenView app;
     private LocationScreenModel model;
 	private boolean okClicked = false;
     
     /**
      * The constructor is called before the initialize() method.
      */
-    public LocationScreenController() {
-    	zipField = new TextField();
+	
+	//this needs to have 1 parameter, the model
+    public LocationScreenController(LocationScreenModel m) {
+    		this.model = m;
+    		zipField = new TextField();
     }
     
-
-    public void setPrevStage(Stage stage){
-         this.prevStage = stage;
-    }
     
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     * Initializes the controller class. 
      */
-    @FXML
     private void initialize() {
-    	model = new LocationScreenModel(78240);
-    	System.out.println("Zip code initially is.." + model.getZipCode());
     }
     
     /**
      * Returns true if the user clicked OK, false otherwise.
-     * 
      * @return
      */
     public boolean isOkClicked() {
@@ -60,9 +55,7 @@ public class LocationScreenController {
      * Called when the user clicks on the ok button.
      * @throws IOException 
      */
-    @FXML
-    private void handleOk() throws IOException {
-    	System.out.println("Ok button clicked. Screen change call should be placed here..maybe");
+    @FXML void handleOk() throws IOException {
     	Integer zip = Integer.valueOf(zipField.getText()); // test variable
     	if (isInputValid()) {
     		model.setZipCode(Integer.parseInt(zipField.getText())); 
@@ -73,6 +66,7 @@ public class LocationScreenController {
     	}
     }
     
+
     /**
      * Validates the user input in the text fields.
      * @return true if the input is valid
@@ -120,6 +114,18 @@ public class LocationScreenController {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
-    
-    
+
+
+	public EventHandler<ActionEvent> getOkListener() {
+		EventHandler handler = new EventHandler<Event>() {
+
+				@Override
+				public void handle(Event event) {
+					System.out.println("Ok button was clicked");
+					//model.getZipCode();
+				}
+		};
+		return handler; 
+	}
+
 }

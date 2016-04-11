@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 
 public class LocationScreenModel {
-	private final IntegerProperty zipCode;
+	private int zipCode;
 	//private final StringProperty city;    // once we add city and state functionality
 	//private final StringProperty state;
 	
@@ -17,21 +17,20 @@ public class LocationScreenModel {
 	/**
 	 * Constructor with zip code, need to add constructors with city/state
 	 */
-	public LocationScreenModel(int zipCode) {
-		this.zipCode = new SimpleIntegerProperty(zipCode);
+	public LocationScreenModel() {
+		zipCode = 0;
+
 	}
 
 
 	public int getZipCode() {
-		return zipCode.get();
+		return zipCode;
 	}
 	
 	public void setZipCode(int zipField) {
-        this.zipCode.set(zipField);
+        this.zipCode = zipField;;
     }
 
-    public IntegerProperty zipCodeProperty() {
-        return zipCode;
-    }	
+   
 
 }
