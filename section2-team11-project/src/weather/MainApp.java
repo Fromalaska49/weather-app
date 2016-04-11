@@ -44,5 +44,11 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        String location = "78249";
+        
+        //Create an object to handle the data
+        LoadAPI data = new LoadAPI(location);
+        
+        
     }
 }
