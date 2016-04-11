@@ -14,16 +14,36 @@ public class LocationScreenModel {
 	private String city;
 	private String state;
 	
-	
+
 	
 	/**
 	 * LocationScreenModel Constructor
 	 */
 	public LocationScreenModel() {
-		zipCode = 0;
-		city = "";
-		state = "";
-
+		this.zipCode = 0;
+		this.city = "";
+		this.state = "";
+		return;
+	}
+	
+	/**
+	 * LocationScreenModel Constructor for zipcode
+	 */
+	public LocationScreenModel(int zip) {
+		this.zipCode = zip;
+		this.city = "";
+		this.state = "";
+		return;
+	}
+	
+	/**
+	 * LocationScreenModel Constructor for state/city
+	 */
+	public LocationScreenModel(String state, String city) {
+		this.zipCode = 0;
+		this.city = city;
+		this.state = state;
+		return;
 	}
 	
 	public int getZipCode() {
