@@ -97,16 +97,6 @@ public class LocationScreenController {
             } 
     }
     
-    public void gotoWeatherScreen() throws IOException {
-    	Stage stage = new Stage();
-        stage.setTitle("Weather");
-        Pane myPane = null;
-        myPane = FXMLLoader.load(getClass().getResource("WeatherScreen.fxml"));
-        Scene scene = new Scene(myPane);
-        stage.setScene(scene);
-        stage.show();
-    }
-    
     /**
      * Is called by the main application to give a reference back to itself.
      * @param mainApp
@@ -119,17 +109,23 @@ public class LocationScreenController {
 	public static EventHandler<ActionEvent> getOkListener() {
 		EventHandler handler = new EventHandler<Event>() {
 
+				private Stage primaryStage;
+				private ScreenController sController;
+
 				@Override
-				public void handle(Event event) {
-					//if(isZipValid(view.getZipCode())) 
-						model.setZipCode(Integer.valueOf(view.getZipCode()));
-					//else if(isCSValid(view.getCity()) && isCSValid(view.getState())) {
-						model.setCity(view.getCity());
-						model.setState(view.getState());
-					//}
-					
-					System.out.println("Ok button was clicked. You entered: " + model.getCity() + " " + model.getState() + " " +
-							model.getZipCode());
+				public void handle(Event event)  {
+					if(view.getZipCode().isEmpty()) {  // checks if user only entered city and state
+						if(isCSValid(view.getCity()) && isCSValid(view.getState())) {  
+							model.setCity(view.getCity());
+							model.setState(view.getState());
+							ScreenController.showWeatherScreen(primaryStage);
+						}
+					} else { // user only entered zip code
+						if(isZipValid(view.getZipCode())) {
+							model.setZipCode(Integer.valueOf(view.getZipCode()));
+							ScreenController.showWeatherScreen(primaryStage);
+						}
+					}					
 				}
 		};
 		return handler; 
