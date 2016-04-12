@@ -57,7 +57,7 @@ public class LocationScreenView extends Application  {
 		
 	}
 	public void start(Stage primaryStage) {
-		primaryStage.setMaximized(true);
+		//primaryStage.setMaximized(true);
 
 		
 		headerText =  TextBuilder.create().text("Weather App").build();
@@ -96,9 +96,7 @@ public class LocationScreenView extends Application  {
 		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
 		
 		
-		Scene scene = new Scene(border, 300, 250);
-		
-
+		Scene scene = new Scene(border, 800, 700);
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
 		primaryStage.show();

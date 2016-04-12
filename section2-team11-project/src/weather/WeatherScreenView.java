@@ -28,6 +28,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 import javafx.scene.text.Font;
 
 public class WeatherScreenView {
@@ -42,42 +43,47 @@ public class WeatherScreenView {
 	private Label timeLabel;
 
 	private Button okBtn = new Button();
+	private LocationScreenModel locModel;
 	
     public WeatherScreenView(){	
 	}
-    public void start(Stage secondStage) {
-		secondStage.setMaximized(true);
+    public void start(Stage stage, Scene scene) {
 		
-		headerText =  TextBuilder.create().text("Weather App").build();
+		
+		headerText =  TextBuilder.create().text("Weather Conditions").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		cityLabel = new Label("model.LocationScreenModel.city");
+		/* cityLabel = new Label("model.LocationScreenModel.city");
 		stateLabel = new Label("model.state");
 		timeLabel = new Label("model.time");
 		okBtn.setText("OK");
 		
 		
-		okBtn.setOnAction(LocationScreenController .getOkListener());
+		okBtn.setOnAction(LocationScreenController .getOkListener()); 
 		
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
 		grid.add(stateLabel, 0, 1);
 		grid.add(timeLabel, 0, 2);
-		grid.setAlignment(Pos.BASELINE_LEFT);
+		grid.setAlignment(Pos.BASELINE_LEFT);  */
 		
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
 		border.setTop(headerText);
-		border.setCenter(grid);
-		border.setBottom(okBtn);
+		//border.setCenter(grid);
+		//border.setBottom(okBtn);
 		border.setAlignment(headerText, Pos.CENTER);
-		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
+		//border.setAlignment(okBtn, Pos.CENTER_RIGHT); 
 		
 
-		Scene scene = new Scene(border, 300, 250);
-    	scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
-		
+		Scene scene2 = new Scene(border, 800, 700);
 
-		secondStage.setTitle("Weather App");
+		//scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
+		
+		//stage.setMaximized(true);
+		stage.setTitle("Weather Conditions");
+		stage.setScene(scene2);
+		stage.show();
+    	    
 
 	}
 	
