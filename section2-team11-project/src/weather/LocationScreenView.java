@@ -44,6 +44,7 @@ public class LocationScreenView extends Application  {
 		private Text headerText;
 		private BorderPane border;
 		private GridPane grid;
+		private GridPane bottomGrid;
 		private Label cityLabel;
 		private Label stateLabel;
 		private Label zipLabel;
@@ -52,7 +53,8 @@ public class LocationScreenView extends Application  {
 		private static TextField cityField;;
 		private static TextField stateField;
 		private Button okBtn = new Button();
-
+		private Button setBtn = new Button();
+		
 	public LocationScreenView(){
 		
 	}
@@ -72,7 +74,7 @@ public class LocationScreenView extends Application  {
 		stateField.setPrefWidth(80);
 		cityField.setPrefWidth(80);
 		okBtn.setText("OK");
-		
+		setBtn.setText("Settings");
 		
 		okBtn.setOnAction(LocationScreenController .getOkListener());
 		
@@ -86,16 +88,22 @@ public class LocationScreenView extends Application  {
 		grid.add(zipField, 3, 4);
 		grid.setAlignment(Pos.CENTER);
 		
+		bottomGrid = new GridPane();
+		bottomGrid.add(okBtn, 0, 0);
+		bottomGrid.add(setBtn, 0, 1);
+		bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
 		
 		border = new BorderPane();
 		//border.setId("Startpane");
 		border.setPadding(new Insets(25, 100, 100, 100));
 		border.setTop(headerText);
 		border.setCenter(grid);
-		border.setBottom(okBtn);
+		border.setBottom(bottomGrid);
+		//border.setBottom(okBtn);
+		//border.setBottom(setBtn);
 		border.setAlignment(headerText, Pos.CENTER);
 		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
-		
+		border.setAlignment(setBtn, Pos.CENTER_LEFT);
 		Scene scene = new Scene(border, 800, 700);
 
 
