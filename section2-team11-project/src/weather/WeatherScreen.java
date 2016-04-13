@@ -39,6 +39,7 @@ package weather;
 			System.out.println(height+ ""+ width);
 			Label headerTextField = new Label("Weather App");
 			Label cityLabel = new Label("City");
+			
 		}
 
 }
