@@ -45,7 +45,8 @@ public class WeatherScreenView {
 	private Label timeLabel;
 	private HBox hbox;
 	private Button okBtn = new Button();
-	private LocationScreenModel locModel;
+
+//	private LocationScreenModel locModel;
 	
     public WeatherScreenView(){	
 	}
@@ -61,6 +62,7 @@ public class WeatherScreenView {
 		 //ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
          ImageView iv1 = new ImageView();
 		 iv1.setImage(image);
+		 iv1.setPreserveRatio(true);
 		/* cityLabel = new Label("model.LocationScreenModel.city");
 		stateLabel = new Label("model.state");
 		timeLabel = new Label("model.time");
@@ -79,11 +81,15 @@ public class WeatherScreenView {
 		border.setPadding(new Insets(25, 100, 100, 100));
 		hbox.getChildren().add(iv1);
 		hbox.getChildren().add(headerText);
+		hbox.setAlignment(Pos.CENTER);
+//		HBox.setHgrow(iv1, Priority.ALWAYS);
+//	     HBox.setHgrow(headerText, Priority.ALWAYS);
 		border.setTop(hbox);
+		border.setAlignment(hbox, Pos.CENTER);
 
 		//border.setCenter(grid);
 		//border.setBottom(okBtn);
-		border.setAlignment(headerText, Pos.CENTER);
+		//border.setAlignment(headerText, Pos.CENTER);
 		//border.setAlignment(okBtn, Pos.CENTER_RIGHT); 
 		
 
