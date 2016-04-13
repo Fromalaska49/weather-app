@@ -102,6 +102,7 @@ public class LocationScreenView extends Application  {
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
         scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
+        scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		primaryStage.show();
 
 	}
