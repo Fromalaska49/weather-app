@@ -2,8 +2,9 @@ package weather;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
-
+import javafx.scene.image.Image;
 import javax.swing.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
@@ -41,7 +43,7 @@ public class WeatherScreenView {
 	private Label cityLabel;
 	private Label stateLabel;
 	private Label timeLabel;
-
+	private HBox hbox;
 	private Button okBtn = new Button();
 	private LocationScreenModel locModel;
 	
@@ -50,8 +52,15 @@ public class WeatherScreenView {
     public void start(Stage stage, Scene scene) {
 		
 		
-		headerText =  TextBuilder.create().text("Weather Conditions").build();
+		headerText =  TextBuilder.create().text("Thunderstorm").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
+		 //Image image = new Image("StartScreen.png");
+		 
+         // simple displays ImageView the image as is
+		 Image image = new Image(new File("Capture.PNG").toURI().toString());
+		 //ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
+         ImageView iv1 = new ImageView();
+		 iv1.setImage(image);
 		/* cityLabel = new Label("model.LocationScreenModel.city");
 		stateLabel = new Label("model.state");
 		timeLabel = new Label("model.time");
@@ -65,10 +74,13 @@ public class WeatherScreenView {
 		grid.add(stateLabel, 0, 1);
 		grid.add(timeLabel, 0, 2);
 		grid.setAlignment(Pos.BASELINE_LEFT);  */
-		
+		hbox = new HBox();
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
-		border.setTop(headerText);
+		hbox.getChildren().add(iv1);
+		hbox.getChildren().add(headerText);
+		border.setTop(hbox);
+
 		//border.setCenter(grid);
 		//border.setBottom(okBtn);
 		border.setAlignment(headerText, Pos.CENTER);
@@ -82,7 +94,7 @@ public class WeatherScreenView {
 		//stage.setMaximized(true);
 		stage.setTitle("Weather Conditions");
 		stage.setScene(scene2);
-		stage.show();
+		stage.show(); 
     	    
 
 	}

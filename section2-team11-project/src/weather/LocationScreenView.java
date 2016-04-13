@@ -88,6 +88,7 @@ public class LocationScreenView extends Application  {
 		
 		
 		border = new BorderPane();
+		//border.setId("Startpane");
 		border.setPadding(new Insets(25, 100, 100, 100));
 		border.setTop(headerText);
 		border.setCenter(grid);
@@ -95,10 +96,12 @@ public class LocationScreenView extends Application  {
 		border.setAlignment(headerText, Pos.CENTER);
 		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
 		
-		
 		Scene scene = new Scene(border, 800, 700);
+
+
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
+        scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
 		primaryStage.show();
 
 	}
