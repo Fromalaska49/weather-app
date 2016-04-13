@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import javax.swing.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -17,6 +18,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -51,7 +53,7 @@ public class LocationScreenView extends Application  {
 		private Label orLabel;
 		private static TextField zipField;
 		private static TextField cityField;;
-		private static TextField stateField;
+		private static ChoiceBox stateField;
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
 		
@@ -69,7 +71,7 @@ public class LocationScreenView extends Application  {
 		zipLabel = new Label("Zip Code:  ");
 		orLabel = new Label(" -OR-");
 		cityField = new TextField();
-		stateField = new TextField();
+		stateField = new ChoiceBox(FXCollections.observableArrayList("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC", "PR", "VI", "AS", "GU", "MP", "AA", "AE", "AP"));
 		zipField = new TextField();
 		stateField.setPrefWidth(80);
 		cityField.setPrefWidth(80);
@@ -110,6 +112,7 @@ public class LocationScreenView extends Application  {
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
         scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
+        scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		primaryStage.show();
 
 	}
@@ -119,7 +122,7 @@ public class LocationScreenView extends Application  {
 	}
 	
 	public static String getState(){
-		return stateField.getText();
+		return stateField.getValue().toString();
 	}
 	
 	public static String getZipCode(){
