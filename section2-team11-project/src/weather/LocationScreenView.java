@@ -102,8 +102,6 @@ public class LocationScreenView extends Application  {
 		border.setTop(headerText);
 		border.setCenter(grid);
 		border.setBottom(bottomGrid);
-		//border.setBottom(okBtn);
-		//border.setBottom(setBtn);
 		border.setAlignment(headerText, Pos.CENTER);
 		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
 		border.setAlignment(setBtn, Pos.CENTER_LEFT);
@@ -112,7 +110,7 @@ public class LocationScreenView extends Application  {
 
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
-        scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
+        //scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
         scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		primaryStage.show();
 

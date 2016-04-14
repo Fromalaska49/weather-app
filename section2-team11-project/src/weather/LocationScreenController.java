@@ -150,7 +150,7 @@ public class LocationScreenController {
 
 			@Override
 			public void handle(Event event){
-				ScreenController.showWeatherScreen(primaryStage);//Replace .show with settings java class.
+				ScreenController.showOptionsScreen(primaryStage);//Replace .show with settings java class.
 			}	
 		};
 		return handler;

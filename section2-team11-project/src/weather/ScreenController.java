@@ -33,5 +33,16 @@ public class ScreenController {
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
+	
+	public static void showOptionsScreen(Stage p) {
+		Scene scene = primaryStage.getScene();
+		
+		OptionsScreenView optView = new OptionsScreenView();
+		
+		System.out.println("Display Options Screen (Pretty Please)");
+		optView.start(primaryStage, scene);
+	}
+	
+	}
 
 }
