@@ -79,7 +79,7 @@ public class LocationScreenView extends Application  {
 		setBtn.setText("Settings");
 		
 		okBtn.setOnAction(LocationScreenController .getOkListener());
-		setBtn.setOnAction(LocationScreenController .getSetListener());
+		setBtn.setOnAction(ScreenController .getSetListener());
 
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
