@@ -26,7 +26,7 @@ public class LocationScreenController {
     private static LocationScreenView view;
     private static LocationScreenModel model;
 	private boolean okClicked = false;
-    private boolean setClicked = false;
+
     /**
      * The constructor is called before the initialize() method.
      * @param v 
@@ -52,14 +52,7 @@ public class LocationScreenController {
     public boolean isOkClicked() {
         return okClicked;
     }
-    
-    /**
-     * Returns true if the user clicked the Settings button, false otherwise.
-     * @return True if the settings button is clicked.
-     */
-    public boolean isSetClicked(){
-    	return setClicked;
-    }
+   
     
     /**
      * Determines if user entered valid city and state
@@ -139,20 +132,4 @@ public class LocationScreenController {
 		return handler; 
 	}
 	
-	/*
-	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
-	 * @return Returns a handler object
-	 */
-	public static EventHandler<ActionEvent> getSetListener(){
-		EventHandler handler = new EventHandler<Event>(){
-			private Stage primaryStage;
-			private ScreenController sController;
-
-			@Override
-			public void handle(Event event){
-				ScreenController.showWeatherScreen(primaryStage);//Replace .show with settings java class.
-			}	
-		};
-		return handler;
-	}
 }
