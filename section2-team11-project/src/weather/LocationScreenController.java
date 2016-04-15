@@ -22,9 +22,10 @@ public class LocationScreenController {
 	private Button okButton;
 	
     private MainApp mainApp;
-    private static LocationScreenView view;
-    private static LocationScreenModel model;
+    private LocationScreenView view;
+    private LocationScreenModel model;
 	private boolean okClicked = false;
+	private Stage primaryStage;
     
     /**
      * The constructor is called before the initialize() method.
@@ -32,11 +33,25 @@ public class LocationScreenController {
      */
 	
 	//this needs to have 1 parameter, the model
-    public LocationScreenController(LocationScreenModel m, LocationScreenView v) {
+    public LocationScreenController(LocationScreenModel m, LocationScreenView v, Stage stage) {
     		this.model = m;
     		this.view = v;
+    		setStage(stage);
     }
     
+    /*
+     * sets the stage object in this class
+     */
+    public void setStage(Stage primaryStage){
+    	this.primaryStage = primaryStage;
+    }
+    
+    /*
+     * returns the stage object
+     */
+    public Stage getStage(){
+    	return this.primaryStage;
+    }
     
     /**
      * Initializes the controller class. 
@@ -57,7 +72,7 @@ public class LocationScreenController {
      * Determines if user entered valid city and state
      * @return true if the input is valid
      */
-    private static boolean isCSValid(String s) {
+    private boolean isCSValid(String s) {
         String errorMessage = "";
         
         if (s == null || s.isEmpty()) {  
@@ -76,7 +91,7 @@ public class LocationScreenController {
         } 
     }
     
-    private static boolean isZipValid(String s) {
+    private boolean isZipValid(String s) {
     		String errorMessage = "";
     		if (s == null || s.isEmpty()) 
     			errorMessage += "Did not enter a zip code.";
@@ -106,10 +121,10 @@ public class LocationScreenController {
     }
 
 
-	public static EventHandler<ActionEvent> getOkListener() {
+	public EventHandler<ActionEvent> getOkListener() {
 		EventHandler handler = new EventHandler<Event>() {
 
-				Stage primaryStage = new Stage();
+				Stage primaryStage = getStage();
 				ScreenController sController = new ScreenController(primaryStage);
 
 				@Override
