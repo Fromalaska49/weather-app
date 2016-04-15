@@ -49,7 +49,7 @@ public class ScreenController {
 		//LoadAPI load = new LoadAPI(locModel.getLocation());
 		ProcessData data = new ProcessData();
 		//System.out.println(data.getWindchillF());
-		System.out.println(this.locModel.getZipCode());
+		//System.out.println(this.locModel.getZipCode());
 		
 		Scene scene = p.getScene();
 		WeatherScreenView wView = new WeatherScreenView();
