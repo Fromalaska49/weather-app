@@ -29,8 +29,8 @@ public class ScreenController {
 	public void showLocationScreen(Stage p) {
 		primaryStage = p;
 	  	LocationScreenModel model = new LocationScreenModel();
-	  	LocationScreenView view = new LocationScreenView();
-	  	LocationScreenController controller = new LocationScreenController(model, view);
+	  	LocationScreenView view = new LocationScreenView(model);
+	  	LocationScreenController controller = new LocationScreenController(model, view, primaryStage);
 	  	view.start(primaryStage);
 	}
 	

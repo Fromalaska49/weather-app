@@ -56,9 +56,10 @@ public class LocationScreenView extends Application  {
 		private static ChoiceBox stateField;
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
+		private LocationScreenController model;
 		
-	public LocationScreenView(){
-		
+	public LocationScreenView(LocationScreenController model){
+		this.model = model;
 	}
 	public void start(Stage primaryStage) {
 		//primaryStage.setMaximized(true);
@@ -78,7 +79,7 @@ public class LocationScreenView extends Application  {
 		okBtn.setText("OK");
 		setBtn.setText("Settings");
 		
-		okBtn.setOnAction(LocationScreenController .getOkListener());
+		okBtn.setOnAction(this.model.getOkListener());
 		
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
