@@ -1,5 +1,6 @@
 package weather;
 
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -41,14 +42,20 @@ public class ScreenController {
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
-	
-	public static void showOptionsScreen(Stage p) {
-		Scene scene = primaryStage.getScene();
 
+	/*
+	 * This function was either incomplete or partially
+	 * deleted, so the name and parameters were instatiated
+	 * and the body was commented out so that the code
+	 * might hobble onwards through the merge commit.
+	 */
+	public static void showOptionsScreen(Stage primaryStage){
+		/*
 		OptionsScreenView optView = new OptionsScreenView();
 		
 		System.out.println("Display Options Screen (Pretty Please)");
 		optView.start(primaryStage, scene);
+		*/
 	}
 	
 	/*
@@ -79,4 +86,4 @@ public class ScreenController {
 		};
 		return handler;
 	}
-}
+	}
