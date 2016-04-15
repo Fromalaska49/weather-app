@@ -134,14 +134,14 @@ public class LocationScreenController {
 						if(isCSValid(view.getCity()) && isCSValid(view.getState())) {  
 							model.setCity(view.getCity());
 							model.setState(view.getState());
-							screenController.showWeatherScreen(primaryStage);
+							screenController.showWeatherScreen(primaryStage, model);
 						}
 					} else { // user only entered zip code
 						if(isZipValid(view.getZipCode())) {
 							model.setZipCode(Integer.valueOf(view.getZipCode()));
 							//System.out.println(model.getZipCode());
 							//System.out.println(model.getLocation());
-							screenController.showWeatherScreen(primaryStage);
+							screenController.showWeatherScreen(primaryStage, model);
 						}
 					}					
 				}

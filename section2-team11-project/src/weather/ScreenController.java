@@ -38,18 +38,17 @@ public class ScreenController {
 	  	LocationScreenView locView = new LocationScreenView(locModel, primaryStage);
 	  	LocationScreenController locController = new LocationScreenController(locModel, locView, primaryStage);
 	  	locView.start(primaryStage);
-	  	System.out.println(locModel.getLocation());
 	}
 	
 	/**
 	 * This method is called by LocationScreenController when the ok button is clicked. 
 	 * @param p
 	 */
-	public void showWeatherScreen(Stage p) {
-		//LoadAPI load = new LoadAPI(locModel.getLocation());
+	public void showWeatherScreen(Stage p, LocationScreenModel lmodel) {
+		LoadAPI load = new LoadAPI(lmodel.getLocation());
 		ProcessData data = new ProcessData();
-		//System.out.println(data.getWindchillF());
-		//System.out.println(this.locModel.getZipCode());
+		System.out.println(data.getTempF());  // 
+
 		
 		Scene scene = p.getScene();
 		WeatherScreenView wView = new WeatherScreenView();
