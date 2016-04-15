@@ -44,6 +44,18 @@ public class LocationScreenController {
     private void initialize() {
     }
     
+    /*
+     * Returns true if str is a numeric string
+     */
+	private boolean isNumeric(String str){
+		for(int i = 0; i < str.length(); i++){
+			if(!Character.isDigit(str.charAt(i))){
+				return false;
+			}
+		}
+		return true;
+	}
+    
     /**
      * Returns true if the user clicked OK, false otherwise.
      * @return
@@ -76,25 +88,43 @@ public class LocationScreenController {
         } 
     }
     
-    private static boolean isZipValid(String s) {
-    		String errorMessage = "";
-    		if (s == null || s.isEmpty()) 
-    			errorMessage += "Did not enter a zip code.";
-    		
-    		if (s.length() != 5)
-    			errorMessage += "Please enter a five digit zip code.";
-    		
-    		if (errorMessage.length() == 0) {
-                return true;    
-    		} else {                                 
-                // Show the error message.
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Invalid Field.");
-                alert.setHeaderText("Please enter a five digit zip code.");
-                alert.setContentText(errorMessage);
-                alert.showAndWait();
-                return false;
-            } 
+    /*
+     * Validates the zipcode and returns true if valid or else false
+     */
+    private boolean isZipValid(String zipCode) {
+		String errorMessage = "";
+		boolean lengthError = false;
+		boolean typeError = false;
+		if (zipCode == null || zipCode.isEmpty()) {
+			errorMessage += "Did not enter a zip code.";
+			lengthError = true;
+		}
+		else if (zipCode.length() != 5){
+			errorMessage += "Please enter a five digit zip code.";
+			lengthError = true;
+		}
+		
+		if (!isNumeric(zipCode)){
+			typeError = true;
+			if(lengthError){
+				errorMessage += " Also, your zip code must be numeric.";
+			}
+			else{
+				errorMessage += "Please enter a valid zipcode";
+			}
+		}
+		
+		if (!lengthError && !typeError) {
+            return true;    
+		} else {                                 
+            // Show the error message.
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Invalid Zip Code.");
+            alert.setHeaderText("Please enter a five digit zip code.");
+            alert.setContentText(errorMessage);
+            alert.showAndWait();
+            return false;
+        } 
     }
     
     /**
@@ -106,7 +136,7 @@ public class LocationScreenController {
     }
 
 
-	public static EventHandler<ActionEvent> getOkListener() {
+	public EventHandler<ActionEvent> getOkListener() {
 		EventHandler handler = new EventHandler<Event>() {
 
 				private Stage primaryStage;
