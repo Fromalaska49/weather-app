@@ -24,6 +24,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 
 public class OptionsScreenView {
 	private Formatter output;
@@ -33,7 +34,12 @@ public class OptionsScreenView {
 	private Label tempLabel;
 	private Scanner input;
 	private String buff;
+	private ScreenController ScreenController;
 	
+	public OptionsScreenView(Stage primaryStage){
+		this.ScreenController = new ScreenController(primaryStage);
+	}
+
 	public OptionsScreenView(){	
 	}
     public void start(Stage primaryStage, Scene scene) {
