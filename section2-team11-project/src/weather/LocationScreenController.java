@@ -20,12 +20,13 @@ public class LocationScreenController {
 	
     private TextField zipField;
 	private Button okButton;
+	private Button setButton;
 	
     private MainApp mainApp;
     private static LocationScreenView view;
     private static LocationScreenModel model;
 	private boolean okClicked = false;
-    
+
     /**
      * The constructor is called before the initialize() method.
      * @param v 
@@ -63,8 +64,8 @@ public class LocationScreenController {
     public boolean isOkClicked() {
         return okClicked;
     }
+   
     
-
     /**
      * Determines if user entered valid city and state
      * @return true if the input is valid
@@ -160,5 +161,5 @@ public class LocationScreenController {
 		};
 		return handler; 
 	}
-
+	
 }

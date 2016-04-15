@@ -1,5 +1,8 @@
 package weather;
 
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
@@ -33,5 +36,43 @@ public class ScreenController {
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
+	
+	public static void showOptionsScreen(Stage p) {
+		Scene scene = primaryStage.getScene();
 
+		OptionsScreenView optView = new OptionsScreenView();
+		
+		System.out.println("Display Options Screen (Pretty Please)");
+		optView.start(primaryStage, scene);
+	}
+	
+	/*
+	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
+	 * @return Returns a handler object
+	 */
+	public static EventHandler<ActionEvent> getSetListener(){
+		EventHandler handler = new EventHandler<Event>(){
+			private Stage primaryStage;
+			private ScreenController sController;
+
+			@Override
+			public void handle(Event event){
+				ScreenController.showOptionsScreen(primaryStage);//Replace .show with settings java class.
+			}	
+		};
+		return handler;
+	}
+	
+	
+	public static EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
+		EventHandler handler = new EventHandler<Event>(){
+			private ScreenController sController;
+			
+			public void handle(Event event){
+				stagePrev.setScene(scenePrev);
+				stagePrev.show();
+			}
+		};
+		return handler;
+	}
 }
