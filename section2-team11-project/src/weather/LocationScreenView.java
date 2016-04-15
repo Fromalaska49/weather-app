@@ -115,15 +115,15 @@ public class LocationScreenView extends Application  {
 
 	}
 	
-	public static String getCity(){
+	public String getCity(){
 		return cityField.getText();
 	}
 	
-	public static String getState(){
+	public String getState(){
 		return stateField.getValue().toString();
 	}
 	
-	public static String getZipCode(){
+	public String getZipCode(){
 		return zipField.getText();
 	}
 	
