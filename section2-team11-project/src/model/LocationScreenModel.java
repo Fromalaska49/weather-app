@@ -6,32 +6,82 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.TextField;
+import weather.LocationScreenView;
 
 
 public class LocationScreenModel {
-	private final IntegerProperty zipCode;
-	//private final StringProperty city;    // once we add city and state functionality
-	//private final StringProperty state;
+	private int zipCode;
+	private String city;
+	private String state;
 	
+
 	
 	/**
-	 * Constructor with zip code, need to add constructors with city/state
+	 * LocationScreenModel Constructor
 	 */
-	public LocationScreenModel(int zipCode) {
-		this.zipCode = new SimpleIntegerProperty(zipCode);
-	}
-
-
-	public int getZipCode() {
-		return zipCode.get();
+	public LocationScreenModel() {
+		this.zipCode = 0;
+		this.city = "";
+		this.state = "";
+		return;
 	}
 	
-	public void setZipCode(int zipField) {
-        this.zipCode.set(zipField);
+	/**
+	 * LocationScreenModel Constructor for zipcode
+	 */
+	public LocationScreenModel(int zip) {
+		this.zipCode = zip;
+		this.city = "";
+		this.state = "";
+		return;
+	}
+	
+	/**
+	 * LocationScreenModel Constructor for state/city
+	 */
+	public LocationScreenModel(String state, String city) {
+		this.zipCode = 0;
+		this.city = city;
+		this.state = state;
+		return;
+	}
+	
+	public int getZipCode() {
+		return zipCode;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public String getState() {
+		return state;
+	}
+	
+	public void setZipCode(int z) {
+        this.zipCode = z;
     }
-
-    public IntegerProperty zipCodeProperty() {
-        return zipCode;
-    }	
-
+	
+	
+	public void setCity(String s) {
+        this.city = s;
+    }
+	
+	public void setState(String s) {
+        this.state = s;
+    }
+	
+	public String getLocation(){
+		String location = "";
+		if(this.zipCode > 0){
+			location += this.zipCode;
+		}
+		else if(this.state.length() > 0 && this.city.length() > 0){
+			location = this.state + "\\" + this.city;
+		}
+		else{
+			System.out.println("Error: no location found (in LocationScreenModel)");
+		}
+		return location;
+	}
 }

@@ -14,7 +14,12 @@ import org.apache.commons.io.IOUtils;
 
 public class LoadAPI{
 	
-	public static void loadAPI(){
+	public LoadAPI(String location) {
+		loadData(location);
+		return;
+	}
+
+	public LoadAPI(){
 		return;
 	}
 	

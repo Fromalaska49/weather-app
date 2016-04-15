@@ -1,22 +1,89 @@
 .root{
-	-fx-bakcground-color: #DDDDDD;
+	-fx-background-color: #DDDDDD;
+	-fx-color:white;
 }
 .button{
-	-fx-background-color:#660066;
-	-fx-text-fill:#FFFFFF;
+	/*-fx-background-color:#cc8800;*/
+	-fx-text-fill:#000000;
 	-fx-font-family:arial;
-	-fx-font-size:15px;
-	-fx-padding:10px;
-	-fx-border-radius:10px;
-	-fx-effect: dropshadow(three-pass-box, #330033, 0, 0, 0, 5);
-	-fx-margin:5 0 -5 0;
-	/*-fx-effect: innershadow(three-pass-box, #330033, 0, 0, 0, 0);*/
+	-fx-font-size:15;
+	-fx-padding:5 10 5 10;
+	-fx-background-radius:100;
+	-fx-border-radius:100;
+	-fx-border-color: #000000;
+	/*
+	This looks really bad
+	-fx-border-insets: 5;
+	*/
+	-fx-border-width: 1;
+	-fx-border-style: solid;
+	/*-fx-effect: dropshadow(three-pass-box, #cc8800, 0, 0, 0, 5);*/
+	/*-fx-effect: innershadow(three-pass-box, #995500, 0, 0, 0, -5);*/
+    -fx-background-color: 
+        rgba(0,0,0,0.08),
+        linear-gradient(#FEFEFE, #999999);
 }
 .button:hover{
-	
+    -fx-background-color: 
+        rgba(0,0,0,0.08),
+        linear-gradient(#FFFFFF, #A0A0A0);
 }
 .button:pressed{
 	/*-fx-effect: dropshadow(three-pass-box, #330033, 0, 0, 0, 0);*/
-	-fx-effect: innershadow(three-pass-box, #000000, 1, 0, 0, 4);
-	-fx-margin:0 0 0 0;
+	-fx-effect: innershadow(gaussian, #000000, 10, 0, 0, 0);
+    -fx-background-color: 
+        rgba(0,0,0,0.08),
+        linear-gradient(#999999, #FEFEFE);
+}
+
+.text-field{
+	-fx-background-color: #FFFFFF;
+	-fx-effect: innershadow(gaussian, #000000, 5, 0.0, 0, 0);
+	-fx-background-radius:5;
+	-fx-border-radius:5;
+	-fx-border-style:solid;
+	-fx-border-color:#999999;
+	-fx-border-width:1;
+	-fx-font-family:arial sans-serif;
+}
+.text-field:focused{
+	-fx-border-color:#000000;
+	-fx-effect: innershadow(gaussian, #000000, 10, 0.0, 0, 1);
+}
+
+.choice-box{
+	-fx-background-color: #FFFFFF;
+	-fx-effect: innershadow(gaussian, #000000, 5, 0.0, 0, 0);
+	-fx-background-radius:5;
+	-fx-border-radius:5;
+	-fx-border-style:solid;
+	-fx-border-color:#999999;
+	-fx-border-width:1;
+	-fx-font-family:arial sans-serif;
+}
+/*
+.choice-box .label{
+	-fx-background-color: #FFFFFF;
+	-fx-background-radius:0;
+	-fx-border-radius:0;
+	-fx-border-style:none;
+	-fx-border-color:#000000;
+	-fx-color:#000000;
+	-fx-border-width:0;
+	-fx-font-family:arial sans-serif;
+}
+*/
+.choice-box .label:focused{
+	-fx-background-color: green;/*
+	
+	-fx-background-radius:0;
+	-fx-border-radius:0;
+	-fx-border-style:none;
+	-fx-border-color:#000000;
+	-fx-border-width:0;
+	-fx-font-family:arial sans-serif;
+	*/
+}
+.choice-box:focused{
+	-fx-border-color:#000000;
 }

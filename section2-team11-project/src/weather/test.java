@@ -42,6 +42,7 @@ public class test extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("JavaFX Welcome");
+        
         GridPane grid = new GridPane();
         grid.setGridLinesVisible(true);
         grid.setAlignment(Pos.CENTER);
@@ -74,7 +75,9 @@ public class test extends Application {
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
         actiontarget.setId("actiontarget");
-
+        
+        //btn.setId("");
+        
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -112,6 +115,7 @@ public class test extends Application {
         
         Scene scene = new Scene(grid, 300, 275);
         scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
+       //scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
         primaryStage.setScene(scene);
         //scene.getStylesheets().add(test.class.getResource("Login.css").toExternalForm());
         primaryStage.show();
