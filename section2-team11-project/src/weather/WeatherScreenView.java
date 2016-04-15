@@ -56,7 +56,9 @@ public class WeatherScreenView {
 //	private LocationScreenModel locModel;
 	
     public WeatherScreenView(){	
+    	return;
 	}
+    
     public void start(Stage stage, Scene scene) {
 		
 		

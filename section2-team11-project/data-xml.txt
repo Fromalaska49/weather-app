@@ -38,32 +38,32 @@
 		<estimated>
 		</estimated>
 		<station_id>KTXSANAN406</station_id>
-		<observation_time>Last Updated on April 13, 11:22 AM CDT</observation_time>
-		<observation_time_rfc822>Wed, 13 Apr 2016 11:22:57 -0500</observation_time_rfc822>
-		<observation_epoch>1460564577</observation_epoch>
-		<local_time_rfc822>Wed, 13 Apr 2016 11:27:27 -0500</local_time_rfc822>
-		<local_epoch>1460564847</local_epoch>
+		<observation_time>Last Updated on April 15, 10:10 AM CDT</observation_time>
+		<observation_time_rfc822>Fri, 15 Apr 2016 10:10:34 -0500</observation_time_rfc822>
+		<observation_epoch>1460733034</observation_epoch>
+		<local_time_rfc822>Fri, 15 Apr 2016 10:14:01 -0500</local_time_rfc822>
+		<local_epoch>1460733241</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
 		<weather>Overcast</weather>
-		<temperature_string>65.1 F (18.4 C)</temperature_string>
-		<temp_f>65.1</temp_f>
-		<temp_c>18.4</temp_c>
-		<relative_humidity>82%</relative_humidity>
-		<wind_string>From the NNE at 2.7 MPH</wind_string>
-		<wind_dir>NNE</wind_dir>
-		<wind_degrees>22</wind_degrees>
-		<wind_mph>2.7</wind_mph>
+		<temperature_string>65.8 F (18.8 C)</temperature_string>
+		<temp_f>65.8</temp_f>
+		<temp_c>18.8</temp_c>
+		<relative_humidity>79%</relative_humidity>
+		<wind_string>From the WNW at 1.7 MPH</wind_string>
+		<wind_dir>WNW</wind_dir>
+		<wind_degrees>292</wind_degrees>
+		<wind_mph>1.7</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
-		<wind_kph>4.3</wind_kph>
+		<wind_kph>2.7</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1018</pressure_mb>
-		<pressure_in>30.08</pressure_in>
-		<pressure_trend>+</pressure_trend>
+		<pressure_mb>1012</pressure_mb>
+		<pressure_in>29.89</pressure_in>
+		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>60 F (15 C)</dewpoint_string>
-		<dewpoint_f>60</dewpoint_f>
+		<dewpoint_string>59 F (15 C)</dewpoint_string>
+		<dewpoint_f>59</dewpoint_f>
 		<dewpoint_c>15</dewpoint_c>
 		
 		
@@ -76,19 +76,19 @@
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>65.1 F (18.4 C)</feelslike_string>
-        <feelslike_f>65.1</feelslike_f>
-        <feelslike_c>18.4</feelslike_c>
-		<visibility_mi>10.0</visibility_mi>
-		<visibility_km>16.1</visibility_km>
+        <feelslike_string>65.8 F (18.8 C)</feelslike_string>
+        <feelslike_f>65.8</feelslike_f>
+        <feelslike_c>18.8</feelslike_c>
+		<visibility_mi>5.0</visibility_mi>
+		<visibility_km>8.0</visibility_km>
 		<solarradiation></solarradiation>
-		<UV>2</UV>
+		<UV>1</UV>
 		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>-999.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
-		<precip_today_string>0.41 in (10 mm)</precip_today_string>
-		<precip_today_in>0.41</precip_today_in>
-		<precip_today_metric>10</precip_today_metric>
+		<precip_today_string>0.00 in (0 mm)</precip_today_string>
+		<precip_today_in>0.00</precip_today_in>
+		<precip_today_metric>0</precip_today_metric>
 		
 		
 		

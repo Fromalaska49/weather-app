@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import javax.swing.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -17,6 +18,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -31,6 +33,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 import javafx.scene.text.Font;
 
 /**
@@ -44,17 +47,20 @@ public class LocationScreenView extends Application  {
 		private Text headerText;
 		private BorderPane border;
 		private GridPane grid;
+		private GridPane bottomGrid;
 		private Label cityLabel;
 		private Label stateLabel;
 		private Label zipLabel;
 		private Label orLabel;
 		private static TextField zipField;
 		private static TextField cityField;;
-		private static TextField stateField;
+		private static ChoiceBox stateField;
 		private Button okBtn = new Button();
-
-	public LocationScreenView(){
+		private Button setBtn = new Button();
+		private LocationScreenController locationScreenController;
 		
+	public LocationScreenView(LocationScreenModel model, Stage primaryStage){
+		this.locationScreenController = new LocationScreenController(model, this, primaryStage);
 	}
 	public void start(Stage primaryStage) {
 		//primaryStage.setMaximized(true);
@@ -67,14 +73,14 @@ public class LocationScreenView extends Application  {
 		zipLabel = new Label("Zip Code:  ");
 		orLabel = new Label(" -OR-");
 		cityField = new TextField();
-		stateField = new TextField();
+		stateField = new ChoiceBox(FXCollections.observableArrayList("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC", "PR", "VI", "AS", "GU", "MP", "AA", "AE", "AP"));
 		zipField = new TextField();
 		stateField.setPrefWidth(80);
 		cityField.setPrefWidth(80);
 		okBtn.setText("OK");
+		setBtn.setText("Settings");
 		
-		
-		okBtn.setOnAction(LocationScreenController .getOkListener());
+		okBtn.setOnAction(locationScreenController.getOkListener());
 		
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
@@ -86,35 +92,42 @@ public class LocationScreenView extends Application  {
 		grid.add(zipField, 3, 4);
 		grid.setAlignment(Pos.CENTER);
 		
+		bottomGrid = new GridPane();
+		bottomGrid.add(okBtn, 0, 0);
+		bottomGrid.add(setBtn, 0, 1);
+		bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
 		
 		border = new BorderPane();
 		//border.setId("Startpane");
 		border.setPadding(new Insets(25, 100, 100, 100));
 		border.setTop(headerText);
 		border.setCenter(grid);
-		border.setBottom(okBtn);
+		border.setBottom(bottomGrid);
+		//border.setBottom(okBtn);
+		//border.setBottom(setBtn);
 		border.setAlignment(headerText, Pos.CENTER);
 		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
-		
+		border.setAlignment(setBtn, Pos.CENTER_LEFT);
 		Scene scene = new Scene(border, 800, 700);
 
-     //   scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
-		
+
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
+        scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
+        scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		primaryStage.show();
 
 	}
 	
-	public static String getCity(){
+	public String getCity(){
 		return cityField.getText();
 	}
 	
-	public static String getState(){
-		return stateField.getText();
+	public String getState(){
+		return stateField.getValue().toString();
 	}
 	
-	public static String getZipCode(){
+	public String getZipCode(){
 		return zipField.getText();
 	}
 	
