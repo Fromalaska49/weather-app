@@ -7,7 +7,7 @@
 	</features>
 	<forecast>
 		<txt_forecast>
-		<date>11:22 PM CDT</date>
+		<date>12:23 AM CDT</date>
 		<forecastdays>
 		<forecastday>
 		<period>0</period>
@@ -23,17 +23,17 @@
 		<icon>nt_clear</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_clear.gif</icon_url>
 		<title>Friday Night</title>
-		<fcttext><![CDATA[Clear to partly cloudy. Low 61F. Winds SE at 10 to 15 mph.]]></fcttext>
-		<fcttext_metric><![CDATA[Partly cloudy. Low 17C. Winds SE at 10 to 15 km/h.]]></fcttext_metric>
-		<pop>20</pop>
+		<fcttext><![CDATA[A few clouds overnight. Low 61F. Winds SE at 10 to 15 mph.]]></fcttext>
+		<fcttext_metric><![CDATA[Mainly clear early, then a few clouds later on. Low 16C. Winds SE at 10 to 15 km/h.]]></fcttext_metric>
+		<pop>10</pop>
 		</forecastday>
 		<forecastday>
 		<period>2</period>
 		<icon>chancetstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 		<title>Saturday</title>
-		<fcttext><![CDATA[Scattered showers and thunderstorms. High 76F. Winds ESE at 10 to 20 mph. Chance of rain 50%.]]></fcttext>
-		<fcttext_metric><![CDATA[Scattered thunderstorms. High near 25C. Winds ESE at 15 to 30 km/h. Chance of rain 60%.]]></fcttext_metric>
+		<fcttext><![CDATA[Variable clouds with scattered thunderstorms. High 77F. Winds ESE at 10 to 20 mph. Chance of rain 50%.]]></fcttext>
+		<fcttext_metric><![CDATA[Scattered thunderstorms. High near 25C. Winds ESE at 15 to 30 km/h. Chance of rain 50%.]]></fcttext_metric>
 		<pop>50</pop>
 		</forecastday>
 		<forecastday>
@@ -41,8 +41,8 @@
 		<icon>nt_tstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_tstorms.gif</icon_url>
 		<title>Saturday Night</title>
-		<fcttext><![CDATA[Thunderstorms. Low 67F. Winds SE at 10 to 20 mph. Chance of rain 80%.]]></fcttext>
-		<fcttext_metric><![CDATA[Thunderstorms. Low around 20C. Winds SE at 15 to 30 km/h. Chance of rain 80%.]]></fcttext_metric>
+		<fcttext><![CDATA[Thunderstorms likely. Low 67F. Winds SE at 10 to 20 mph. Chance of rain 80%. Localized flooding is possible.]]></fcttext>
+		<fcttext_metric><![CDATA[Thunderstorms likely. Low 19C. Winds SE at 15 to 25 km/h. Chance of rain 80%. Localized flooding is possible.]]></fcttext_metric>
 		<pop>80</pop>
 		</forecastday>
 		<forecastday>
@@ -50,8 +50,8 @@
 		<icon>tstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/tstorms.gif</icon_url>
 		<title>Sunday</title>
-		<fcttext><![CDATA[Thunderstorms. Potential for heavy rainfall. High 78F. Winds SE at 10 to 20 mph. Chance of rain 100%. 2 to 3 inches of rain expected.]]></fcttext>
-		<fcttext_metric><![CDATA[Thunderstorms. Potential for heavy rainfall. High 26C. Winds SE at 15 to 30 km/h. Chance of rain 100%. 50 to 75mm of rain expected.]]></fcttext_metric>
+		<fcttext><![CDATA[Thunderstorms. High 79F. Winds SE at 10 to 20 mph. Chance of rain 100%. 2 to 3 inches of rain expected. Localized flooding is possible.]]></fcttext>
+		<fcttext_metric><![CDATA[Thunderstorms. High 26C. Winds SE at 15 to 30 km/h. Chance of rain 100%. 50 to 75mm of rain expected. Localized flooding is possible.]]></fcttext_metric>
 		<pop>100</pop>
 		</forecastday>
 		<forecastday>
@@ -59,8 +59,8 @@
 		<icon>nt_tstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_tstorms.gif</icon_url>
 		<title>Sunday Night</title>
-		<fcttext><![CDATA[Thunderstorms. Potential for heavy rainfall. Low 66F. Winds ESE at 10 to 20 mph. Chance of rain 100%. Rainfall possibly over one inch.]]></fcttext>
-		<fcttext_metric><![CDATA[Thunderstorms. Potential for heavy rainfall. Low 19C. Winds ESE at 15 to 30 km/h. Chance of rain 100%. Rainfall near 25mm.]]></fcttext_metric>
+		<fcttext><![CDATA[Thunderstorms likely. Low 66F. Winds ESE at 10 to 15 mph. Chance of rain 100%. 1 to 2 inches of rain expected. Localized flooding is possible.]]></fcttext>
+		<fcttext_metric><![CDATA[Thunderstorms likely. Low 19C. Winds ESE at 15 to 25 km/h. Chance of rain 100%. 25 to 50mm of rain expected. Localized flooding is possible.]]></fcttext_metric>
 		<pop>100</pop>
 		</forecastday>
 		<forecastday>
@@ -68,26 +68,26 @@
 		<icon>tstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/tstorms.gif</icon_url>
 		<title>Monday</title>
-		<fcttext><![CDATA[Thunderstorms likely. High 79F. Winds ENE at 10 to 15 mph. Chance of rain 100%. Locally heavy rainfall possible.]]></fcttext>
-		<fcttext_metric><![CDATA[Thunderstorms likely. High 26C. Winds ENE at 15 to 25 km/h. Chance of rain 100%. Locally heavy rainfall possible.]]></fcttext_metric>
+		<fcttext><![CDATA[Thunderstorms. High 79F. Winds ENE at 10 to 15 mph. Chance of rain 100%. Rainfall may reach one inch. Locally heavy rainfall possible.]]></fcttext>
+		<fcttext_metric><![CDATA[Thunderstorms. High 26C. Winds ENE at 10 to 15 km/h. Chance of rain 100%. Rainfall near 25mm. Locally heavy rainfall possible.]]></fcttext_metric>
 		<pop>100</pop>
 		</forecastday>
 		<forecastday>
 		<period>7</period>
-		<icon>nt_chancetstorms</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/nt_chancetstorms.gif</icon_url>
+		<icon>nt_tstorms</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_tstorms.gif</icon_url>
 		<title>Monday Night</title>
-		<fcttext><![CDATA[Variable clouds with scattered thunderstorms. Low 63F. Winds ENE at 5 to 10 mph. Chance of rain 60%. Locally heavy rainfall possible.]]></fcttext>
-		<fcttext_metric><![CDATA[Variable clouds with scattered thunderstorms. Low 18C. Winds ENE at 10 to 15 km/h. Chance of rain 60%. Locally heavy rainfall possible.]]></fcttext_metric>
-		<pop>60</pop>
+		<fcttext><![CDATA[Thunderstorms during the evening followed by occasional showers overnight. Low 63F. Winds NE at 5 to 10 mph. Chance of rain 100%. Locally heavy rainfall possible.]]></fcttext>
+		<fcttext_metric><![CDATA[Scattered showers and thunderstorms. Low 17C. Winds ENE at 10 to 15 km/h. Chance of rain 60%. Locally heavy rainfall possible.]]></fcttext_metric>
+		<pop>100</pop>
 		</forecastday>
 		<forecastday>
 		<period>8</period>
 		<icon>cloudy</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/cloudy.gif</icon_url>
 		<title>Tuesday</title>
-		<fcttext><![CDATA[Cloudy skies. High 81F. Winds NNE at 10 to 15 mph.]]></fcttext>
-		<fcttext_metric><![CDATA[Cloudy skies. High 27C. Winds NE at 15 to 25 km/h.]]></fcttext_metric>
+		<fcttext><![CDATA[Cloudy. A stray shower or thunderstorm is possible. High 81F. Winds NNE at 10 to 15 mph.]]></fcttext>
+		<fcttext_metric><![CDATA[Cloudy. High 27C. Winds NNE at 10 to 15 km/h.]]></fcttext_metric>
 		<pop>20</pop>
 		</forecastday>
 		<forecastday>
@@ -96,7 +96,7 @@
 		<icon_url>http://icons.wxug.com/i/c/k/nt_partlycloudy.gif</icon_url>
 		<title>Tuesday Night</title>
 		<fcttext><![CDATA[Partly cloudy skies. Low 62F. Winds NNE at 5 to 10 mph.]]></fcttext>
-		<fcttext_metric><![CDATA[A few clouds from time to time. Low 17C. Winds NE at 10 to 15 km/h.]]></fcttext_metric>
+		<fcttext_metric><![CDATA[Cloudy early with partial clearing expected late. Low 17C. Winds NNE at 10 to 15 km/h.]]></fcttext_metric>
 		<pop>20</pop>
 		</forecastday>
 		<forecastday>
@@ -104,8 +104,8 @@
 		<icon>chancetstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 		<title>Wednesday</title>
-		<fcttext><![CDATA[Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High 84F. Winds ENE at 5 to 10 mph. Chance of rain 50%.]]></fcttext>
-		<fcttext_metric><![CDATA[Partly cloudy with afternoon showers or thunderstorms. High 29C. Winds ENE at 10 to 15 km/h. Chance of rain 40%.]]></fcttext_metric>
+		<fcttext><![CDATA[Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High 82F. Winds ENE at 5 to 10 mph. Chance of rain 50%.]]></fcttext>
+		<fcttext_metric><![CDATA[Partial cloudiness early, with scattered showers and thunderstorms in the afternoon. High 29C. Winds ENE at 10 to 15 km/h. Chance of rain 50%.]]></fcttext_metric>
 		<pop>50</pop>
 		</forecastday>
 		<forecastday>
@@ -113,8 +113,8 @@
 		<icon>nt_chancetstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_chancetstorms.gif</icon_url>
 		<title>Wednesday Night</title>
-		<fcttext><![CDATA[Scattered thunderstorms. Low 64F. Winds SSE at 5 to 10 mph. Chance of rain 50%.]]></fcttext>
-		<fcttext_metric><![CDATA[Scattered thunderstorms. Low 18C. Winds SSE at 10 to 15 km/h. Chance of rain 50%.]]></fcttext_metric>
+		<fcttext><![CDATA[Variable clouds with scattered thunderstorms. Low 64F. Winds SSE at 5 to 10 mph. Chance of rain 50%.]]></fcttext>
+		<fcttext_metric><![CDATA[Variably cloudy with scattered thunderstorms. Low 18C. Winds SSE at 10 to 15 km/h. Chance of rain 60%.]]></fcttext_metric>
 		<pop>50</pop>
 		</forecastday>
 		<forecastday>
@@ -122,8 +122,8 @@
 		<icon>chancetstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 		<title>Thursday</title>
-		<fcttext><![CDATA[Scattered thunderstorms. High 81F. Winds ESE at 5 to 10 mph. Chance of rain 60%.]]></fcttext>
-		<fcttext_metric><![CDATA[Variable clouds with scattered thunderstorms. High 28C. Winds ESE at 10 to 15 km/h. Chance of rain 60%.]]></fcttext_metric>
+		<fcttext><![CDATA[Scattered thunderstorms. High 83F. Winds E at 5 to 10 mph. Chance of rain 60%.]]></fcttext>
+		<fcttext_metric><![CDATA[Variable clouds with scattered thunderstorms. High 27C. Winds SE at 10 to 15 km/h. Chance of rain 60%.]]></fcttext_metric>
 		<pop>60</pop>
 		</forecastday>
 		<forecastday>
@@ -131,7 +131,7 @@
 		<icon>nt_fog</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_fog.gif</icon_url>
 		<title>Thursday Night</title>
-		<fcttext><![CDATA[Cloudy skies early then becoming foggy and damp later at night. Low 64F. Winds SSE at 5 to 10 mph.]]></fcttext>
+		<fcttext><![CDATA[Cloudy skies during the evening. Fog developing overnight. Low 64F. Winds SSE at 5 to 10 mph.]]></fcttext>
 		<fcttext_metric><![CDATA[Cloudy skies during the evening. Fog developing overnight. Low 18C. Winds SSE at 10 to 15 km/h.]]></fcttext_metric>
 		<pop>20</pop>
 		</forecastday>
@@ -140,8 +140,8 @@
 		<icon>chancetstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 		<title>Friday</title>
-		<fcttext><![CDATA[Scattered thunderstorms in the morning, then partly cloudy late. High around 85F. Winds SSE at 10 to 15 mph. Chance of rain 50%.]]></fcttext>
-		<fcttext_metric><![CDATA[Partly to mostly cloudy skies with scattered thunderstorms in the morning. High around 30C. Winds SSE at 10 to 15 km/h. Chance of rain 50%.]]></fcttext_metric>
+		<fcttext><![CDATA[Scattered thunderstorms in the morning, then partly cloudy late. High 87F. Winds SSE at 10 to 15 mph. Chance of rain 50%.]]></fcttext>
+		<fcttext_metric><![CDATA[Scattered thunderstorms in the morning, then partly cloudy late. High 29C. Winds SSE at 10 to 15 km/h. Chance of rain 50%.]]></fcttext_metric>
 		<pop>50</pop>
 		</forecastday>
 		<forecastday>
@@ -149,8 +149,8 @@
 		<icon>nt_partlycloudy</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_partlycloudy.gif</icon_url>
 		<title>Friday Night</title>
-		<fcttext><![CDATA[Partly cloudy skies. Low 64F. Winds SSE at 10 to 15 mph.]]></fcttext>
-		<fcttext_metric><![CDATA[A few clouds from time to time. Low 18C. Winds SSE at 10 to 15 km/h.]]></fcttext_metric>
+		<fcttext><![CDATA[A few clouds from time to time. Low 64F. Winds SSE at 5 to 10 mph.]]></fcttext>
+		<fcttext_metric><![CDATA[Partly cloudy skies. Low 18C. Winds SSE at 10 to 15 km/h.]]></fcttext_metric>
 		<pop>20</pop>
 		</forecastday>
 		<forecastday>
@@ -158,35 +158,35 @@
 		<icon>chancetstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 		<title>Saturday</title>
-		<fcttext><![CDATA[Scattered thunderstorms in the morning. Partly cloudy skies late. High 87F. Winds SSE at 10 to 15 mph. Chance of rain 40%.]]></fcttext>
-		<fcttext_metric><![CDATA[Scattered thunderstorms in the morning. Partly cloudy skies late. High 31C. Winds SSE at 15 to 25 km/h. Chance of rain 40%.]]></fcttext_metric>
-		<pop>40</pop>
+		<fcttext><![CDATA[Widely scattered showers or a thunderstorm early. Then partly cloudy. High 88F. Winds SSE at 10 to 15 mph. Chance of rain 30%.]]></fcttext>
+		<fcttext_metric><![CDATA[Scattered thunderstorms in the morning, then partly cloudy late. High 31C. Winds SSE at 15 to 25 km/h. Chance of rain 40%.]]></fcttext_metric>
+		<pop>30</pop>
 		</forecastday>
 		<forecastday>
 		<period>17</period>
-		<icon>nt_clear</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/nt_clear.gif</icon_url>
+		<icon>nt_partlycloudy</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_partlycloudy.gif</icon_url>
 		<title>Saturday Night</title>
-		<fcttext><![CDATA[Generally fair. Low around 65F. Winds SSE at 10 to 15 mph.]]></fcttext>
-		<fcttext_metric><![CDATA[Clear skies with a few passing clouds. Low 19C. Winds SSE at 15 to 25 km/h.]]></fcttext_metric>
+		<fcttext><![CDATA[Partly cloudy. Low around 65F. Winds SSE at 10 to 15 mph.]]></fcttext>
+		<fcttext_metric><![CDATA[Generally fair. Low 18C. Winds SSE at 15 to 25 km/h.]]></fcttext_metric>
 		<pop>20</pop>
 		</forecastday>
 		<forecastday>
 		<period>18</period>
-		<icon>mostlycloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/mostlycloudy.gif</icon_url>
+		<icon>chancetstorms</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 		<title>Sunday</title>
-		<fcttext><![CDATA[Considerable cloudiness. High 87F. Winds SSE at 10 to 20 mph.]]></fcttext>
-		<fcttext_metric><![CDATA[Mostly cloudy. High 31C. Winds SSE at 15 to 30 km/h.]]></fcttext_metric>
-		<pop>20</pop>
+		<fcttext><![CDATA[Scattered thunderstorms in the morning. Partly cloudy skies late. High 87F. Winds SSE at 10 to 20 mph. Chance of rain 40%.]]></fcttext>
+		<fcttext_metric><![CDATA[Considerable cloudiness. High 31C. Winds SSE at 15 to 30 km/h.]]></fcttext_metric>
+		<pop>40</pop>
 		</forecastday>
 		<forecastday>
 		<period>19</period>
 		<icon>nt_tstorms</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/nt_tstorms.gif</icon_url>
 		<title>Sunday Night</title>
-		<fcttext><![CDATA[Partial cloudiness early, with scattered showers and thunderstorms later during the night. Low 66F. Winds SSE at 10 to 20 mph. Chance of rain 50%.]]></fcttext>
-		<fcttext_metric><![CDATA[Partly cloudy skies early. Scattered thunderstorms developing later at night. Low 19C. Winds SSE at 15 to 30 km/h. Chance of rain 50%.]]></fcttext_metric>
+		<fcttext><![CDATA[Partly cloudy with late night showers or thunderstorms. Low 67F. Winds SSE at 10 to 20 mph. Chance of rain 50%.]]></fcttext>
+		<fcttext_metric><![CDATA[Partly cloudy with late night showers or thunderstorms. Low 19C. Winds SSE at 15 to 30 km/h. Chance of rain 50%.]]></fcttext_metric>
 		<pop>50</pop>
 		</forecastday>
 		</forecastdays>
@@ -293,8 +293,8 @@
 </date>
 					<period>2</period>
 					<high>
-						<fahrenheit>76</fahrenheit>
-						<celsius>24</celsius>
+						<fahrenheit>77</fahrenheit>
+						<celsius>25</celsius>
 					</high>
 					<low>
 						<fahrenheit>67</fahrenheit>
@@ -307,15 +307,15 @@
 					<skyicon></skyicon>
 					<pop>50</pop>
 					<qpf_allday>
-						<in>0.40</in>
-						<mm>10</mm>
+						<in>0.42</in>
+						<mm>11</mm>
 					</qpf_allday>
 					<qpf_day>
-						<in>0.13</in>
-						<mm>3</mm>
+						<in>0.15</in>
+						<mm>4</mm>
 					</qpf_day>
 					<qpf_night>
-						<in>0.26</in>
+						<in>0.27</in>
 						<mm>7</mm>
 					</qpf_night>
 					<snow_allday>
@@ -342,7 +342,7 @@
 						<dir>ESE</dir>
 						<degrees>118</degrees>
 					</avewind>
-					<avehumidity>84</avehumidity>
+					<avehumidity>85</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -370,7 +370,7 @@
 </date>
 					<period>3</period>
 					<high>
-						<fahrenheit>78</fahrenheit>
+						<fahrenheit>79</fahrenheit>
 						<celsius>26</celsius>
 					</high>
 					<low>
@@ -384,16 +384,16 @@
 					<skyicon></skyicon>
 					<pop>100</pop>
 					<qpf_allday>
-						<in>3.34</in>
-						<mm>85</mm>
+						<in>3.55</in>
+						<mm>90</mm>
 					</qpf_allday>
 					<qpf_day>
-						<in>2.30</in>
-						<mm>58</mm>
+						<in>2.18</in>
+						<mm>55</mm>
 					</qpf_day>
 					<qpf_night>
-						<in>1.04</in>
-						<mm>26</mm>
+						<in>1.37</in>
+						<mm>35</mm>
 					</qpf_night>
 					<snow_allday>
 						<in>0.0</in>
@@ -411,13 +411,13 @@
 						<mph>20</mph>
 						<kph>32</kph>
 						<dir>SE</dir>
-						<degrees>133</degrees>
+						<degrees>134</degrees>
 					</maxwind>
 					<avewind>
 						<mph>14</mph>
 						<kph>23</kph>
 						<dir>SE</dir>
-						<degrees>133</degrees>
+						<degrees>134</degrees>
 					</avewind>
 					<avehumidity>85</avehumidity>
 					<maxhumidity>0</maxhumidity>
@@ -461,15 +461,15 @@
 					<skyicon></skyicon>
 					<pop>100</pop>
 					<qpf_allday>
-						<in>0.76</in>
-						<mm>19</mm>
+						<in>1.34</in>
+						<mm>34</mm>
 					</qpf_allday>
 					<qpf_day>
-						<in>0.61</in>
-						<mm>15</mm>
+						<in>1.19</in>
+						<mm>30</mm>
 					</qpf_day>
 					<qpf_night>
-						<in>0.15</in>
+						<in>0.14</in>
 						<mm>4</mm>
 					</qpf_night>
 					<snow_allday>
@@ -488,15 +488,15 @@
 						<mph>15</mph>
 						<kph>24</kph>
 						<dir>ENE</dir>
-						<degrees>68</degrees>
+						<degrees>63</degrees>
 					</maxwind>
 					<avewind>
 						<mph>10</mph>
 						<kph>16</kph>
 						<dir>ENE</dir>
-						<degrees>68</degrees>
+						<degrees>63</degrees>
 					</avewind>
-					<avehumidity>86</avehumidity>
+					<avehumidity>85</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -565,15 +565,15 @@
 						<mph>15</mph>
 						<kph>24</kph>
 						<dir>NNE</dir>
-						<degrees>32</degrees>
+						<degrees>29</degrees>
 					</maxwind>
 					<avewind>
 						<mph>10</mph>
 						<kph>16</kph>
 						<dir>NNE</dir>
-						<degrees>32</degrees>
+						<degrees>29</degrees>
 					</avewind>
-					<avehumidity>78</avehumidity>
+					<avehumidity>77</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -601,8 +601,8 @@
 </date>
 					<period>6</period>
 					<high>
-						<fahrenheit>84</fahrenheit>
-						<celsius>29</celsius>
+						<fahrenheit>82</fahrenheit>
+						<celsius>28</celsius>
 					</high>
 					<low>
 						<fahrenheit>64</fahrenheit>
@@ -615,16 +615,16 @@
 					<skyicon></skyicon>
 					<pop>50</pop>
 					<qpf_allday>
-						<in>0.14</in>
-						<mm>4</mm>
+						<in>0.09</in>
+						<mm>2</mm>
 					</qpf_allday>
 					<qpf_day>
-						<in>0.06</in>
-						<mm>2</mm>
+						<in>0.05</in>
+						<mm>1</mm>
 					</qpf_day>
 					<qpf_night>
-						<in>0.08</in>
-						<mm>2</mm>
+						<in>0.04</in>
+						<mm>1</mm>
 					</qpf_night>
 					<snow_allday>
 						<in>0.0</in>
@@ -642,15 +642,15 @@
 						<mph>10</mph>
 						<kph>16</kph>
 						<dir>ENE</dir>
-						<degrees>65</degrees>
+						<degrees>63</degrees>
 					</maxwind>
 					<avewind>
 						<mph>8</mph>
 						<kph>13</kph>
 						<dir>ENE</dir>
-						<degrees>65</degrees>
+						<degrees>63</degrees>
 					</avewind>
-					<avehumidity>75</avehumidity>
+					<avehumidity>74</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -678,8 +678,8 @@
 </date>
 					<period>7</period>
 					<high>
-						<fahrenheit>81</fahrenheit>
-						<celsius>27</celsius>
+						<fahrenheit>83</fahrenheit>
+						<celsius>28</celsius>
 					</high>
 					<low>
 						<fahrenheit>64</fahrenheit>
@@ -692,11 +692,11 @@
 					<skyicon></skyicon>
 					<pop>60</pop>
 					<qpf_allday>
-						<in>0.24</in>
+						<in>0.23</in>
 						<mm>6</mm>
 					</qpf_allday>
 					<qpf_day>
-						<in>0.24</in>
+						<in>0.23</in>
 						<mm>6</mm>
 					</qpf_day>
 					<qpf_night>
@@ -718,16 +718,16 @@
 					<maxwind>
 						<mph>10</mph>
 						<kph>16</kph>
-						<dir>ESE</dir>
-						<degrees>123</degrees>
+						<dir>E</dir>
+						<degrees>98</degrees>
 					</maxwind>
 					<avewind>
 						<mph>7</mph>
 						<kph>11</kph>
-						<dir>ESE</dir>
-						<degrees>123</degrees>
+						<dir>E</dir>
+						<degrees>98</degrees>
 					</avewind>
-					<avehumidity>78</avehumidity>
+					<avehumidity>77</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -755,8 +755,8 @@
 </date>
 					<period>8</period>
 					<high>
-						<fahrenheit>85</fahrenheit>
-						<celsius>29</celsius>
+						<fahrenheit>87</fahrenheit>
+						<celsius>31</celsius>
 					</high>
 					<low>
 						<fahrenheit>64</fahrenheit>
@@ -796,15 +796,15 @@
 						<mph>15</mph>
 						<kph>24</kph>
 						<dir>SSE</dir>
-						<degrees>160</degrees>
+						<degrees>157</degrees>
 					</maxwind>
 					<avewind>
 						<mph>10</mph>
 						<kph>16</kph>
 						<dir>SSE</dir>
-						<degrees>160</degrees>
+						<degrees>157</degrees>
 					</avewind>
-					<avehumidity>75</avehumidity>
+					<avehumidity>73</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -832,7 +832,7 @@
 </date>
 					<period>9</period>
 					<high>
-						<fahrenheit>87</fahrenheit>
+						<fahrenheit>88</fahrenheit>
 						<celsius>31</celsius>
 					</high>
 					<low>
@@ -844,7 +844,7 @@
 					<icon>chancetstorms</icon>
 					<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 					<skyicon></skyicon>
-					<pop>40</pop>
+					<pop>30</pop>
 					<qpf_allday>
 						<in>0.01</in>
 						<mm>0</mm>
@@ -873,15 +873,15 @@
 						<mph>15</mph>
 						<kph>24</kph>
 						<dir>SSE</dir>
-						<degrees>159</degrees>
+						<degrees>156</degrees>
 					</maxwind>
 					<avewind>
 						<mph>12</mph>
 						<kph>19</kph>
 						<dir>SSE</dir>
-						<degrees>159</degrees>
+						<degrees>156</degrees>
 					</avewind>
-					<avehumidity>71</avehumidity>
+					<avehumidity>69</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
@@ -913,25 +913,25 @@
 						<celsius>31</celsius>
 					</high>
 					<low>
-						<fahrenheit>66</fahrenheit>
+						<fahrenheit>67</fahrenheit>
 						<celsius>19</celsius>
 					</low>
-					<conditions>Mostly Cloudy</conditions>
+					<conditions>Chance of a Thunderstorm</conditions>
 					
-					<icon>mostlycloudy</icon>
-					<icon_url>http://icons.wxug.com/i/c/k/mostlycloudy.gif</icon_url>
+					<icon>chancetstorms</icon>
+					<icon_url>http://icons.wxug.com/i/c/k/chancetstorms.gif</icon_url>
 					<skyicon></skyicon>
-					<pop>20</pop>
+					<pop>40</pop>
 					<qpf_allday>
-						<in>0.04</in>
+						<in>0.03</in>
 						<mm>1</mm>
 					</qpf_allday>
 					<qpf_day>
-						<in>0.00</in>
+						<in>0.01</in>
 						<mm>0</mm>
 					</qpf_day>
 					<qpf_night>
-						<in>0.04</in>
+						<in>0.02</in>
 						<mm>1</mm>
 					</qpf_night>
 					<snow_allday>
@@ -950,15 +950,15 @@
 						<mph>20</mph>
 						<kph>32</kph>
 						<dir>SSE</dir>
-						<degrees>168</degrees>
+						<degrees>165</degrees>
 					</maxwind>
 					<avewind>
 						<mph>15</mph>
 						<kph>24</kph>
 						<dir>SSE</dir>
-						<degrees>168</degrees>
+						<degrees>165</degrees>
 					</avewind>
-					<avehumidity>70</avehumidity>
+					<avehumidity>71</avehumidity>
 					<maxhumidity>0</maxhumidity>
 					<minhumidity>0</minhumidity>
 				</forecastday>
