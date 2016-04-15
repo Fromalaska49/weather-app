@@ -30,7 +30,7 @@ public class MainApp extends Application {
     	//LocationScreenModel model = new LocationScreenModel();
     	//LocationScreenView view = new LocationScreenView();
     	//LocationScreenController controller = new LocationScreenController(model, view);
-    ScreenController sController = new ScreenController();
+    ScreenController sController = new ScreenController(primaryStage);
     sController.showLocationScreen(primaryStage);
     	
     	//view.start(primaryStage);

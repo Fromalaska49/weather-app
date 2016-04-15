@@ -26,13 +26,13 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class OptionsScreenView {
-	private static Formatter output;
-	private static ChoiceBox<String> tempField;
+	private Formatter output;
+	private ChoiceBox<String> tempField;
 	private GridPane grid;
 	private BorderPane border;
 	private Label tempLabel;
-	private static Scanner input;
-	private static String buff;
+	private Scanner input;
+	private String buff;
 	
 	public OptionsScreenView(){	
 	}
@@ -42,10 +42,10 @@ public class OptionsScreenView {
     	primaryStage.setTitle("Options Window");    
     	tempLabel = new Label("Temprature Unit: ");
     	
-    	
+    	ScreenController screenController = new ScreenController(primaryStage);
     	Button backBtn = new Button("Back");
     	Button saveBtn = new Button("Save");
-    	backBtn.setOnAction(ScreenController .getBackListener(stagePrev, scenePrev));
+    	backBtn.setOnAction(screenController.getBackListener(stagePrev, scenePrev));
     	saveBtn.setOnAction(getSaveListener());
     	tempField = new ChoiceBox(FXCollections.observableArrayList("F", "C"));
     	//tempField = "F";
@@ -72,7 +72,7 @@ public class OptionsScreenView {
     	//closeFile();
     }
     
-    public static void openFileW(){
+    public void openFileW(){
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	output = new Formatter("weatherConfig.txt");
@@ -82,7 +82,7 @@ public class OptionsScreenView {
             }
     }
     
-    public static void openFileR(){
+    public void openFileR(){
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	input = new Scanner(Paths.get("weatherConfig.txt"));
@@ -92,7 +92,7 @@ public class OptionsScreenView {
             }
     }
     
-    public static void writeToConfig(){
+    public void writeToConfig(){
     	openFileW();
     	try{
     	output.format("Temprature Setting: %s", getTempSet());
@@ -105,7 +105,7 @@ public class OptionsScreenView {
     	closeFileW();
     }
     
-    public static void readFromConfig(){
+    public void readFromConfig(){
     	openFileR();
     	try {
             while (input.hasNextLine()) { 
@@ -120,17 +120,17 @@ public class OptionsScreenView {
     	closeFileR(); 	
     }
     
-    public static void closeFileW() {
+    public void closeFileW() {
         if (output != null)
             output.close();
     }
     
-    public static void closeFileR() {
+    public void closeFileR() {
     	if (input != null)
             input.close();
     }
     
-    public static void setTempSet(){
+    public void setTempSet(){
     	readFromConfig();
     	if(buff.equals("Temprature Setting: F")){
     	tempField.setValue("F");
@@ -147,11 +147,11 @@ public class OptionsScreenView {
     	}
     	
     }
-    public static String getTempSet(){
+    public String getTempSet(){
 		return tempField.getValue().toString();
 	}
     
-    public static EventHandler<ActionEvent> getSaveListener(){
+    public EventHandler<ActionEvent> getSaveListener(){
 		EventHandler handler = new EventHandler<Event>(){
 			private ScreenController sController;
 			

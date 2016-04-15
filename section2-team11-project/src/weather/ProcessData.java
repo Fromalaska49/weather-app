@@ -8,7 +8,7 @@ import javax.xml.xpath.*;
 
 public class ProcessData {
 	
-	public static void ProcessData() {
+	public void ProcessData() {
 		return;
 	}
 	
