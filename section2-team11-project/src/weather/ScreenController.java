@@ -1,5 +1,11 @@
 package weather;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Formatter;
+import java.util.Scanner;
+
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -10,7 +16,6 @@ import model.LocationScreenModel;
 public class ScreenController {
 	
 	private static Stage primaryStage;
-	
 	
 	public ScreenController() {
 		
@@ -53,7 +58,7 @@ public class ScreenController {
 	public static EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
 			private Stage primaryStage;
-			private ScreenController sController;
+
 
 			@Override
 			public void handle(Event event){
@@ -66,7 +71,6 @@ public class ScreenController {
 	
 	public static EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
-			private ScreenController sController;
 			
 			public void handle(Event event){
 				stagePrev.setScene(scenePrev);
