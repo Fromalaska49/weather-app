@@ -33,6 +33,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 import javafx.scene.text.Font;
 
 /**
@@ -56,10 +57,10 @@ public class LocationScreenView extends Application  {
 		private static ChoiceBox stateField;
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
-		private LocationScreenController model;
+		private LocationScreenController locationScreenController;
 		
-	public LocationScreenView(LocationScreenController model){
-		this.model = model;
+	public LocationScreenView(LocationScreenModel model, Stage primaryStage){
+		this.locationScreenController = new LocationScreenController(model, this, primaryStage);
 	}
 	public void start(Stage primaryStage) {
 		//primaryStage.setMaximized(true);
@@ -79,7 +80,7 @@ public class LocationScreenView extends Application  {
 		okBtn.setText("OK");
 		setBtn.setText("Settings");
 		
-		okBtn.setOnAction(this.model.getOkListener());
+		okBtn.setOnAction(locationScreenController.getOkListener());
 		
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
