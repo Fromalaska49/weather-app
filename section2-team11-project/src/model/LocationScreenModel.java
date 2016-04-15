@@ -73,7 +73,7 @@ public class LocationScreenModel {
 	
 	public String getLocation(){
 		String location = "";
-		if(this.zipCode > 0){
+		if(getZipCode() > 0){
 			location += this.zipCode;
 		}
 		else if(this.state.length() > 0 && this.city.length() > 0){
