@@ -46,10 +46,12 @@ public class WeatherScreenView {
 	private Label timeLabel;
 	private HBox topPanel;
 	private VBox rightPanel;
+	private VBox centerPanel;
 	private Button okBtn = new Button();
 	private Button toggleCF = new Button();
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
+	private Text weatherNumerics;
 
 //	private LocationScreenModel locModel;
 	
@@ -60,6 +62,9 @@ public class WeatherScreenView {
 		
 		headerText =  TextBuilder.create().text("Thunderstorm").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
+		weatherNumerics =  TextBuilder.create().text("49 C").build();
+		weatherNumerics.setFont(Font.font ("Consolas",  60));
+//		weatherNumerics.setText("49° C");
 		 //Image image = new Image("StartScreen.png");
 		 
          // simple displays ImageView the image as is
@@ -85,7 +90,8 @@ public class WeatherScreenView {
 		grid.add(timeLabel, 0, 2);
 		grid.setAlignment(Pos.BASELINE_LEFT);  */
 		topPanel = new HBox();
-		rightPanel = new VBox();
+		rightPanel = new VBox(20);
+		centerPanel = new VBox();
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
 		
@@ -99,11 +105,17 @@ public class WeatherScreenView {
 		rightPanel.setAlignment(Pos.CENTER_LEFT);
 //		topPanel.setHgrow(iv1, Priority.ALWAYS);
 //	     topPanel.setHgrow(headerText, Priority.ALWAYS);
+		
+		centerPanel.getChildren().add(weatherNumerics);
+		centerPanel.setAlignment(Pos.CENTER);
+		
 		border.setTop(topPanel);
 		border.setRight(rightPanel);
+		border.setCenter(weatherNumerics);
 		border.setAlignment(topPanel, Pos.CENTER);
-		border.setAlignment(rightPanel, Pos.CENTER_LEFT);
-
+		border.setAlignment(rightPanel, Pos.BASELINE_LEFT);
+		border.setAlignment(weatherNumerics, Pos.CENTER);
+		//border.setAlignment(weatherNumerics, Pos.CENTER );
 		//border.setCenter(grid);
 		//border.setBottom(okBtn);
 		//border.setAlignment(headerText, Pos.CENTER);
