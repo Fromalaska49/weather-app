@@ -56,16 +56,14 @@ public class WeatherScreenView {
 //	private LocationScreenModel locModel;
 	
     public WeatherScreenView(){	
-    	return;
 	}
-    
     public void start(Stage stage, Scene scene) {
 		
 		
 		headerText =  TextBuilder.create().text("Thunderstorm").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		weatherNumerics =  TextBuilder.create().text("49 C").build();
-		weatherNumerics.setFont(Font.font ("Consolas",  60));
+		weatherNumerics =  TextBuilder.create().text("49°C").build();
+		weatherNumerics.setFont(Font.font ("Consolas",  100));
 //		weatherNumerics.setText("49° C");
 		 //Image image = new Image("StartScreen.png");
 		 
