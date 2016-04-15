@@ -57,7 +57,7 @@ public class LocationScreenController {
      * Determines if user entered valid city and state
      * @return true if the input is valid
      */
-    private boolean isCSValid(String s) {
+    private static boolean isCSValid(String s) {
         String errorMessage = "";
         
         if (s == null || s.isEmpty()) {  
