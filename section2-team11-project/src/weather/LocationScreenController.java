@@ -139,6 +139,8 @@ public class LocationScreenController {
 					} else { // user only entered zip code
 						if(isZipValid(view.getZipCode())) {
 							model.setZipCode(Integer.valueOf(view.getZipCode()));
+							//System.out.println(model.getZipCode());
+							//System.out.println(model.getLocation());
 							screenController.showWeatherScreen(primaryStage);
 						}
 					}					

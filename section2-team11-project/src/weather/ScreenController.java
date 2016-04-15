@@ -13,10 +13,12 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
+import model.WeatherScreenModel;
 
 public class ScreenController {
 	
 	private Stage primaryStage;
+	private LocationScreenModel locModel;
 	
 	public ScreenController(Stage stage) {
 		this.primaryStage = stage;
@@ -26,19 +28,33 @@ public class ScreenController {
 		
     }
 	
+	/**
+	 * This method is called on by MainApp. It displays the first screen of the app, Location Screen.
+	 * @param p
+	 */
 	public void showLocationScreen(Stage p) {
 		primaryStage = p;
-	  	LocationScreenModel model = new LocationScreenModel();
-	  	LocationScreenView view = new LocationScreenView(model, primaryStage);
-	  	LocationScreenController controller = new LocationScreenController(model, view, primaryStage);
-	  	view.start(primaryStage);
+	  	this.locModel = new LocationScreenModel();
+	  	LocationScreenView locView = new LocationScreenView(locModel, primaryStage);
+	  	LocationScreenController locController = new LocationScreenController(locModel, locView, primaryStage);
+	  	locView.start(primaryStage);
+	  	System.out.println(locModel.getLocation());
 	}
 	
+	/**
+	 * This method is called by LocationScreenController when the ok button is clicked. 
+	 * @param p
+	 */
 	public void showWeatherScreen(Stage p) {
-		//primaryStage = p;
-		Scene scene = p.getScene();
+		//LoadAPI load = new LoadAPI(locModel.getLocation());
+		ProcessData data = new ProcessData();
+		//System.out.println(data.getWindchillF());
+		System.out.println(this.locModel.getZipCode());
 		
+		Scene scene = p.getScene();
 		WeatherScreenView wView = new WeatherScreenView();
+		WeatherScreenModel wModel = new WeatherScreenModel();
+		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
