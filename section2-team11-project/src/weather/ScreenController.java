@@ -22,6 +22,10 @@ public class ScreenController {
 		this.primaryStage = stage;
 	}
 	
+	public Stage getStage(){
+    	return this.primaryStage;
+    }
+	
 	private void initialize() {
 		
     }
@@ -49,12 +53,12 @@ public class ScreenController {
 	 * and the body was commented out so that the code
 	 * might hobble onwards through the merge commit.
 	 */
-	public void showOptionsScreen(Stage primaryStage){
-		
+	public void showOptionsScreen(Stage stage){
 		OptionsScreenView optView = new OptionsScreenView();
+		Scene scene = stage.getScene();
 		
 		System.out.println("Display Options Screen (Pretty Please)");
-		optView.start(primaryStage, primaryStage.getScene());
+		optView.start(primaryStage, scene);
 		
 	}
 	
@@ -62,19 +66,25 @@ public class ScreenController {
 	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
 	 * @return Returns a handler object
 	 */
+	/*
 	public EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
-			private Stage primaryStage;
-
+			//private Stage primaryStage;
+			Stage primaryStage = getStage();
+			ScreenController sController = new ScreenController(primaryStage);
 
 			@Override
 			public void handle(Event event){
-				showOptionsScreen(primaryStage);//Replace .show with settings java class.
+				ScreenController screenController = new ScreenController(primaryStage);
+				System.out.println("Setting button");
+				ScreenController.showOptionsScreen(primaryStage);
+				//showOptionsScreen(primaryStage);//Replace .show with settings java class.
+				//showOptionsScreen(primaryStage);
 			}	
 		};
 		return handler;
 	}
-	
+	*/
 	
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
