@@ -38,32 +38,32 @@
 		<estimated>
 		</estimated>
 		<station_id>KTXSANAN406</station_id>
-		<observation_time>Last Updated on April 15, 12:48 AM CDT</observation_time>
-		<observation_time_rfc822>Fri, 15 Apr 2016 00:48:48 -0500</observation_time_rfc822>
-		<observation_epoch>1460699328</observation_epoch>
-		<local_time_rfc822>Fri, 15 Apr 2016 00:49:35 -0500</local_time_rfc822>
-		<local_epoch>1460699375</local_epoch>
+		<observation_time>Last Updated on April 15, 2:04 AM CDT</observation_time>
+		<observation_time_rfc822>Fri, 15 Apr 2016 02:04:35 -0500</observation_time_rfc822>
+		<observation_epoch>1460703875</observation_epoch>
+		<local_time_rfc822>Fri, 15 Apr 2016 02:05:18 -0500</local_time_rfc822>
+		<local_epoch>1460703918</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
 		<weather>Clear</weather>
-		<temperature_string>60.4 F (15.8 C)</temperature_string>
-		<temp_f>60.4</temp_f>
-		<temp_c>15.8</temp_c>
-		<relative_humidity>84%</relative_humidity>
-		<wind_string>From the NNE at 1.7 MPH</wind_string>
-		<wind_dir>NNE</wind_dir>
-		<wind_degrees>22</wind_degrees>
+		<temperature_string>58.5 F (14.7 C)</temperature_string>
+		<temp_f>58.5</temp_f>
+		<temp_c>14.7</temp_c>
+		<relative_humidity>87%</relative_humidity>
+		<wind_string>From the SE at 1.7 MPH</wind_string>
+		<wind_dir>SE</wind_dir>
+		<wind_degrees>135</wind_degrees>
 		<wind_mph>1.7</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
 		<wind_kph>2.7</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1012</pressure_mb>
-		<pressure_in>29.89</pressure_in>
+		<pressure_mb>1011</pressure_mb>
+		<pressure_in>29.87</pressure_in>
 		<pressure_trend>-</pressure_trend>
 		
-		<dewpoint_string>56 F (13 C)</dewpoint_string>
-		<dewpoint_f>56</dewpoint_f>
+		<dewpoint_string>55 F (13 C)</dewpoint_string>
+		<dewpoint_f>55</dewpoint_f>
 		<dewpoint_c>13</dewpoint_c>
 		
 		
@@ -76,9 +76,9 @@
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>60.4 F (15.8 C)</feelslike_string>
-        <feelslike_f>60.4</feelslike_f>
-        <feelslike_c>15.8</feelslike_c>
+        <feelslike_string>58.5 F (14.7 C)</feelslike_string>
+        <feelslike_f>58.5</feelslike_f>
+        <feelslike_c>14.7</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation></solarradiation>

@@ -109,8 +109,8 @@ public class LocationScreenController {
 	public static EventHandler<ActionEvent> getOkListener() {
 		EventHandler handler = new EventHandler<Event>() {
 
-				private Stage primaryStage;
-				private ScreenController sController;
+				Stage primaryStage = new Stage();
+				ScreenController sController = new ScreenController(primaryStage);
 
 				@Override
 				public void handle(Event event)  {

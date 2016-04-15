@@ -36,7 +36,7 @@ public class ScreenController {
 	
 	public void showWeatherScreen(Stage p) {
 		//primaryStage = p;
-		Scene scene = primaryStage.getScene();
+		Scene scene = p.getScene();
 		
 		WeatherScreenView wView = new WeatherScreenView();
 		System.out.println("Display Weather Screen");
