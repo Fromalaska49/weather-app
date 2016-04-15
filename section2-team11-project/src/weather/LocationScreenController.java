@@ -114,16 +114,17 @@ public class LocationScreenController {
 
 				@Override
 				public void handle(Event event)  {
+					ScreenController screenController = new ScreenController(primaryStage);
 					if(view.getZipCode().isEmpty()) {  // checks if user only entered city and state
 						if(isCSValid(view.getCity()) && isCSValid(view.getState())) {  
 							model.setCity(view.getCity());
 							model.setState(view.getState());
-							ScreenController.showWeatherScreen(primaryStage);
+							screenController.showWeatherScreen(primaryStage);
 						}
 					} else { // user only entered zip code
 						if(isZipValid(view.getZipCode())) {
 							model.setZipCode(Integer.valueOf(view.getZipCode()));
-							ScreenController.showWeatherScreen(primaryStage);
+							screenController.showWeatherScreen(primaryStage);
 						}
 					}					
 				}

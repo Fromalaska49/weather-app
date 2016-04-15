@@ -16,17 +16,17 @@ import model.LocationScreenModel;
 
 public class ScreenController {
 	
-	private static Stage primaryStage;
+	private Stage primaryStage;
 	
-	public ScreenController() {
-		
+	public ScreenController(Stage stage) {
+		this.primaryStage = stage;
 	}
 	
 	private void initialize() {
 		
     }
 	
-	public static void showLocationScreen(Stage p) {
+	public void showLocationScreen(Stage p) {
 		primaryStage = p;
 	  	LocationScreenModel model = new LocationScreenModel();
 	  	LocationScreenView view = new LocationScreenView();
@@ -34,7 +34,7 @@ public class ScreenController {
 	  	view.start(primaryStage);
 	}
 	
-	public static void showWeatherScreen(Stage p) {
+	public void showWeatherScreen(Stage p) {
 		//primaryStage = p;
 		Scene scene = primaryStage.getScene();
 		
@@ -49,34 +49,34 @@ public class ScreenController {
 	 * and the body was commented out so that the code
 	 * might hobble onwards through the merge commit.
 	 */
-	public static void showOptionsScreen(Stage primaryStage){
-		/*
+	public void showOptionsScreen(Stage primaryStage){
+		
 		OptionsScreenView optView = new OptionsScreenView();
 		
 		System.out.println("Display Options Screen (Pretty Please)");
-		optView.start(primaryStage, scene);
-		*/
+		optView.start(primaryStage, primaryStage.getScene());
+		
 	}
 	
 	/*
 	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
 	 * @return Returns a handler object
 	 */
-	public static EventHandler<ActionEvent> getSetListener(){
+	public EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
 			private Stage primaryStage;
 
 
 			@Override
 			public void handle(Event event){
-				ScreenController.showOptionsScreen(primaryStage);//Replace .show with settings java class.
+				showOptionsScreen(primaryStage);//Replace .show with settings java class.
 			}	
 		};
 		return handler;
 	}
 	
 	
-	public static EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
+	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
 			
 			public void handle(Event event){

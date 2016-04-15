@@ -42,10 +42,10 @@ public class OptionsScreenView {
     	primaryStage.setTitle("Options Window");    
     	tempLabel = new Label("Temprature Unit: ");
     	
-    	
+    	ScreenController screenController = new ScreenController(primaryStage);
     	Button backBtn = new Button("Back");
     	Button saveBtn = new Button("Save");
-    	backBtn.setOnAction(ScreenController .getBackListener(stagePrev, scenePrev));
+    	backBtn.setOnAction(screenController.getBackListener(stagePrev, scenePrev));
     	saveBtn.setOnAction(getSaveListener());
     	tempField = new ChoiceBox(FXCollections.observableArrayList("F", "C"));
     	//tempField = "F";
