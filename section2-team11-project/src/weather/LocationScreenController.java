@@ -22,8 +22,8 @@ public class LocationScreenController {
 	private Button okButton;
 	
     private MainApp mainApp;
-    private static LocationScreenView view;
-    private static LocationScreenModel model;
+    private LocationScreenView view;
+    private LocationScreenModel model;
 	private boolean okClicked = false;
 	private Stage primaryStage;
     
