@@ -58,6 +58,7 @@ public class LocationScreenView extends Application  {
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
 		private LocationScreenController locationScreenController;
+		private LocationScreenController test;
 		
 	public LocationScreenView(LocationScreenModel model, Stage primaryStage){
 		this.locationScreenController = new LocationScreenController(model, this, primaryStage);
@@ -81,6 +82,7 @@ public class LocationScreenView extends Application  {
 		setBtn.setText("Settings");
 		
 		okBtn.setOnAction(locationScreenController.getOkListener());
+		setBtn.setOnAction(locationScreenController.getSetListener());
 		
 		grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
@@ -113,7 +115,7 @@ public class LocationScreenView extends Application  {
 
 		primaryStage.setTitle("Weather App");
 		primaryStage.setScene(scene);
-        scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
+        //scene.getStylesheets().add(this.getClass().getResource("startScreen.css").toExternalForm());
         scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		primaryStage.show();
 
