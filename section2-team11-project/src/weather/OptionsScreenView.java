@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -51,7 +52,7 @@ public class OptionsScreenView {
     	boolean inDev = false;
     	
     	ScreenController screenController = new ScreenController(primaryStage);
-    	Button backBtn = new Button("Back");
+    	Button backBtn = new Button("< Back");
     	Button saveBtn = new Button("Save");
     	backBtn.setOnAction(screenController.getBackListener(stagePrev, scenePrev));
     	saveBtn.setOnAction(getSaveListener());
@@ -60,6 +61,9 @@ public class OptionsScreenView {
     	//tempField(getTempSet());
     	setTempSet();
     	grid = new GridPane();
+    	grid.setPadding(new Insets(10, 10, 10, 10));
+    	grid.setHgap(10);
+    	grid.setVgap(10);
     	//grid.add(backBtn, 0, 0);
     	grid.add(saveBtn, 3, 1);
     	grid.add(tempLabel, 0, 0);
@@ -68,6 +72,9 @@ public class OptionsScreenView {
     	grid.setGridLinesVisible(inDev);
 
     	topGrid = new GridPane();
+    	topGrid.setPadding(new Insets(10, 10, 10, 10));
+    	topGrid.setHgap(10);
+    	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(inDev);
     	topGrid.setAlignment(Pos.TOP_LEFT);
     	topGrid.add(backBtn, 0, 0);

@@ -2,8 +2,11 @@
 	-fx-background-color: #66ccff;
 	-fx-color:white;
 }
+
+/* Old Buttons */
+
+/*
 .button{
-	/*-fx-background-color:#cc8800;*/
 	-fx-text-fill:#000000;
 	-fx-font-family:arial;
 	-fx-font-size:15;
@@ -11,14 +14,8 @@
 	-fx-background-radius:100;
 	-fx-border-radius:100;
 	-fx-border-color: #000000;
-	/*
-	This looks really bad
-	-fx-border-insets: 5;
-	*/
 	-fx-border-width: 1;
 	-fx-border-style: solid;
-	/*-fx-effect: dropshadow(three-pass-box, #cc8800, 0, 0, 0, 5);*/
-	/*-fx-effect: innershadow(three-pass-box, #995500, 0, 0, 0, -5);*/
     -fx-background-color: 
         rgba(0,0,0,0.08),
         linear-gradient(#FEFEFE, #999999);
@@ -29,11 +26,32 @@
         linear-gradient(#FFFFFF, #A0A0A0);
 }
 .button:pressed{
-	/*-fx-effect: dropshadow(three-pass-box, #330033, 0, 0, 0, 0);*/
 	-fx-effect: innershadow(gaussian, #000000, 10, 0, 0, 0);
     -fx-background-color: 
         rgba(0,0,0,0.08),
         linear-gradient(#999999, #FEFEFE);
+}
+*/
+
+/* New Buttons */
+
+.button{
+	-fx-text-fill:#FFFFFF;
+	-fx-font-family:arial;
+	-fx-font-size:15;
+	-fx-padding:5 10 5 10;
+	-fx-background-radius:5;
+	-fx-border-radius:5;
+	-fx-border-color: #000000;
+	-fx-border-width: 0;
+	-fx-border-style: none;
+	-fx-background-color: rgba(0,0,0,0.2);
+}
+.button:hover{
+	-fx-background-color: rgba(0,0,0,0.25);
+}
+.button:pressed{
+	-fx-background-color: rgba(0,0,0,0.5);
 }
 
 .text-field{
@@ -41,7 +59,7 @@
 	-fx-effect: innershadow(gaussian, #000000, 5, 0.0, 0, 0);
 	-fx-background-radius:5;
 	-fx-border-radius:5;
-	-fx-border-style:solid;
+	-fx-border-style:none;
 	-fx-border-color:#999999;
 	-fx-border-width:1;
 	-fx-font-family:arial sans-serif;

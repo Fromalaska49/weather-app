@@ -95,6 +95,9 @@ public class LocationScreenView extends Application  {
 		grid.setAlignment(Pos.CENTER);
 		
 		bottomGrid = new GridPane();
+		bottomGrid.setPadding(new Insets(10, 10, 10, 10));
+		bottomGrid.setHgap(10);
+		bottomGrid.setVgap(10);
 		bottomGrid.add(okBtn, 0, 0);
 		bottomGrid.add(setBtn, 0, 1);
 		bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
