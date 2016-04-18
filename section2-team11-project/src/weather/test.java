@@ -33,12 +33,36 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class test extends Application {
+public class test {
 
     public static void main(String[] args) {
-        launch(args);
+        
+        // Example usage of LoadAPI and ProcessData
+        String location = "TX/San_Antonio";
+        new LoadAPI(location);
+        ProcessData data = new ProcessData();
+        String city = data.getCity();
+        String state = data.getState();
+        String tempF = data.getTempF();
+        String dataArray[] = new String[100];
+        dataArray[0] = data.getCity();;
+        dataArray[1] = data.getWeatherCondition();;
+        dataArray[2] = data.getDewpointC();
+        dataArray[3] = data.getDewpointF();
+        dataArray[4] = data.getFeelsLikeC();
+        dataArray[5] = data.getFeelsLikeF();
+        dataArray[6] = data.getWindchillF();
+        String dataCSV = dataArray[0];
+        for(int i = 0; i< 7; i++){
+        	dataCSV += ", " + dataArray[i];
+        }
+        System.out.println(dataCSV);
+        System.out.println("The current temperature in "+city+", "+state+" is "+tempF+"F");
+        
+        
+        
     }
-
+/*
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("JavaFX Welcome");
@@ -87,30 +111,6 @@ public class test extends Application {
         });
 
 
-        /*
-        
-        DropShadow shadow = new DropShadow();
-        shadow.setRadius(5.0);
-        shadow.setOffsetX(3.0);
-        shadow.setOffsetY(3.0);
-        shadow.setColor(Color.color(0.4, 0.5, 0.5));
-      //Adding the shadow when the mouse cursor is on
-      btn.addEventHandler(MouseEvent.MOUSE_ENTERED, 
-          new EventHandler<MouseEvent>() {
-              @Override public void handle(MouseEvent e) {
-            	  btn.setEffect(shadow);
-          	  	System.out.println("hi");
-              }
-      });
-      //Removing the shadow when the mouse cursor is off
-      btn.addEventHandler(MouseEvent.MOUSE_EXITED, 
-          new EventHandler<MouseEvent>() {
-              @Override public void handle(MouseEvent e) {
-            	  btn.setEffect(null);
-          	  	System.out.println("bye");
-              }
-      });
-        */
         
         
         Scene scene = new Scene(grid, 300, 275);
@@ -120,4 +120,5 @@ public class test extends Application {
         //scene.getStylesheets().add(test.class.getResource("Login.css").toExternalForm());
         primaryStage.show();
     }
+    */
 }

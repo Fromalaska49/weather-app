@@ -13,32 +13,51 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
+import model.WeatherScreenModel;
 
 public class ScreenController {
 	
 	private Stage primaryStage;
+	private LocationScreenModel locModel;
 	
 	public ScreenController(Stage stage) {
 		this.primaryStage = stage;
 	}
 	
+	public Stage getStage(){
+    	return this.primaryStage;
+    }
+	
 	private void initialize() {
 		
     }
 	
+	/**
+	 * This method is called on by MainApp. It displays the first screen of the app, Location Screen.
+	 * @param p
+	 */
 	public void showLocationScreen(Stage p) {
 		primaryStage = p;
-	  	LocationScreenModel model = new LocationScreenModel();
-	  	LocationScreenView view = new LocationScreenView(model, primaryStage);
-	  	LocationScreenController controller = new LocationScreenController(model, view, primaryStage);
-	  	view.start(primaryStage);
+	  	this.locModel = new LocationScreenModel();
+	  	LocationScreenView locView = new LocationScreenView(locModel, primaryStage);
+	  	LocationScreenController locController = new LocationScreenController(locModel, locView, primaryStage);
+	  	locView.start(primaryStage);
 	}
 	
-	public void showWeatherScreen(Stage p) {
-		//primaryStage = p;
-		Scene scene = p.getScene();
+	/**
+	 * This method is called by LocationScreenController when the ok button is clicked. 
+	 * @param p
+	 */
+	public void showWeatherScreen(Stage p, LocationScreenModel lmodel) {
+		LoadAPI load = new LoadAPI(lmodel.getLocation());
+		ProcessData data = new ProcessData();
+		System.out.println(data.getTempF());  // 
+
 		
+		Scene scene = p.getScene();
 		WeatherScreenView wView = new WeatherScreenView();
+		WeatherScreenModel wModel = new WeatherScreenModel();
+		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
@@ -49,12 +68,12 @@ public class ScreenController {
 	 * and the body was commented out so that the code
 	 * might hobble onwards through the merge commit.
 	 */
-	public void showOptionsScreen(Stage primaryStage){
-		
+	public void showOptionsScreen(Stage stage){
 		OptionsScreenView optView = new OptionsScreenView();
+		Scene scene = stage.getScene();
 		
 		System.out.println("Display Options Screen (Pretty Please)");
-		optView.start(primaryStage, primaryStage.getScene());
+		optView.start(primaryStage, scene);
 		
 	}
 	
@@ -62,19 +81,25 @@ public class ScreenController {
 	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
 	 * @return Returns a handler object
 	 */
+	/*
 	public EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
-			private Stage primaryStage;
-
+			//private Stage primaryStage;
+			Stage primaryStage = getStage();
+			ScreenController sController = new ScreenController(primaryStage);
 
 			@Override
 			public void handle(Event event){
-				showOptionsScreen(primaryStage);//Replace .show with settings java class.
+				ScreenController screenController = new ScreenController(primaryStage);
+				System.out.println("Setting button");
+				ScreenController.showOptionsScreen(primaryStage);
+				//showOptionsScreen(primaryStage);//Replace .show with settings java class.
+				//showOptionsScreen(primaryStage);
 			}	
 		};
 		return handler;
 	}
-	
+	*/
 	
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){

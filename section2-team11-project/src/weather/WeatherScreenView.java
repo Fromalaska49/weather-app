@@ -61,10 +61,10 @@ public class WeatherScreenView {
 	}
 	public void start(Stage stage, Scene scene) {
 
-
+		
 		headerText =  TextBuilder.create().text("Thunderstorm").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		weatherNumerics =  TextBuilder.create().text("49°C").build();
+		weatherNumerics =  TextBuilder.create().text("49" + Character.toString((char) 176) + "C").build();
 		weatherNumerics.setFont(Font.font ("Consolas",  100));
 		cityLabel =  TextBuilder.create().text("San Antonio").build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
@@ -72,7 +72,7 @@ public class WeatherScreenView {
 		stateLabel.setFont(Font.font ("Helvetica",  20));
 		timeLabel =  TextBuilder.create().text("7:46 PM").build();
 		timeLabel.setFont(Font.font("Helvetica",  20));
-		//		weatherNumerics.setText("49° C");
+		//		weatherNumerics.setText("49ï¿½ C");
 		//Image image = new Image("StartScreen.png");
 
 		// simple displays ImageView the image as is
@@ -183,6 +183,7 @@ public class WeatherScreenView {
 
 		//stage.setMaximized(true);
 		stage.setTitle("Weather Conditions");
+        scene2.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		stage.setScene(scene2);
 		stage.show(); 
 

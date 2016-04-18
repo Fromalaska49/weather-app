@@ -134,17 +134,41 @@ public class LocationScreenController {
 						if(isCSValid(view.getCity()) && isCSValid(view.getState())) {  
 							model.setCity(view.getCity());
 							model.setState(view.getState());
-							screenController.showWeatherScreen(primaryStage);
+							screenController.showWeatherScreen(primaryStage, model);
 						}
 					} else { // user only entered zip code
 						if(isZipValid(view.getZipCode())) {
 							model.setZipCode(Integer.valueOf(view.getZipCode()));
-							screenController.showWeatherScreen(primaryStage);
+							//System.out.println(model.getZipCode());
+							//System.out.println(model.getLocation());
+							screenController.showWeatherScreen(primaryStage, model);
 						}
 					}					
 				}
 		};
 		return handler; 
+	}
+	
+	/*
+	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
+	 * @return Returns a handler object
+	 */
+	public EventHandler<ActionEvent> getSetListener() {
+		EventHandler handler = new EventHandler<Event>(){
+			//private Stage primaryStage;
+			Stage primaryStage = getStage();
+			ScreenController sController = new ScreenController(primaryStage);
+
+			@Override
+			public void handle(Event event){
+				ScreenController screenController = new ScreenController(primaryStage);
+				System.out.println("Setting button");
+				screenController.showOptionsScreen(primaryStage);
+				//showOptionsScreen(primaryStage);//Replace .show with settings java class.
+				//showOptionsScreen(primaryStage);
+			}	
+		};
+		return handler;
 	}
 
 }
