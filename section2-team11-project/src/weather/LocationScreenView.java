@@ -58,7 +58,6 @@ public class LocationScreenView extends Application  {
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
 		private LocationScreenController locationScreenController;
-		private LocationScreenController test;
 		
 	public LocationScreenView(LocationScreenModel model, Stage primaryStage){
 		this.locationScreenController = new LocationScreenController(model, this, primaryStage);
@@ -95,6 +94,9 @@ public class LocationScreenView extends Application  {
 		grid.setAlignment(Pos.CENTER);
 		
 		bottomGrid = new GridPane();
+		bottomGrid.setPadding(new Insets(10, 10, 10, 10));
+		bottomGrid.setHgap(10);
+		bottomGrid.setVgap(10);
 		bottomGrid.add(okBtn, 0, 0);
 		bottomGrid.add(setBtn, 0, 1);
 		bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
