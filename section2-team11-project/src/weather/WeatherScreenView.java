@@ -61,10 +61,10 @@ public class WeatherScreenView {
 	}
 	public void start(Stage stage, Scene scene) {
 
-
+		
 		headerText =  TextBuilder.create().text("Thunderstorm").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		weatherNumerics =  TextBuilder.create().text("49�C").build();
+		weatherNumerics =  TextBuilder.create().text("49" + Character.toString((char) 176) + "C").build();
 		weatherNumerics.setFont(Font.font ("Consolas",  100));
 		cityLabel =  TextBuilder.create().text("San Antonio").build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
