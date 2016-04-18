@@ -46,7 +46,7 @@ public class test {
         String tempF = data.getTempF();
         String dataArray[] = new String[100];
         dataArray[0] = data.getCity();;
-        dataArray[1] = data.getCurrentWeather();;
+        dataArray[1] = data.getWeatherCondition();;
         dataArray[2] = data.getDewpointC();
         dataArray[3] = data.getDewpointF();
         dataArray[4] = data.getFeelsLikeC();
