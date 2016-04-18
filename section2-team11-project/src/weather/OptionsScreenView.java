@@ -25,6 +25,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
+import model.OptionsScreenModel;
 
 public class OptionsScreenView {
 	private Formatter output;
@@ -34,15 +35,17 @@ public class OptionsScreenView {
 	private Label tempLabel;
 	private Scanner input;
 	private String buff;
-	private ScreenController ScreenController;
-	
+	private OptionsScreenController OptionsScreenController;
+	/*
 	public OptionsScreenView(Stage primaryStage){
 		this.ScreenController = new ScreenController(primaryStage);
 	}
-
-	public OptionsScreenView(){	
+	*/
+	public OptionsScreenView(OptionsScreenModel model, Stage primaryStage){	
+		this.OptionsScreenController = new OptionsScreenController(this, model, primaryStage);
 	}
-    public void start(Stage primaryStage, Scene scene) {
+
+	public void start(Stage primaryStage, Scene scene) {
     	Stage stagePrev = primaryStage;
     	Scene scenePrev = scene;
     	primaryStage.setTitle("Options Window");    
@@ -51,7 +54,7 @@ public class OptionsScreenView {
     	ScreenController screenController = new ScreenController(primaryStage);
     	Button backBtn = new Button("Back");
     	Button saveBtn = new Button("Save");
-    	backBtn.setOnAction(screenController.getBackListener(stagePrev, scenePrev));
+    	backBtn.setOnAction(OptionsScreenController.getBackListener(stagePrev, scenePrev));
     	saveBtn.setOnAction(getSaveListener());
     	tempField = new ChoiceBox(FXCollections.observableArrayList("F", "C"));
     	//tempField = "F";

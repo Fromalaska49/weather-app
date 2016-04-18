@@ -153,20 +153,16 @@ public class LocationScreenController {
 	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
 	 * @return Returns a handler object
 	 */
-	public EventHandler<ActionEvent> getSetListener() {
+	public EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
-			//private Stage primaryStage;
 			Stage primaryStage = getStage();
 			ScreenController sController = new ScreenController(primaryStage);
-
 			@Override
-			public void handle(Event event){
-				ScreenController screenController = new ScreenController(primaryStage);
-				System.out.println("Setting button");
-				screenController.showOptionsScreen(primaryStage);
-				//showOptionsScreen(primaryStage);//Replace .show with settings java class.
-				//showOptionsScreen(primaryStage);
-			}	
+			public void handle(Event event) {
+				// TODO Auto-generated method stub
+				sController.showOptionsScreen(primaryStage);
+			}
+			
 		};
 		return handler;
 	}
