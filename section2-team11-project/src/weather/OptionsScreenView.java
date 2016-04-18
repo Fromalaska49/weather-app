@@ -42,12 +42,20 @@ public class OptionsScreenView {
 	public OptionsScreenView(Stage primaryStage){
 		this.ScreenController = new ScreenController(primaryStage);
 	}
+<<<<<<< HEAD
 	*/
 	public OptionsScreenView(OptionsScreenModel model, Stage primaryStage){	
-		this.OptionsScreenController = new OptionsScreenController(this, model, primaryStage);
+	this.OptionsScreenController = new OptionsScreenController(this, model, primaryStage);
 	}
 
-	public void start(Stage primaryStage, Scene scene) {
+	public OptionsScreenView(){	
+		// do nothing
+
+	}
+
+
+	
+    public void start(Stage primaryStage, Scene scene) {
     	Stage stagePrev = primaryStage;
     	Scene scenePrev = scene;
     	primaryStage.setTitle("Options Window");    
