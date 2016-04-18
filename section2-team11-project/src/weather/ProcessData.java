@@ -26,6 +26,7 @@ public class ProcessData {
 			Document doc = dBuilder.parse(inputFile);
 			doc.getDocumentElement().normalize();
 			XPath xPath =  XPathFactory.newInstance().newXPath();
+			System.out.println(xPath.compile(XPath).evaluate(doc, XPathConstants.STRING));
 			value = (String) xPath.compile(XPath).evaluate(doc, XPathConstants.STRING);
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -212,18 +213,25 @@ public class ProcessData {
 	}
 	
 	/*
+	 * Gets the name of the weather icon
+	 */
+	public String getIconName() {
+		String XPath = "/response/current_observation/icon/text()";
+		return getNode(XPath, "data-xml.txt");
+	}
+	
+	/*
 	 * Gets the URL of the weather icon
 	 */
 	public String getIconURL() {
-		String XPath = "/response/current_observation/icon_url/text()";
-		return getNode(XPath, "data-xml.txt");
+		return "http://icons.wxug.com/i/c/k/" + getIconName() + ".gif";
 	}
 	
 	/*
 	 * Gets the current city name
 	 */
 	public String getCity() {
-		String XPath = "/response/current_observation/city/text()";
+		String XPath = "/response/current_observation/display_location/city/text()";
 		return getNode(XPath, "data-xml.txt");
 	}
 	
@@ -231,7 +239,7 @@ public class ProcessData {
 	 * Gets the current state abbreviation
 	 */
 	public String getState() {
-		String XPath = "/response/current_observation/state/text()";
+		String XPath = "/response/current_observation/display_location/state/text()";
 		return getNode(XPath, "data-xml.txt");
 	}
 	
@@ -239,14 +247,22 @@ public class ProcessData {
 	 * Gets the current state name
 	 */
 	public String getStateName() {
-		String XPath = "/response/current_observation/state_name/text()";
+		String XPath = "/response/current_observation/display_location/state_name/text()";
+		return getNode(XPath, "data-xml.txt");
+	}
+	
+	/*
+	 * Gets the zip code
+	 */
+	public String getZipCode() {
+		String XPath = "/response/current_observation/display_location/zip/text()";
 		return getNode(XPath, "data-xml.txt");
 	}
 	
 	/*
 	 * Gets the current weather condition decription e.g. "partly cloudy"
 	 */
-	public String getCurrentWeather() {
+	public String getWeatherCondition() {
 		String XPath = "/response/current_observation/weather/text()";
 		return getNode(XPath, "data-xml.txt");
 	}

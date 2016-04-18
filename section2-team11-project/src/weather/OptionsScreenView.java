@@ -30,6 +30,7 @@ public class OptionsScreenView {
 	private Formatter output;
 	private ChoiceBox<String> tempField;
 	private GridPane grid;
+	private GridPane topGrid;
 	private BorderPane border;
 	private Label tempLabel;
 	private Scanner input;
@@ -47,6 +48,7 @@ public class OptionsScreenView {
     	Scene scenePrev = scene;
     	primaryStage.setTitle("Options Window");    
     	tempLabel = new Label("Temprature Unit: ");
+    	boolean inDev = false;
     	
     	ScreenController screenController = new ScreenController(primaryStage);
     	Button backBtn = new Button("Back");
@@ -58,20 +60,29 @@ public class OptionsScreenView {
     	//tempField(getTempSet());
     	setTempSet();
     	grid = new GridPane();
-    	grid.add(backBtn, 0, 0);
-    	grid.add(saveBtn, 1, 0);
-    	grid.add(tempLabel, 0, 1);
-    	grid.add(tempField, 3, 1);
+    	//grid.add(backBtn, 0, 0);
+    	grid.add(saveBtn, 3, 1);
+    	grid.add(tempLabel, 0, 0);
+    	grid.add(tempField, 3, 0);
     	grid.setAlignment(Pos.CENTER);
+    	grid.setGridLinesVisible(inDev);
+
+    	topGrid = new GridPane();
+    	topGrid.setGridLinesVisible(inDev);
+    	topGrid.setAlignment(Pos.TOP_LEFT);
+    	topGrid.add(backBtn, 0, 0);
+    	
     	
     	border = new BorderPane();
     	//border.setTop(headerText);
     	border.setCenter(grid);
+    	border.setTop(topGrid);
     	
     	
     	Scene Optscene = new Scene(border, 800, 700);
     	
-    	
+
+        Optscene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
     	primaryStage.setScene(Optscene);
     	primaryStage.show();
     	//writeToConfig();
@@ -82,28 +93,27 @@ public class OptionsScreenView {
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	output = new Formatter("weatherConfig.txt");
-        	}catch (IOException ioException) {
-                System.err.println("Error opening file. Terminating.");
-                System.exit(1);
-            }
+    	}catch (IOException ioException) {
+            System.err.println("Error opening file. Terminating.");
+            System.exit(1);
+        }
     }
     
     public void openFileR(){
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	input = new Scanner(Paths.get("weatherConfig.txt"));
-        	}catch (IOException ioException) {
-                System.err.println("Error opening file. Terminating.");
-                System.exit(1);
-            }
+    	}catch (IOException ioException) {
+            System.err.println("Error opening file. Terminating.");
+            System.exit(1);
+        }
     }
     
     public void writeToConfig(){
     	openFileW();
     	try{
-    	output.format("Temprature Setting: %s", getTempSet());
-    	
-    	System.out.println("I printed to file");
+	    	output.format("Temprature Setting: %s", getTempSet());
+	    	System.out.println("I printed to file");
     	}catch (SecurityException securityException) {
             System.err.println("Write permission denied. Terminating.");
             System.exit(1); // terminate the program
@@ -127,20 +137,22 @@ public class OptionsScreenView {
     }
     
     public void closeFileW() {
-        if (output != null)
+        if (output != null){
             output.close();
+        }
     }
     
     public void closeFileR() {
-    	if (input != null)
+    	if (input != null){
             input.close();
+    	}
     }
     
     public void setTempSet(){
     	readFromConfig();
     	if(buff.equals("Temprature Setting: F")){
-    	tempField.setValue("F");
-    	System.out.println("I found F");
+	    	tempField.setValue("F");
+	    	System.out.println("I found F");
     	}
     	else if(buff.equals("Temprature Setting: C")){
     		tempField.setValue("C");
