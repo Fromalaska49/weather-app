@@ -31,8 +31,6 @@ public class LocationScreenController {
      * The constructor is called before the initialize() method.
      * @param v 
      */
-	
-	//this needs to have 1 parameter, the model
     public LocationScreenController(LocationScreenModel m, LocationScreenView v, Stage stage) {
     		this.model = m;
     		this.view = v;
@@ -59,15 +57,6 @@ public class LocationScreenController {
     private void initialize() {
     }
     
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     * @return
-     */
-    public boolean isOkClicked() {
-        return okClicked;
-    }
-    
-
     /**
      * Determines if user entered valid city and state
      * @return true if the input is valid

@@ -50,14 +50,12 @@ public class ScreenController {
 	 * @param p
 	 */
 	public void showWeatherScreen(Stage p, LocationScreenModel lmodel) {
-		LoadAPI load = new LoadAPI(lmodel.getLocation());
-		ProcessData data = new ProcessData();
-		System.out.println(data.getTempF());  // 
-
-		
+		LoadAPI api = new LoadAPI(lmodel.getLocation());  
+		ProcessData data = new ProcessData();                   
+	
 		Scene scene = p.getScene();
-		WeatherScreenView wView = new WeatherScreenView();
-		WeatherScreenModel wModel = new WeatherScreenModel();
+		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
+		WeatherScreenView wView = new WeatherScreenView(wModel);
 		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
