@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import model.*;
 
@@ -17,7 +18,7 @@ import model.*;
 public class OptionsScreenController {
 
 	private OptionsScreenView view;
-	private OptionsScreenModel model;
+	
 	private Stage primaryStage;
 	
 	/**
@@ -25,8 +26,8 @@ public class OptionsScreenController {
 	 * @param oView 
 	 * 
 	 */
-	public OptionsScreenController(OptionsScreenView oView, OptionsScreenModel oModel, Stage stage) {
-		this.model = oModel;
+	public OptionsScreenController(OptionsScreenView oView, Stage stage) {
+		
 		this.view = oView;
 		setStage(stage);
 	}
@@ -78,4 +79,16 @@ public class OptionsScreenController {
 		return handler;
 	}
 	
+	 public EventHandler<ActionEvent> getSaveListener(ChoiceBox<String> tempField, OptionsScreenModel OSmodel){
+			EventHandler handler = new EventHandler<Event>(){
+				
+				public void handle(Event event){
+					String buff = tempField.getValue().toString();
+					//System.out.println("Listener received " + buff);
+					OSmodel.setTempOpt(tempField.getValue().toString());
+					OSmodel.writeToConfig();
+				}
+			};
+			return handler;
+		}
 }
