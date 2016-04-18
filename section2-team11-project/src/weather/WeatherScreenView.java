@@ -78,11 +78,39 @@ public class WeatherScreenView {
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
 		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
-		ImageView iv2,iv3,iv4,iv5,iv6,iv7,iv8;
-		ImageView iv1 = new ImageView();
-		iv2 = iv3 = iv4= iv5= iv6= iv7 = iv8 = iv1;
+		ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
+		iv1 = new ImageView();
+		iv2 = new ImageView();
+		iv3 = new ImageView();
+		iv4 = new ImageView();
+		iv5 = new ImageView();
+		iv6 = new ImageView();
+		iv7 = new ImageView(); 
+		iv8 = new ImageView();
+
 		iv1.setImage(image);
 		iv1.setPreserveRatio(true);
+
+		iv2.setImage(image);
+		iv2.setPreserveRatio(true);
+
+		iv3.setImage(image);
+		iv3.setPreserveRatio(true);
+
+		iv4.setImage(image);
+		iv4.setPreserveRatio(true);
+
+		iv5.setImage(image);
+		iv5.setPreserveRatio(true);
+
+		iv6.setImage(image);
+		iv6.setPreserveRatio(true);
+
+		iv7.setImage(image);
+		iv7.setPreserveRatio(true);
+
+		iv8.setImage(image);
+		iv8.setPreserveRatio(true);
 		toggleCF.setText("Toggle C/F");
 		toggleHW.setText("Toggle Hourly/Weekly");
 		toggleMI.setText("Toggle Meters/Imperial");
@@ -114,13 +142,15 @@ public class WeatherScreenView {
 		leftPanel.getChildren().add(stateLabel);
 		leftPanel.getChildren().add(timeLabel);
 		leftPanel.setAlignment(Pos.BOTTOM_LEFT);
-//		bottomPanel.add(iv2, 0, 1);
-//		bottomPanel.add(iv3, 0, 2);
-//		bottomPanel.add(iv4, 0, 3);
-//		bottomPanel.add(iv5, 0, 4);
-//		bottomPanel.add(iv6, 0, 5);
-//		bottomPanel.add(iv7, 0, 6);
-//		bottomPanel.add(iv8, 0, 0);
+		
+		bottomPanel.add(iv2, 0, 0);
+		bottomPanel.add(iv3, 1, 0);
+		bottomPanel.add(iv4, 2, 0);
+		bottomPanel.add(iv5, 3, 0);
+		bottomPanel.add(iv6, 4, 0);
+		bottomPanel.add(iv7, 5, 0);
+		bottomPanel.add(iv8, 6, 0);
+		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);
 		border.setRight(rightPanel);
@@ -137,7 +167,7 @@ public class WeatherScreenView {
 
 
 
-		border.setMargin(leftPanel, new Insets(0,50,50,50));
+		border.setMargin(leftPanel, new Insets(0,50,50,25));
 		border.setMargin(rightPanel, new Insets(0,50,50,50));
 		border.setMargin(centerPanel, new Insets(50,10,50,10));
 		//border.setAlignment(weatherNumerics, Pos.CENTER );
