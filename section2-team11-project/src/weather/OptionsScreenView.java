@@ -43,7 +43,9 @@ public class OptionsScreenView {
 	}
 
 	public OptionsScreenView(){	
+		// do nothing
 	}
+	
     public void start(Stage primaryStage, Scene scene) {
     	Stage stagePrev = primaryStage;
     	Scene scenePrev = scene;
