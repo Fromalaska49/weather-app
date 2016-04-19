@@ -31,8 +31,6 @@ public class LocationScreenController {
      * The constructor is called before the initialize() method.
      * @param v 
      */
-	
-	//this needs to have 1 parameter, the model
     public LocationScreenController(LocationScreenModel m, LocationScreenView v, Stage stage) {
     		this.model = m;
     		this.view = v;
@@ -59,15 +57,6 @@ public class LocationScreenController {
     private void initialize() {
     }
     
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     * @return
-     */
-    public boolean isOkClicked() {
-        return okClicked;
-    }
-    
-
     /**
      * Determines if user entered valid city and state
      * @return true if the input is valid
@@ -136,12 +125,18 @@ public class LocationScreenController {
 							model.setState(view.getState());
 							screenController.showWeatherScreen(primaryStage, model);
 						}
+						else{
+							System.out.println("Error: invalid city/state detected");
+						}
 					} else { // user only entered zip code
 						if(isZipValid(view.getZipCode())) {
 							model.setZipCode(Integer.valueOf(view.getZipCode()));
 							//System.out.println(model.getZipCode());
 							//System.out.println(model.getLocation());
 							screenController.showWeatherScreen(primaryStage, model);
+						}
+						else{
+							System.out.println("Error: invalid zipcode");
 						}
 					}					
 				}
@@ -153,20 +148,16 @@ public class LocationScreenController {
 	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
 	 * @return Returns a handler object
 	 */
-	public EventHandler<ActionEvent> getSetListener() {
+	public EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
-			//private Stage primaryStage;
 			Stage primaryStage = getStage();
 			ScreenController sController = new ScreenController(primaryStage);
-
 			@Override
-			public void handle(Event event){
-				ScreenController screenController = new ScreenController(primaryStage);
-				System.out.println("Setting button");
-				screenController.showOptionsScreen(primaryStage);
-				//showOptionsScreen(primaryStage);//Replace .show with settings java class.
-				//showOptionsScreen(primaryStage);
-			}	
+			public void handle(Event event) {
+				// TODO Auto-generated method stub
+				sController.showOptionsScreen(primaryStage);
+			}
+			
 		};
 		return handler;
 	}
