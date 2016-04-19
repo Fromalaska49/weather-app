@@ -58,13 +58,20 @@ public class LocationScreenView extends Application  {
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
 		private LocationScreenController locationScreenController;
-		private LocationScreenController test;
-		
+	
+		/**
+		 * Constructor method for LocationScreenView
+		 * @param model
+		 * @param primaryStage
+		 */
 	public LocationScreenView(LocationScreenModel model, Stage primaryStage){
 		this.locationScreenController = new LocationScreenController(model, this, primaryStage);
 	}
+	
+	/**
+	 * Adds contents to the stage
+	 */
 	public void start(Stage primaryStage) {
-		//primaryStage.setMaximized(true);
 
 		
 		headerText =  TextBuilder.create().text("Weather App").build();
@@ -124,14 +131,26 @@ public class LocationScreenView extends Application  {
 
 	}
 	
+	/**
+	 * Returns city field
+	 * @return
+	 */
 	public String getCity(){
 		return cityField.getText();
 	}
 	
+	/**
+	 * Returns state field
+	 * @return
+	 */
 	public String getState(){
 		return stateField.getValue().toString();
 	}
 	
+	/**
+	 * Returns zip code field
+	 * @return
+	 */
 	public String getZipCode(){
 		return zipField.getText();
 	}

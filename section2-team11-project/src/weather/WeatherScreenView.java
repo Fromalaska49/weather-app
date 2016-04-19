@@ -33,6 +33,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
+import model.WeatherScreenModel;
 import javafx.scene.text.Font;
 
 public class WeatherScreenView {
@@ -54,23 +55,25 @@ public class WeatherScreenView {
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
+	WeatherScreenModel model;
 
 	//	private LocationScreenModel locModel;
 
-	public WeatherScreenView(){	
+	public WeatherScreenView(WeatherScreenModel wModel){	
+		model = wModel;
 	}
 	public void start(Stage stage, Scene scene) {
 
 		
 		headerText =  TextBuilder.create().text("Thunderstorm").build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		weatherNumerics =  TextBuilder.create().text("49" + Character.toString((char) 176) + "C").build();
-		weatherNumerics.setFont(Font.font ("Consolas",  100));
-		cityLabel =  TextBuilder.create().text("San Antonio").build();
+		setWeatherNumerics(TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build());
+		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
+		cityLabel =  TextBuilder.create().text(model.getCity()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
-		stateLabel =  TextBuilder.create().text("Texas").build();
+		stateLabel =  TextBuilder.create().text(model.getState()).build();
 		stateLabel.setFont(Font.font ("Helvetica",  20));
-		timeLabel =  TextBuilder.create().text("7:46 PM").build();
+		timeLabel =  TextBuilder.create().text(model.getTime()).build();
 		timeLabel.setFont(Font.font("Helvetica",  20));
 		//		weatherNumerics.setText("49� C");
 		//Image image = new Image("StartScreen.png");
@@ -135,7 +138,7 @@ public class WeatherScreenView {
 		//		topPanel.setHgrow(iv1, Priority.ALWAYS);
 		//	     topPanel.setHgrow(headerText, Priority.ALWAYS);
 
-		centerPanel.getChildren().add(weatherNumerics);
+		centerPanel.getChildren().add(getWeatherNumerics());
 		centerPanel.setAlignment(Pos.CENTER);
 
 		leftPanel.getChildren().add(cityLabel);
@@ -154,14 +157,14 @@ public class WeatherScreenView {
 
 		border.setTop(topPanel);
 		border.setRight(rightPanel);
-		border.setCenter(weatherNumerics);
+		border.setCenter(getWeatherNumerics());
 		border.setLeft(leftPanel);
 		border.setBottom(bottomPanel);
 
 
 		border.setAlignment(topPanel, Pos.CENTER);
 		border.setAlignment(rightPanel, Pos.CENTER_LEFT);
-		border.setAlignment(weatherNumerics, Pos.CENTER);
+		border.setAlignment(getWeatherNumerics(), Pos.CENTER);
 		border.setAlignment(leftPanel, Pos.BOTTOM_LEFT);
 		border.setAlignment(bottomPanel, Pos.CENTER);
 
@@ -189,8 +192,13 @@ public class WeatherScreenView {
 
 
 	}
-
-
-
+	
+	public Text getWeatherNumerics() {
+		return weatherNumerics;
+	}
+	
+	public void setWeatherNumerics(Text weatherNumerics) {
+		this.weatherNumerics = weatherNumerics;
+	}
 
 }

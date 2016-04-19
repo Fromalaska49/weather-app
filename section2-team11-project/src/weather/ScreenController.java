@@ -13,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
+import model.OptionsScreenModel;
 import model.WeatherScreenModel;
 
 public class ScreenController {
@@ -20,14 +21,25 @@ public class ScreenController {
 	private Stage primaryStage;
 	private LocationScreenModel locModel;
 	
+	/**
+	 * Constructor method
+	 * @param stage
+	 */
 	public ScreenController(Stage stage) {
 		this.primaryStage = stage;
 	}
 	
+	/**
+	 * Returns primary stage
+	 * @return
+	 */
 	public Stage getStage(){
     	return this.primaryStage;
     }
 	
+	/**
+	 * Initializes controller class
+	 */
 	private void initialize() {
 		
     }
@@ -49,66 +61,29 @@ public class ScreenController {
 	 * @param p
 	 */
 	public void showWeatherScreen(Stage p, LocationScreenModel lmodel) {
-		LoadAPI load = new LoadAPI(lmodel.getLocation());
-		ProcessData data = new ProcessData();
-		System.out.println(data.getTempF());  // 
-
-		
+		LoadAPI api = new LoadAPI(lmodel.getLocation());  
+		ProcessData data = new ProcessData();                   
+	
 		Scene scene = p.getScene();
-		WeatherScreenView wView = new WeatherScreenView();
-		WeatherScreenModel wModel = new WeatherScreenModel();
+		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
+		WeatherScreenView wView = new WeatherScreenView(wModel);
 		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
-
-	/*
-	 * This function was either incomplete or partially
-	 * deleted, so the name and parameters were instatiated
-	 * and the body was commented out so that the code
-	 * might hobble onwards through the merge commit.
+	/**
+	 * This method is called by LocationScreenController when the Settings button is clicked. 
+	 * @param p
 	 */
 	public void showOptionsScreen(Stage stage){
-		OptionsScreenView optView = new OptionsScreenView();
 		Scene scene = stage.getScene();
 		
-		System.out.println("Display Options Screen (Pretty Please)");
-		optView.start(primaryStage, scene);
+		OptionsScreenModel oModel = new OptionsScreenModel();
+		OptionsScreenView oView = new OptionsScreenView(oModel, stage);
+		OptionsScreenController oController = new OptionsScreenController(oView, oModel, stage);
 		
-	}
-	
-	/*
-	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
-	 * @return Returns a handler object
-	 */
-	/*
-	public EventHandler<ActionEvent> getSetListener(){
-		EventHandler handler = new EventHandler<Event>(){
-			//private Stage primaryStage;
-			Stage primaryStage = getStage();
-			ScreenController sController = new ScreenController(primaryStage);
-
-			@Override
-			public void handle(Event event){
-				ScreenController screenController = new ScreenController(primaryStage);
-				System.out.println("Setting button");
-				ScreenController.showOptionsScreen(primaryStage);
-				//showOptionsScreen(primaryStage);//Replace .show with settings java class.
-				//showOptionsScreen(primaryStage);
-			}	
-		};
-		return handler;
-	}
-	*/
-	
-	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
-		EventHandler handler = new EventHandler<Event>(){
-			
-			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
-			}
-		};
-		return handler;
+		System.out.println("Display Options Screen (Pretty Please)");
+		oView.start(primaryStage, scene);
+		
 	}
 	}
