@@ -38,27 +38,28 @@ public class OptionsScreenModel {
 	
 	private Formatter output;
 	private String tempOpt;
+	private String cityOpt;
+	private String stateOpt;
+	private String zipOpt;
 	private Scanner input;
-	private String buff;
+	private String configTemp;
+	private String configCity;
+	private String configState;
+	private String configZip;
 	/**
 	 * 
 	 */
 	public OptionsScreenModel() {
 		// TODO Auto-generated constructor stub
 		readFromConfig();
-    	if(buff.equals("Temprature Setting: F")){
-    	this.tempOpt = "F";
-    	//System.out.println("I found F");
-    	}
-    	else if(buff.equals("Temprature Setting: C")){
-    		this.tempOpt = "C";
-        	//System.out.println("I found C");
-    	}
-    	else{//No Config File or Config miss formated
-    		this.tempOpt= "F";
-    		writeToConfig();//Create config if config missing
-        	//System.out.println("I found Nothing");
-    	}
+    	
+    	tempOpt = configTemp.substring(21);
+    	cityOpt = configCity.substring(6);
+    	//System.out.println(cityOpt);
+    	stateOpt = configState.substring(7);
+    	//System.out.println(stateOpt);
+    	zipOpt = configZip.substring(5);
+    	//System.out.println(zipOpt);
 	}
 	
 	public void setTempOpt(String temp){
@@ -69,6 +70,29 @@ public class OptionsScreenModel {
 		return this.tempOpt;
 	}
 	
+	public String getCityOpt(){
+		return this.cityOpt;
+	}
+	
+	public void setCityOpt(String city){
+		this.cityOpt = city;
+	}
+	
+	public String getStateOpt(){
+		return this.stateOpt;
+	}
+	
+	public void setStateOpt(String state){
+		this.stateOpt = state;
+	}
+	
+	public String getZipOpt(){
+		return this.zipOpt;
+	}
+	
+	public void setZipOpt(String zip){
+		this.zipOpt = zip;
+	}
 	
 	public void openFileW(){
     	try{
@@ -94,9 +118,9 @@ public class OptionsScreenModel {
     	openFileW();
     	try{
     		
-    	output.format("Temprature Setting: %s", this.tempOpt);
-    	
-    	//System.out.println("I printed TempSetting: " + this.tempOpt);
+    	output.format("Temperature Setting: %s\nCity: %s\nState: %s\nZip: %s", this.tempOpt, this.cityOpt, this.stateOpt, this.zipOpt);
+
+    	//System.out.println(this.tempOpt + " " + this.cityOpt + " " + this.stateOpt + " " + this.zipOpt);
     	
     	}catch (SecurityException securityException) {
             System.err.println("Write permission denied. Terminating.");
@@ -109,10 +133,11 @@ public class OptionsScreenModel {
     public void readFromConfig(){
     	openFileR();
     	try {
-            while (input.hasNextLine()) { 
-            buff = input.nextLine();
-            //System.out.println(buff);
-            }
+            configTemp = input.nextLine();
+            configCity = input.nextLine();
+            configState = input.nextLine();
+            configZip = input.nextLine();
+            
         } catch (NoSuchElementException elementException) {
             System.err.println("File improperly formed. Terminating.");
         } catch (IllegalStateException stateException) {
