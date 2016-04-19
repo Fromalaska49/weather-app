@@ -86,4 +86,15 @@ public class ScreenController {
 		oView.start(primaryStage, scene);
 		
 	}
+	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
+		EventHandler handler = new EventHandler<Event>(){
+			
+			public void handle(Event event){
+				stagePrev.setScene(scenePrev);
+				stagePrev.show();
+			}
+		};
+		return handler;
+	}
+
 	}
