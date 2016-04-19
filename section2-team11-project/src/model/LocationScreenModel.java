@@ -82,7 +82,6 @@ public class LocationScreenModel {
 		else{
 			System.out.println("Error: no location found (in LocationScreenModel)");
 		}
-		System.out.println("location = "+location+";");
 		return location;
 	}
 }
