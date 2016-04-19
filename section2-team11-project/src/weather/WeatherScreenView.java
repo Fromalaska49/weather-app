@@ -162,6 +162,7 @@ public class WeatherScreenView {
 
 
 	}
+	
 	public Text getWeatherNumerics() {
 		return weatherNumerics;
 	}

@@ -125,12 +125,18 @@ public class LocationScreenController {
 							model.setState(view.getState());
 							screenController.showWeatherScreen(primaryStage, model);
 						}
+						else{
+							System.out.println("Error: invalid city/state detected");
+						}
 					} else { // user only entered zip code
 						if(isZipValid(view.getZipCode())) {
 							model.setZipCode(Integer.valueOf(view.getZipCode()));
 							//System.out.println(model.getZipCode());
 							//System.out.println(model.getLocation());
 							screenController.showWeatherScreen(primaryStage, model);
+						}
+						else{
+							System.out.println("Error: invalid zipcode");
 						}
 					}					
 				}
