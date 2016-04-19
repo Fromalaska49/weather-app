@@ -38,11 +38,11 @@
 		<estimated>
 		</estimated>
 		<station_id>KTXSANAN406</station_id>
-		<observation_time>Last Updated on April 18, 5:00 PM CDT</observation_time>
-		<observation_time_rfc822>Mon, 18 Apr 2016 17:00:52 -0500</observation_time_rfc822>
-		<observation_epoch>1461016852</observation_epoch>
-		<local_time_rfc822>Mon, 18 Apr 2016 17:02:29 -0500</local_time_rfc822>
-		<local_epoch>1461016949</local_epoch>
+		<observation_time>Last Updated on April 18, 7:01 PM CDT</observation_time>
+		<observation_time_rfc822>Mon, 18 Apr 2016 19:01:49 -0500</observation_time_rfc822>
+		<observation_epoch>1461024109</observation_epoch>
+		<local_time_rfc822>Mon, 18 Apr 2016 19:09:17 -0500</local_time_rfc822>
+		<local_epoch>1461024557</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
@@ -51,15 +51,15 @@
 		<temp_f>70.9</temp_f>
 		<temp_c>21.6</temp_c>
 		<relative_humidity>79%</relative_humidity>
-		<wind_string>From the SSW at 2.7 MPH</wind_string>
-		<wind_dir>SSW</wind_dir>
-		<wind_degrees>202</wind_degrees>
-		<wind_mph>2.7</wind_mph>
+		<wind_string>From the ENE at 3.7 MPH</wind_string>
+		<wind_dir>ENE</wind_dir>
+		<wind_degrees>67</wind_degrees>
+		<wind_mph>3.7</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
-		<wind_kph>4.3</wind_kph>
+		<wind_kph>6.0</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1016</pressure_mb>
-		<pressure_in>30.02</pressure_in>
+		<pressure_mb>1015</pressure_mb>
+		<pressure_in>29.99</pressure_in>
 		<pressure_trend>+</pressure_trend>
 		
 		<dewpoint_string>64 F (18 C)</dewpoint_string>
@@ -82,7 +82,7 @@
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation></solarradiation>
-		<UV>2</UV>
+		<UV>0</UV>
 		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>-999.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
