@@ -21,14 +21,25 @@ public class ScreenController {
 	private Stage primaryStage;
 	private LocationScreenModel locModel;
 	
+	/**
+	 * Constructor method
+	 * @param stage
+	 */
 	public ScreenController(Stage stage) {
 		this.primaryStage = stage;
 	}
 	
+	/**
+	 * Returns primary stage
+	 * @return
+	 */
 	public Stage getStage(){
     	return this.primaryStage;
     }
 	
+	/**
+	 * Initializes controller class
+	 */
 	private void initialize() {
 		
     }

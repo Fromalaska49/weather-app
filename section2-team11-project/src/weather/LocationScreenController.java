@@ -80,6 +80,11 @@ public class LocationScreenController {
         } 
     }
     
+    /**
+     * Determines if user entered a valid zip code
+     * @param s
+     * @return
+     */
     private boolean isZipValid(String s) {
     		String errorMessage = "";
     		if (s == null || s.isEmpty()) 
@@ -109,7 +114,10 @@ public class LocationScreenController {
         this.mainApp = mainApp;
     }
 
-
+    /**
+     * Event listener for ok button. If pressed will transition to Weather Screen.
+     * @return
+     */
 	public EventHandler<ActionEvent> getOkListener() {
 		EventHandler handler = new EventHandler<Event>() {
 
