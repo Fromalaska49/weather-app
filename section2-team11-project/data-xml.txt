@@ -38,58 +38,29 @@
 		<estimated>
 		</estimated>
 		<station_id>KTXSANAN406</station_id>
-<<<<<<< HEAD
-		<observation_time>Last Updated on April 19, 12:28 PM CDT</observation_time>
-		<observation_time_rfc822>Tue, 19 Apr 2016 12:28:09 -0500</observation_time_rfc822>
-		<observation_epoch>1461086889</observation_epoch>
-		<local_time_rfc822>Tue, 19 Apr 2016 12:28:16 -0500</local_time_rfc822>
-		<local_epoch>1461086896</local_epoch>
-=======
-		<observation_time>Last Updated on April 18, 7:01 PM CDT</observation_time>
-		<observation_time_rfc822>Mon, 18 Apr 2016 19:01:49 -0500</observation_time_rfc822>
-		<observation_epoch>1461024109</observation_epoch>
-		<local_time_rfc822>Mon, 18 Apr 2016 19:09:17 -0500</local_time_rfc822>
-		<local_epoch>1461024557</local_epoch>
->>>>>>> refs/remotes/origin/master
+		<observation_time>Last Updated on April 19, 5:45 PM CDT</observation_time>
+		<observation_time_rfc822>Tue, 19 Apr 2016 17:45:20 -0500</observation_time_rfc822>
+		<observation_epoch>1461105920</observation_epoch>
+		<local_time_rfc822>Tue, 19 Apr 2016 17:52:42 -0500</local_time_rfc822>
+		<local_epoch>1461106362</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
 		<weather>Overcast</weather>
-<<<<<<< HEAD
-		<temperature_string>74.5 F (23.6 C)</temperature_string>
-		<temp_f>74.5</temp_f>
-		<temp_c>23.6</temp_c>
-		<relative_humidity>71%</relative_humidity>
-		<wind_string>From the NNE at 3.2 MPH</wind_string>
+		<temperature_string>74.8 F (23.8 C)</temperature_string>
+		<temp_f>74.8</temp_f>
+		<temp_c>23.8</temp_c>
+		<relative_humidity>69%</relative_humidity>
+		<wind_string>From the NNE at 2.2 MPH</wind_string>
 		<wind_dir>NNE</wind_dir>
 		<wind_degrees>22</wind_degrees>
-		<wind_mph>3.2</wind_mph>
-=======
-		<temperature_string>70.9 F (21.6 C)</temperature_string>
-		<temp_f>70.9</temp_f>
-		<temp_c>21.6</temp_c>
-		<relative_humidity>79%</relative_humidity>
-		<wind_string>From the ENE at 3.7 MPH</wind_string>
-		<wind_dir>ENE</wind_dir>
-		<wind_degrees>67</wind_degrees>
-		<wind_mph>3.7</wind_mph>
->>>>>>> refs/remotes/origin/master
+		<wind_mph>2.2</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
-<<<<<<< HEAD
-		<wind_kph>5.1</wind_kph>
-=======
-		<wind_kph>6.0</wind_kph>
->>>>>>> refs/remotes/origin/master
+		<wind_kph>3.5</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-<<<<<<< HEAD
-		<pressure_mb>1017</pressure_mb>
-		<pressure_in>30.03</pressure_in>
+		<pressure_mb>1014</pressure_mb>
+		<pressure_in>29.94</pressure_in>
 		<pressure_trend>-</pressure_trend>
-=======
-		<pressure_mb>1015</pressure_mb>
-		<pressure_in>29.99</pressure_in>
-		<pressure_trend>+</pressure_trend>
->>>>>>> refs/remotes/origin/master
 		
 		<dewpoint_string>64 F (18 C)</dewpoint_string>
 		<dewpoint_f>64</dewpoint_f>
@@ -105,29 +76,19 @@
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-<<<<<<< HEAD
-        <feelslike_string>74.5 F (23.6 C)</feelslike_string>
-        <feelslike_f>74.5</feelslike_f>
-        <feelslike_c>23.6</feelslike_c>
-=======
-        <feelslike_string>70.9 F (21.6 C)</feelslike_string>
-        <feelslike_f>70.9</feelslike_f>
-        <feelslike_c>21.6</feelslike_c>
->>>>>>> refs/remotes/origin/master
+        <feelslike_string>74.8 F (23.8 C)</feelslike_string>
+        <feelslike_f>74.8</feelslike_f>
+        <feelslike_c>23.8</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation></solarradiation>
-<<<<<<< HEAD
-		<UV>3</UV>
-=======
-		<UV>0</UV>
->>>>>>> refs/remotes/origin/master
+		<UV>2</UV>
 		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>-999.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
-		<precip_today_string>0.27 in (7 mm)</precip_today_string>
-		<precip_today_in>0.27</precip_today_in>
-		<precip_today_metric>7</precip_today_metric>
+		<precip_today_string>0.00 in (0 mm)</precip_today_string>
+		<precip_today_in>0.00</precip_today_in>
+		<precip_today_metric>0</precip_today_metric>
 		
 		
 		

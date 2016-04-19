@@ -78,11 +78,11 @@ public class ScreenController {
 	public void showOptionsScreen(Stage stage){
 		Scene scene = stage.getScene();
 		
-		OptionsScreenModel oModel = new OptionsScreenModel();
-		OptionsScreenView oView = new OptionsScreenView(oModel, stage);
-		OptionsScreenController oController = new OptionsScreenController(oView, oModel, stage);
 		
-		System.out.println("Display Options Screen (Pretty Please)");
+		OptionsScreenView oView = new OptionsScreenView(stage);
+		OptionsScreenController oController = new OptionsScreenController(oView, stage);
+		
+		//System.out.println("Display Options Screen (Pretty Please)");
 		oView.start(primaryStage, scene);
 		
 	}
