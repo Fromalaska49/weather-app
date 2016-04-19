@@ -50,6 +50,7 @@ public class WeatherScreenView {
 	private VBox centerPanel;
 	private VBox leftPanel;
 	private GridPane bottomPanel;
+	private GridPane topGrid;
 	private Button okBtn = new Button();
 	private Button toggleCF = new Button();
 	private Button toggleHW = new Button();
@@ -77,6 +78,18 @@ public class WeatherScreenView {
 		timeLabel.setFont(Font.font("Helvetica",  20));
 		//		weatherNumerics.setText("49� C");
 		//Image image = new Image("StartScreen.png");
+		
+
+    	WeatherScreenController wController = new WeatherScreenController(this, model);
+    	Button backButton = new Button("< Back");
+    	backButton.setOnAction(wController.getBackListener(stage, scene));
+    	topGrid = new GridPane();
+    	topGrid.setPadding(new Insets(10, 10, 10, 10));
+    	topGrid.setHgap(10);
+    	topGrid.setVgap(10);
+    	topGrid.setGridLinesVisible(false);
+    	topGrid.setAlignment(Pos.TOP_LEFT);
+    	topGrid.add(backButton, 0, 0);
 
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
@@ -99,6 +112,7 @@ public class WeatherScreenView {
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
 
+		topPanel.getChildren().add(topGrid);
 		topPanel.getChildren().add(iv1);
 		topPanel.getChildren().add(headerText);
 		topPanel.setAlignment(Pos.CENTER);
