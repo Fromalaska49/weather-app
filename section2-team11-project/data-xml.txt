@@ -12,59 +12,59 @@
 		<link>http://www.wunderground.com</link>
 		</image>
 		<display_location>
-		<full>San Antonio, TX</full>
-		<city>San Antonio</city>
-		<state>TX</state>
-		<state_name>Texas</state_name>
+		<full>Anchorage, AK</full>
+		<city>Anchorage</city>
+		<state>AK</state>
+		<state_name>Alaska</state_name>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<zip>78249</zip>
+		<zip>99508</zip>
 		<magic>1</magic>
 		<wmo>99999</wmo>
-		<latitude>29.56793976</latitude>
-		<longitude>-98.61299896</longitude>
-		<elevation>288.00000000</elevation>
+		<latitude>61.20191956</latitude>
+		<longitude>-149.81645203</longitude>
+		<elevation>52.00000000</elevation>
 		</display_location>
 		<observation_location>
-		<full>University Heights Trent Ranch, San Antonio, Texas</full>
-		<city>University Heights Trent Ranch, San Antonio</city>
-		<state>Texas</state>
+		<full>The Spurlocks at Airport Heights, Anchorage, Alaska</full>
+		<city>The Spurlocks at Airport Heights, Anchorage</city>
+		<state>Alaska</state>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<latitude>29.570229</latitude>
-		<longitude>-98.602570</longitude>
-		<elevation>997 ft</elevation>
+		<latitude>61.207767</latitude>
+		<longitude>-149.817322</longitude>
+		<elevation>124 ft</elevation>
 		</observation_location>
 		<estimated>
 		</estimated>
-		<station_id>KTXSANAN406</station_id>
-		<observation_time>Last Updated on April 19, 5:45 PM CDT</observation_time>
-		<observation_time_rfc822>Tue, 19 Apr 2016 17:45:20 -0500</observation_time_rfc822>
-		<observation_epoch>1461105920</observation_epoch>
-		<local_time_rfc822>Tue, 19 Apr 2016 17:52:42 -0500</local_time_rfc822>
-		<local_epoch>1461106362</local_epoch>
-		<local_tz_short>CDT</local_tz_short>
-		<local_tz_long>America/Chicago</local_tz_long>
-		<local_tz_offset>-0500</local_tz_offset>
+		<station_id>KAKANCHO21</station_id>
+		<observation_time>Last Updated on April 19, 3:49 PM AKDT</observation_time>
+		<observation_time_rfc822>Tue, 19 Apr 2016 15:49:22 -0800</observation_time_rfc822>
+		<observation_epoch>1461109762</observation_epoch>
+		<local_time_rfc822>Tue, 19 Apr 2016 15:49:35 -0800</local_time_rfc822>
+		<local_epoch>1461109775</local_epoch>
+		<local_tz_short>AKDT</local_tz_short>
+		<local_tz_long>America/Anchorage</local_tz_long>
+		<local_tz_offset>-0800</local_tz_offset>
 		<weather>Overcast</weather>
-		<temperature_string>74.8 F (23.8 C)</temperature_string>
-		<temp_f>74.8</temp_f>
-		<temp_c>23.8</temp_c>
-		<relative_humidity>69%</relative_humidity>
-		<wind_string>From the NNE at 2.2 MPH</wind_string>
-		<wind_dir>NNE</wind_dir>
-		<wind_degrees>22</wind_degrees>
-		<wind_mph>2.2</wind_mph>
-		<wind_gust_mph>0</wind_gust_mph>
-		<wind_kph>3.5</wind_kph>
-		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1014</pressure_mb>
-		<pressure_in>29.94</pressure_in>
-		<pressure_trend>-</pressure_trend>
+		<temperature_string>53.1 F (11.7 C)</temperature_string>
+		<temp_f>53.1</temp_f>
+		<temp_c>11.7</temp_c>
+		<relative_humidity>30%</relative_humidity>
+		<wind_string>From the SE at 2.0 MPH Gusting to 2.5 MPH</wind_string>
+		<wind_dir>SE</wind_dir>
+		<wind_degrees>128</wind_degrees>
+		<wind_mph>2.0</wind_mph>
+		<wind_gust_mph>2.5</wind_gust_mph>
+		<wind_kph>3.2</wind_kph>
+		<wind_gust_kph>4.0</wind_gust_kph>
+		<pressure_mb>1019</pressure_mb>
+		<pressure_in>30.09</pressure_in>
+		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>64 F (18 C)</dewpoint_string>
-		<dewpoint_f>64</dewpoint_f>
-		<dewpoint_c>18</dewpoint_c>
+		<dewpoint_string>22 F (-5 C)</dewpoint_string>
+		<dewpoint_f>22</dewpoint_f>
+		<dewpoint_c>-5</dewpoint_c>
 		
 		
 		<heat_index_string>NA</heat_index_string>
@@ -76,15 +76,15 @@
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>74.8 F (23.8 C)</feelslike_string>
-        <feelslike_f>74.8</feelslike_f>
-        <feelslike_c>23.8</feelslike_c>
+        <feelslike_string>53.1 F (11.7 C)</feelslike_string>
+        <feelslike_f>53.1</feelslike_f>
+        <feelslike_c>11.7</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
-		<solarradiation></solarradiation>
-		<UV>2</UV>
-		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
-		<precip_1hr_in>-999.00</precip_1hr_in>
+		<solarradiation>209</solarradiation>
+		<UV>1.0</UV>
+		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
+		<precip_1hr_in>0.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
 		<precip_today_string>0.00 in (0 mm)</precip_today_string>
 		<precip_today_in>0.00</precip_today_in>
@@ -94,11 +94,11 @@
 		
 		<icon>cloudy</icon>
 		<icon_url>http://icons.wxug.com/i/c/k/cloudy.gif</icon_url>
-		<forecast_url>http://www.wunderground.com/US/TX/San_Antonio.html</forecast_url>
+		<forecast_url>http://www.wunderground.com/US/AK/Anchorage.html</forecast_url>
         
-        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXSANAN406</history_url>
+        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KAKANCHO21</history_url>
         
-		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=29.570229,-98.602570</ob_url>
+		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=61.207767,-149.817322</ob_url>
 	</current_observation>
 
 		

@@ -50,27 +50,40 @@ public class OptionsScreenView {
 	private Scanner input;
 	private String buff;
 	private OptionsScreenController OptionsScreenController;
-	private OptionsScreenModel OSmodel;
 	private Label cityLabel;
 	private Label stateLabel;
 	private Label zipLabel;
 	private Label orLabel;
-	private static TextField zipField;
-	private static TextField cityField;;
-	private static ChoiceBox<String> stateField;
+	private TextField zipField;
+	private TextField cityField;
+	private ChoiceBox<String>stateField;
+	
+
 	
 	public OptionsScreenView(Stage primaryStage) {
 		this.OptionsScreenController = new OptionsScreenController(this, primaryStage);
 	}
 
 
-	public void start(Stage primaryStage, Scene scene) {
+	//public void start(Stage primaryStage, Scene scene) {
+
+
+	public OptionsScreenView(OptionsScreenModel model, Stage primaryStage){	
+	this.OptionsScreenController = new OptionsScreenController(this, primaryStage);
+	}
+
+	public OptionsScreenView(){	
+		// do nothing
+	}
+
+    public void start(Stage primaryStage, Scene scene) {
+    	
 
     	Stage stagePrev = primaryStage;
     	Scene scenePrev = scene;
     	primaryStage.setTitle("Options Window");    
     	tempLabel = new Label("Temprature Unit: ");
-    	OSmodel = new OptionsScreenModel();
+    	OptionsScreenModel OSmodel = new OptionsScreenModel();
     	Button backBtn = new Button("Back");
     	Button saveBtn = new Button("Save");
     	Group root = new Group();//Added for Radar
