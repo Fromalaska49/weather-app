@@ -3,10 +3,19 @@ package weather;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.Formatter;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import com.sun.prism.Image;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -14,12 +23,16 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -62,7 +75,9 @@ public class OptionsScreenView {
     	OSmodel = new OptionsScreenModel();
     	Button backBtn = new Button("Back");
     	Button saveBtn = new Button("Save");
-
+    	Group root = new Group();//Added for Radar
+    	
+    	
     	tempField = new ChoiceBox<String>(FXCollections.observableArrayList("F", "C"));
     	
 
@@ -78,8 +93,34 @@ public class OptionsScreenView {
 		zipField = new TextField();
 		stateField.setPrefWidth(80);
 		cityField.setPrefWidth(80);
-    	
+    	/*
+		//start
+		URL url;
+		Icon icon;
+	    JLabel label;
+		try {
+			url = new URL("http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/78249.gif?width=300&height=300&newmaps=1&rainsnow=1&timelabel=0&timelabel.x=0&timelabel.y=0&num=10&delay=50");
+			icon = new ImageIcon(url);
+		    label = new JLabel(icon);
+		    
+		    Image img = new Image("javafx.png");
+		    final ImageView imv = new ImageView();
+	    	final HBox pictureRegion = new HBox();
+		    
+		    JFrame f = new JFrame("Animation");
+		    f.getContentPane().add(label);
+		    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		    f.pack();
+		    f.setLocationRelativeTo(null);
+		    f.setVisible(true);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+	    */
+		
 		grid = new GridPane();
+		//grid.add(label, 0, 0);
 		grid.add(cityLabel, 0, 0);
 		grid.add(stateLabel, 0, 1);
 		grid.add(orLabel, 0, 2);
@@ -99,9 +140,12 @@ public class OptionsScreenView {
     	zipField.setText(OSmodel.getZipOpt());
     	
     	border = new BorderPane();
-    	
     	border.setCenter(grid);
-
+    	
+    	
+        
+       // pictureRegion.getChildren().add((Node) icon);
+       // grid.add(pictureRegion, 1, 1);
     	
     	Scene Optscene = new Scene(border, 800, 700);
     	
