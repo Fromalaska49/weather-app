@@ -26,28 +26,34 @@ public class MainApp extends Application {
     private Stage primaryStage;
 
     @Override
+    /**
+     * Launches application by calling on Screen Controller class
+     */
     public void start(Stage primaryStage) {
-    	//LocationScreenModel model = new LocationScreenModel();
-    	//LocationScreenView view = new LocationScreenView();
-    	//LocationScreenController controller = new LocationScreenController(model, view);
+    	
     ScreenController sController = new ScreenController(primaryStage);
     sController.showLocationScreen(primaryStage);
-    	
-    	//view.start(primaryStage);
-    	
     		
     }
+    
+    /**
+     * Returns primary stage
+     * @return
+     */
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    /**
+     * main method
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
         String location = "78249";
         
         //Create an object to handle the data
         LoadAPI data = new LoadAPI(location);
-        
-        
+     
     }
 }
