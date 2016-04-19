@@ -12,59 +12,59 @@
 		<link>http://www.wunderground.com</link>
 		</image>
 		<display_location>
-		<full>Schenectady, NY</full>
-		<city>Schenectady</city>
-		<state>NY</state>
-		<state_name>New York</state_name>
+		<full>San Antonio, TX</full>
+		<city>San Antonio</city>
+		<state>TX</state>
+		<state_name>Texas</state_name>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<zip>12345</zip>
+		<zip>78249</zip>
 		<magic>1</magic>
 		<wmo>99999</wmo>
-		<latitude>42.81407928</latitude>
-		<longitude>-73.93997955</longitude>
-		<elevation>78.00000000</elevation>
+		<latitude>29.56793976</latitude>
+		<longitude>-98.61299896</longitude>
+		<elevation>288.00000000</elevation>
 		</display_location>
 		<observation_location>
-		<full>APRSWXNET, Schenectady, New York</full>
-		<city>APRSWXNET, Schenectady</city>
-		<state>New York</state>
+		<full>University Heights Trent Ranch, San Antonio, Texas</full>
+		<city>University Heights Trent Ranch, San Antonio</city>
+		<state>Texas</state>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<latitude>42.817581</latitude>
-		<longitude>-73.927963</longitude>
-		<elevation>344 ft</elevation>
+		<latitude>29.570229</latitude>
+		<longitude>-98.602570</longitude>
+		<elevation>997 ft</elevation>
 		</observation_location>
 		<estimated>
 		</estimated>
-		<station_id>MD3701</station_id>
-		<observation_time>Last Updated on April 19, 12:50 PM EDT</observation_time>
-		<observation_time_rfc822>Tue, 19 Apr 2016 12:50:00 -0400</observation_time_rfc822>
-		<observation_epoch>1461084600</observation_epoch>
-		<local_time_rfc822>Tue, 19 Apr 2016 13:16:12 -0400</local_time_rfc822>
-		<local_epoch>1461086172</local_epoch>
-		<local_tz_short>EDT</local_tz_short>
-		<local_tz_long>America/New_York</local_tz_long>
-		<local_tz_offset>-0400</local_tz_offset>
-		<weather>Clear</weather>
-		<temperature_string>61 F (16.1 C)</temperature_string>
-		<temp_f>61</temp_f>
-		<temp_c>16.1</temp_c>
-		<relative_humidity>43%</relative_humidity>
-		<wind_string>From the NW at 8 MPH Gusting to 20.0 MPH</wind_string>
-		<wind_dir>NW</wind_dir>
-		<wind_degrees>309</wind_degrees>
-		<wind_mph>8</wind_mph>
-		<wind_gust_mph>20.0</wind_gust_mph>
-		<wind_kph>12.9</wind_kph>
-		<wind_gust_kph>32.2</wind_gust_kph>
-		<pressure_mb>1018</pressure_mb>
-		<pressure_in>30.07</pressure_in>
+		<station_id>KTXSANAN406</station_id>
+		<observation_time>Last Updated on April 19, 12:28 PM CDT</observation_time>
+		<observation_time_rfc822>Tue, 19 Apr 2016 12:28:09 -0500</observation_time_rfc822>
+		<observation_epoch>1461086889</observation_epoch>
+		<local_time_rfc822>Tue, 19 Apr 2016 12:28:16 -0500</local_time_rfc822>
+		<local_epoch>1461086896</local_epoch>
+		<local_tz_short>CDT</local_tz_short>
+		<local_tz_long>America/Chicago</local_tz_long>
+		<local_tz_offset>-0500</local_tz_offset>
+		<weather>Overcast</weather>
+		<temperature_string>74.5 F (23.6 C)</temperature_string>
+		<temp_f>74.5</temp_f>
+		<temp_c>23.6</temp_c>
+		<relative_humidity>71%</relative_humidity>
+		<wind_string>From the NNE at 3.2 MPH</wind_string>
+		<wind_dir>NNE</wind_dir>
+		<wind_degrees>22</wind_degrees>
+		<wind_mph>3.2</wind_mph>
+		<wind_gust_mph>0</wind_gust_mph>
+		<wind_kph>5.1</wind_kph>
+		<wind_gust_kph>0</wind_gust_kph>
+		<pressure_mb>1017</pressure_mb>
+		<pressure_in>30.03</pressure_in>
 		<pressure_trend>-</pressure_trend>
 		
-		<dewpoint_string>38 F (3 C)</dewpoint_string>
-		<dewpoint_f>38</dewpoint_f>
-		<dewpoint_c>3</dewpoint_c>
+		<dewpoint_string>64 F (18 C)</dewpoint_string>
+		<dewpoint_f>64</dewpoint_f>
+		<dewpoint_c>18</dewpoint_c>
 		
 		
 		<heat_index_string>NA</heat_index_string>
@@ -76,29 +76,29 @@
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>61 F (16.1 C)</feelslike_string>
-        <feelslike_f>61</feelslike_f>
-        <feelslike_c>16.1</feelslike_c>
+        <feelslike_string>74.5 F (23.6 C)</feelslike_string>
+        <feelslike_f>74.5</feelslike_f>
+        <feelslike_c>23.6</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
-		<solarradiation>889</solarradiation>
-		<UV>9</UV>
-		<precip_1hr_string>0.00 in ( 0 mm)</precip_1hr_string>
-		<precip_1hr_in>0.00</precip_1hr_in>
+		<solarradiation></solarradiation>
+		<UV>3</UV>
+		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
+		<precip_1hr_in>-999.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
-		<precip_today_string> in ( mm)</precip_today_string>
-		<precip_today_in></precip_today_in>
-		<precip_today_metric></precip_today_metric>
+		<precip_today_string>0.00 in (0 mm)</precip_today_string>
+		<precip_today_in>0.00</precip_today_in>
+		<precip_today_metric>0</precip_today_metric>
 		
 		
 		
-		<icon>clear</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/clear.gif</icon_url>
-		<forecast_url>http://www.wunderground.com/US/NY/Schenectady.html</forecast_url>
+		<icon>cloudy</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/cloudy.gif</icon_url>
+		<forecast_url>http://www.wunderground.com/US/TX/San_Antonio.html</forecast_url>
         
-        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MD3701</history_url>
+        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXSANAN406</history_url>
         
-		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=42.817581,-73.927963</ob_url>
+		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=29.570229,-98.602570</ob_url>
 	</current_observation>
 
 		

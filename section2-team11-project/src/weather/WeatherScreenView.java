@@ -55,6 +55,7 @@ public class WeatherScreenView {
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
+	private 
 	WeatherScreenModel model;
 
 	//	private LocationScreenModel locModel;
@@ -95,24 +96,31 @@ public class WeatherScreenView {
 		iv1.setPreserveRatio(true);
 
 		iv2.setImage(image);
+		iv2.setFitWidth(100);
 		iv2.setPreserveRatio(true);
 
 		iv3.setImage(image);
+		iv3.setFitWidth(100);
 		iv3.setPreserveRatio(true);
 
 		iv4.setImage(image);
+		iv4.setFitWidth(100);
 		iv4.setPreserveRatio(true);
 
 		iv5.setImage(image);
+		iv5.setFitWidth(100);
 		iv5.setPreserveRatio(true);
 
 		iv6.setImage(image);
+		iv6.setFitWidth(100);
 		iv6.setPreserveRatio(true);
 
 		iv7.setImage(image);
+		iv7.setFitWidth(100);
 		iv7.setPreserveRatio(true);
 
 		iv8.setImage(image);
+		iv8.setFitWidth(100);
 		iv8.setPreserveRatio(true);
 		toggleCF.setText("Toggle C/F");
 		toggleHW.setText("Toggle Hourly/Weekly");
@@ -146,13 +154,13 @@ public class WeatherScreenView {
 		leftPanel.getChildren().add(timeLabel);
 		leftPanel.setAlignment(Pos.BOTTOM_LEFT);
 		
-		bottomPanel.add(iv2, 0, 0);
-		bottomPanel.add(iv3, 1, 0);
-		bottomPanel.add(iv4, 2, 0);
-		bottomPanel.add(iv5, 3, 0);
-		bottomPanel.add(iv6, 4, 0);
-		bottomPanel.add(iv7, 5, 0);
-		bottomPanel.add(iv8, 6, 0);
+		bottomPanel.add(iv2, 0, 1);
+		bottomPanel.add(iv3, 1, 1);
+		bottomPanel.add(iv4, 2, 1);
+		bottomPanel.add(iv5, 3, 1);
+		bottomPanel.add(iv6, 4, 1);
+		bottomPanel.add(iv7, 5, 1);
+		bottomPanel.add(iv8, 6, 1);
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);
