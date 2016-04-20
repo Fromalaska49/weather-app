@@ -226,7 +226,10 @@ public class ProcessData {
 	public String getForecastIconURL(int index) {
 		index++;
 		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/icon_url/text()";
-		return getNode(XPath, "data-forecast-xml.txt");
+		String url = getNode(XPath, "data-forecast-xml.txt");
+		String imageType = "i";
+		url = url.substring(0, 26) + imageType + url.substring(27);
+		return url;
 	}
 	
 	/*
