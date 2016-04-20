@@ -59,7 +59,7 @@ public class LocationScreenView extends Application  {
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
 		private LocationScreenController locationScreenController;
-		private OptionsScreenModel OSmodel;
+		/*private OptionsScreenModel OSmodel;*/
 		/**
 		 * Constructor method for LocationScreenView
 		 * @param model
@@ -111,10 +111,10 @@ public class LocationScreenView extends Application  {
 		bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
 		
 		//Creates Options Model which pulls settings from config file
-		OSmodel = new OptionsScreenModel();
+		/*OSmodel = new OptionsScreenModel();
     	cityField.setText(OSmodel.getCityOpt());
     	stateField.setValue(OSmodel.getStateOpt());
-    	zipField.setText(OSmodel.getZipOpt());
+    	zipField.setText(OSmodel.getZipOpt());*/
 		
 
 		border = new BorderPane();
