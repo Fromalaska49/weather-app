@@ -46,6 +46,8 @@ public class OptionsScreenModel {
 	private String configCity;
 	private String configState;
 	private String configZip;
+	private String configWindOpt;
+	private String windOpt;
 	/**
 	 * 
 	 */
@@ -59,6 +61,7 @@ public class OptionsScreenModel {
     	stateOpt = configState.substring(7);
     	//System.out.println(stateOpt);
     	zipOpt = configZip.substring(5);
+    	windOpt = configWindOpt.substring(12);
     	//System.out.println(zipOpt);
 	}
 	
@@ -94,6 +97,14 @@ public class OptionsScreenModel {
 		this.zipOpt = zip;
 	}
 	
+	public void setWindOpt(String wind){
+		this.windOpt = wind;
+	}
+	
+	public String getWindOpt(){
+		return this.windOpt;
+	}
+	
 	public void openFileW(){
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
@@ -118,7 +129,7 @@ public class OptionsScreenModel {
     	openFileW();
     	try{
     		
-    	output.format("Temperature Setting: %s\nCity: %s\nState: %s\nZip: %s", this.tempOpt, this.cityOpt, this.stateOpt, this.zipOpt);
+    	output.format("Temperature Setting: %s\nCity: %s\nState: %s\nZip: %s\nWind Speed: %s", this.tempOpt, this.cityOpt, this.stateOpt, this.zipOpt, this.windOpt);
 
     	//System.out.println(this.tempOpt + " " + this.cityOpt + " " + this.stateOpt + " " + this.zipOpt);
     	
@@ -137,6 +148,7 @@ public class OptionsScreenModel {
             configCity = input.nextLine();
             configState = input.nextLine();
             configZip = input.nextLine();
+            configWindOpt = input.nextLine();
             
         } catch (NoSuchElementException elementException) {
             System.err.println("File improperly formed. Terminating.");

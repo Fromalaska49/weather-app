@@ -21,6 +21,7 @@ public class WeatherScreenModel {
 	private String forecastCondition;
 	private String windSpeed;
 	private String windSetting;
+	private OptionsScreenModel optionsModel;
 
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -29,6 +30,7 @@ public class WeatherScreenModel {
 		this.api = wApi;
 		this.data = wdata;
 		this.setTime();
+		optionsModel = new OptionsScreenModel();
 	}
 
 	/**
@@ -78,14 +80,11 @@ public class WeatherScreenModel {
 	 * @param setting "C" or "F"
 	 */
 
-	public void setTempSetting(String setting) {  // for now returns F.. probably need to call OptionsScreen? 
+	public void setTempSetting(String setting) {  // uses parameteter passed from WeatherScreenController
 		this.tempSetting = setting;
 	}
-	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
-		if (tempSetting == "C")
-			tempSetting = "C";
-		else
-		tempSetting = "F";
+	public void setTempSetting() {  // uses configurations in OptionsScreenModel
+		this.tempSetting = optionsModel.getTempOpt();
 
 	}
 
@@ -242,15 +241,18 @@ public class WeatherScreenModel {
 	}
 	
 	public void setWindSpeed(int n) {
-		this.windSpeed = data.getForecastWindMPH(n);
+		if (this.windSetting.equals("MpH"))
+			this.windSpeed = data.getForecastWindMPH(n);
+		else 
+			this.windSpeed = data.getForecastWindKPH(n);
 	}
 	
 	public String getWindSettings() {
 		return this.windSetting;
 	}
 	
-	public void setWindSettings(String setting) {
-		this.windSetting = setting;
+	public void setWindSettings() {
+		this.windSetting = optionsModel.getWindOpt();
 	}
 
 
