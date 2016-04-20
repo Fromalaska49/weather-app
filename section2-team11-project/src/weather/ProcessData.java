@@ -244,7 +244,7 @@ public class ProcessData {
 	 * Gets the URL of the weather icon
 	 */
 	public String getIconURL() {
-		return "http://icons.wxug.com/i/c/j/" + getIconName() + ".gif";
+		return "http://icons.wxug.com/i/c/i/" + getIconName() + ".gif";
 	}
 	
 	/*

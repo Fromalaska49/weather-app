@@ -4,9 +4,16 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+
+import java.net.URL;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javafx.scene.image.Image;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -58,8 +65,9 @@ public class WeatherScreenView {
 	private Button toggleCF = new Button();
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
-	Text weatherNumerics;
-	private WeatherScreenModel model;
+	private Text weatherNumerics;
+	private Calendar dateToday = Calendar.getInstance();
+	WeatherScreenModel model;
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
 
@@ -76,12 +84,12 @@ public class WeatherScreenView {
 		headerText.setFont(Font.font ("Sans Serif",  40));
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
 		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
-		cityLabel =  TextBuilder.create().text(model.getCity()).build();
+		cityLabel =  TextBuilder.create().text(model.getCity()+", "+model.getState()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
-		stateLabel =  TextBuilder.create().text(model.getState()).build();
-		stateLabel.setFont(Font.font ("Helvetica",  20));
-		timeLabel =  TextBuilder.create().text(model.getTime()).build();
-		timeLabel.setFont(Font.font("Helvetica",  20));
+		stateLabel =  TextBuilder.create().text(model.getTime()).build();
+		stateLabel.setFont(Font.font ("Helvetica",  15));
+		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
+		timeLabel.setFont(Font.font("Helvetica",  15));
 
 		
 		
@@ -109,15 +117,15 @@ public class WeatherScreenView {
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
 		
 		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
-		ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
-		iv1 = new ImageView();
-		iv2 = new ImageView();
-		iv3 = new ImageView();
-		iv4 = new ImageView();
-		iv5 = new ImageView();
-		iv6 = new ImageView();
-		iv7 = new ImageView(); 
-		iv8 = new ImageView();
+		
+//		String imageSource = model.getTodayIcon();
+////        
+//        ImageView imageView = ImageViewBuilder.create()
+//                .image(new Image(imageSource))
+//                .build();
+//        imageView.setFitHeight(100);
+//        imageView.setFitWidth(100);
+
 
 		toggleCF.setText("Toggle C/F");
 		toggleCF.setOnAction(wController.getTempSettingListener());
@@ -133,10 +141,19 @@ public class WeatherScreenView {
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
 
-		topGrid.add(iv1, 2, 0);
+		
+		
+		//topGrid.add(iv1, 2, 0);
 		topGrid.add(headerText, 3, 0);
+		
+		bottomPanel.setHgap(15);
+		bottomPanel.setVgap(15);
+		
 		topPanel.getChildren().add(topGrid);
 		//topPanel.getChildren().add(iv1);
+		//topPanel.getChildren().add(headerText);
+
+		//topPanel.getChildren().add(imageView);
 		//topPanel.getChildren().add(headerText);
 		topPanel.setAlignment(Pos.CENTER);
 
@@ -158,6 +175,7 @@ public class WeatherScreenView {
 		
         
         ArrayList<ImageView> imageViewArray = new ArrayList<>();
+        ArrayList<Label> sevenDaysWeather= new ArrayList<>();
         
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
@@ -172,9 +190,13 @@ public class WeatherScreenView {
         	iv.setFitHeight(100);
         	iv.setFitWidth(100);
         	bottomPanel.add(iv, p, 1);
+        	Label dayLabel = new Label();
+        	dayLabel.setText(model.getForecastDay(p+2));
+        	sevenDaysWeather.add(p, dayLabel);
+        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+        	//bottomPanel.
         	p++;
         }
-		
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);
