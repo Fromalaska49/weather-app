@@ -37,21 +37,21 @@ public class ChangeUnitController {
 	
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
-			
+			ScreenController sController = new ScreenController(primaryStage);
 			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+				sController.showOptionsScreen(primaryStage);
 			}
 		};
 		return handler;
 	}
 	
-	public EventHandler<ActionEvent> getSaveListener(ChoiceBox<String> tempField, OptionsScreenModel OSmodel){
+	public EventHandler<ActionEvent> getSaveListener(ChoiceBox<String> tempField, ChoiceBox<String> windField, OptionsScreenModel OSmodel){
 		EventHandler handler = new EventHandler<Event>(){
 			
 			public void handle(Event event){
 				String buff = tempField.getValue().toString();
 				//System.out.println("Listener received " + buff);
+				OSmodel.setWindOpt(windField.getValue().toString());
 				OSmodel.setTempOpt(tempField.getValue().toString());
 				OSmodel.writeToConfig();
 			}

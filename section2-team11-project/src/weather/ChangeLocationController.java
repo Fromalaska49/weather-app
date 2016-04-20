@@ -80,10 +80,9 @@ public class ChangeLocationController {
 	
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
-			
+			ScreenController sController = new ScreenController(primaryStage);
 			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+				sController.showOptionsScreen(primaryStage);
 			}
 		};
 		return handler;
