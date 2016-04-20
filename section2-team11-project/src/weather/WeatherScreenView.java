@@ -144,6 +144,7 @@ public class WeatherScreenView {
 		iv8 = new ImageView();
 
 		toggleCF.setText("Toggle C/F");
+		toggleCF.setOnAction(wController.getTempSettingListener());
 		toggleHW.setText("Toggle Hourly/Weekly");
 		toggleMI.setText("Toggle Meters/Imperial");
 

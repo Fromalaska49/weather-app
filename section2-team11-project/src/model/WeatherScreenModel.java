@@ -55,14 +55,14 @@ public class WeatherScreenModel {
 	 * Calls on Process Data class to get temperature in desired setting
 	 */
 	public void setTemp() {	
-		// if F
-		this.temp = data.getTempF();
-		// else
-		// temp = data.getTempC();
+		if(tempSetting.equals("F"))
+			this.temp = data.getTempF();
+		 else
+			 temp = data.getTempC();
 	}
 	
 	/**
-	 * Returns temperature setting 
+	 * Returns temperature setting as "C" or "F"
 	 * @return
 	 */
 	public String getTempSetting() {
@@ -70,13 +70,11 @@ public class WeatherScreenModel {
 	}
 	
 	/**
-	 * Sets temperature setting to C or F
+	 * Sets temperature setting to C or F based off of what was passed in parameter
+	 * @param setting "C" or "F"
 	 */
-	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
-		// if F
-		this.tempSetting = "F";
-		// if C
-		// tempSetting = "C";
+	public void setTempSetting(String setting) {  // for now returns F.. probably need to call OptionsScreen? 
+		this.tempSetting = setting;
 	}
 	
 	/**

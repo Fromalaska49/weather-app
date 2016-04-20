@@ -4,12 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
 import model.WeatherScreenModel;
 
 public class WeatherScreenController {
 	static WeatherScreenView view;
 	WeatherScreenModel model;
+	private boolean tempSettingBtn;
 	
 	/**
 	 * Constructor method for WeatherScreenController
@@ -19,6 +22,7 @@ public class WeatherScreenController {
 	public WeatherScreenController(WeatherScreenView wView, WeatherScreenModel wModel) {
 		this.view = wView;
 		this.model = wModel;
+		tempSettingBtn = false;
 		setVariables();
 	}
 	
@@ -27,11 +31,36 @@ public class WeatherScreenController {
 	 */
 	public void setVariables() {
 		model.setWeatherCondition();
+		model.setTempSetting("F"); // default is F unless settings changed or toggle button clicked
 		model.setTemp();
-		model.setTempSetting();
 		model.setCity();
 		model.setState();
 		model.setTime();
+	}
+	
+	/**
+	 * 
+	 */
+	
+	public EventHandler<ActionEvent> getTempSettingListener(){
+		EventHandler handler = new EventHandler<Event>(){
+					
+			
+			public void handle(Event event){
+				if(tempSettingBtn == false) {
+					model.setTempSetting("C");
+					model.getTempSetting();
+					System.out.println("Change to celcius");
+				}
+				else {
+					model.setTempSetting("F");
+					System.out.println("Change back to fahrenheit");
+				}
+				tempSettingBtn = !tempSettingBtn;
+				
+			}
+		};
+		return handler;
 	}
 	
 	/**
