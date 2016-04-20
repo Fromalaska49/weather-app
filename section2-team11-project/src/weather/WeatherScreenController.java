@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
 import model.WeatherScreenModel;
@@ -11,7 +13,10 @@ import model.WeatherScreenModel;
 public class WeatherScreenController {
 	WeatherScreenView view;
 	WeatherScreenModel model;
+	private boolean tempSettingBtn;
+
 	private LocationScreenModel locationScreenModel = new LocationScreenModel();
+
 	
 	/**
 	 * Constructor method for WeatherScreenController
@@ -21,6 +26,7 @@ public class WeatherScreenController {
 	public WeatherScreenController(WeatherScreenView wView, WeatherScreenModel wModel) {
 		this.view = wView;
 		this.model = wModel;
+		tempSettingBtn = false;
 		setVariables();
 	}
 	
@@ -28,11 +34,46 @@ public class WeatherScreenController {
 	 * This method calls on the WeatherScreenModel class to set all the variables that will be displayed on WeatherScreenView
 	 */
 	public void setVariables() {
+		model.setWeatherCondition();
+		model.setTempSetting("F"); // default is F unless settings changed or toggle button clicked
 		model.setTemp();
-		model.setTempSetting();
 		model.setCity();
 		model.setState();
 		model.setTime();
+	}
+	
+	/**
+	 * 
+	 */
+	
+	public EventHandler<ActionEvent> getTempSettingListener(){
+		EventHandler handler = new EventHandler<Event>(){
+					
+			
+			public void handle(Event event){
+				if(tempSettingBtn == false) {
+					model.setTempSetting("C");
+					model.getTempSetting();
+					model.setTemp();
+					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					//view.setWeatherNumerics(TextBuilder.create().text(model.getTemp() + Character.toString((char) 176) + model.getTempSetting()).build());
+					//view.getWeatherNumerics().setFont(Font.font ("Consolas",  100));
+					System.out.println("Change to celcius");
+				}
+				else {
+					model.setTempSetting("F");
+					model.getTempSetting();
+					model.setTemp();
+					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					System.out.println("Change back to fahrenheit");
+				}
+				tempSettingBtn = !tempSettingBtn;
+				
+			}
+		};
+		return handler;
+		//model.setWeatherForecast();
+		//model.setTodayIcon();
 	}
 	
 	/**
@@ -127,6 +168,19 @@ public class WeatherScreenController {
 			}
 	};
 	return handler; 
+	}
+
+	public EventHandler<ActionEvent> getSettingsListener(Stage stage) {
+		EventHandler handler = new EventHandler<Event>(){
+			ScreenController sController = new ScreenController(stage);
+			@Override
+			public void handle(Event event) {
+				// TODO Auto-generated method stub
+				sController.showOptionsScreen(stage);
+			}
+			
+		};
+		return handler;
 	}
 	
 }
