@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import model.LocationScreenModel;
 import model.OptionsScreenModel;
 import model.WeatherScreenModel;
+import model.ChangeUnitModel;
 
 public class ScreenController {
 	
@@ -104,6 +105,22 @@ public class ScreenController {
 		oView.start(primaryStage, scene);
 		
 	}
+	
+	public void showChangeUnitScreen(Stage stage){
+		Scene scene = stage.getScene();
+	//	System.out.println("I'm in Show Screen!");
+		ChangeUnitView cView = new ChangeUnitView(stage);
+		ChangeUnitController cController = new ChangeUnitController(cView, stage);
+		cView.start(primaryStage, scene);
+	}
+	
+	public void showChangeLocationScreen(Stage stage){
+		Scene scene = stage.getScene();
+		ChangeLocationView lView = new ChangeLocationView(stage);
+		ChangeLocationController lController = new ChangeLocationController(lView, stage);
+		lView.start(primaryStage, scene);
+	}
+	
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
 			
