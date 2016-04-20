@@ -14,6 +14,7 @@ public class WeatherScreenController {
 	WeatherScreenView view;
 	WeatherScreenModel model;
 	private boolean tempSettingBtn;
+	private boolean windSettingBtn;
 
 	private LocationScreenModel locationScreenModel = new LocationScreenModel();
 
@@ -27,6 +28,7 @@ public class WeatherScreenController {
 		this.view = wView;
 		this.model = wModel;
 		tempSettingBtn = false;
+		windSettingBtn = false;
 		setVariables();
 	}
 	
@@ -56,8 +58,6 @@ public class WeatherScreenController {
 					model.getTempSetting();
 					model.setTemp();
 					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
-					//view.setWeatherNumerics(TextBuilder.create().text(model.getTemp() + Character.toString((char) 176) + model.getTempSetting()).build());
-					//view.getWeatherNumerics().setFont(Font.font ("Consolas",  100));
 					System.out.println("Change to celcius");
 				}
 				else {
@@ -81,26 +81,23 @@ public class WeatherScreenController {
 	public EventHandler<ActionEvent> getWindSettingListener(){
 		EventHandler handler = new EventHandler<Event>(){
 					
-			private boolean windSettingBtn;
 
 			public void handle(Event event){
 				if(windSettingBtn == false) {
-					model.setWindSettings("KPH");
-					model.getTempSetting();
-					model.setTemp();
-					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
-					//view.setWeatherNumerics(TextBuilder.create().text(model.getTemp() + Character.toString((char) 176) + model.getTempSetting()).build());
-					//view.getWeatherNumerics().setFont(Font.font ("Consolas",  100));
-					System.out.println("Change to celcius");
+					model.setWindSettings("KmPH");
+					model.getWindSettings();
+					model.setWindSpeed(0);
+					view.getWindNumerics().setText(model.getWindSpeed() +  " " + model.getWindSettings());
+					System.out.println("Change to KPH");
 				}
 				else {
-					model.setTempSetting("F");
-					model.getTempSetting();
-					model.setTemp();
-					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
-					System.out.println("Change back to fahrenheit");
+					model.setWindSettings("MPH");
+					model.getWindSettings();
+					model.setWindSpeed(0);
+					view.getWindNumerics().setText(model.getWindSpeed() + " " + model.getWindSettings());
+					System.out.println("Change back to MPH");
 				}
-				tempSettingBtn = !tempSettingBtn;
+				windSettingBtn = ! windSettingBtn;
 				
 			}
 		};

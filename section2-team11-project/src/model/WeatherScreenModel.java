@@ -139,10 +139,10 @@ public class WeatherScreenModel {
 	 * Returns icon
 	 * @return
 	 */
-	/*
+	
 	public String getForecastDay(int n) {
 		return data.getForecastDayOfWeek(n);
-	}*/
+	}
 
 
 	public String getTodayIcon() {
@@ -242,7 +242,7 @@ public class WeatherScreenModel {
 	}
 	
 	public void setWindSpeed(int n) {
-		if (this.windSetting.equals("MpH"))
+		if (this.windSetting.equals("MPH"))
 			this.windSpeed = data.getForecastWindMPH(n);
 		else 
 			this.windSpeed = data.getForecastWindKPH(n);
