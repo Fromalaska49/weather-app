@@ -50,7 +50,7 @@ public class WeatherScreenController {
 		return handler;
 	}
 
-	private static boolean isZipCode(String str){
+	private boolean isZipCode(String str){
 		if(str.length() == 5){
 			for(int i = 0; i < 5; i++){
 				if(!Character.isDigit(str.charAt(i))){
@@ -64,7 +64,7 @@ public class WeatherScreenController {
 		}
 	}
 	
-	private static boolean isCity(String str){
+	private boolean isCity(String str){
 		if(str.length() > 4 && (str.charAt(str.length() - 4) == ',' && str.charAt(str.length() - 3) == ' ')){
 			for(int i = 0; i < str.length() - 4; i++){
 				if(!Character.isLetter(str.charAt(i)) && str.charAt(i) != ' '){
@@ -87,11 +87,11 @@ public class WeatherScreenController {
 		}
 	}
 
-	private static boolean isValidLocation(String str){
+	private boolean isValidLocation(String str){
 		return isZipCode(str) || isCity(str);
 	}
 	
-	public static EventHandler<ActionEvent> getSearchListener(Stage stage) {
+	public EventHandler<ActionEvent> getSearchListener(Stage stage) {
 		EventHandler handler = new EventHandler<Event>() {
 
 			//Stage primaryStage = getStage();
