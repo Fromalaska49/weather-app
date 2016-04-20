@@ -208,6 +208,7 @@ public class WeatherScreenView {
         	dayLabel.setText(model.getForecastDay(p+2));
         	sevenDaysWeather.add(p, dayLabel);
         	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+        	//bottomPanel.
         	p++;
         }
 		bottomPanel.setAlignment(Pos.CENTER);
