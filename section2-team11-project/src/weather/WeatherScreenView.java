@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.scene.image.Image;
 import javax.swing.*;
 import javafx.application.Application;
@@ -19,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageViewBuilder;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
@@ -107,6 +110,7 @@ public class WeatherScreenView {
 
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
+		
 		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
 		ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
 		iv1 = new ImageView();
@@ -160,7 +164,7 @@ public class WeatherScreenView {
 
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
-
+		
 		topPanel.getChildren().add(topGrid);
 		topPanel.getChildren().add(iv1);
 		topPanel.getChildren().add(headerText);
@@ -181,13 +185,40 @@ public class WeatherScreenView {
 		leftPanel.getChildren().add(timeLabel);
 		leftPanel.setAlignment(Pos.BOTTOM_LEFT);
 		
-		bottomPanel.add(iv2, 0, 1);
-		bottomPanel.add(iv3, 1, 1);
-		bottomPanel.add(iv4, 2, 1);
-		bottomPanel.add(iv5, 3, 1);
-		bottomPanel.add(iv6, 4, 1);
-		bottomPanel.add(iv7, 5, 1);
-		bottomPanel.add(iv8, 6, 1);
+		model.setIcon(1);
+		String imageSource = model.getIcon();
+        
+        ImageView day1 = ImageViewBuilder.create()
+                .image(new Image(imageSource))
+                .build();
+        
+        model.setIcon(2);
+        String imageSource1 = model.getIcon();
+        
+        ImageView day2 = ImageViewBuilder.create()
+                .image(new Image(imageSource1))
+                .build();
+        day1.setFitWidth(100);
+        day1.setFitHeight(100);
+        
+        ArrayList<ImageView> imageViewArray = new ArrayList<>();
+        
+        for(int i = 1; i <= 7; i++){
+        	model.setIcon(i);
+        	ImageView temp = ImageViewBuilder.create()
+                    .image(new Image(model.getIcon()))
+                    .build();
+        	imageViewArray.add(temp);
+        }
+        
+        int p = 0;
+        for(ImageView iv : imageViewArray){
+        	iv.setFitHeight(100);
+        	iv.setFitWidth(100);
+        	bottomPanel.add(iv, p, 1);
+        	p++;
+        }
+		
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);
