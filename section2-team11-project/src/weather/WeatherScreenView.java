@@ -78,16 +78,16 @@ public class WeatherScreenView {
 		timeLabel =  TextBuilder.create().text(model.getTime()).build();
 		timeLabel.setFont(Font.font("Helvetica",  20));
 
-    	ScreenController screenController = new ScreenController(stage);
-    	Button backButton = new Button("< Back");
-    	backButton.setOnAction(screenController.getBackListener(stage, scene));
-    	topGrid = new GridPane();
-    	topGrid.setPadding(new Insets(10, 10, 10, 10));
-    	topGrid.setHgap(10);
-    	topGrid.setVgap(10);
-    	topGrid.setGridLinesVisible(false);
-    	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(backButton, 0, 0);
+//    	//ScreenController screenController = new ScreenController(stage);
+//    	//Button backButton = new Button("< Back");
+//    	backButton.setOnAction(screenController.getBackListener(stage, scene));
+//    	topGrid = new GridPane();
+//    	topGrid.setPadding(new Insets(10, 10, 10, 10));
+//    	topGrid.setHgap(10);
+//    	topGrid.setVgap(10);
+//    	topGrid.setGridLinesVisible(false);
+//    	topGrid.setAlignment(Pos.TOP_LEFT);
+//    	topGrid.add(backButton, 0, 0);
     	
     	
 		//		weatherNumerics.setText("49� C");
@@ -95,15 +95,15 @@ public class WeatherScreenView {
 		
 
     	WeatherScreenController wController = new WeatherScreenController(this, model);
-    	Button backButton = new Button("< Back");
-    	backButton.setOnAction(wController.getBackListener(stage, scene));
+    	Button backButton1 = new Button("< Back");
+    	backButton1.setOnAction(wController.getBackListener(stage, scene));
     	topGrid = new GridPane();
     	topGrid.setPadding(new Insets(10, 10, 10, 10));
     	topGrid.setHgap(10);
     	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(backButton, 0, 0);
+    	topGrid.add(backButton1, 0, 0);
 
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
