@@ -44,13 +44,12 @@ public class WeatherScreenController {
 	}
 	
 	/**
-	 * 
+	 * Creates an event handler for the toggle temperature settings
 	 */
 	
 	public EventHandler<ActionEvent> getTempSettingListener(){
 		EventHandler handler = new EventHandler<Event>(){
 					
-			
 			public void handle(Event event){
 				if(tempSettingBtn == false) {
 					model.setTempSetting("C");
@@ -73,8 +72,39 @@ public class WeatherScreenController {
 			}
 		};
 		return handler;
-		//model.setWeatherForecast();
-		//model.setTodayIcon();
+	}
+	
+	/**
+	 * Creates an event handler for the toggle temperature settings
+	 */
+	
+	public EventHandler<ActionEvent> getWindSettingListener(){
+		EventHandler handler = new EventHandler<Event>(){
+					
+			private boolean windSettingBtn;
+
+			public void handle(Event event){
+				if(windSettingBtn == false) {
+					model.setWindSettings("KPH");
+					model.getTempSetting();
+					model.setTemp();
+					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					//view.setWeatherNumerics(TextBuilder.create().text(model.getTemp() + Character.toString((char) 176) + model.getTempSetting()).build());
+					//view.getWeatherNumerics().setFont(Font.font ("Consolas",  100));
+					System.out.println("Change to celcius");
+				}
+				else {
+					model.setTempSetting("F");
+					model.getTempSetting();
+					model.setTemp();
+					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					System.out.println("Change back to fahrenheit");
+				}
+				tempSettingBtn = !tempSettingBtn;
+				
+			}
+		};
+		return handler;
 	}
 	
 	/**

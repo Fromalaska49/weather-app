@@ -252,7 +252,11 @@ public class WeatherScreenModel {
 		return this.windSetting;
 	}
 	
-	public void setWindSettings() {
+	public void setWindSettings(String setting) {  // sets wind speed unit after toggle button has been clicked
+		this.windSetting = setting;
+	}
+	
+	public void setWindSettings() {  // sets wind speed unit according to what is in OptionsModel
 		this.windSetting = optionsModel.getWindOpt();
 	}
 
