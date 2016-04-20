@@ -12,6 +12,7 @@ public class WeatherScreenModel {
 	private String city;
 	private String state;
 	private String time;
+	private String todayIcon;
 	
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -104,6 +105,19 @@ public class WeatherScreenModel {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mma"); // can change to military time with HH:mm
         time = sdf.format(cal.getTime());
 	}
-	
+	/*public void getForecastDay() {
+		data.getForecastDayOfWeek(0);
+	}
+*/
 
+	public String getTodayIcon() {
+		// TODO Auto-generated method stub
+		return this.todayIcon;
+		//Systemz.out.println(data.getForecastDayOfWeek(1));
+		
+	}
+	public void setTodayIcon(){
+		this.todayIcon= data.getIconURL();
+	}
+	
 }

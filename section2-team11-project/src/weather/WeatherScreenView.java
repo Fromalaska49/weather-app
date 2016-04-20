@@ -4,7 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
 import javafx.scene.image.Image;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -19,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageViewBuilder;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
@@ -97,6 +102,14 @@ public class WeatherScreenView {
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
 		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
 		ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
+		
+		String imageSource = model.getTodayIcon();
+        
+        ImageView imageView = ImageViewBuilder.create()
+                .image(new Image(imageSource))
+                .build();
+		
+		
 		iv1 = new ImageView();
 		iv2 = new ImageView();
 		iv3 = new ImageView();
@@ -107,6 +120,7 @@ public class WeatherScreenView {
 		iv8 = new ImageView();
 
 		iv1.setImage(image);
+		iv1.setFitWidth(200);
 		iv1.setPreserveRatio(true);
 
 		iv2.setImage(image);
@@ -150,7 +164,7 @@ public class WeatherScreenView {
 		border.setPadding(new Insets(25, 100, 100, 100));
 
 		topPanel.getChildren().add(topGrid);
-		topPanel.getChildren().add(iv1);
+		topPanel.getChildren().add(imageView);
 		topPanel.getChildren().add(headerText);
 		topPanel.setAlignment(Pos.CENTER);
 

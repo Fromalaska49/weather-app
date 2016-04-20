@@ -84,4 +84,5 @@ public class LocationScreenModel {
 		}
 		return location;
 	}
+	
 }

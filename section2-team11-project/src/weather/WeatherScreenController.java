@@ -31,6 +31,8 @@ public class WeatherScreenController {
 		model.setCity();
 		model.setState();
 		model.setTime();
+		//model.setWeatherForecast();
+		model.setTodayIcon();
 	}
 	
 	/**

@@ -38,51 +38,51 @@
 		<estimated>
 		</estimated>
 		<station_id>KTXSANAN406</station_id>
-		<observation_time>Last Updated on April 19, 2:43 PM CDT</observation_time>
-		<observation_time_rfc822>Tue, 19 Apr 2016 14:43:50 -0500</observation_time_rfc822>
-		<observation_epoch>1461095030</observation_epoch>
-		<local_time_rfc822>Tue, 19 Apr 2016 14:56:35 -0500</local_time_rfc822>
-		<local_epoch>1461095795</local_epoch>
+		<observation_time>Last Updated on April 19, 7:16 PM CDT</observation_time>
+		<observation_time_rfc822>Tue, 19 Apr 2016 19:16:56 -0500</observation_time_rfc822>
+		<observation_epoch>1461111416</observation_epoch>
+		<local_time_rfc822>Tue, 19 Apr 2016 19:27:07 -0500</local_time_rfc822>
+		<local_epoch>1461112027</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
-		<weather>Mostly Cloudy</weather>
-		<temperature_string>80.1 F (26.7 C)</temperature_string>
-		<temp_f>80.1</temp_f>
-		<temp_c>26.7</temp_c>
-		<relative_humidity>63%</relative_humidity>
-		<wind_string>From the SSE at 2.7 MPH</wind_string>
-		<wind_dir>SSE</wind_dir>
-		<wind_degrees>157</wind_degrees>
-		<wind_mph>2.7</wind_mph>
+		<weather>Overcast</weather>
+		<temperature_string>74.7 F (23.7 C)</temperature_string>
+		<temp_f>74.7</temp_f>
+		<temp_c>23.7</temp_c>
+		<relative_humidity>71%</relative_humidity>
+		<wind_string>Calm</wind_string>
+		<wind_dir>ESE</wind_dir>
+		<wind_degrees>112</wind_degrees>
+		<wind_mph>0.0</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
-		<wind_kph>4.3</wind_kph>
+		<wind_kph>0.0</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1015</pressure_mb>
-		<pressure_in>29.97</pressure_in>
-		<pressure_trend>-</pressure_trend>
+		<pressure_mb>1013</pressure_mb>
+		<pressure_in>29.92</pressure_in>
+		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>66 F (19 C)</dewpoint_string>
-		<dewpoint_f>66</dewpoint_f>
-		<dewpoint_c>19</dewpoint_c>
+		<dewpoint_string>65 F (18 C)</dewpoint_string>
+		<dewpoint_f>65</dewpoint_f>
+		<dewpoint_c>18</dewpoint_c>
 		
 		
-		<heat_index_string>82 F (28 C)</heat_index_string>
-		<heat_index_f>82</heat_index_f>
-		<heat_index_c>28</heat_index_c>
+		<heat_index_string>NA</heat_index_string>
+		<heat_index_f>NA</heat_index_f>
+		<heat_index_c>NA</heat_index_c>
 		
 		
 		<windchill_string>NA</windchill_string>
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>82 F (28 C)</feelslike_string>
-        <feelslike_f>82</feelslike_f>
-        <feelslike_c>28</feelslike_c>
+        <feelslike_string>74.7 F (23.7 C)</feelslike_string>
+        <feelslike_f>74.7</feelslike_f>
+        <feelslike_c>23.7</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation></solarradiation>
-		<UV>6</UV>
+		<UV>0</UV>
 		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>-999.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
@@ -92,8 +92,8 @@
 		
 		
 		
-		<icon>mostlycloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/mostlycloudy.gif</icon_url>
+		<icon>cloudy</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/cloudy.gif</icon_url>
 		<forecast_url>http://www.wunderground.com/US/TX/San_Antonio.html</forecast_url>
         
         <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXSANAN406</history_url>
