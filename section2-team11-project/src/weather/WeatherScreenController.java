@@ -35,11 +35,12 @@ public class WeatherScreenController {
 	 */
 	public void setVariables() {
 		model.setWeatherCondition();
-		model.setTempSetting("F"); // default is F unless settings changed or toggle button clicked
+		model.setTempSetting(); // uses settings from OptionsScreenModel
 		model.setTemp();
 		model.setCity();
 		model.setState();
 		model.setTime();
+		model.setWindSettings(); // uses settings form OptionsScreenModel
 	}
 	
 	/**
