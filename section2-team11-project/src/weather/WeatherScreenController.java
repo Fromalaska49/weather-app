@@ -5,11 +5,13 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 import model.WeatherScreenModel;
 
 public class WeatherScreenController {
 	WeatherScreenView view;
 	WeatherScreenModel model;
+	private LocationScreenModel locationScreenModel = new LocationScreenModel();
 	
 	/**
 	 * Constructor method for WeatherScreenController
@@ -41,13 +43,90 @@ public class WeatherScreenController {
 	 */
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
+				ScreenController sController = new ScreenController(stagePrev);			
 			
 			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+				sController.showLocationScreen(stagePrev);
 			}
 		};
 		return handler;
+	}
+
+	private boolean isZipCode(String str){
+		if(str.length() == 5){
+			for(int i = 0; i < 5; i++){
+				if(!Character.isDigit(str.charAt(i))){
+					return false;
+				}
+			}
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	private boolean isCity(String str){
+		if(str.length() > 4 && (str.charAt(str.length() - 4) == ',' && str.charAt(str.length() - 3) == ' ')){
+			for(int i = 0; i < str.length() - 4; i++){
+				if(!Character.isLetter(str.charAt(i)) && str.charAt(i) != ' '){
+					return false;
+				}
+			}
+			return true;
+		}
+		/*else if(str.length() > 3 && str.charAt(str.length() - 3) == ','){
+			for(int i = 0; i < str.length() - 3; i++){
+				if(!Character.isLetter(str.charAt(i)) && str.charAt(i) != ' '){
+					return false;
+				}
+			}
+			return true;
+		}*/
+		else{
+			//not comma separated
+			return false;
+		}
+	}
+
+	private boolean isValidLocation(String str){
+		return isZipCode(str) || isCity(str);
+	}
+	
+	public EventHandler<ActionEvent> getSearchListener(Stage stage) {
+		EventHandler handler = new EventHandler<Event>() {
+
+			//Stage primaryStage = getStage();
+			//ScreenController sController = new ScreenController(primaryStage);
+
+			@Override
+			public void handle(Event event)  {
+				//ScreenController screenController = new ScreenController(primaryStage);
+				String location = view.getSearchQuery();
+				if(isValidLocation(location)){
+					if(isZipCode(location)){
+						locationScreenModel.setLocation(location);
+					}
+					else{
+						String state = location.substring(location.length() - 2);
+						String city = location.substring(0, location.length() - 4);
+						locationScreenModel.setLocation(city, state);
+					}
+					if(locationScreenModel.isKnownLocation()){
+						ScreenController sController = new ScreenController(stage);	
+						sController.showWeatherScreen(stage, locationScreenModel.getLocation());
+					}
+					else{
+						System.out.println("Error: unkown location: "+locationScreenModel.getLocation());
+					}
+				}
+				else{ 
+					//invalid location
+					System.out.println("Error: invalid location detected: '"+location+"'");
+				}					
+			}
+	};
+	return handler; 
 	}
 	
 }
