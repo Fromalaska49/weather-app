@@ -70,6 +70,7 @@ public class WeatherScreenView {
 	WeatherScreenModel model;
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
+	private Text windNumerics;
 
 	//	private LocationScreenModel locModel;
 
@@ -82,8 +83,14 @@ public class WeatherScreenView {
 		
 		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
+		
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
 		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
+		model.setWindSpeed(1);
+		setWindNumerics((TextBuilder.create().text( model.getWindSpeed() + model.getWindSettings() ).build()));
+		getWindNumerics().setFont(Font.font ("Consolas", 50));
+		
+		
 		cityLabel =  TextBuilder.create().text(model.getCity()+", "+model.getState()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
 		stateLabel =  TextBuilder.create().text(model.getTime()).build();
@@ -109,23 +116,13 @@ public class WeatherScreenView {
     	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(searchField, 0, 0);
-    	topGrid.add(searchButton, 1, 0);
+    	topGrid.add(searchField, 0, 1);
+    	topGrid.add(searchButton, 1, 1);
     	topGrid.add(settingsButton, 4, 0);
 
-		// simple displays ImageView the image as is
-		Image image = new Image(new File("Capture.PNG").toURI().toString());
-		
-		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
-		
-//		String imageSource = model.getTodayIcon();
-////        
-//        ImageView imageView = ImageViewBuilder.create()
-//                .image(new Image(imageSource))
+//    	ImageView today = ImageViewBuilder.create()
+//                .image(new Image(model.getTodayIcon()))
 //                .build();
-//        imageView.setFitHeight(100);
-//        imageView.setFitWidth(100);
-
 
 		toggleCF.setText("Toggle C/F");
 		toggleCF.setOnAction(wController.getTempSettingListener());
@@ -165,6 +162,7 @@ public class WeatherScreenView {
 		//	     topPanel.setHgrow(headerText, Priority.ALWAYS);
 
 		centerPanel.getChildren().add(getWeatherNumerics());
+		centerPanel.getChildren().add(getWindNumerics());
 		centerPanel.setAlignment(Pos.CENTER);
 
 		leftPanel.getChildren().add(cityLabel);
@@ -201,14 +199,16 @@ public class WeatherScreenView {
 
 		border.setTop(topPanel);
 		border.setRight(rightPanel);
-		border.setCenter(getWeatherNumerics());
+		//border.setCenter(getWeatherNumerics());
+		border.setCenter(centerPanel);
 		border.setLeft(leftPanel);
 		border.setBottom(bottomPanel);
 
 
 		border.setAlignment(topPanel, Pos.CENTER);
 		border.setAlignment(rightPanel, Pos.CENTER_LEFT);
-		border.setAlignment(getWeatherNumerics(), Pos.CENTER);
+		//border.setAlignment(getWeatherNumerics(), Pos.CENTER);
+		border.setAlignment(centerPanel, Pos.CENTER);
 		border.setAlignment(leftPanel, Pos.BOTTOM_LEFT);
 		border.setAlignment(bottomPanel, Pos.CENTER);
 
@@ -246,6 +246,13 @@ public class WeatherScreenView {
 		this.weatherNumerics = string;
 	}
 	
+	public Text getWindNumerics() {
+		return windNumerics;
+	}
+	
+	public void setWindNumerics(Text string) {
+		this.windNumerics = string;
+	}
 	/*
 	 * Returns the value of the search field
 	 */
