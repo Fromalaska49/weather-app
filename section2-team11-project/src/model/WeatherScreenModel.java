@@ -242,7 +242,10 @@ public class WeatherScreenModel {
 	}
 	
 	public void setWindSpeed(int n) {
-		this.windSpeed = data.getForecastWindMPH(n);
+		if (this.windSetting.equals("MpH"))
+			this.windSpeed = data.getForecastWindMPH(n);
+		else 
+			this.windSpeed = data.getForecastWindKPH(n);
 	}
 	
 	public String getWindSettings() {
