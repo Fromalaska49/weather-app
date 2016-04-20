@@ -1,1 +1,4 @@
-Temprature Setting: F
+Temperature Setting: F
+City: San Antonio
+State: TX
+Zip: 78254
