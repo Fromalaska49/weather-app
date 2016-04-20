@@ -62,6 +62,7 @@ public class WeatherScreenView {
 	private 
 	WeatherScreenModel model;
 	private TextField searchField = new TextField();
+	private Button settingsButton = new Button();
 
 	//	private LocationScreenModel locModel;
 
@@ -119,7 +120,10 @@ public class WeatherScreenView {
 
     	WeatherScreenController weatherScreenController = new WeatherScreenController(this, this.model);
     	searchButton.setOnAction(weatherScreenController.getSearchListener(stage));
-		
+
+		settingsButton.setText("Settings");
+		settingsButton.setOnAction(weatherScreenController.getSettingsListener(stage));
+    	
     	topGrid = new GridPane();
     	topGrid.setPadding(new Insets(10, 10, 10, 10));
     	topGrid.setHgap(10);
@@ -128,6 +132,7 @@ public class WeatherScreenView {
     	topGrid.setAlignment(Pos.TOP_LEFT);
     	topGrid.add(searchField, 0, 0);
     	topGrid.add(searchButton, 1, 0);
+    	topGrid.add(settingsButton, 4, 0);
 
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
@@ -155,10 +160,12 @@ public class WeatherScreenView {
 
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
-		
+
+		topGrid.add(iv1, 2, 0);
+		topGrid.add(headerText, 3, 0);
 		topPanel.getChildren().add(topGrid);
-		topPanel.getChildren().add(iv1);
-		topPanel.getChildren().add(headerText);
+		//topPanel.getChildren().add(iv1);
+		//topPanel.getChildren().add(headerText);
 		topPanel.setAlignment(Pos.CENTER);
 
 		rightPanel.getChildren().add(toggleCF);
