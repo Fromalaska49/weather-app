@@ -119,10 +119,13 @@ public class WeatherScreenView {
     	topGrid.add(searchField, 0, 1);
     	topGrid.add(searchButton, 1, 1);
     	topGrid.add(settingsButton, 4, 0);
-
-//    	ImageView today = ImageViewBuilder.create()
-//                .image(new Image(model.getTodayIcon()))
-//                .build();
+    	model.setTodayIcon();
+    	ImageView todayIcon = ImageViewBuilder.create()
+                .image(new Image(model.getTodayIcon()))
+                .build();
+    	todayIcon.setFitHeight(200);
+    	todayIcon.setFitWidth(200);
+    	topGrid.add(todayIcon, 1, 0);
 
 		toggleCF.setText("Toggle C/F");
 		toggleCF.setOnAction(wController.getTempSettingListener());
@@ -141,7 +144,7 @@ public class WeatherScreenView {
 		
 		
 		//topGrid.add(iv1, 2, 0);
-		topGrid.add(headerText, 3, 0);
+		topGrid.add(headerText, 2, 0);
 		
 		bottomPanel.setHgap(15);
 		bottomPanel.setVgap(15);
@@ -152,7 +155,7 @@ public class WeatherScreenView {
 
 		//topPanel.getChildren().add(imageView);
 		//topPanel.getChildren().add(headerText);
-		topPanel.setAlignment(Pos.CENTER);
+		topPanel.setAlignment(Pos.TOP_LEFT);
 
 		rightPanel.getChildren().add(toggleCF);
 		rightPanel.getChildren().add(toggleHW);

@@ -140,10 +140,9 @@ public class WeatherScreenModel {
 	 * Returns icon
 	 * @return
 	 */
-	/*
 	public String getForecastDay(int n) {
 		return data.getForecastDayOfWeek(n);
-	}*/
+	}
 
 
 	public String getTodayIcon() {
