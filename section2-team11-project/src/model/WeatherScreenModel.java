@@ -35,10 +35,10 @@ public class WeatherScreenModel {
 	 * Calls on Process Data class to get temperature in desired setting
 	 */
 	public void setTemp() {	
-		// if F
+	if (temp == "F")
 		temp = data.getTempF();
-		// else
-		// temp = data.getTempC();
+		else
+		temp = data.getTempC();
 	}
 	
 	/**
@@ -53,7 +53,8 @@ public class WeatherScreenModel {
 	 * Sets temperature setting to C or F
 	 */
 	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
-		// if F
+		if (tempSetting == "C")
+			tempSetting = "C";
 		tempSetting = "F";
 		// if C
 		// tempSetting = "C";

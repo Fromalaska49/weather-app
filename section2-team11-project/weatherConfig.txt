@@ -1,4 +1,4 @@
-Temperature Setting: F
+Temperature Setting: C
 City: San Antonio
 State: TX
 Zip: 78254

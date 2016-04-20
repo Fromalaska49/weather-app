@@ -117,7 +117,8 @@ public class WeatherScreenView {
     	Button searchButton = new Button("Search");
     	searchButton.setOnAction(wController.getBackListener(stage, scene));
 
-    	searchButton.setOnAction(WeatherScreenController.getSearchListener(stage));
+    	WeatherScreenController weatherScreenController = new WeatherScreenController(this, this.model);
+    	searchButton.setOnAction(weatherScreenController.getSearchListener(stage));
 		
     	topGrid = new GridPane();
     	topGrid.setPadding(new Insets(10, 10, 10, 10));
