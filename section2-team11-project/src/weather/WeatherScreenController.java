@@ -128,5 +128,18 @@ public class WeatherScreenController {
 	};
 	return handler; 
 	}
+
+	public EventHandler<ActionEvent> getSettingsListener(Stage stage) {
+		EventHandler handler = new EventHandler<Event>(){
+			ScreenController sController = new ScreenController(stage);
+			@Override
+			public void handle(Event event) {
+				// TODO Auto-generated method stub
+				sController.showOptionsScreen(stage);
+			}
+			
+		};
+		return handler;
+	}
 	
 }
