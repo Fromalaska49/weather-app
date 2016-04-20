@@ -34,6 +34,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
+import model.OptionsScreenModel;
 import javafx.scene.text.Font;
 
 /**
@@ -54,14 +55,22 @@ public class LocationScreenView extends Application  {
 		private Label orLabel;
 		private static TextField zipField;
 		private static TextField cityField;;
-		private static ChoiceBox stateField;
+		private static ChoiceBox<String> stateField;
 		private Button okBtn = new Button();
 		private Button setBtn = new Button();
 		private LocationScreenController locationScreenController;
-		
+		private OptionsScreenModel OSmodel;
+		/**
+		 * Constructor method for LocationScreenView
+		 * @param model
+		 * @param primaryStage
+		 */	
 	public LocationScreenView(LocationScreenModel model, Stage primaryStage){
 		this.locationScreenController = new LocationScreenController(model, this, primaryStage);
 	}
+	/**
+	 * Adds contents to the stage
+	 */
 	public void start(Stage primaryStage) {
 		//primaryStage.setMaximized(true);
 
@@ -101,6 +110,13 @@ public class LocationScreenView extends Application  {
 		bottomGrid.add(setBtn, 0, 1);
 		bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
 		
+		//Creates Options Model which pulls settings from config file
+		OSmodel = new OptionsScreenModel();
+    	cityField.setText(OSmodel.getCityOpt());
+    	stateField.setValue(OSmodel.getStateOpt());
+    	zipField.setText(OSmodel.getZipOpt());
+		
+
 		border = new BorderPane();
 		//border.setId("Startpane");
 		border.setPadding(new Insets(25, 100, 100, 100));
@@ -123,14 +139,26 @@ public class LocationScreenView extends Application  {
 
 	}
 	
+	/**
+	 * Returns city field
+	 * @return
+	 */
 	public String getCity(){
 		return cityField.getText();
 	}
 	
+	/**
+	 * Returns state field
+	 * @return
+	 */
 	public String getState(){
 		return stateField.getValue().toString();
 	}
 	
+	/**
+	 * Returns zip code field
+	 * @return
+	 */
 	public String getZipCode(){
 		return zipField.getText();
 	}

@@ -10,7 +10,12 @@ import model.WeatherScreenModel;
 public class WeatherScreenController {
 	WeatherScreenView view;
 	WeatherScreenModel model;
-
+	
+	/**
+	 * Constructor method for WeatherScreenController
+	 * @param wView
+	 * @param wModel
+	 */
 	public WeatherScreenController(WeatherScreenView wView, WeatherScreenModel wModel) {
 		this.view = wView;
 		this.model = wModel;
@@ -18,7 +23,7 @@ public class WeatherScreenController {
 	}
 	
 	/**
-	 * This method calls on the WeatherScreenView class to set all the variables that will be displayed on WeatherScreenView
+	 * This method calls on the WeatherScreenModel class to set all the variables that will be displayed on WeatherScreenView
 	 */
 	public void setVariables() {
 		model.setTemp();
@@ -28,6 +33,12 @@ public class WeatherScreenController {
 		model.setTime();
 	}
 	
+	/**
+	 * Creates an event handler for the back button.
+	 * @param stagePrev
+	 * @param scenePrev
+	 * @return
+	 */
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
 			
