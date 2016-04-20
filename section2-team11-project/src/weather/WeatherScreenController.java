@@ -26,6 +26,7 @@ public class WeatherScreenController {
 	 * This method calls on the WeatherScreenModel class to set all the variables that will be displayed on WeatherScreenView
 	 */
 	public void setVariables() {
+		//model.getWeatherCondition();
 		model.setTemp();
 		model.setTempSetting();
 		model.setCity();
@@ -43,10 +44,10 @@ public class WeatherScreenController {
 	 */
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
+				ScreenController sController = new ScreenController(stagePrev);			
 			
 			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+				sController.showLocationScreen(stagePrev);
 			}
 		};
 		return handler;

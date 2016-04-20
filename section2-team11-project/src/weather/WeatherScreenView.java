@@ -4,7 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+
 import java.net.URL;
+
+import java.util.ArrayList;
+
 
 import javafx.scene.image.Image;
 
@@ -61,7 +65,6 @@ public class WeatherScreenView {
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
-	private 
 	WeatherScreenModel model;
 
 	//	private LocationScreenModel locModel;
@@ -72,84 +75,58 @@ public class WeatherScreenView {
 	public void start(Stage stage, Scene scene) {
 
 		
-		headerText =  TextBuilder.create().text("Thunderstorm").build();
+		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
 		setWeatherNumerics(TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build());
 		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
-		cityLabel =  TextBuilder.create().text(model.getCity()).build();
+		cityLabel =  TextBuilder.create().text(model.getCity()+", "+model.getState()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
-		stateLabel =  TextBuilder.create().text(model.getState()).build();
+		stateLabel =  TextBuilder.create().text(model.getTime()).build();
 		stateLabel.setFont(Font.font ("Helvetica",  20));
-		timeLabel =  TextBuilder.create().text(model.getTime()).build();
+		timeLabel =  TextBuilder.create().text("Date|"+model.getForecastDay(1)).build();
 		timeLabel.setFont(Font.font("Helvetica",  20));
 
-    	ScreenController screenController = new ScreenController(stage);
-    	Button backButton = new Button("< Back");
-    	backButton.setOnAction(screenController.getBackListener(stage, scene));
+//    	//ScreenController screenController = new ScreenController(stage);
+//    	//Button backButton = new Button("< Back");
+//    	backButton.setOnAction(screenController.getBackListener(stage, scene));
+//    	topGrid = new GridPane();
+//    	topGrid.setPadding(new Insets(10, 10, 10, 10));
+//    	topGrid.setHgap(10);
+//    	topGrid.setVgap(10);
+//    	topGrid.setGridLinesVisible(false);
+//    	topGrid.setAlignment(Pos.TOP_LEFT);
+//    	topGrid.add(backButton, 0, 0);
+    	
+    	
+		//		weatherNumerics.setText("49� C");
+		//Image image = new Image("StartScreen.png");
+		
+
+    	WeatherScreenController wController = new WeatherScreenController(this, model);
+    	Button backButton1 = new Button("< Back");
+    	backButton1.setOnAction(wController.getBackListener(stage, scene));
     	topGrid = new GridPane();
     	topGrid.setPadding(new Insets(10, 10, 10, 10));
     	topGrid.setHgap(10);
     	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(backButton, 0, 0);
-    	
-    	
-		//		weatherNumerics.setText("49� C");
-		//Image image = new Image("StartScreen.png");
+    	topGrid.add(backButton1, 0, 0);
 
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
+		
 		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
-		ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
 		
 		String imageSource = model.getTodayIcon();
         
         ImageView imageView = ImageViewBuilder.create()
                 .image(new Image(imageSource))
                 .build();
-		
-		
-		iv1 = new ImageView();
-		iv2 = new ImageView();
-		iv3 = new ImageView();
-		iv4 = new ImageView();
-		iv5 = new ImageView();
-		iv6 = new ImageView();
-		iv7 = new ImageView(); 
-		iv8 = new ImageView();
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(100);
 
-		iv1.setImage(image);
-		iv1.setFitWidth(200);
-		iv1.setPreserveRatio(true);
 
-		iv2.setImage(image);
-		iv2.setFitWidth(100);
-		iv2.setPreserveRatio(true);
-
-		iv3.setImage(image);
-		iv3.setFitWidth(100);
-		iv3.setPreserveRatio(true);
-
-		iv4.setImage(image);
-		iv4.setFitWidth(100);
-		iv4.setPreserveRatio(true);
-
-		iv5.setImage(image);
-		iv5.setFitWidth(100);
-		iv5.setPreserveRatio(true);
-
-		iv6.setImage(image);
-		iv6.setFitWidth(100);
-		iv6.setPreserveRatio(true);
-
-		iv7.setImage(image);
-		iv7.setFitWidth(100);
-		iv7.setPreserveRatio(true);
-
-		iv8.setImage(image);
-		iv8.setFitWidth(100);
-		iv8.setPreserveRatio(true);
 		toggleCF.setText("Toggle C/F");
 		toggleHW.setText("Toggle Hourly/Weekly");
 		toggleMI.setText("Toggle Meters/Imperial");
@@ -162,7 +139,10 @@ public class WeatherScreenView {
 
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
-
+		
+		bottomPanel.setHgap(15);
+		bottomPanel.setVgap(15);
+		
 		topPanel.getChildren().add(topGrid);
 		topPanel.getChildren().add(imageView);
 		topPanel.getChildren().add(headerText);
@@ -183,13 +163,30 @@ public class WeatherScreenView {
 		leftPanel.getChildren().add(timeLabel);
 		leftPanel.setAlignment(Pos.BOTTOM_LEFT);
 		
-		bottomPanel.add(iv2, 0, 1);
-		bottomPanel.add(iv3, 1, 1);
-		bottomPanel.add(iv4, 2, 1);
-		bottomPanel.add(iv5, 3, 1);
-		bottomPanel.add(iv6, 4, 1);
-		bottomPanel.add(iv7, 5, 1);
-		bottomPanel.add(iv8, 6, 1);
+		
+        
+        ArrayList<ImageView> imageViewArray = new ArrayList<>();
+        ArrayList<Label> sevenDaysWeather= new ArrayList<>();
+        
+        for(int i = 1; i <= 7; i++){
+        	model.setIcon(i);
+        	ImageView temp = ImageViewBuilder.create()
+                    .image(new Image(model.getIcon()))
+                    .build();
+        	imageViewArray.add(temp);
+        }
+        
+        int p = 0;
+        for(ImageView iv : imageViewArray){
+        	iv.setFitHeight(100);
+        	iv.setFitWidth(100);
+        	bottomPanel.add(iv, p, 1);
+        	Label dayLabel = new Label();
+        	dayLabel.setText(model.getForecastDay(p+2));
+        	sevenDaysWeather.add(p, dayLabel);
+        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+        	p++;
+        }
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);

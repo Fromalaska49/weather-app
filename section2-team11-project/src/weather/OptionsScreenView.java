@@ -159,7 +159,8 @@ public class OptionsScreenView {
        // grid.add(pictureRegion, 1, 1);
     	
     	Scene Optscene = new Scene(border, 800, 700);
-    	
+
+    	Optscene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
     	
     	primaryStage.setScene(Optscene);
     	primaryStage.show();

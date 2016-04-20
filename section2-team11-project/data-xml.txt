@@ -38,28 +38,28 @@
 		<estimated>
 		</estimated>
 		<station_id>KTXHELOT10</station_id>
-		<observation_time>Last Updated on April 19, 10:23 PM CDT</observation_time>
-		<observation_time_rfc822>Tue, 19 Apr 2016 22:23:53 -0500</observation_time_rfc822>
-		<observation_epoch>1461122633</observation_epoch>
-		<local_time_rfc822>Tue, 19 Apr 2016 22:24:24 -0500</local_time_rfc822>
-		<local_epoch>1461122664</local_epoch>
+		<observation_time>Last Updated on April 20, 1:11 AM CDT</observation_time>
+		<observation_time_rfc822>Wed, 20 Apr 2016 01:11:10 -0500</observation_time_rfc822>
+		<observation_epoch>1461132670</observation_epoch>
+		<local_time_rfc822>Wed, 20 Apr 2016 01:11:53 -0500</local_time_rfc822>
+		<local_epoch>1461132713</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
-		<weather>Mostly Cloudy</weather>
-		<temperature_string>68.4 F (20.2 C)</temperature_string>
-		<temp_f>68.4</temp_f>
-		<temp_c>20.2</temp_c>
-		<relative_humidity>85%</relative_humidity>
+		<weather>Partly Cloudy</weather>
+		<temperature_string>67.3 F (19.6 C)</temperature_string>
+		<temp_f>67.3</temp_f>
+		<temp_c>19.6</temp_c>
+		<relative_humidity>90%</relative_humidity>
 		<wind_string>Calm</wind_string>
-		<wind_dir>ENE</wind_dir>
-		<wind_degrees>67</wind_degrees>
+		<wind_dir>ESE</wind_dir>
+		<wind_degrees>112</wind_degrees>
 		<wind_mph>0.0</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
 		<wind_kph>0.0</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
 		<pressure_mb>1016</pressure_mb>
-		<pressure_in>30.02</pressure_in>
+		<pressure_in>30.00</pressure_in>
 		<pressure_trend>0</pressure_trend>
 		
 		<dewpoint_string>64 F (18 C)</dewpoint_string>
@@ -76,9 +76,9 @@
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>68.4 F (20.2 C)</feelslike_string>
-        <feelslike_f>68.4</feelslike_f>
-        <feelslike_c>20.2</feelslike_c>
+        <feelslike_string>67.3 F (19.6 C)</feelslike_string>
+        <feelslike_f>67.3</feelslike_f>
+        <feelslike_c>19.6</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation></solarradiation>
@@ -92,8 +92,8 @@
 		
 		
 		
-		<icon>mostlycloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif</icon_url>
+		<icon>partlycloudy</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_partlycloudy.gif</icon_url>
 		<forecast_url>http://www.wunderground.com/US/TX/San_Antonio.html</forecast_url>
         
         <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXHELOT10</history_url>
