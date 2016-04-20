@@ -59,6 +59,7 @@ public class WeatherScreenModel {
 			this.temp = data.getTempF();
 		 else
 			 temp = data.getTempC();
+
 	}
 	
 	/**
@@ -73,8 +74,15 @@ public class WeatherScreenModel {
 	 * Sets temperature setting to C or F based off of what was passed in parameter
 	 * @param setting "C" or "F"
 	 */
+
 	public void setTempSetting(String setting) {  // for now returns F.. probably need to call OptionsScreen? 
 		this.tempSetting = setting;
+	}
+	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
+		if (tempSetting == "C")
+			tempSetting = "C";
+		tempSetting = "F";
+
 	}
 	
 	/**
