@@ -5,11 +5,13 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 import model.WeatherScreenModel;
 
 public class WeatherScreenController {
-	static WeatherScreenView view;
+	WeatherScreenView view;
 	WeatherScreenModel model;
+	private LocationScreenModel locationScreenModel = new LocationScreenModel();
 	
 	/**
 	 * Constructor method for WeatherScreenController
@@ -73,14 +75,14 @@ public class WeatherScreenController {
 			}
 			return true;
 		}
-		else if(str.length() > 3 && str.charAt(str.length() - 3) == ','){
+		/*else if(str.length() > 3 && str.charAt(str.length() - 3) == ','){
 			for(int i = 0; i < str.length() - 3; i++){
 				if(!Character.isLetter(str.charAt(i)) && str.charAt(i) != ' '){
 					return false;
 				}
 			}
 			return true;
-		}
+		}*/
 		else{
 			//not comma separated
 			return false;
@@ -102,8 +104,21 @@ public class WeatherScreenController {
 				//ScreenController screenController = new ScreenController(primaryStage);
 				String location = view.getSearchQuery();
 				if(isValidLocation(location)){
-					ScreenController sController = new ScreenController(stage);	
-					sController.showWeatherScreen(stage, location);
+					if(isZipCode(location)){
+						locationScreenModel.setLocation(location);
+					}
+					else{
+						String state = location.substring(location.length() - 2);
+						String city = location.substring(0, location.length() - 4);
+						locationScreenModel.setLocation(city, state);
+					}
+					if(locationScreenModel.isKnownLocation()){
+						ScreenController sController = new ScreenController(stage);	
+						sController.showWeatherScreen(stage, locationScreenModel.getLocation());
+					}
+					else{
+						System.out.println("Error: unkown location: "+locationScreenModel.getLocation());
+					}
 				}
 				else{ 
 					//invalid location
