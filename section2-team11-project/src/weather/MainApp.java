@@ -1,9 +1,7 @@
 package weather;
 
-
-import java.io.IOException;
-
 import javafx.application.Application;
+import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
