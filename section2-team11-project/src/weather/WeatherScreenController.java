@@ -41,10 +41,10 @@ public class WeatherScreenController {
 	 */
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
+				ScreenController sController = new ScreenController(stagePrev);			
 			
 			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+				sController.showLocationScreen(stagePrev);
 			}
 		};
 		return handler;

@@ -12,6 +12,7 @@ public class WeatherScreenModel {
 	private String city;
 	private String state;
 	private String time;
+	private String icon;
 	
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -103,6 +104,14 @@ public class WeatherScreenModel {
 		Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mma"); // can change to military time with HH:mm
         time = sdf.format(cal.getTime());
+	}
+	
+	public String getIcon() {
+		return this.icon;
+		
+	}
+	public void setIcon(int n){
+		this.icon= data.getForecastIconURL(n);
 	}
 	
 
