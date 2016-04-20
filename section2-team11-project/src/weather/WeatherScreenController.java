@@ -7,12 +7,16 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
+import model.LocationScreenModel;
 import model.WeatherScreenModel;
 
 public class WeatherScreenController {
-	static WeatherScreenView view;
+	WeatherScreenView view;
 	WeatherScreenModel model;
 	private boolean tempSettingBtn;
+
+	private LocationScreenModel locationScreenModel = new LocationScreenModel();
+
 	
 	/**
 	 * Constructor method for WeatherScreenController
@@ -51,7 +55,7 @@ public class WeatherScreenController {
 					model.setTempSetting("C");
 					model.getTempSetting();
 					model.setTemp();
-					view.weatherNumerics.setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
 					//view.setWeatherNumerics(TextBuilder.create().text(model.getTemp() + Character.toString((char) 176) + model.getTempSetting()).build());
 					//view.getWeatherNumerics().setFont(Font.font ("Consolas",  100));
 					System.out.println("Change to celcius");
@@ -60,7 +64,7 @@ public class WeatherScreenController {
 					model.setTempSetting("F");
 					model.getTempSetting();
 					model.setTemp();
-					view.weatherNumerics.setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
 					System.out.println("Change back to fahrenheit");
 				}
 				tempSettingBtn = !tempSettingBtn;
@@ -68,6 +72,8 @@ public class WeatherScreenController {
 			}
 		};
 		return handler;
+		//model.setWeatherForecast();
+		//model.setTodayIcon();
 	}
 	
 	/**
@@ -110,14 +116,14 @@ public class WeatherScreenController {
 			}
 			return true;
 		}
-		else if(str.length() > 3 && str.charAt(str.length() - 3) == ','){
+		/*else if(str.length() > 3 && str.charAt(str.length() - 3) == ','){
 			for(int i = 0; i < str.length() - 3; i++){
 				if(!Character.isLetter(str.charAt(i)) && str.charAt(i) != ' '){
 					return false;
 				}
 			}
 			return true;
-		}
+		}*/
 		else{
 			//not comma separated
 			return false;
@@ -139,8 +145,21 @@ public class WeatherScreenController {
 				//ScreenController screenController = new ScreenController(primaryStage);
 				String location = view.getSearchQuery();
 				if(isValidLocation(location)){
-					ScreenController sController = new ScreenController(stage);	
-					sController.showWeatherScreen(stage, location);
+					if(isZipCode(location)){
+						locationScreenModel.setLocation(location);
+					}
+					else{
+						String state = location.substring(location.length() - 2);
+						String city = location.substring(0, location.length() - 4);
+						locationScreenModel.setLocation(city, state);
+					}
+					if(locationScreenModel.isKnownLocation()){
+						ScreenController sController = new ScreenController(stage);	
+						sController.showWeatherScreen(stage, locationScreenModel.getLocation());
+					}
+					else{
+						System.out.println("Error: unkown location: "+locationScreenModel.getLocation());
+					}
 				}
 				else{ 
 					//invalid location
@@ -149,6 +168,19 @@ public class WeatherScreenController {
 			}
 	};
 	return handler; 
+	}
+
+	public EventHandler<ActionEvent> getSettingsListener(Stage stage) {
+		EventHandler handler = new EventHandler<Event>(){
+			ScreenController sController = new ScreenController(stage);
+			@Override
+			public void handle(Event event) {
+				// TODO Auto-generated method stub
+				sController.showOptionsScreen(stage);
+			}
+			
+		};
+		return handler;
 	}
 	
 }
