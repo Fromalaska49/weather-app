@@ -71,6 +71,24 @@ public class ScreenController {
 		System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
+
+	
+	/**
+	 * This method is called by LocationScreenController when the ok button is clicked. 
+	 * @param p
+	 */
+	public void showWeatherScreen(Stage p, String location) {
+		LoadAPI api = new LoadAPI(location);  
+		ProcessData data = new ProcessData();                   
+	
+		Scene scene = p.getScene();
+		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
+		WeatherScreenView wView = new WeatherScreenView(wModel);
+		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
+		System.out.println("Display Weather Screen");
+		wView.start(primaryStage, scene);
+	}
+	
 	/**
 	 * This method is called by LocationScreenController when the Settings button is clicked. 
 	 * @param p
