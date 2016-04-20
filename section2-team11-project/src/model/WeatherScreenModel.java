@@ -7,12 +7,17 @@ import weather.ProcessData;
 public class WeatherScreenModel {
 	LoadAPI api;
 	ProcessData data;
+	private String weatherCondition;
 	private String temp;
 	private String tempSetting;
 	private String city;
 	private String state;
 	private String time;
 	private String icon;
+	private String day;
+	private String high;
+	private String low;
+	private String forecastCondition;
 	
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -22,13 +27,28 @@ public class WeatherScreenModel {
 		this.data = wdata;
 		this.setTime();
 	}
+	
+	/**
+	 * Returns a brief description of current weather e.g. "partly cloudy"
+	 * @return
+	 */
+	public String getWeatherCondition() {
+		return this.weatherCondition;
+	}
+	
+	/**
+	 * Calls on Process Data to get a description of current weather conditions
+	 */
+	public void setWeatherCondition() {
+		this.weatherCondition = data.getWeatherCondition();
+	}
 
 	/**
-	 * Returns temperature
+	 * Returns temperature in F or C
 	 * @return
 	 */
 	public String getTemp() {
-		return temp;
+		return this.temp;
 	}
 	
 	/**
@@ -36,7 +56,7 @@ public class WeatherScreenModel {
 	 */
 	public void setTemp() {	
 		// if F
-		temp = data.getTempF();
+		this.temp = data.getTempF();
 		// else
 		// temp = data.getTempC();
 	}
@@ -46,7 +66,7 @@ public class WeatherScreenModel {
 	 * @return
 	 */
 	public String getTempSetting() {
-		return tempSetting;
+		return this.tempSetting;
 	}
 	
 	/**
@@ -54,7 +74,7 @@ public class WeatherScreenModel {
 	 */
 	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
 		// if F
-		tempSetting = "F";
+		this.tempSetting = "F";
 		// if C
 		// tempSetting = "C";
 	}
@@ -64,14 +84,14 @@ public class WeatherScreenModel {
 	 * @return
 	 */
 	public String getCity() {
-		return city;
+		return this.city;
 	}
 	
 	/**
 	 * Calls on Process Data class to get current city
 	 */
 	public void setCity() {
-		city = data.getCity();
+		this.city = data.getCity();
 	}
 
 	/**
@@ -79,14 +99,14 @@ public class WeatherScreenModel {
 	 * @return
 	 */
 	public String getState() {
-		return state;
+		return this.state;
 	}
 
 	/**
 	 * Calls on Process Data class to get current state
 	 */
 	public void setState() {
-		state = data.getStateName();
+		this.state = data.getStateName();
 	}
 	
 	/** 
@@ -94,7 +114,7 @@ public class WeatherScreenModel {
 	 * @return
 	 */
 	public String getTime() {
-		return time;
+		return this.time;
 	}
 	
 	/**
@@ -106,13 +126,89 @@ public class WeatherScreenModel {
         time = sdf.format(cal.getTime());
 	}
 	
+	/**
+	 * Returns icon
+	 * @return
+	 */
 	public String getIcon() {
 		return this.icon;
-		
 	}
+	
+	/**
+	 * Calls on Process Data to get icon that matches weather of the day, n, which is passed as parameter
+	 * @param n, the day of the week
+	 */
 	public void setIcon(int n){
 		this.icon= data.getForecastIconURL(n);
 	}
 	
+	/**
+	 * Returns the day of the week
+	 * @return
+	 */
+	public String getDayOfWeek() {
+		return this.day;
+	}
+	
+	/**
+	 * Calls on Process Data to get the name of the day, n, which is passed as the parameter
+	 * @param n
+	 */
+	public void setDayOfWeek(int n) {
+		this.day = data. getForecastDayOfWeek(n); // data. getForecastDayOfWeekShort(n)
+	}
+	
+	/**
+	 * Returns high temperature in F or C
+	 * @return
+	 */
+	public String getForecastHigh() {
+		return this.high;
+	}
+	
+	/**
+	 * Calls on Process Data to get highest temperature of the day, n, which is passed as parameter
+	 * @param n
+	 */
+	public void setForecastHigh(int n) {
+		// if f
+		this.high = data.getForecastHighF(n);
+		// else
+		// this.high = data.getForecastHighC(n);
+	}
+	
+	/**
+	 * Returns low temperature in F or C
+	 * @return
+	 */
+	public String getForecastlow() {
+		return this.low;
+	}
+	
+	/**
+	 * Calls on Process Data to get lowest temperature of the day, n, which is passed as parameter
+	 * @param n
+	 */
+	public void setForecastLow(int n) {
+		// if f
+		this.high = data.getForecastLowF(n);
+		// else
+		// this.high = data.getForecastLowC(n);
+	}
+	
+	/**
+	 * Returns forecast conditions of given day
+	 */
+	public String getForecastCondition() {
+		return this.forecastCondition;
+	}
+	
+	/**
+	 * Calls on Process Data to get the forecast conditions of the day n, which is passed as parameter
+	 */
+	public void setForecastCondition(int n) {
+		this.forecastCondition = data.getForecastConditions(n); // 
+	}
+		
 
 }

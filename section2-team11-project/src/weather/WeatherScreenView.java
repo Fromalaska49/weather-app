@@ -70,7 +70,7 @@ public class WeatherScreenView {
 	public void start(Stage stage, Scene scene) {
 
 		
-		headerText =  TextBuilder.create().text("Thunderstorm").build();
+		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
 		setWeatherNumerics(TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build());
 		getWeatherNumerics().setFont(Font.font ("Consolas",  100));

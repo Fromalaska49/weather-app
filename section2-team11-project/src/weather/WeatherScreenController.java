@@ -26,6 +26,7 @@ public class WeatherScreenController {
 	 * This method calls on the WeatherScreenModel class to set all the variables that will be displayed on WeatherScreenView
 	 */
 	public void setVariables() {
+		model.setWeatherCondition();
 		model.setTemp();
 		model.setTempSetting();
 		model.setCity();
