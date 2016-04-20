@@ -53,6 +53,8 @@ public class ChangeUnitView {
 	private GridPane grid;
 	private BorderPane border;
 	private Label tempLabel;
+	private Label windLabel;
+	private ChoiceBox<String> windField;
 	private ChangeUnitController ChangeUnitController;
 
 	/**
@@ -70,23 +72,28 @@ public class ChangeUnitView {
 	    
 	    primaryStage.setTitle("Change Unit Window");    
 	    tempLabel = new Label("Temprature Unit: ");
+	    windLabel = new Label("Wind Speed Unti: ");
 	    OptionsScreenModel OSmodel = new OptionsScreenModel();
 	    Button backBtn = new Button("Back");
 	    Button saveBtn = new Button("Save");
 	    
 	    tempField = new ChoiceBox<String>(FXCollections.observableArrayList("F", "C"));
+	    windField = new ChoiceBox<String>(FXCollections.observableArrayList("MpH", "KpH"));
 	    
 	    backBtn.setOnAction(ChangeUnitController.getBackListener(stagePrev, scenePrev));
-    	saveBtn.setOnAction(ChangeUnitController.getSaveListener(tempField, OSmodel));
+    	saveBtn.setOnAction(ChangeUnitController.getSaveListener(tempField, windField, OSmodel));
     	
     	grid = new GridPane();
-		grid.add(tempLabel, 0, 5);
+    	grid.add(windLabel, 0, 3);
+    	grid.add(windField, 3, 3);
+		grid.add(tempLabel, 0, 6);
     	grid.add(tempField, 3, 6);
     	grid.add(backBtn, 0, 7);
     	grid.add(saveBtn, 4, 7);
 		grid.setAlignment(Pos.CENTER);
 		
 		tempField.setValue(OSmodel.getTempOpt());
+		windField.setValue(OSmodel.getWindOpt());
 		
 		border = new BorderPane();
     	border.setCenter(grid);

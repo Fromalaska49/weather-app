@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import model.LocationScreenModel;
 import model.OptionsScreenModel;
 import model.WeatherScreenModel;
+import model.ChangeLocationModel;
 import model.ChangeUnitModel;
 
 public class ScreenController {
@@ -73,6 +74,21 @@ public class ScreenController {
 		wView.start(primaryStage, scene);
 	}
 
+	/**
+	 * This method is called by LocationScreenController when the ok button is clicked. 
+	 * @param p
+	 */
+	public void showWeatherScreen(Stage p, ChangeLocationModel cModel) {
+		LoadAPI api = new LoadAPI(cModel.getLocation());  
+		ProcessData data = new ProcessData();                   
+	
+		Scene scene = p.getScene();
+		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
+		WeatherScreenView wView = new WeatherScreenView(wModel);
+		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
+		System.out.println("Display Weather Screen");
+		wView.start(primaryStage, scene);
+	}
 	
 	/**
 	 * This method is called by LocationScreenController when the ok button is clicked. 

@@ -70,11 +70,12 @@ public class OptionsScreenController {
 	 */
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
-			
+			ScreenController sController = new ScreenController(primaryStage);
 			public void handle(Event event){
 			//	System.out.println("Back Button Pressed");
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+				ChangeLocationModel cModel = new ChangeLocationModel();
+				sController.showWeatherScreen(primaryStage, cModel);
+				
 			}
 		};
 		return handler;

@@ -57,6 +57,8 @@ public class OptionsScreenView {
 	private Label zipField;
 	private Label cityField;
 	private Label stateField;
+	private Label windLabel;
+	private Label windField;
 	
 
 	
@@ -73,6 +75,7 @@ public class OptionsScreenView {
     	Scene scenePrev = scene;
     	primaryStage.setTitle("Options Window");    
     	tempLabel = new Label("Temprature Unit: ");
+    	windLabel = new Label("Wind Speed Unit: ");
     	OptionsScreenModel OSmodel = new OptionsScreenModel();
     	Button backBtn = new Button("Back");
     	Button ChgUnBtn = new Button("Change Unit");
@@ -81,6 +84,7 @@ public class OptionsScreenView {
     	cityField = new Label(OSmodel.getCityOpt());
     	stateField = new Label(OSmodel.getStateOpt());
     	zipField = new Label(OSmodel.getZipOpt());
+    	windField = new Label(OSmodel.getWindOpt());
     	backBtn.setOnAction(OptionsScreenController.getBackListener(stagePrev, scenePrev));
     	ChgUnBtn.setOnAction(OptionsScreenController.getChangeUnitListener());
     	ChgLcBtn.setOnAction(OptionsScreenController.getChangeLocationListener());
@@ -103,10 +107,12 @@ public class OptionsScreenView {
 		grid.add(stateField, 3, 1);
 		grid.add(zipField, 3, 4);
 		grid.add(tempLabel, 0, 5);
-    	grid.add(tempField, 3, 6);
-    	grid.add(backBtn, 0, 7);
-    	grid.add(ChgLcBtn, 2, 7);
-    	grid.add(ChgUnBtn, 4, 7);
+    	grid.add(tempField, 3, 5);
+    	grid.add(windLabel, 0, 7);
+    	grid.add(windField, 3, 7);
+    	grid.add(backBtn, 0, 8);
+    	grid.add(ChgLcBtn, 2, 8);
+    	grid.add(ChgUnBtn, 4, 8);
 		grid.setAlignment(Pos.CENTER);
 		
     	
