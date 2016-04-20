@@ -77,11 +77,12 @@ public class LocationScreenModel {
 			location += this.zipCode;
 		}
 		else if(this.state.length() > 0 && this.city.length() > 0){
-			location = this.state + "/" + this.city;
+			location = this.state + "/" + this.city.replace(' ', '_');
 		}
 		else{
 			System.out.println("Error: no location found (in LocationScreenModel)");
 		}
+		System.out.println("S");
 		return location;
 	}
 	
