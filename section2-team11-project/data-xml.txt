@@ -1,0 +1,134 @@
+
+<response>
+	<version>0.1</version>
+	<termsofService>http://www.wunderground.com/weather/api/d/terms.html</termsofService>
+	<features>
+		<feature>conditions</feature>
+	</features>
+  <current_observation>
+		<image>
+		<url>http://icons.wxug.com/graphics/wu2/logo_130x80.png</url>
+		<title>Weather Underground</title>
+		<link>http://www.wunderground.com</link>
+		</image>
+		<display_location>
+		<full>San Antonio, TX</full>
+		<city>San Antonio</city>
+		<state>TX</state>
+		<state_name>Texas</state_name>
+		<country>US</country>
+		<country_iso3166>US</country_iso3166>
+		<zip>78254</zip>
+		<magic>1</magic>
+		<wmo>99999</wmo>
+		<latitude>29.53610039</latitude>
+		<longitude>-98.72433472</longitude>
+		<elevation>297.00000000</elevation>
+		</display_location>
+		<observation_location>
+		<full>Hearthstone Ranch, Helotes, Texas</full>
+		<city>Hearthstone Ranch, Helotes</city>
+		<state>Texas</state>
+		<country>US</country>
+		<country_iso3166>US</country_iso3166>
+		<latitude>29.552671</latitude>
+		<longitude>-98.717796</longitude>
+		<elevation>1070 ft</elevation>
+		</observation_location>
+		<estimated>
+		</estimated>
+		<station_id>KTXHELOT10</station_id>
+		<observation_time>Last Updated on April 19, 10:23 PM CDT</observation_time>
+		<observation_time_rfc822>Tue, 19 Apr 2016 22:23:53 -0500</observation_time_rfc822>
+		<observation_epoch>1461122633</observation_epoch>
+		<local_time_rfc822>Tue, 19 Apr 2016 22:24:24 -0500</local_time_rfc822>
+		<local_epoch>1461122664</local_epoch>
+		<local_tz_short>CDT</local_tz_short>
+		<local_tz_long>America/Chicago</local_tz_long>
+		<local_tz_offset>-0500</local_tz_offset>
+		<weather>Mostly Cloudy</weather>
+		<temperature_string>68.4 F (20.2 C)</temperature_string>
+		<temp_f>68.4</temp_f>
+		<temp_c>20.2</temp_c>
+		<relative_humidity>85%</relative_humidity>
+		<wind_string>Calm</wind_string>
+		<wind_dir>ENE</wind_dir>
+		<wind_degrees>67</wind_degrees>
+		<wind_mph>0.0</wind_mph>
+		<wind_gust_mph>0</wind_gust_mph>
+		<wind_kph>0.0</wind_kph>
+		<wind_gust_kph>0</wind_gust_kph>
+		<pressure_mb>1016</pressure_mb>
+		<pressure_in>30.02</pressure_in>
+		<pressure_trend>0</pressure_trend>
+		
+		<dewpoint_string>64 F (18 C)</dewpoint_string>
+		<dewpoint_f>64</dewpoint_f>
+		<dewpoint_c>18</dewpoint_c>
+		
+		
+		<heat_index_string>NA</heat_index_string>
+		<heat_index_f>NA</heat_index_f>
+		<heat_index_c>NA</heat_index_c>
+		
+		
+		<windchill_string>NA</windchill_string>
+		<windchill_f>NA</windchill_f>
+		<windchill_c>NA</windchill_c>
+		
+        <feelslike_string>68.4 F (20.2 C)</feelslike_string>
+        <feelslike_f>68.4</feelslike_f>
+        <feelslike_c>20.2</feelslike_c>
+		<visibility_mi>10.0</visibility_mi>
+		<visibility_km>16.1</visibility_km>
+		<solarradiation></solarradiation>
+		<UV>0</UV>
+		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
+		<precip_1hr_in>-999.00</precip_1hr_in>
+		<precip_1hr_metric> 0</precip_1hr_metric>
+		<precip_today_string>0.00 in (0 mm)</precip_today_string>
+		<precip_today_in>0.00</precip_today_in>
+		<precip_today_metric>0</precip_today_metric>
+		
+		
+		
+		<icon>mostlycloudy</icon>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif</icon_url>
+		<forecast_url>http://www.wunderground.com/US/TX/San_Antonio.html</forecast_url>
+        
+        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXHELOT10</history_url>
+        
+		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=29.552671,-98.717796</ob_url>
+	</current_observation>
+
+		
+	
+	
+	
+	
+    
+	
+	
+		
+	
+
+    
+    
+    
+	
+  
+	
+	
+	
+	
+	
+    
+    
+
+
+    
+    
+    
+    
+</response>
+	
