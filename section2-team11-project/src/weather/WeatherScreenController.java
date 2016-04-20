@@ -50,10 +50,17 @@ public class WeatherScreenController {
 				if(tempSettingBtn == false) {
 					model.setTempSetting("C");
 					model.getTempSetting();
+					model.setTemp();
+					view.weatherNumerics.setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+					//view.setWeatherNumerics(TextBuilder.create().text(model.getTemp() + Character.toString((char) 176) + model.getTempSetting()).build());
+					//view.getWeatherNumerics().setFont(Font.font ("Consolas",  100));
 					System.out.println("Change to celcius");
 				}
 				else {
 					model.setTempSetting("F");
+					model.getTempSetting();
+					model.setTemp();
+					view.weatherNumerics.setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
 					System.out.println("Change back to fahrenheit");
 				}
 				tempSettingBtn = !tempSettingBtn;

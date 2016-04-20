@@ -58,9 +58,8 @@ public class WeatherScreenView {
 	private Button toggleCF = new Button();
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
-	private Text weatherNumerics;
-	private 
-	WeatherScreenModel model;
+	Text weatherNumerics;
+	private WeatherScreenModel model;
 	private TextField searchField = new TextField();
 
 	//	private LocationScreenModel locModel;
@@ -74,7 +73,7 @@ public class WeatherScreenView {
 		
 		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		setWeatherNumerics(TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build());
+		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
 		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
 		cityLabel =  TextBuilder.create().text(model.getCity()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
@@ -83,34 +82,6 @@ public class WeatherScreenView {
 		timeLabel =  TextBuilder.create().text(model.getTime()).build();
 		timeLabel.setFont(Font.font("Helvetica",  20));
 
-//    	//ScreenController screenController = new ScreenController(stage);
-//    	//Button backButton = new Button("< Back");
-//    	backButton.setOnAction(screenController.getBackListener(stage, scene));
-//    	topGrid = new GridPane();
-//    	topGrid.setPadding(new Insets(10, 10, 10, 10));
-//    	topGrid.setHgap(10);
-//    	topGrid.setVgap(10);
-//    	topGrid.setGridLinesVisible(false);
-//    	topGrid.setAlignment(Pos.TOP_LEFT);
-//    	topGrid.add(backButton, 0, 0);
-    	
-    	
-		//		weatherNumerics.setText("49� C");
-		//Image image = new Image("StartScreen.png");
-		
-
-		/*
-    	WeatherScreenController wController = new WeatherScreenController(this, model);
-    	Button backButton1 = new Button("< Back");
-    	backButton1.setOnAction(wController.getBackListener(stage, scene));
-    	topGrid = new GridPane();
-    	topGrid.setPadding(new Insets(10, 10, 10, 10));
-    	topGrid.setHgap(10);
-    	topGrid.setVgap(10);
-    	topGrid.setGridLinesVisible(false);
-    	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(backButton1, 0, 0);
-    	*/
 		
 		
     	WeatherScreenController wController = new WeatherScreenController(this, model);
@@ -242,8 +213,8 @@ public class WeatherScreenView {
 		return weatherNumerics;
 	}
 	
-	public void setWeatherNumerics(Text weatherNumerics) {
-		this.weatherNumerics = weatherNumerics;
+	public void setWeatherNumerics(Text string) {
+		this.weatherNumerics = string;
 	}
 	
 	/*
