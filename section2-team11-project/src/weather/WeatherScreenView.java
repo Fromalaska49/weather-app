@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.net.URL;
 
 import java.util.ArrayList;
-
+import java.util.Calendar;
+import java.util.Date;
 
 import javafx.scene.image.Image;
 
@@ -65,6 +66,7 @@ public class WeatherScreenView {
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
+	private Calendar dateToday = Calendar.getInstance();
 	WeatherScreenModel model;
 
 	//	private LocationScreenModel locModel;
@@ -82,9 +84,9 @@ public class WeatherScreenView {
 		cityLabel =  TextBuilder.create().text(model.getCity()+", "+model.getState()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
 		stateLabel =  TextBuilder.create().text(model.getTime()).build();
-		stateLabel.setFont(Font.font ("Helvetica",  20));
-		timeLabel =  TextBuilder.create().text("Date|"+model.getForecastDay(1)).build();
-		timeLabel.setFont(Font.font("Helvetica",  20));
+		stateLabel.setFont(Font.font ("Helvetica",  15));
+		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
+		timeLabel.setFont(Font.font("Helvetica",  15));
 
 //    	//ScreenController screenController = new ScreenController(stage);
 //    	//Button backButton = new Button("< Back");
