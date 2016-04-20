@@ -80,14 +80,11 @@ public class WeatherScreenModel {
 	 * @param setting "C" or "F"
 	 */
 
-	public void setTempSetting(String setting) {  // for now returns F.. probably need to call OptionsScreen? 
+	public void setTempSetting(String setting) {  // uses parameteter passed from WeatherScreenController
 		this.tempSetting = setting;
 	}
-	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
-		if (tempSetting == "C")
-			tempSetting = "C";
-		else
-		tempSetting = "F";
+	public void setTempSetting() {  // uses configurations in OptionsScreenModel
+		this.tempSetting = optionsModel.getTempOpt();
 
 	}
 
