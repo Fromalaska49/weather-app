@@ -19,6 +19,8 @@ public class WeatherScreenModel {
 	private String high;
 	private String low;
 	private String forecastCondition;
+	private String windSpeed;
+	private String windSetting;
 
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -82,6 +84,7 @@ public class WeatherScreenModel {
 	public void setTempSetting() {  // for now returns F.. probably need to call OptionsScreen? 
 		if (tempSetting == "C")
 			tempSetting = "C";
+		else
 		tempSetting = "F";
 
 	}
@@ -137,9 +140,10 @@ public class WeatherScreenModel {
 	 * Returns icon
 	 * @return
 	 */
+	/*
 	public String getForecastDay(int n) {
 		return data.getForecastDayOfWeek(n);
-	}
+	}*/
 
 
 	public String getTodayIcon() {
@@ -232,6 +236,22 @@ public class WeatherScreenModel {
 	 */
 	public void setForecastCondition(int n) {
 		this.forecastCondition = data.getForecastConditions(n); // 
+	}
+	
+	public String getWindSpeed() {
+		return this.windSpeed;
+	}
+	
+	public void setWindSpeed(int n) {
+		this.windSpeed = data.getForecastWindMPH(n);
+	}
+	
+	public String getWindSettings() {
+		return this.windSetting;
+	}
+	
+	public void setWindSettings(String setting) {
+		this.windSetting = setting;
 	}
 
 
