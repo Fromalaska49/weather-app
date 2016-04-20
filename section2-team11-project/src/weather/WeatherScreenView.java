@@ -122,36 +122,6 @@ public class WeatherScreenView {
 		iv7 = new ImageView(); 
 		iv8 = new ImageView();
 
-		iv1.setImage(image);
-		iv1.setPreserveRatio(true);
-
-		iv2.setImage(image);
-		iv2.setFitWidth(100);
-		iv2.setPreserveRatio(true);
-
-		iv3.setImage(image);
-		iv3.setFitWidth(100);
-		iv3.setPreserveRatio(true);
-
-		iv4.setImage(image);
-		iv4.setFitWidth(100);
-		iv4.setPreserveRatio(true);
-
-		iv5.setImage(image);
-		iv5.setFitWidth(100);
-		iv5.setPreserveRatio(true);
-
-		iv6.setImage(image);
-		iv6.setFitWidth(100);
-		iv6.setPreserveRatio(true);
-
-		iv7.setImage(image);
-		iv7.setFitWidth(100);
-		iv7.setPreserveRatio(true);
-
-		iv8.setImage(image);
-		iv8.setFitWidth(100);
-		iv8.setPreserveRatio(true);
 		toggleCF.setText("Toggle C/F");
 		toggleHW.setText("Toggle Hourly/Weekly");
 		toggleMI.setText("Toggle Meters/Imperial");
@@ -185,21 +155,7 @@ public class WeatherScreenView {
 		leftPanel.getChildren().add(timeLabel);
 		leftPanel.setAlignment(Pos.BOTTOM_LEFT);
 		
-		model.setIcon(1);
-		String imageSource = model.getIcon();
-        
-        ImageView day1 = ImageViewBuilder.create()
-                .image(new Image(imageSource))
-                .build();
-        
-        model.setIcon(2);
-        String imageSource1 = model.getIcon();
-        
-        ImageView day2 = ImageViewBuilder.create()
-                .image(new Image(imageSource1))
-                .build();
-        day1.setFitWidth(100);
-        day1.setFitHeight(100);
+		
         
         ArrayList<ImageView> imageViewArray = new ArrayList<>();
         
