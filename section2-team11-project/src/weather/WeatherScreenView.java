@@ -61,12 +61,14 @@ public class WeatherScreenView {
 	private Text weatherNumerics;
 	private 
 	WeatherScreenModel model;
+	private TextField searchField = new TextField();
 
 	//	private LocationScreenModel locModel;
 
 	public WeatherScreenView(WeatherScreenModel wModel){	
 		model = wModel;
 	}
+	
 	public void start(Stage stage, Scene scene) {
 
 		
@@ -97,6 +99,7 @@ public class WeatherScreenView {
 		//Image image = new Image("StartScreen.png");
 		
 
+		/*
     	WeatherScreenController wController = new WeatherScreenController(this, model);
     	Button backButton1 = new Button("< Back");
     	backButton1.setOnAction(wController.getBackListener(stage, scene));
@@ -107,6 +110,24 @@ public class WeatherScreenView {
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
     	topGrid.add(backButton1, 0, 0);
+    	*/
+		
+		
+    	WeatherScreenController wController = new WeatherScreenController(this, model);
+    	Button searchButton = new Button("Search");
+    	searchButton.setOnAction(wController.getBackListener(stage, scene));
+
+    	WeatherScreenController weatherScreenController = new WeatherScreenController(this, this.model);
+    	searchButton.setOnAction(weatherScreenController.getSearchListener(stage));
+		
+    	topGrid = new GridPane();
+    	topGrid.setPadding(new Insets(10, 10, 10, 10));
+    	topGrid.setHgap(10);
+    	topGrid.setVgap(10);
+    	topGrid.setGridLinesVisible(false);
+    	topGrid.setAlignment(Pos.TOP_LEFT);
+    	topGrid.add(searchField, 0, 0);
+    	topGrid.add(searchButton, 1, 0);
 
 		// simple displays ImageView the image as is
 		Image image = new Image(new File("Capture.PNG").toURI().toString());
@@ -222,6 +243,13 @@ public class WeatherScreenView {
 	
 	public void setWeatherNumerics(Text weatherNumerics) {
 		this.weatherNumerics = weatherNumerics;
+	}
+	
+	/*
+	 * Returns the value of the search field
+	 */
+	public String getSearchQuery(){
+		return searchField.getText();
 	}
 
 

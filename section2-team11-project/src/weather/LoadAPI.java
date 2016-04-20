@@ -14,6 +14,8 @@ import org.apache.commons.io.IOUtils;
 
 public class LoadAPI{
 	
+	private int cacheTime = 900;
+	
 	public LoadAPI(String location) {
 		loadData(location);
 		return;
@@ -114,6 +116,7 @@ public class LoadAPI{
 		success &= downloadXML(location);
 		success &= downloadForecastXML(location);
 		success &= downloadRadar(location);
+		System.out.println("Success = "+success);
 		if(success){
 			setUpdateTime();
 		    setLocation(location);
@@ -127,8 +130,8 @@ public class LoadAPI{
 	 * String value
 	 */
 	private boolean downloadJSON(String location){
-		if(alreadyLoaded(location, 900)){
-			return true;
+		if(alreadyLoaded(location, this.cacheTime)){
+			return false;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".json";
 		String targetURLContents = "undefined";
@@ -159,8 +162,8 @@ public class LoadAPI{
 	 * String value
 	 */
 	private boolean downloadXML(String location) {
-		if(alreadyLoaded(location, 900)){
-			return true;
+		if(alreadyLoaded(location, this.cacheTime)){
+			return false;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/conditions/q/" + location + ".xml";
 		String targetURLContents = "undefined";
@@ -193,8 +196,8 @@ public class LoadAPI{
 	 * FOR THE NEXT 10 DAYS!
 	 */
 	private boolean downloadForecastXML(String location){
-		if(alreadyLoaded(location, 3600)){
-			return true;
+		if(alreadyLoaded(location, this.cacheTime)){
+			return false;
 		}
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/forecast10day/q/" + location + ".xml";
 		String targetURLContents = "undefined";
@@ -224,8 +227,8 @@ public class LoadAPI{
 	 * downloadRadar just downloads the radar as a gif
 	 */
 	private boolean downloadRadar(String location){
-		if(alreadyLoaded(location, 900)){
-			return true;
+		if(alreadyLoaded(location, this.cacheTime)){
+			return false;
 		}
 		
 		String
