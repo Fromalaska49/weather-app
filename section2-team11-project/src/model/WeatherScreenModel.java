@@ -21,6 +21,7 @@ public class WeatherScreenModel {
 	private String forecastCondition;
 	private String windSpeed;
 	private String windSetting;
+	private OptionsScreenModel optionsModel;
 
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -29,6 +30,7 @@ public class WeatherScreenModel {
 		this.api = wApi;
 		this.data = wdata;
 		this.setTime();
+		optionsModel = new OptionsScreenModel();
 	}
 
 	/**
@@ -250,8 +252,8 @@ public class WeatherScreenModel {
 		return this.windSetting;
 	}
 	
-	public void setWindSettings(String setting) {
-		this.windSetting = setting;
+	public void setWindSettings() {
+		this.windSetting = optionsModel.getWindOpt();
 	}
 
 
