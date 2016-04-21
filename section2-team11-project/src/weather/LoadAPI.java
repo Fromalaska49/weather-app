@@ -115,6 +115,7 @@ public class LoadAPI{
 		boolean success = true;
 		success &= downloadXML(location);
 		success &= downloadForecastXML(location);
+		success &= downloadHourlyForecastXML(location);
 		success &= downloadRadar(location);
 		System.out.println("Success = "+success);
 		if(success){
@@ -178,6 +179,37 @@ public class LoadAPI{
 		}
 		
 		Path file = Paths.get("data-xml.txt");
+		Charset charset = Charset.forName("UTF-8");
+		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
+		    writer.write(targetURLContents, 0, targetURLContents.length());
+		    return true;
+		} catch (IOException x) {
+		    System.err.format("IOException: %s%n", x);
+		}
+		
+		return false;
+	}
+	
+	/*
+	 * downloads the hourly forecast data
+	 */
+	private boolean downloadHourlyForecastXML(String location){
+		if(alreadyLoaded(location, this.cacheTime) && getUpdateTime() % 3600 == (System.currentTimeMillis() / 1000L) % 3600){
+			return false;
+		}
+		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/hourly/q/" + location + ".xml";
+		String targetURLContents = "undefined";
+		try {
+			targetURLContents = IOUtils.toString(new URL(targetURL), "UTF-8");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Path file = Paths.get("data-forecast-hourly-xml.txt");
 		Charset charset = Charset.forName("UTF-8");
 		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 		    writer.write(targetURLContents, 0, targetURLContents.length());

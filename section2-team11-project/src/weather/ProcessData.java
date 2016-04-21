@@ -34,6 +34,159 @@ public class ProcessData {
 	}
 	
 	/*
+	 * The hourly forecast data extends for 36 hours
+	 */
+	
+	/*
+	 * Gets the hour of the day in 24 hour format
+	 */
+	public String getHourlyForecastHour(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/hour/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the number of the month at the given index
+	 */
+	public String getHourlyForecastMonthNumber(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/mon/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the abbreviation of the month at the given index
+	 */
+	public String getHourlyForecastMonthAbbreviation(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/mon_abbrev/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the name of the month at the given index
+	 */
+	public String getHourlyForecastMonthName(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/month_name/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the day of the month at the given index
+	 */
+	public String getHourlyForecastDay(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/mday/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the Unix Time at the given index
+	 */
+	public String getHourlyForecastEpoch(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/epoch/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the abbreviation of the weekday at the given index
+	 */
+	public String getHourlyForecastWeekdayAbbreviation(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/weekday_name_abbrev/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the weekday at the given index
+	 */
+	public String getHourlyForecastWeekdayName(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/weekday_name/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the (preformatted) time at the given index
+	 */
+	public String getHourlyForecastTime(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/FCTTIME/civil/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the forecasted temperature (F) at the given index
+	 */
+	public String getHourlyForecastTempF(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/temp/english/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the forecasted condition at the given index
+	 */
+	public String getHourlyForecastCondition(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/condition/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the icon URL for the conditions at the given index
+	 */
+	public String getHourlyForecastIconURL(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/icon_url/text()";
+		String url = getNode(XPath, "data-forecast-hourly-xml.txt");
+		String imageType = "i";
+		url = url.substring(0, 26) + imageType + url.substring(27);
+		return url;
+	}
+	
+	/*
+	 * Gets the forecasted wind speed at the given index
+	 */
+	public String getHourlyForecastWindMPH(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/wspd/english/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the forecasted wind speed at the given index
+	 */
+	public String getHourlyForecastWindKPH(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/wspd/metric/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the forecasted wind direction at the given index
+	 */
+	public String getHourlyForecastWindDirection(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/wdir/dir/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	/*
+	 * Gets the forecasted humidity at the given index
+	 */
+	public String getHourlyForecastHumidity(int index) {
+		index++;
+		String XPath = "/response/hourly_forecast/forecast["+index+"]/wdir/humidity/text()";
+		return getNode(XPath, "data-forecast-hourly-xml.txt");
+	}
+	
+	
+	
+	/*
 	 * 
 	 * For all of the forecast methods below, the index
 	 * parameter is the number of days in the future that
