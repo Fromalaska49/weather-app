@@ -110,6 +110,7 @@ public class OptionsScreenModel {
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	output = new Formatter("weatherConfig.txt");
         	}catch (IOException ioException) {
+        		closeFile();
                 System.err.println("Error opening file. Terminating.");
                 System.exit(1);
             }
@@ -120,6 +121,7 @@ public class OptionsScreenModel {
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	input = new Scanner(Paths.get("weatherConfig.txt"));
         	}catch (IOException ioException) {
+        		closeFile();
                 System.err.println("Error opening file. Terminating.");
                 System.exit(1);
             }
@@ -134,10 +136,11 @@ public class OptionsScreenModel {
     	//System.out.println(this.tempOpt + " " + this.cityOpt + " " + this.stateOpt + " " + this.zipOpt);
     	
     	}catch (SecurityException securityException) {
+    		closeFile();
             System.err.println("Write permission denied. Terminating.");
             System.exit(1); // terminate the program
         }
-    	closeFileW();
+    	closeFile();
     	readFromConfig();
     }
     
@@ -151,20 +154,20 @@ public class OptionsScreenModel {
             configWindOpt = input.nextLine();
             
         } catch (NoSuchElementException elementException) {
+        	closeFile();
             System.err.println("File improperly formed. Terminating.");
         } catch (IllegalStateException stateException) {
+        	closeFile();
             System.err.println("Error reading from file. Terminating.");
         }
-    	closeFileR(); 	
+    	closeFile(); 	
     }
     
-    public void closeFileW() {
+    public void closeFile() {
         if (output != null)
             output.close();
-    }
-    
-    public void closeFileR() {
-    	if (input != null)
+        if (input != null)
             input.close();
     }
+    
 }
