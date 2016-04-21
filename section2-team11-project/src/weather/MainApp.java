@@ -35,7 +35,7 @@ public class MainApp extends Application {
     ScreenController sController = new ScreenController(primaryStage);
 
     try{
-    sController.showWeatherScreen(primaryStage, cModel);
+    	sController.showWeatherScreen(primaryStage, cModel);
     }catch(Exception e){
     	//In case of unexpected location entry, open location screen!
     	sController.showLocationScreen(primaryStage);

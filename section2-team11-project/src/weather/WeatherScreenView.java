@@ -22,6 +22,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -71,7 +72,8 @@ public class WeatherScreenView {
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
 	private Text windNumerics;
-
+	private String BckGimg;
+	
 	//	private LocationScreenModel locModel;
 
 	public WeatherScreenView(WeatherScreenModel wModel){	
@@ -99,7 +101,6 @@ public class WeatherScreenView {
 		timeLabel.setFont(Font.font("Helvetica",  15));
 
 		
-		
     	WeatherScreenController wController = new WeatherScreenController(this, model);
     	Button searchButton = new Button("Search");
     	searchButton.setOnAction(wController.getBackListener(stage, scene));
@@ -110,6 +111,14 @@ public class WeatherScreenView {
 		settingsButton.setText("Settings");
 		settingsButton.setOnAction(weatherScreenController.getSettingsListener(stage));
     	
+		//Code for importing background image.
+		BckGimg = model.getBckGImg();
+		//imports background img into image
+		String image = WeatherScreenView.class.getResource(BckGimg).toExternalForm();
+		
+		
+		
+		
     	topGrid = new GridPane();
     	topGrid.setPadding(new Insets(10, 10, 10, 10));
     	topGrid.setHgap(10);
@@ -140,8 +149,10 @@ public class WeatherScreenView {
 
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
-
-		
+		//set background img to border
+		border.setStyle("-fx-background-image: url('" + image + "'); " +
+		           "-fx-background-position: center center; " +
+		           "-fx-background-repeat: stretch;");
 		
 		//topGrid.add(iv1, 2, 0);
 		topGrid.add(headerText, 2, 0);
