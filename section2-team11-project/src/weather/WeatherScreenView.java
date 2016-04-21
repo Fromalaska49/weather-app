@@ -263,7 +263,7 @@ public class WeatherScreenView {
 		//border.setAlignment(okBtn, Pos.CENTER_RIGHT); 
 
 
-		Scene scene2 = new Scene(border, 800, 700);
+		Scene scene2 = new Scene(border, 1080, 700);
 
 		//scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 
