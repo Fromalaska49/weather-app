@@ -98,11 +98,11 @@ public class WeatherScreenView {
 		cityLabel.setFont(Font.font ("Helvetica",  20));
 		int timeStamp = Integer.parseInt(model.getData().getLocalTime());
 		Date time = new Date((long) timeStamp * 1000);
-		SimpleDateFormat sdf = new SimpleDateFormat("h:mm a, z");
-		//sdf.setTimeZone(TimeZone.getTimeZone("GMT-0")); 
-		String formattedDate = sdf.format(time);
+		SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT" + model.getData().getTimeOffset())); 
+		String formattedTime = sdf.format(time);
 		
-		stateLabel =  TextBuilder.create().text(formattedDate).build();
+		stateLabel =  TextBuilder.create().text(formattedTime).build();
 		stateLabel.setFont(Font.font ("Helvetica",  15));
 		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
 		timeLabel.setFont(Font.font("Helvetica",  15));
