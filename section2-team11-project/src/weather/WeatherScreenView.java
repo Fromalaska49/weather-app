@@ -74,7 +74,6 @@ public class WeatherScreenView {
 	private Button settingsButton = new Button();
 	private Text windNumerics;
 	private String BckGimg;
-	
 	//	private LocationScreenModel locModel;
 
 	public WeatherScreenView(WeatherScreenModel wModel){	
@@ -85,6 +84,7 @@ public class WeatherScreenView {
 
 		
 		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
+
 		headerText.setFont(Font.font ("Helvetica",  40));
 		
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
@@ -150,6 +150,7 @@ public class WeatherScreenView {
 		toggleCF.setOnAction(wController.getTempSettingListener());
 		toggleHW.setText("Toggle Hourly/Weekly");
 		toggleMI.setText("Toggle Meters/Imperial");
+		toggleMI.setOnAction(wController.getWindSettingListener());
 
 		topPanel = new HBox();
 		rightPanel = new VBox(20);
@@ -211,16 +212,18 @@ public class WeatherScreenView {
         
         int p = 0;
         for(ImageView iv : imageViewArray){
-        	iv.setFitHeight(100);
-        	iv.setFitWidth(100);
-        	bottomPanel.add(iv, p, 1);
-        	Label dayLabel = new Label();
-        	dayLabel.setText(model.getForecastDay(p+2));
-        	sevenDaysWeather.add(p, dayLabel);
-        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
-        	//bottomPanel.
-        	p++;
-        }
+	        	iv.setFitHeight(100);
+	        	iv.setFitWidth(100);
+	        	bottomPanel.add(iv, p, 1);
+	        	Label dayLabel = new Label();
+	        	dayLabel.setText(model.getForecastDay(p+1));
+	        	sevenDaysWeather.add(p, dayLabel);
+	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+	        bottomPanel.add(model.getHighTemps().get(p), p, 2);
+	        bottomPanel.add(model.getLowTemps().get(p), p, 3);
+	        	
+	        	p++;
+	        }
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);

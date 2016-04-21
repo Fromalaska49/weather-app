@@ -1,6 +1,13 @@
 package model;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageViewBuilder;
+import javafx.scene.text.TextBuilder;
 import weather.LoadAPI;
 import weather.ProcessData;
 
@@ -23,6 +30,8 @@ public class WeatherScreenModel {
 	private String windSetting;
 	private String BckGImg;
 	private OptionsScreenModel optionsModel;
+	private ArrayList<Label> highTemps;
+	private ArrayList<Label> lowTemps;
 
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -32,6 +41,8 @@ public class WeatherScreenModel {
 		this.setData(wdata);
 		this.setTime();
 		optionsModel = new OptionsScreenModel();
+		highTemps= new ArrayList<>();
+		lowTemps = new ArrayList<>();
 	}
 
 	/**
@@ -202,6 +213,7 @@ public class WeatherScreenModel {
 	 */
 	public String getForecastDay(int n) {
 		return getData().getForecastDayOfWeek(n);
+
 	}
 
 
@@ -259,11 +271,11 @@ public class WeatherScreenModel {
 	 */
 	public void setForecastHigh(int n) {
 		// if f
-		this.high = getData().getForecastHighF(n);
+		this.high = data.getForecastHighF(n);
 		// else
 		// this.high = data.getForecastHighC(n);
 	}
-
+	
 	/**
 	 * Returns low temperature in F or C
 	 * @return
@@ -282,6 +294,42 @@ public class WeatherScreenModel {
 		// else
 		// this.high = data.getForecastLowC(n);
 	}
+	
+	public void setHighTemps() {
+		for(int i = 0; i <= 8; i++) {
+			
+			Label temp = new Label();
+			if(this.tempSetting.equals("F"))  {
+				temp.setText(data.getForecastHighF(i+1));
+			}
+			else
+				temp.setText(data.getForecastHighC(i+1));
+        		highTemps.add(i,temp);
+        }
+	}
+	
+	public ArrayList<Label> getHighTemps() {
+		return this.highTemps;
+	}
+	
+	
+	public void setLowTemps() {
+		for(int i = 0; i <= 8; i++) {
+			
+			Label temp = new Label();
+			if(this.tempSetting.equals("F"))  {
+				temp.setText(data.getForecastLowF(i+1));
+			}
+			else
+				temp.setText(data.getForecastLowC(i+1));
+        		lowTemps.add(i,temp);
+        }
+	}	
+	public ArrayList<Label> getLowTemps() {
+		return this.lowTemps;
+	}
+
+
 
 	/**
 	 * Returns forecast conditions of given day
@@ -302,8 +350,9 @@ public class WeatherScreenModel {
 	}
 	
 	public void setWindSpeed(int n) {
-		if (this.windSetting.equals("MpH"))
-			this.windSpeed = getData().getForecastWindMPH(n);
+
+		if (this.windSetting.equals("MPH"))
+			this.windSpeed = data.getForecastWindMPH(n);
 		else 
 			this.windSpeed = getData().getForecastWindKPH(n);
 	}
@@ -312,7 +361,11 @@ public class WeatherScreenModel {
 		return this.windSetting;
 	}
 	
-	public void setWindSettings() {
+	public void setWindSettings(String setting) {  // sets wind speed unit after toggle button has been clicked
+		this.windSetting = setting;
+	}
+	
+	public void setWindSettings() {  // sets wind speed unit according to what is in OptionsModel
 		this.windSetting = optionsModel.getWindOpt();
 	}
 
