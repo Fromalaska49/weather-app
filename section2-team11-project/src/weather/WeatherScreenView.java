@@ -6,10 +6,11 @@ import java.io.File;
 import java.io.IOException;
 
 import java.net.URL;
-
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import javafx.scene.image.Image;
 
@@ -84,18 +85,24 @@ public class WeatherScreenView {
 
 		
 		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
-		headerText.setFont(Font.font ("Sans Serif",  40));
+		headerText.setFont(Font.font ("Helvetica",  40));
 		
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
-		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
+		getWeatherNumerics().setFont(Font.font ("Helvetica",  100));
 		model.setWindSpeed(1);
 		setWindNumerics((TextBuilder.create().text( model.getWindSpeed() + model.getWindSettings() ).build()));
-		getWindNumerics().setFont(Font.font ("Consolas", 50));
+		getWindNumerics().setFont(Font.font ("Helvetica", 50));
 		
 		
 		cityLabel =  TextBuilder.create().text(model.getCity()+", "+model.getState()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
-		stateLabel =  TextBuilder.create().text(model.getTime()).build();
+		int timeStamp = Integer.parseInt(model.getData().getLocalTime());
+		Date time = new Date((long) timeStamp * 1000);
+		SimpleDateFormat sdf = new SimpleDateFormat("h:mm a, z");
+		//sdf.setTimeZone(TimeZone.getTimeZone("GMT-0")); 
+		String formattedDate = sdf.format(time);
+		
+		stateLabel =  TextBuilder.create().text(formattedDate).build();
 		stateLabel.setFont(Font.font ("Helvetica",  15));
 		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
 		timeLabel.setFont(Font.font("Helvetica",  15));

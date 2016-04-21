@@ -6,7 +6,7 @@ import weather.ProcessData;
 
 public class WeatherScreenModel {
 	LoadAPI api;
-	ProcessData data;
+	private ProcessData data;
 	private String weatherCondition;
 	private String temp;
 	private String tempSetting;
@@ -29,9 +29,23 @@ public class WeatherScreenModel {
 	 */
 	public WeatherScreenModel(LoadAPI wApi, ProcessData wdata) {
 		this.api = wApi;
-		this.data = wdata;
+		this.setData(wdata);
 		this.setTime();
 		optionsModel = new OptionsScreenModel();
+	}
+
+	/**
+	 * @return the data
+	 */
+	public ProcessData getData() {
+		return data;
+	}
+
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(ProcessData data) {
+		this.data = data;
 	}
 
 	/**
@@ -46,7 +60,7 @@ public class WeatherScreenModel {
 	 * Calls on Process Data to get a description of current weather conditions
 	 */
 	public void setWeatherCondition() {
-		this.weatherCondition = data.getWeatherCondition();
+		this.weatherCondition = getData().getWeatherCondition();
 	}
 
 	/**
@@ -58,7 +72,7 @@ public class WeatherScreenModel {
 	}
 	
 	public String getBckGImg(){
-		String weatherCondition = data.getIconName();
+		String weatherCondition = getData().getIconName();
 		String[] snow = {"chanceflurries", "snow", "chancesleet", "chancesnow", "flurries", "sleet"};
 		String[] rain = {"chancerain","rain"};
 		String[] clear = {"clear", "mostlysunny", "partlysunny", "sunny", "unknown"};
@@ -108,9 +122,9 @@ public class WeatherScreenModel {
 	 */
 	public void setTemp() {	
 		if(tempSetting.equals("F"))
-			this.temp = data.getTempF();
+			this.temp = getData().getTempF();
 		else
-			temp = data.getTempC();
+			temp = getData().getTempC();
 
 	}
 
@@ -147,7 +161,7 @@ public class WeatherScreenModel {
 	 * Calls on Process Data class to get current city
 	 */
 	public void setCity() {
-		this.city = data.getCity();
+		this.city = getData().getCity();
 	}
 
 	/**
@@ -162,7 +176,7 @@ public class WeatherScreenModel {
 	 * Calls on Process Data class to get current state
 	 */
 	public void setState() {
-		this.state = data.getStateName();
+		this.state = getData().getStateName();
 	}
 
 	/** 
@@ -187,7 +201,7 @@ public class WeatherScreenModel {
 	 * @return
 	 */
 	public String getForecastDay(int n) {
-		return data.getForecastDayOfWeek(n);
+		return getData().getForecastDayOfWeek(n);
 	}
 
 
@@ -198,7 +212,7 @@ public class WeatherScreenModel {
 
 	}
 	public void setTodayIcon(){
-		this.todayIcon= data.getIconURL();
+		this.todayIcon= getData().getIconURL();
 	}
 
 
@@ -211,7 +225,7 @@ public class WeatherScreenModel {
 	 * @param n, the day of the week
 	 */
 	public void setIcon(int n){
-		this.icon= data.getForecastIconURL(n);
+		this.icon= getData().getForecastIconURL(n);
 	}
 
 
@@ -228,7 +242,7 @@ public class WeatherScreenModel {
 	 * @param n
 	 */
 	public void setDayOfWeek(int n) {
-		this.day = data. getForecastDayOfWeek(n); // data. getForecastDayOfWeekShort(n)
+		this.day = getData(). getForecastDayOfWeek(n); // data. getForecastDayOfWeekShort(n)
 	}
 
 	/**
@@ -245,7 +259,7 @@ public class WeatherScreenModel {
 	 */
 	public void setForecastHigh(int n) {
 		// if f
-		this.high = data.getForecastHighF(n);
+		this.high = getData().getForecastHighF(n);
 		// else
 		// this.high = data.getForecastHighC(n);
 	}
@@ -264,7 +278,7 @@ public class WeatherScreenModel {
 	 */
 	public void setForecastLow(int n) {
 		// if f
-		this.high = data.getForecastLowF(n);
+		this.high = getData().getForecastLowF(n);
 		// else
 		// this.high = data.getForecastLowC(n);
 	}
@@ -280,7 +294,7 @@ public class WeatherScreenModel {
 	 * Calls on Process Data to get the forecast conditions of the day n, which is passed as parameter
 	 */
 	public void setForecastCondition(int n) {
-		this.forecastCondition = data.getForecastConditions(n); // 
+		this.forecastCondition = getData().getForecastConditions(n); // 
 	}
 	
 	public String getWindSpeed() {
@@ -289,9 +303,9 @@ public class WeatherScreenModel {
 	
 	public void setWindSpeed(int n) {
 		if (this.windSetting.equals("MpH"))
-			this.windSpeed = data.getForecastWindMPH(n);
+			this.windSpeed = getData().getForecastWindMPH(n);
 		else 
-			this.windSpeed = data.getForecastWindKPH(n);
+			this.windSpeed = getData().getForecastWindKPH(n);
 	}
 	
 	public String getWindSettings() {
