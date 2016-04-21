@@ -117,7 +117,6 @@ public class LoadAPI{
 		success &= downloadForecastXML(location);
 		success &= downloadHourlyForecastXML(location);
 		success &= downloadRadar(location);
-		System.out.println("Success = "+success);
 		if(success){
 			setUpdateTime();
 		    setLocation(location);

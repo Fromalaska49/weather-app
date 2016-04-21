@@ -274,11 +274,11 @@ public class ProcessData {
 	
 	/*
 	 * Gets the data from the forecast
-	 * Returns the high in Farenheit at the given index
+	 * Returns the high in fahrenheit at the given index
 	 */
 	public String getForecastHighF(int index) {
 		index++;
-		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/high/farenheit/text()";
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/high/fahrenheit/text()";
 		return getNode(XPath, "data-forecast-xml.txt");
 	}
 	
@@ -294,11 +294,11 @@ public class ProcessData {
 	
 	/*
 	 * Gets the data from the forecast
-	 * Returns the low in Farenheit at the given index
+	 * Returns the low in fahrenheit at the given index
 	 */
 	public String getForecastLowF(int index) {
 		index++;
-		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/low/farenheit/text()";
+		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/low/fahrenheit/text()";
 		return getNode(XPath, "data-forecast-xml.txt");
 	}
 	
@@ -589,6 +589,14 @@ public class ProcessData {
 	 */
 	public String getVisibilityKm() {
 		String XPath = "/response/current_observation/visibility_km/text()";
+		return getNode(XPath, "data-xml.txt");
+	}
+	
+	/*
+	 * Returns the Unix timestamp adjusted for the local time zone
+	 */
+	public String getLocalTime() {
+		String XPath = "/response/current_observation/local_epoch/text()";
 		return getNode(XPath, "data-xml.txt");
 	}
 }
