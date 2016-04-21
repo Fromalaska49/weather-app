@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.stream.Stream;
 
 import javafx.scene.image.Image;
 
@@ -85,10 +86,10 @@ public class WeatherScreenView {
 		
 		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 
-		headerText.setFont(Font.font ("Helvetica",  40));
+		headerText.setFont(Font.font ("Helvetica",  55));
 		
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
-		getWeatherNumerics().setFont(Font.font ("Helvetica",  100));
+		getWeatherNumerics().setFont(Font.font ("Calibri",  125));
 		model.setWindSpeed(1);
 		setWindNumerics((TextBuilder.create().text( model.getWindSpeed() + model.getWindSettings() ).build()));
 		getWindNumerics().setFont(Font.font ("Helvetica", 50));
@@ -135,8 +136,8 @@ public class WeatherScreenView {
     	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(searchField, 0, 1);
-    	topGrid.add(searchButton, 1, 1);
+    	topGrid.add(searchField, 2, 1);
+    	topGrid.add(searchButton, 4, 1);
     	topGrid.add(settingsButton, 4, 0);
     	model.setTodayIcon();
     	ImageView todayIcon = ImageViewBuilder.create()
@@ -201,7 +202,7 @@ public class WeatherScreenView {
         
         ArrayList<ImageView> imageViewArray = new ArrayList<>();
         ArrayList<Label> sevenDaysWeather= new ArrayList<>();
-        
+        ArrayList<Label> highLow= new ArrayList<>();
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
         	ImageView temp = ImageViewBuilder.create()
@@ -211,16 +212,22 @@ public class WeatherScreenView {
         }
         
         int p = 0;
+        
         for(ImageView iv : imageViewArray){
 	        	iv.setFitHeight(100);
 	        	iv.setFitWidth(100);
 	        	bottomPanel.add(iv, p, 1);
 	        	Label dayLabel = new Label();
 	        	dayLabel.setText(model.getForecastDay(p+1));
+	        	dayLabel.setAlignment(Pos.CENTER);
 	        	sevenDaysWeather.add(p, dayLabel);
 	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+//	        	Stream.of(model.getHighTemps(), model.getLowTemps()).forEach(highLow::addAll);
+//	        	bottomPanel.add(highLow.get(p), p, 2);
+	        	
 	        bottomPanel.add(model.getHighTemps().get(p), p, 2);
-	        bottomPanel.add(model.getLowTemps().get(p), p, 3);
+	        bottomPanel.add(model.getLowTemps().get(p), p, 2);
+	      //  bottomPanel.add
 	        	
 	        	p++;
 	        }
