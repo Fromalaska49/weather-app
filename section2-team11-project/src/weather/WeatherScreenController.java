@@ -74,6 +74,8 @@ public class WeatherScreenController {
 				model.setHighTemps();
 				model.setLowTemps();
 				view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+				view.clearBottomPanel();
+				view.setBottomPanel();
 				tempSettingBtn = !tempSettingBtn;
 				
 			}
