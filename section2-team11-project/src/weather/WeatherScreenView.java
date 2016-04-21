@@ -195,6 +195,13 @@ public class WeatherScreenView {
 		centerPanel.getChildren().add(getWindNumerics());
 		centerPanel.setAlignment(Pos.CENTER);
 
+		cityLabel.getStyleClass().add("readable-text");
+		stateLabel.getStyleClass().add("readable-text");
+		timeLabel.getStyleClass().add("readable-text");
+		
+		
+		
+		
 		leftPanel.getChildren().add(cityLabel);
 		leftPanel.getChildren().add(stateLabel);
 		leftPanel.getChildren().add(timeLabel);
@@ -264,6 +271,7 @@ public class WeatherScreenView {
 		stage.setTitle("Weather Conditions");
         scene2.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		stage.setScene(scene2);
+		stage.setMinWidth(1080);
 		stage.show(); 
 
 
