@@ -1,5 +1,7 @@
+/**
+ * 
+ */
 package weather;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,65 +42,58 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import model.LocationScreenModel;
 import model.OptionsScreenModel;
-
-public class OptionsScreenView {
+import model.ChangeUnitModel;
+/**
+ * @author Admin
+ *
+ */
+public class ChangeLocationView {
 	private Formatter output;
-	private Label tempField;
+	private ChoiceBox<String> tempField;
 	private GridPane grid;
 	private BorderPane border;
 	private Label tempLabel;
 	private Scanner input;
 	private String buff;
-	private OptionsScreenController OptionsScreenController;
+	private ChangeLocationController ChangeLocationController;
 	private Label cityLabel;
 	private Label stateLabel;
 	private Label zipLabel;
 	private Label orLabel;
-	private Label zipField;
-	private Label cityField;
-	private Label stateField;
-	private Label windLabel;
-	private Label windField;
-	
-
-	
-	public OptionsScreenView(Stage primaryStage) {
-		this.OptionsScreenController = new OptionsScreenController(this, primaryStage);
+	private TextField zipField;
+	private TextField cityField;
+	private ChoiceBox<String>stateField;
+	/**
+	 * 
+	 */
+	public ChangeLocationView(Stage primaryStage) {
+		this.ChangeLocationController = new ChangeLocationController(this, primaryStage);
 	}
-
-
-
-    public void start(Stage primaryStage, Scene scene) {
-    	
-
-    	Stage stagePrev = primaryStage;
-    	Scene scenePrev = scene;
-    	primaryStage.setTitle("Options Window");    
-    	tempLabel = new Label("Temprature Unit: ");
-    	windLabel = new Label("Wind Speed Unit: ");
-    	OptionsScreenModel OSmodel = new OptionsScreenModel();
-    	Button backBtn = new Button("Back");
-    	Button ChgUnBtn = new Button("Change Unit");
-    	Button ChgLcBtn = new Button("Change Location");
-    	tempField = new Label(OSmodel.getTempOpt());
-    	cityField = new Label(OSmodel.getCityOpt());
-    	stateField = new Label(OSmodel.getStateOpt());
-    	zipField = new Label(OSmodel.getZipOpt());
-    	windField = new Label(OSmodel.getWindOpt());
-    	backBtn.setOnAction(OptionsScreenController.getBackListener(stagePrev, scenePrev));
-    	ChgUnBtn.setOnAction(OptionsScreenController.getChangeUnitListener());
-    	ChgLcBtn.setOnAction(OptionsScreenController.getChangeLocationListener());
-    	
+	
+	public void start(Stage primaryStage, Scene scene) {
+		//store for back button
+		Stage stagePrev = primaryStage;
+	    Scene scenePrev = scene;
+	    
+	    primaryStage.setTitle("Change Location Window");    
+	    OptionsScreenModel OSmodel = new OptionsScreenModel();
+	    Button backBtn = new Button("Back");
+	    Button saveBtn = new Button("Save");
+	    
     	cityLabel = new Label("City:  ");
 		stateLabel = new Label("State:  ");
 		zipLabel = new Label("Zip Code:  ");
 		orLabel = new Label(" -OR-");
-
+		cityField = new TextField();
+		stateField = new ChoiceBox<String>(FXCollections.observableArrayList("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC", "PR", "VI", "AS", "GU", "MP", "AA", "AE", "AP"));
+		zipField = new TextField();
 		stateField.setPrefWidth(80);
 		cityField.setPrefWidth(80);
-    	
 		
-		grid = new GridPane();
+		backBtn.setOnAction(ChangeLocationController.getBackListener(stagePrev, scenePrev));
+    	saveBtn.setOnAction(ChangeLocationController.getSaveListener(cityField, stateField, zipField, OSmodel));
+
+    	grid = new GridPane();
 		grid.add(cityLabel, 0, 0);
 		grid.add(stateLabel, 0, 1);
 		grid.add(orLabel, 0, 2);
@@ -106,21 +101,16 @@ public class OptionsScreenView {
 		grid.add(cityField, 3, 0);
 		grid.add(stateField, 3, 1);
 		grid.add(zipField, 3, 4);
-		grid.add(tempLabel, 0, 5);
-    	grid.add(tempField, 3, 5);
-    	grid.add(windLabel, 0, 7);
-    	grid.add(windField, 3, 7);
-    	grid.add(backBtn, 0, 8);
-    	grid.add(ChgLcBtn, 2, 8);
-    	grid.add(ChgUnBtn, 4, 8);
+		grid.add(backBtn, 0, 7);
+    	grid.add(saveBtn, 4, 7);
 		grid.setAlignment(Pos.CENTER);
 		
-    	
+		cityField.setText(OSmodel.getCityOpt());
+    	stateField.setValue(OSmodel.getStateOpt());
+    	zipField.setText(OSmodel.getZipOpt());
     	
     	border = new BorderPane();
     	border.setCenter(grid);
-    	
-
     	
     	Scene Optscene = new Scene(border, 800, 700);
 
@@ -128,7 +118,5 @@ public class OptionsScreenView {
     	
     	primaryStage.setScene(Optscene);
     	primaryStage.show();
-    	
-    }
-  
+	}
 }

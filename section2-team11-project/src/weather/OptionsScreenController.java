@@ -50,7 +50,7 @@ public class OptionsScreenController {
     /*
 	 * Event listener for the Settings button.  If pressed will transition to Settings screen.
 	 * @return Returns a handler object
-	 */
+	 *//*
 	public EventHandler<ActionEvent> getSetListener(){
 		EventHandler handler = new EventHandler<Event>(){
 			Stage primaryStage = getStage();
@@ -63,25 +63,26 @@ public class OptionsScreenController {
 			
 		};
 		return handler;
-	}
+	}*/
 	/*
 	 * Event listener for the Back button.  If pressed will transition to previous screen.
 	 * @return Returns a handler object
 	 */
 	public EventHandler<ActionEvent> getBackListener(Stage stagePrev, Scene scenePrev){
 		EventHandler handler = new EventHandler<Event>(){
-			
+			ScreenController sController = new ScreenController(primaryStage);
 			public void handle(Event event){
-				stagePrev.setScene(scenePrev);
-				stagePrev.show();
+			//	System.out.println("Back Button Pressed");
+				ChangeLocationModel cModel = new ChangeLocationModel();
+				sController.showWeatherScreen(primaryStage, cModel);
+				
 			}
 		};
 		return handler;
 	}
-	
+	//Will be unused
 	 public EventHandler<ActionEvent> getSaveListener(ChoiceBox<String> tempField, OptionsScreenModel OSmodel){
 			EventHandler handler = new EventHandler<Event>(){
-				
 				public void handle(Event event){
 					String buff = tempField.getValue().toString();
 					//System.out.println("Listener received " + buff);
@@ -91,4 +92,28 @@ public class OptionsScreenController {
 			};
 			return handler;
 		}
+	 
+	 public EventHandler<ActionEvent> getChangeUnitListener(){
+		 EventHandler handler = new EventHandler<Event>(){
+			 
+			Stage primaryStage = getStage();
+			ScreenController sController = new ScreenController(primaryStage); 
+			 public void handle(Event event){
+				// System.out.println("ChangeUnit button pressed!");
+				 sController.showChangeUnitScreen(primaryStage);
+			 }
+		 };
+		return handler;
+	 }
+	 
+	 public EventHandler<ActionEvent> getChangeLocationListener(){
+		 EventHandler handler = new EventHandler<Event>(){
+			 Stage primaryStage = getStage();
+			 ScreenController sController = new ScreenController(primaryStage);
+			 public void handle(Event event){
+				 sController.showChangeLocationScreen(primaryStage);
+			 }
+		 };
+		 return handler;
+	 }
 }
