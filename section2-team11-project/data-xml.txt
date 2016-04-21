@@ -12,93 +12,93 @@
 		<link>http://www.wunderground.com</link>
 		</image>
 		<display_location>
-		<full>Cypress, TX</full>
-		<city>Cypress</city>
+		<full>San Antonio, TX</full>
+		<city>San Antonio</city>
 		<state>TX</state>
 		<state_name>Texas</state_name>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<zip>77410</zip>
+		<zip>78254</zip>
 		<magic>1</magic>
 		<wmo>99999</wmo>
-		<latitude>29.96888924</latitude>
-		<longitude>-95.69694519</longitude>
-		<elevation>53.00000000</elevation>
+		<latitude>29.53610039</latitude>
+		<longitude>-98.72433472</longitude>
+		<elevation>297.00000000</elevation>
 		</display_location>
 		<observation_location>
-		<full>The Niederberger's, Cypress, Texas</full>
-		<city>The Niederberger's, Cypress</city>
+		<full>Hearthstone Ranch, Helotes, Texas</full>
+		<city>Hearthstone Ranch, Helotes</city>
 		<state>Texas</state>
 		<country>US</country>
 		<country_iso3166>US</country_iso3166>
-		<latitude>29.962790</latitude>
-		<longitude>-95.698608</longitude>
-		<elevation>154 ft</elevation>
+		<latitude>29.552671</latitude>
+		<longitude>-98.717796</longitude>
+		<elevation>1070 ft</elevation>
 		</observation_location>
 		<estimated>
 		</estimated>
-		<station_id>KTXCYPRE74</station_id>
-		<observation_time>Last Updated on April 20, 4:22 PM CDT</observation_time>
-		<observation_time_rfc822>Wed, 20 Apr 2016 16:22:19 -0500</observation_time_rfc822>
-		<observation_epoch>1461187339</observation_epoch>
-		<local_time_rfc822>Wed, 20 Apr 2016 16:31:24 -0500</local_time_rfc822>
-		<local_epoch>1461187884</local_epoch>
+		<station_id>KTXHELOT10</station_id>
+		<observation_time>Last Updated on April 20, 10:15 PM CDT</observation_time>
+		<observation_time_rfc822>Wed, 20 Apr 2016 22:15:37 -0500</observation_time_rfc822>
+		<observation_epoch>1461208537</observation_epoch>
+		<local_time_rfc822>Wed, 20 Apr 2016 22:16:01 -0500</local_time_rfc822>
+		<local_epoch>1461208561</local_epoch>
 		<local_tz_short>CDT</local_tz_short>
 		<local_tz_long>America/Chicago</local_tz_long>
 		<local_tz_offset>-0500</local_tz_offset>
 		<weather>Mostly Cloudy</weather>
-		<temperature_string>91.2 F (32.9 C)</temperature_string>
-		<temp_f>91.2</temp_f>
-		<temp_c>32.9</temp_c>
-		<relative_humidity>52%</relative_humidity>
-		<wind_string>From the SW at 2.2 MPH</wind_string>
-		<wind_dir>SW</wind_dir>
-		<wind_degrees>225</wind_degrees>
-		<wind_mph>2.2</wind_mph>
+		<temperature_string>69.6 F (20.9 C)</temperature_string>
+		<temp_f>69.6</temp_f>
+		<temp_c>20.9</temp_c>
+		<relative_humidity>78%</relative_humidity>
+		<wind_string>Calm</wind_string>
+		<wind_dir>East</wind_dir>
+		<wind_degrees>90</wind_degrees>
+		<wind_mph>0.0</wind_mph>
 		<wind_gust_mph>0</wind_gust_mph>
-		<wind_kph>3.5</wind_kph>
+		<wind_kph>0.0</wind_kph>
 		<wind_gust_kph>0</wind_gust_kph>
-		<pressure_mb>1013</pressure_mb>
-		<pressure_in>29.92</pressure_in>
-		<pressure_trend>-</pressure_trend>
+		<pressure_mb>1016</pressure_mb>
+		<pressure_in>30.00</pressure_in>
+		<pressure_trend>0</pressure_trend>
 		
-		<dewpoint_string>71 F (22 C)</dewpoint_string>
-		<dewpoint_f>71</dewpoint_f>
-		<dewpoint_c>22</dewpoint_c>
+		<dewpoint_string>62 F (17 C)</dewpoint_string>
+		<dewpoint_f>62</dewpoint_f>
+		<dewpoint_c>17</dewpoint_c>
 		
 		
-		<heat_index_string>98 F (37 C)</heat_index_string>
-		<heat_index_f>98</heat_index_f>
-		<heat_index_c>37</heat_index_c>
+		<heat_index_string>NA</heat_index_string>
+		<heat_index_f>NA</heat_index_f>
+		<heat_index_c>NA</heat_index_c>
 		
 		
 		<windchill_string>NA</windchill_string>
 		<windchill_f>NA</windchill_f>
 		<windchill_c>NA</windchill_c>
 		
-        <feelslike_string>98 F (37 C)</feelslike_string>
-        <feelslike_f>98</feelslike_f>
-        <feelslike_c>37</feelslike_c>
+        <feelslike_string>69.6 F (20.9 C)</feelslike_string>
+        <feelslike_f>69.6</feelslike_f>
+        <feelslike_c>20.9</feelslike_c>
 		<visibility_mi>10.0</visibility_mi>
 		<visibility_km>16.1</visibility_km>
 		<solarradiation></solarradiation>
-		<UV>7</UV>
+		<UV>0</UV>
 		<precip_1hr_string>-999.00 in ( 0 mm)</precip_1hr_string>
 		<precip_1hr_in>-999.00</precip_1hr_in>
 		<precip_1hr_metric> 0</precip_1hr_metric>
-		<precip_today_string>0.46 in (12 mm)</precip_today_string>
-		<precip_today_in>0.46</precip_today_in>
-		<precip_today_metric>12</precip_today_metric>
+		<precip_today_string>0.00 in (0 mm)</precip_today_string>
+		<precip_today_in>0.00</precip_today_in>
+		<precip_today_metric>0</precip_today_metric>
 		
 		
 		
 		<icon>mostlycloudy</icon>
-		<icon_url>http://icons.wxug.com/i/c/k/mostlycloudy.gif</icon_url>
-		<forecast_url>http://www.wunderground.com/US/TX/Cypress.html</forecast_url>
+		<icon_url>http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif</icon_url>
+		<forecast_url>http://www.wunderground.com/US/TX/San_Antonio.html</forecast_url>
         
-        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXCYPRE74</history_url>
+        <history_url>http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KTXHELOT10</history_url>
         
-		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=29.962790,-95.698608</ob_url>
+		<ob_url>http://www.wunderground.com/cgi-bin/findweather/getForecast?query=29.552671,-98.717796</ob_url>
 	</current_observation>
 
 		

@@ -1,5 +1,5 @@
-Temperature Setting: F
+Temperature Setting: C
 City: San Antonio
 State: TX
 Zip: 78254
-Wind Speed: MPH
+Wind Speed: KpH
