@@ -1,5 +1,12 @@
 package weather;
 
+import java.net.URL;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -184,4 +191,38 @@ public class WeatherScreenController {
 		return handler;
 	}
 	
+	public EventHandler<ActionEvent> getRadarListener(){
+		EventHandler handler = new EventHandler<Event>(){
+			
+			public void handle(Event event){
+				URL url;
+				try {
+					//url = new URL("radar.gif");
+				
+				url = WeatherScreenController.class.getResource("radar.gif");
+			    Icon icon = new ImageIcon(url);
+			    JLabel label = new JLabel(icon);
+
+			    JFrame f = new JFrame("Animation");
+			    f.getContentPane().add(label);
+			    f.pack();
+			    f.setLocationRelativeTo(null);
+			    f.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("Well, Shit.");
+				}
+			}
+		};
+		return handler;
+	}
+	
+	public EventHandler<ActionEvent> getExitListener(){
+		EventHandler handler = new EventHandler<Event>(){
+			public void handle(Event event){
+				System.exit(0);
+			}
+		};
+		return handler;
+	}
 }

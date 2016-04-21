@@ -117,7 +117,6 @@ public class LoadAPI{
 		success &= downloadForecastXML(location);
 		success &= downloadHourlyForecastXML(location);
 		success &= downloadRadar(location);
-		System.out.println("Success = "+success);
 		if(success){
 			setUpdateTime();
 		    setLocation(location);
@@ -296,7 +295,7 @@ public class LoadAPI{
 		
 		OutputStream out = null;
 		try {
-			out = new BufferedOutputStream(new FileOutputStream("radar.gif"));
+			out = new BufferedOutputStream(new FileOutputStream("bin/weather/radar.gif"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
