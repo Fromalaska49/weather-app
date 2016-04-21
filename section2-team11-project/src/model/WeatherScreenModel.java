@@ -21,6 +21,7 @@ public class WeatherScreenModel {
 	private String forecastCondition;
 	private String windSpeed;
 	private String windSetting;
+	private String BckGImg;
 	private OptionsScreenModel optionsModel;
 
 	/**
@@ -55,7 +56,53 @@ public class WeatherScreenModel {
 	public String getTemp() {
 		return this.temp;
 	}
-
+	
+	public String getBckGImg(){
+		String weatherCondition = data.getIconName();
+		String[] snow = {"chanceflurries", "snow", "chancesleet", "chancesnow", "flurries", "sleet"};
+		String[] rain = {"chancerain","rain"};
+		String[] clear = {"clear", "mostlysunny", "partlysunny", "sunny", "unknown"};
+		String[] cloudy = {"cloudy","mostlycloudy"};
+		String[] pCloudy = {"partlycloudy"};
+		String[] fog = {"fog","hazy"};
+		for(int i = 0; i < snow.length; i++){
+			if(weatherCondition.equals(snow[i]))
+				{
+					return"snow.jpg";
+				}
+		}
+		for(int i = 0; i < rain.length; i++){
+			if(weatherCondition.equals(rain[i]))
+				{
+					return "rain.jpg";
+				}
+		}
+		for(int i = 0; i < clear.length; i++){
+			if(weatherCondition.equals(clear[i]))
+				{
+					return "clear.jpg";
+				}
+		}
+		for(int i = 0; i < cloudy.length; i++){
+			if(weatherCondition.equals(cloudy[i]))
+				{
+					return "cloudy.jpg";
+				}
+		}
+		for(int i = 0; i < pCloudy.length; i++){
+			if(weatherCondition.equals(pCloudy[i]))
+				{
+					return "partlycloudy.jpg";
+				}
+		}
+		for(int i = 0; i < fog.length; i++){
+			if(weatherCondition.equals(fog[i]))
+				{
+					return "fog.jpg";
+				}
+		}
+		return "unknown.jpg";
+	}
 	/**
 	 * Calls on Process Data class to get temperature in desired setting
 	 */
