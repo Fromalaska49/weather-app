@@ -98,13 +98,16 @@ public class WeatherScreenView {
 		cityLabel.setFont(Font.font ("Helvetica",  20));
 		int timeStamp = Integer.parseInt(model.getData().getLocalTime());
 		Date time = new Date((long) timeStamp * 1000);
-		SimpleDateFormat sdf = new SimpleDateFormat("h:mm a, z");
-		//sdf.setTimeZone(TimeZone.getTimeZone("GMT-0")); 
-		String formattedDate = sdf.format(time);
-		
-		stateLabel =  TextBuilder.create().text(formattedDate).build();
+		SimpleDateFormat stf = new SimpleDateFormat("EEE, h:mm a");
+		stf.setTimeZone(TimeZone.getTimeZone("GMT" + model.getData().getTimeOffset())); 
+		String formattedTime = stf.format(time);
+		stateLabel =  TextBuilder.create().text(formattedTime).build();
 		stateLabel.setFont(Font.font ("Helvetica",  15));
-		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT" + model.getData().getTimeOffset())); 
+		String formattedDate = sdf.format(time);
+		timeLabel =  TextBuilder.create().text(formattedDate).build();
 		timeLabel.setFont(Font.font("Helvetica",  15));
 
 		
@@ -192,6 +195,13 @@ public class WeatherScreenView {
 		centerPanel.getChildren().add(getWindNumerics());
 		centerPanel.setAlignment(Pos.CENTER);
 
+		cityLabel.getStyleClass().add("readable-text");
+		stateLabel.getStyleClass().add("readable-text");
+		timeLabel.getStyleClass().add("readable-text");
+		
+		
+		
+		
 		leftPanel.getChildren().add(cityLabel);
 		leftPanel.getChildren().add(stateLabel);
 		leftPanel.getChildren().add(timeLabel);
@@ -253,7 +263,7 @@ public class WeatherScreenView {
 		//border.setAlignment(okBtn, Pos.CENTER_RIGHT); 
 
 
-		Scene scene2 = new Scene(border, 800, 700);
+		Scene scene2 = new Scene(border, 1080, 700);
 
 		//scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 
@@ -261,6 +271,7 @@ public class WeatherScreenView {
 		stage.setTitle("Weather Conditions");
         scene2.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		stage.setScene(scene2);
+		stage.setMinWidth(1080);
 		stage.show(); 
 
 
