@@ -219,4 +219,5 @@ public class LocationScreenModel {
 		System.out.println("S");
 		return location;
 	}
+	
 }

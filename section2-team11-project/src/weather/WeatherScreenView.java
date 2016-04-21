@@ -4,9 +4,16 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+
+import java.net.URL;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javafx.scene.image.Image;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -15,6 +22,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -59,11 +67,13 @@ public class WeatherScreenView {
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
-	private 
+	private Calendar dateToday = Calendar.getInstance();
 	WeatherScreenModel model;
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
-
+	private Text windNumerics;
+	private String BckGimg;
+	
 	//	private LocationScreenModel locModel;
 
 	public WeatherScreenView(WeatherScreenModel wModel){	
@@ -73,46 +83,23 @@ public class WeatherScreenView {
 	public void start(Stage stage, Scene scene) {
 
 		
-		headerText =  TextBuilder.create().text("Thunderstorm").build();
+		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 		headerText.setFont(Font.font ("Sans Serif",  40));
-		setWeatherNumerics(TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build());
+		
+		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
 		getWeatherNumerics().setFont(Font.font ("Consolas",  100));
-		cityLabel =  TextBuilder.create().text(model.getCity()).build();
+		model.setWindSpeed(1);
+		setWindNumerics((TextBuilder.create().text( model.getWindSpeed() + model.getWindSettings() ).build()));
+		getWindNumerics().setFont(Font.font ("Consolas", 50));
+		
+		
+		cityLabel =  TextBuilder.create().text(model.getCity()+", "+model.getState()).build();
 		cityLabel.setFont(Font.font ("Helvetica",  20));
-		stateLabel =  TextBuilder.create().text(model.getState()).build();
-		stateLabel.setFont(Font.font ("Helvetica",  20));
-		timeLabel =  TextBuilder.create().text(model.getTime()).build();
-		timeLabel.setFont(Font.font("Helvetica",  20));
+		stateLabel =  TextBuilder.create().text(model.getTime()).build();
+		stateLabel.setFont(Font.font ("Helvetica",  15));
+		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
+		timeLabel.setFont(Font.font("Helvetica",  15));
 
-//    	//ScreenController screenController = new ScreenController(stage);
-//    	//Button backButton = new Button("< Back");
-//    	backButton.setOnAction(screenController.getBackListener(stage, scene));
-//    	topGrid = new GridPane();
-//    	topGrid.setPadding(new Insets(10, 10, 10, 10));
-//    	topGrid.setHgap(10);
-//    	topGrid.setVgap(10);
-//    	topGrid.setGridLinesVisible(false);
-//    	topGrid.setAlignment(Pos.TOP_LEFT);
-//    	topGrid.add(backButton, 0, 0);
-    	
-    	
-		//		weatherNumerics.setText("49� C");
-		//Image image = new Image("StartScreen.png");
-		
-
-		/*
-    	WeatherScreenController wController = new WeatherScreenController(this, model);
-    	Button backButton1 = new Button("< Back");
-    	backButton1.setOnAction(wController.getBackListener(stage, scene));
-    	topGrid = new GridPane();
-    	topGrid.setPadding(new Insets(10, 10, 10, 10));
-    	topGrid.setHgap(10);
-    	topGrid.setVgap(10);
-    	topGrid.setGridLinesVisible(false);
-    	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(backButton1, 0, 0);
-    	*/
-		
 		
     	WeatherScreenController wController = new WeatherScreenController(this, model);
     	Button searchButton = new Button("Search");
@@ -124,31 +111,33 @@ public class WeatherScreenView {
 		settingsButton.setText("Settings");
 		settingsButton.setOnAction(weatherScreenController.getSettingsListener(stage));
     	
+		//Code for importing background image.
+		BckGimg = model.getBckGImg();
+		//imports background img into image
+		String image = WeatherScreenView.class.getResource(BckGimg).toExternalForm();
+		
+		
+		
+		
     	topGrid = new GridPane();
     	topGrid.setPadding(new Insets(10, 10, 10, 10));
     	topGrid.setHgap(10);
     	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(searchField, 0, 0);
-    	topGrid.add(searchButton, 1, 0);
+    	topGrid.add(searchField, 0, 1);
+    	topGrid.add(searchButton, 1, 1);
     	topGrid.add(settingsButton, 4, 0);
-
-		// simple displays ImageView the image as is
-		Image image = new Image(new File("Capture.PNG").toURI().toString());
-		
-		//ImageView iv1 = new ImageView(getClass().getResource("StartScreen.png").toExternalForm());
-		ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
-		iv1 = new ImageView();
-		iv2 = new ImageView();
-		iv3 = new ImageView();
-		iv4 = new ImageView();
-		iv5 = new ImageView();
-		iv6 = new ImageView();
-		iv7 = new ImageView(); 
-		iv8 = new ImageView();
+    	model.setTodayIcon();
+    	ImageView todayIcon = ImageViewBuilder.create()
+                .image(new Image(model.getTodayIcon()))
+                .build();
+    	todayIcon.setFitHeight(200);
+    	todayIcon.setFitWidth(200);
+    	topGrid.add(todayIcon, 1, 0);
 
 		toggleCF.setText("Toggle C/F");
+		toggleCF.setOnAction(wController.getTempSettingListener());
 		toggleHW.setText("Toggle Hourly/Weekly");
 		toggleMI.setText("Toggle Meters/Imperial");
 
@@ -160,13 +149,24 @@ public class WeatherScreenView {
 
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
-
-		topGrid.add(iv1, 2, 0);
-		topGrid.add(headerText, 3, 0);
+		//set background img to border
+		border.setStyle("-fx-background-image: url('" + image + "'); " +
+		           "-fx-background-position: center center; " +
+		           "-fx-background-repeat: stretch;");
+		
+		//topGrid.add(iv1, 2, 0);
+		topGrid.add(headerText, 2, 0);
+		
+		bottomPanel.setHgap(15);
+		bottomPanel.setVgap(15);
+		
 		topPanel.getChildren().add(topGrid);
 		//topPanel.getChildren().add(iv1);
 		//topPanel.getChildren().add(headerText);
-		topPanel.setAlignment(Pos.CENTER);
+
+		//topPanel.getChildren().add(imageView);
+		//topPanel.getChildren().add(headerText);
+		topPanel.setAlignment(Pos.TOP_LEFT);
 
 		rightPanel.getChildren().add(toggleCF);
 		rightPanel.getChildren().add(toggleHW);
@@ -176,6 +176,7 @@ public class WeatherScreenView {
 		//	     topPanel.setHgrow(headerText, Priority.ALWAYS);
 
 		centerPanel.getChildren().add(getWeatherNumerics());
+		centerPanel.getChildren().add(getWindNumerics());
 		centerPanel.setAlignment(Pos.CENTER);
 
 		leftPanel.getChildren().add(cityLabel);
@@ -186,6 +187,7 @@ public class WeatherScreenView {
 		
         
         ArrayList<ImageView> imageViewArray = new ArrayList<>();
+        ArrayList<Label> sevenDaysWeather= new ArrayList<>();
         
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
@@ -200,21 +202,27 @@ public class WeatherScreenView {
         	iv.setFitHeight(100);
         	iv.setFitWidth(100);
         	bottomPanel.add(iv, p, 1);
+        	Label dayLabel = new Label();
+        	dayLabel.setText(model.getForecastDay(p+2));
+        	sevenDaysWeather.add(p, dayLabel);
+        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+        	//bottomPanel.
         	p++;
         }
-		
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);
 		border.setRight(rightPanel);
-		border.setCenter(getWeatherNumerics());
+		//border.setCenter(getWeatherNumerics());
+		border.setCenter(centerPanel);
 		border.setLeft(leftPanel);
 		border.setBottom(bottomPanel);
 
 
 		border.setAlignment(topPanel, Pos.CENTER);
 		border.setAlignment(rightPanel, Pos.CENTER_LEFT);
-		border.setAlignment(getWeatherNumerics(), Pos.CENTER);
+		//border.setAlignment(getWeatherNumerics(), Pos.CENTER);
+		border.setAlignment(centerPanel, Pos.CENTER);
 		border.setAlignment(leftPanel, Pos.BOTTOM_LEFT);
 		border.setAlignment(bottomPanel, Pos.CENTER);
 
@@ -248,10 +256,17 @@ public class WeatherScreenView {
 		return weatherNumerics;
 	}
 	
-	public void setWeatherNumerics(Text weatherNumerics) {
-		this.weatherNumerics = weatherNumerics;
+	public void setWeatherNumerics(Text string) {
+		this.weatherNumerics = string;
 	}
 	
+	public Text getWindNumerics() {
+		return windNumerics;
+	}
+	
+	public void setWindNumerics(Text string) {
+		this.windNumerics = string;
+	}
 	/*
 	 * Returns the value of the search field
 	 */
