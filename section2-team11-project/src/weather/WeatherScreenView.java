@@ -117,7 +117,10 @@ public class WeatherScreenView {
 
 		settingsButton.setText("Settings");
 		settingsButton.setOnAction(weatherScreenController.getSettingsListener(stage));
-    	
+    	Button radarButton = new Button("Radar");
+    	radarButton.setOnAction(wController.getRadarListener());
+    	Button exitButton = new Button("Exit");
+    	exitButton.setOnAction(wController.getExitListener());
 		//Code for importing background image.
 		BckGimg = model.getBckGImg();
 		//imports background img into image
@@ -175,10 +178,12 @@ public class WeatherScreenView {
 		//topPanel.getChildren().add(imageView);
 		//topPanel.getChildren().add(headerText);
 		topPanel.setAlignment(Pos.TOP_LEFT);
-
+		
+		rightPanel.getChildren().add(radarButton);
 		rightPanel.getChildren().add(toggleCF);
 		rightPanel.getChildren().add(toggleHW);
 		rightPanel.getChildren().add(toggleMI);
+		rightPanel.getChildren().add(exitButton);
 		rightPanel.setAlignment(Pos.CENTER_LEFT);
 		//		topPanel.setHgrow(iv1, Priority.ALWAYS);
 		//	     topPanel.setHgrow(headerText, Priority.ALWAYS);
