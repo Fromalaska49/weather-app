@@ -1,7 +1,31 @@
 .root{
 	-fx-background-color: #66ccff;
-	-fx-color:white;
 }
+
+.readable-text{
+	/*
+	-fx-font-family: helvetica arial sans-serif;
+	-fx-text-fill:#FFFFFF;
+	-fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 1) , 10,0,0,1 );
+	*/
+}
+
+/*
+.label-bright{
+	-fx-text-fill:#FFFFFF;
+	-fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.9) , 0,0,0,1 );
+}
+
+.label-header{
+	-fx-text-fill:#FFFFFF;
+	-fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.9) , 0,0,0,1 );
+}
+
+.table-view{
+	-fx-text-fill:#FFFFFF;
+	-fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.9) , 0,0,0,1 );
+}
+*/
 
 /* Old Buttons */
 
