@@ -1,6 +1,13 @@
 package model;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageViewBuilder;
+import javafx.scene.text.TextBuilder;
 import weather.LoadAPI;
 import weather.ProcessData;
 
@@ -22,6 +29,8 @@ public class WeatherScreenModel {
 	private String windSpeed;
 	private String windSetting;
 	private OptionsScreenModel optionsModel;
+	private ArrayList<Label> highTemps;
+	private ArrayList<Label> lowTemps;
 
 	/**
 	 * Constructor method for WeatherScreenModel
@@ -31,6 +40,8 @@ public class WeatherScreenModel {
 		this.data = wdata;
 		this.setTime();
 		optionsModel = new OptionsScreenModel();
+		highTemps= new ArrayList<>();
+		lowTemps = new ArrayList<>();
 	}
 
 	/**
@@ -185,43 +196,79 @@ public class WeatherScreenModel {
 		this.day = data. getForecastDayOfWeek(n); // data. getForecastDayOfWeekShort(n)
 	}
 
-	/**
-	 * Returns high temperature in F or C
-	 * @return
-	 */
-	public String getForecastHigh() {
-		return this.high;
+//	/**
+//	 * Returns high temperature in F or C
+//	 * @return
+//	 */
+//	public String getForecastHigh() {
+//		return this.high;
+//	}
+//
+//	/**
+//	 * Calls on Process Data to get highest temperature of the day, n, which is passed as parameter
+//	 * @param n
+//	 */
+//	public void setForecastHigh(int n) {
+//		// if f
+//		this.high = data.getForecastHighF(n);
+//		// else
+//		// this.high = data.getForecastHighC(n);
+//	}
+	
+	public void setHighTemps() {
+		for(int i = 0; i <= 8; i++) {
+			
+			Label temp = new Label();
+			if(this.tempSetting.equals("F"))  {
+				temp.setText(data.getForecastHighF(i+1));
+			}
+			else
+				temp.setText(data.getForecastHighC(i+1));
+        		highTemps.add(i,temp);
+        }
+	}
+	
+	public ArrayList<Label> getHighTemps() {
+		return this.highTemps;
+	}
+	
+	
+	public void setLowTemps() {
+		for(int i = 0; i <= 8; i++) {
+			
+			Label temp = new Label();
+			if(this.tempSetting.equals("F"))  {
+				temp.setText(data.getForecastLowF(i+1));
+			}
+			else
+				temp.setText(data.getForecastLowC(i+1));
+        		lowTemps.add(i,temp);
+        }
 	}
 
-	/**
-	 * Calls on Process Data to get highest temperature of the day, n, which is passed as parameter
-	 * @param n
-	 */
-	public void setForecastHigh(int n) {
-		// if f
-		this.high = data.getForecastHighF(n);
-		// else
-		// this.high = data.getForecastHighC(n);
+	
+	public ArrayList<Label> getLowTemps() {
+		return this.lowTemps;
 	}
 
-	/**
-	 * Returns low temperature in F or C
-	 * @return
-	 */
-	public String getForecastlow() {
-		return this.low;
-	}
-
-	/**
-	 * Calls on Process Data to get lowest temperature of the day, n, which is passed as parameter
-	 * @param n
-	 */
-	public void setForecastLow(int n) {
-		// if f
-		this.high = data.getForecastLowF(n);
-		// else
-		// this.high = data.getForecastLowC(n);
-	}
+//	/**
+//	 * Returns low temperature in F or C
+//	 * @return
+//	 */
+//	public String getForecastlow() {
+//		return this.low;
+//	}
+//
+//	/**
+//	 * Calls on Process Data to get lowest temperature of the day, n, which is passed as parameter
+//	 * @param n
+//	 */
+//	public void setForecastLow(int n) {
+//		// if f
+//		this.high = data.getForecastLowF(n);
+//		// else
+//		// this.high = data.getForecastLowC(n);
+//	}
 
 	/**
 	 * Returns forecast conditions of given day

@@ -43,10 +43,12 @@ public class WeatherScreenController {
 		model.setState();
 		model.setTime();
 		model.setWindSettings(); // uses settings form OptionsScreenModel
+		model.setHighTemps();
+        model.setLowTemps();
 	}
 	
 	/**
-	 * Creates an event handler for the toggle temperature settings
+	 * Creates an event handler for the toggle temperature settings button
 	 */
 	
 	public EventHandler<ActionEvent> getTempSettingListener(){
@@ -55,18 +57,16 @@ public class WeatherScreenController {
 			public void handle(Event event){
 				if(tempSettingBtn == false) {
 					model.setTempSetting("C");
-					model.getTempSetting();
-					model.setTemp();
-					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
 					System.out.println("Change to celcius");
-				}
-				else {
+				} else {
 					model.setTempSetting("F");
-					model.getTempSetting();
-					model.setTemp();
-					view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
 					System.out.println("Change back to fahrenheit");
 				}
+				model.getTempSetting();
+				model.setTemp();
+				model.setHighTemps();
+				model.setLowTemps();
+				view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
 				tempSettingBtn = !tempSettingBtn;
 				
 			}
@@ -75,7 +75,7 @@ public class WeatherScreenController {
 	}
 	
 	/**
-	 * Creates an event handler for the toggle temperature settings
+	 * Creates an event handler for the toggle wind settings button
 	 */
 	
 	public EventHandler<ActionEvent> getWindSettingListener(){
