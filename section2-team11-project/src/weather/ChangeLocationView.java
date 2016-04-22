@@ -112,7 +112,7 @@ public class ChangeLocationView {
     	border = new BorderPane();
     	border.setCenter(grid);
     	
-    	Scene Optscene = new Scene(border, 800, 700);
+    	Scene Optscene = new Scene(border, 1080, 700);
 
     	Optscene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
     	
