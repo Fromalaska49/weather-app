@@ -94,7 +94,7 @@ public class WeatherScreenView {
 	
 	public void setBottomPanel(){
 		for(int i = 0; i < 7; i++){
-			Label temps = new Label(model.getHighTemps().get(i).getText() + " / " + model.getLowTemps().get(i).getText());
+			Label temps = new Label(model.getHighTemps().get(i).getText() + model.getLowTemps().get(i).getText());
 			tempSevenDays.add(temps);
 			bottomPanel.add(temps,	 i, 2);
 		}
@@ -241,18 +241,26 @@ public class WeatherScreenView {
         
         int p = 0;
         for(ImageView iv : imageViewArray){
-	        	iv.setFitHeight(100);
-	        	iv.setFitWidth(100);
-	        	bottomPanel.add(iv, p, 1);
-	        	Label dayLabel = new Label();
-	        	dayLabel.setText(model.getForecastDay(p+1));
-	        	sevenDaysWeather.add(p, dayLabel);
-	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
-	        	Label temps = new Label(model.getHighTemps().get(p).getText() + " / " + model.getLowTemps().get(p).getText());
-	        	tempSevenDays.add(temps);
-	        	bottomPanel.add(temps, p, 2);
-	        	p++;
-	        }
+        	iv.setFitHeight(100);
+        	iv.setFitWidth(100);
+        	bottomPanel.add(iv, p, 1);
+        	bottomPanel.setMargin(iv, new Insets(0,0,0,10));
+        	Label dayLabel = new Label();
+        	dayLabel.setText(model.getForecastDay(p+1));
+        	dayLabel.setAlignment(Pos.CENTER);
+        	sevenDaysWeather.add(p, dayLabel);
+        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+        	if(sevenDaysWeather.get(p).getText().length() >= 9)
+        		bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,15));
+        	else
+        		bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,30));
+        	
+        	Label temps = new Label(model.getHighTemps().get(p).getText() + model.getLowTemps().get(p).getText());
+        	tempSevenDays.add(temps);
+        	bottomPanel.add(temps, p, 2);
+
+        	p++;
+        }
 		bottomPanel.setAlignment(Pos.CENTER);
 
 		border.setTop(topPanel);
