@@ -109,8 +109,8 @@ public class OptionsScreenModel {
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	output = new Formatter("weatherConfig.txt");
-        	}catch (IOException ioException) {
-                System.err.println("Error opening file. Terminating.");
+        	} catch (IOException ioException) {
+                System.err.println("Error opening weatherConfig.txt for reading.");
             }
     }
     
@@ -118,8 +118,8 @@ public class OptionsScreenModel {
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	input = new Scanner(Paths.get("weatherConfig.txt"));
-        	}catch (IOException ioException) {
-                System.err.println("Error opening file. Terminating.");
+        	} catch (IOException ioException) {
+                System.err.println("Error opening weatherConfig.txt for writing.");
             }
     }
     
