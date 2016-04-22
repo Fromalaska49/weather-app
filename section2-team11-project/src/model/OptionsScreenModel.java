@@ -109,9 +109,8 @@ public class OptionsScreenModel {
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	output = new Formatter("weatherConfig.txt");
-        	}catch (IOException ioException) {
-                System.err.println("Error opening file. Terminating.");
-                System.exit(1);
+        	} catch (IOException ioException) {
+                System.err.println("Error opening weatherConfig.txt for writing.");
             }
     }
     
@@ -119,9 +118,8 @@ public class OptionsScreenModel {
     	try{
         	//PrintWriter writer = new PrintWriter("weatherConfig.txt");
         	input = new Scanner(Paths.get("weatherConfig.txt"));
-        	}catch (IOException ioException) {
-                System.err.println("Error opening file. Terminating.");
-                System.exit(1);
+        	} catch (IOException ioException) {
+                System.err.println("Error opening weatherConfig.txt for reading.");
             }
     }
     
@@ -135,7 +133,6 @@ public class OptionsScreenModel {
     	
     	}catch (SecurityException securityException) {
             System.err.println("Write permission denied. Terminating.");
-            System.exit(1); // terminate the program
         }
     	closeFileW();
     	readFromConfig();
