@@ -75,11 +75,32 @@ public class WeatherScreenView {
 	private Button settingsButton = new Button();
 	private Text windNumerics;
 	private String BckGimg;
+    private ArrayList<ImageView> imageViewArray = new ArrayList<>();
+    private ArrayList<Label> sevenDaysWeather= new ArrayList<>();
+    public ArrayList<Label> tempSevenDays = new ArrayList<>();
+
 	//	private LocationScreenModel locModel;
 
 	public WeatherScreenView(WeatherScreenModel wModel){	
 		model = wModel;
 	}
+	
+	public void clearBottomPanel(){
+        for(Node node : bottomPanel.getChildren()){
+        		if( tempSevenDays.contains(node)){
+        			node.setVisible(false);
+        		}
+        }
+	}
+	
+	public void setBottomPanel(){
+		for(int i = 0; i < 7; i++){
+			Label temps = new Label(model.getHighTemps().get(i).getText() + " / " + model.getLowTemps().get(i).getText());
+			tempSevenDays.add(temps);
+			bottomPanel.add(temps,	 i, 2);
+		}
+	}
+	
 	
 	public void start(Stage stage, Scene scene) {
 
@@ -99,13 +120,16 @@ public class WeatherScreenView {
 		cityLabel.setFont(Font.font ("Helvetica",  20));
 		int timeStamp = Integer.parseInt(model.getData().getLocalTime());
 		Date time = new Date((long) timeStamp * 1000);
-		SimpleDateFormat sdf = new SimpleDateFormat("h:mm a, z");
-		//sdf.setTimeZone(TimeZone.getTimeZone("GMT-0")); 
-		String formattedDate = sdf.format(time);
-		
-		stateLabel =  TextBuilder.create().text(formattedDate).build();
+		SimpleDateFormat stf = new SimpleDateFormat("EEE, h:mm a");
+		stf.setTimeZone(TimeZone.getTimeZone("GMT" + model.getData().getTimeOffset())); 
+		String formattedTime = stf.format(time);
+		stateLabel =  TextBuilder.create().text(formattedTime).build();
 		stateLabel.setFont(Font.font ("Helvetica",  15));
-		timeLabel =  TextBuilder.create().text(dateToday.get(Calendar.MONTH)+"/"+dateToday.get(Calendar.DATE)+"/"+dateToday.get(Calendar.YEAR)+"|"+model.getForecastDay(1)).build();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT" + model.getData().getTimeOffset())); 
+		String formattedDate = sdf.format(time);
+		timeLabel =  TextBuilder.create().text(formattedDate).build();
 		timeLabel.setFont(Font.font("Helvetica",  15));
 
 		
@@ -193,6 +217,13 @@ public class WeatherScreenView {
 		centerPanel.getChildren().add(getWindNumerics());
 		centerPanel.setAlignment(Pos.CENTER);
 
+		cityLabel.getStyleClass().add("readable-text");
+		stateLabel.getStyleClass().add("readable-text");
+		timeLabel.getStyleClass().add("readable-text");
+		
+		
+		
+		
 		leftPanel.getChildren().add(cityLabel);
 		leftPanel.getChildren().add(stateLabel);
 		leftPanel.getChildren().add(timeLabel);
@@ -200,9 +231,11 @@ public class WeatherScreenView {
 		
 		
         
+
         ArrayList<ImageView> imageViewArray = new ArrayList<>();
         ArrayList<Label> sevenDaysWeather= new ArrayList<>();
         ArrayList<Label> highLow= new ArrayList<>();
+
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
         	ImageView temp = ImageViewBuilder.create()
@@ -217,18 +250,21 @@ public class WeatherScreenView {
 	        	iv.setFitHeight(100);
 	        	iv.setFitWidth(100);
 	        	bottomPanel.add(iv, p, 1);
+	        	bottomPanel.setMargin(iv, new Insets(0,0,0,10));
 	        	Label dayLabel = new Label();
 	        	dayLabel.setText(model.getForecastDay(p+1));
 	        	dayLabel.setAlignment(Pos.CENTER);
 	        	sevenDaysWeather.add(p, dayLabel);
 	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
-//	        	Stream.of(model.getHighTemps(), model.getLowTemps()).forEach(highLow::addAll);
-//	        	bottomPanel.add(highLow.get(p), p, 2);
+	        	if(sevenDaysWeather.get(p).getText().length() >= 9)
+	        		bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,15));
+	        	else
+	        		bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,25));
 	        	
-	        bottomPanel.add(model.getHighTemps().get(p), p, 2);
-	        bottomPanel.add(model.getLowTemps().get(p), p, 2);
-	      //  bottomPanel.add
-	        	
+	        	Label temps = new Label(model.getHighTemps().get(p).getText() + model.getLowTemps().get(p).getText());
+	        	tempSevenDays.add(temps);
+	        	bottomPanel.add(temps, p, 2);
+
 	        	p++;
 	        }
 		bottomPanel.setAlignment(Pos.CENTER);
@@ -260,7 +296,7 @@ public class WeatherScreenView {
 		//border.setAlignment(okBtn, Pos.CENTER_RIGHT); 
 
 
-		Scene scene2 = new Scene(border, 800, 700);
+		Scene scene2 = new Scene(border, 1080, 700);
 
 		//scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 
@@ -268,6 +304,7 @@ public class WeatherScreenView {
 		stage.setTitle("Weather Conditions");
         scene2.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
 		stage.setScene(scene2);
+		stage.setMinWidth(1080);
 		stage.show(); 
 
 

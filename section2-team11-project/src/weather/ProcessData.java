@@ -599,4 +599,12 @@ public class ProcessData {
 		String XPath = "/response/current_observation/local_epoch/text()";
 		return getNode(XPath, "data-xml.txt");
 	}
+	
+	/*
+	 * Returns the time zone offset
+	 */
+	public String getTimeOffset() {
+		String XPath = "/response/current_observation/local_tz_offset/text()";
+		return "" + (Integer.parseInt(getNode(XPath, "data-xml.txt")) / 100);
+	}
 }
