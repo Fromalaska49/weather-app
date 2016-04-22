@@ -204,7 +204,7 @@ public class WeatherScreenView {
 		
 		rightPanel.getChildren().add(radarButton);
 		rightPanel.getChildren().add(toggleCF);
-		rightPanel.getChildren().add(toggleHW);
+		//rightPanel.getChildren().add(toggleHW);
 		rightPanel.getChildren().add(toggleMI);
 		rightPanel.getChildren().add(exitButton);
 		rightPanel.setAlignment(Pos.CENTER_LEFT);
