@@ -69,16 +69,37 @@ public class WeatherScreenView {
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
 	private Calendar dateToday = Calendar.getInstance();
-	WeatherScreenModel model;
+	private WeatherScreenModel model;
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
 	private Text windNumerics;
 	private String BckGimg;
+    private ArrayList<ImageView> imageViewArray = new ArrayList<>();
+    private ArrayList<Label> sevenDaysWeather= new ArrayList<>();
+    public ArrayList<Label> tempSevenDays = new ArrayList<>();
+
 	//	private LocationScreenModel locModel;
 
 	public WeatherScreenView(WeatherScreenModel wModel){	
 		model = wModel;
 	}
+	
+	public void clearBottomPanel(){
+        for(Node node : bottomPanel.getChildren()){
+        		if( tempSevenDays.contains(node)){
+        			node.setVisible(false);
+        		}
+        }
+	}
+	
+	public void setBottomPanel(){
+		for(int i = 0; i < 7; i++){
+			Label temps = new Label(model.getHighTemps().get(i).getText() + " / " + model.getLowTemps().get(i).getText());
+			tempSevenDays.add(temps);
+			bottomPanel.add(temps,	 i, 2);
+		}
+	}
+	
 	
 	public void start(Stage stage, Scene scene) {
 
@@ -89,7 +110,6 @@ public class WeatherScreenView {
 		
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
 		getWeatherNumerics().setFont(Font.font ("Helvetica",  100));
-		model.setWindSpeed(1);
 		setWindNumerics((TextBuilder.create().text( model.getWindSpeed() + model.getWindSettings() ).build()));
 		getWindNumerics().setFont(Font.font ("Helvetica", 50));
 		
@@ -209,8 +229,7 @@ public class WeatherScreenView {
 		
 		
         
-        ArrayList<ImageView> imageViewArray = new ArrayList<>();
-        ArrayList<Label> sevenDaysWeather= new ArrayList<>();
+
         
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
@@ -229,9 +248,9 @@ public class WeatherScreenView {
 	        	dayLabel.setText(model.getForecastDay(p+1));
 	        	sevenDaysWeather.add(p, dayLabel);
 	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
-	        bottomPanel.add(model.getHighTemps().get(p), p, 2);
-	        bottomPanel.add(model.getLowTemps().get(p), p, 3);
-	        	
+	        	Label temps = new Label(model.getHighTemps().get(p).getText() + " / " + model.getLowTemps().get(p).getText());
+	        	tempSevenDays.add(temps);
+	        	bottomPanel.add(temps, p, 2);
 	        	p++;
 	        }
 		bottomPanel.setAlignment(Pos.CENTER);
