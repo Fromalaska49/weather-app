@@ -72,13 +72,13 @@ public class ChangeUnitView {
 	    
 	    primaryStage.setTitle("Change Unit Window");    
 	    tempLabel = new Label("Temprature Unit: ");
-	    windLabel = new Label("Wind Speed Unti: ");
+	    windLabel = new Label("Wind Speed Unit: ");
 	    OptionsScreenModel OSmodel = new OptionsScreenModel();
 	    Button backBtn = new Button("Back");
 	    Button saveBtn = new Button("Save");
 	    
 	    tempField = new ChoiceBox<String>(FXCollections.observableArrayList("F", "C"));
-	    windField = new ChoiceBox<String>(FXCollections.observableArrayList("MpH", "KpH"));
+	    windField = new ChoiceBox<String>(FXCollections.observableArrayList("mph", "km/h"));
 	    
 	    backBtn.setOnAction(ChangeUnitController.getBackListener(stagePrev, scenePrev));
     	saveBtn.setOnAction(ChangeUnitController.getSaveListener(tempField, windField, OSmodel));

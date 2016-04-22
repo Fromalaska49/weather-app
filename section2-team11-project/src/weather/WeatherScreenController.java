@@ -52,6 +52,7 @@ public class WeatherScreenController {
 		model.setState();
 		model.setTime();
 		model.setWindSettings(); // uses settings form OptionsScreenModel
+		model.setWindSpeed(0);
 		model.setHighTemps();
         model.setLowTemps();
 	}
@@ -98,15 +99,15 @@ public class WeatherScreenController {
 					model.setWindSettings("km/h");
 					model.getWindSettings();
 					model.setWindSpeed(0);
-					view.getWindNumerics().setText(model.getWindSpeed() +  model.getWindSettings());
-					System.out.println("Change to KPH");
+					view.getWindNumerics().setText(model.getWindSpeed() + model.getWindSettings());
+					System.out.println("Change to km/h");
 				}
 				else {
 					model.setWindSettings("mph");
 					model.getWindSettings();
 					model.setWindSpeed(0);
-					view.getWindNumerics().setText(model.getWindSpeed() +  model.getWindSettings());
-					System.out.println("Change back to MPH");
+					view.getWindNumerics().setText(model.getWindSpeed() + model.getWindSettings());
+					System.out.println("Change back to mph");
 				}
 				windSettingBtn = ! windSettingBtn;
 				
