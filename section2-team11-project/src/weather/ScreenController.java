@@ -17,6 +17,7 @@ import model.OptionsScreenModel;
 import model.WeatherScreenModel;
 import model.ChangeLocationModel;
 import model.ChangeUnitModel;
+import model.dressScreenModel;
 
 public class ScreenController {
 	
@@ -116,6 +117,21 @@ public class ScreenController {
 		
 		OptionsScreenView oView = new OptionsScreenView(stage);
 		OptionsScreenController oController = new OptionsScreenController(oView, stage);
+		
+		//System.out.println("Display Options Screen (Pretty Please)");
+		oView.start(primaryStage, scene);
+		
+	}
+	/**
+	 * This method is called by LocationScreenController when the Settings button is clicked. 
+	 * @param p
+	 */
+	public void showDressScreen(Stage stage){
+		Scene scene = stage.getScene();
+		dressScreenModel dModel = new dressScreenModel();  
+		
+		dressScreenView oView = new dressScreenView(dModel, stage);
+		dressScreenController oController = new dressScreenController(oView, dModel, stage);
 		
 		//System.out.println("Display Options Screen (Pretty Please)");
 		oView.start(primaryStage, scene);

@@ -252,4 +252,21 @@ public class WeatherScreenController {
 		};
 		return handler;
 	}
+	/*
+	 * Event listener for the dress button.  If pressed will transition to the dress screen.
+	 * @return Returns a handler object
+	 */
+	public EventHandler<ActionEvent> getDressListener(Stage stage) {
+		EventHandler handler = new EventHandler<Event>(){
+			ScreenController sController = new ScreenController(stage);
+			@Override
+			public void handle(Event event) {
+				// TODO Auto-generated method stub
+		     sController.showDressScreen(stage); 
+			}
+			
+		};
+		return handler;
+	}
+	
 }
