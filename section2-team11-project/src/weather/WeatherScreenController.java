@@ -11,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
@@ -93,17 +95,17 @@ public class WeatherScreenController {
 
 			public void handle(Event event){
 				if(windSettingBtn == false) {
-					model.setWindSettings("KmPH");
+					model.setWindSettings("km/h");
 					model.getWindSettings();
 					model.setWindSpeed(0);
-					view.getWindNumerics().setText(model.getWindSpeed() +  " " + model.getWindSettings());
+					view.getWindNumerics().setText(model.getWindSpeed() +  model.getWindSettings());
 					System.out.println("Change to KPH");
 				}
 				else {
-					model.setWindSettings("MPH");
+					model.setWindSettings("mph");
 					model.getWindSettings();
 					model.setWindSpeed(0);
-					view.getWindNumerics().setText(model.getWindSpeed() + " " + model.getWindSettings());
+					view.getWindNumerics().setText(model.getWindSpeed() +  model.getWindSettings());
 					System.out.println("Change back to MPH");
 				}
 				windSettingBtn = ! windSettingBtn;
@@ -196,11 +198,21 @@ public class WeatherScreenController {
 					}
 					else{
 						System.out.println("Error: unkown location: "+locationScreenModel.getLocation());
+						Alert alert = new Alert(AlertType.ERROR);
+						alert.setTitle("Error");
+		                	alert.setHeaderText("Error: unkown location");
+		                	alert.setContentText("Please enter in format : (city name, abb. state) or enter a five digit zip code");
+		                	alert.showAndWait();
 					}
 				}
 				else{ 
 					//invalid location
 					System.out.println("Error: invalid location detected: '"+location+"'");
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("Error: unkown location:");
+	                	alert.setHeaderText("Error: unkown location:");
+	                	alert.setContentText("Please enter in format : (city name, abb. state) or enter a five digit zip code");
+	                	alert.showAndWait();
 				}					
 			}
 	};

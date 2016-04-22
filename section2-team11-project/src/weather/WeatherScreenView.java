@@ -50,8 +50,6 @@ import javafx.scene.text.Font;
 
 public class WeatherScreenView {
 
-
-	private WeatherScreenController controller;
 	private Text headerText;
 	private BorderPane border;
 	private Text cityLabel;
@@ -63,13 +61,12 @@ public class WeatherScreenView {
 	private VBox leftPanel;
 	private GridPane bottomPanel;
 	private GridPane topGrid;
-	private Button okBtn = new Button();
 	private Button toggleCF = new Button();
 	private Button toggleHW = new Button();
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
 	private Calendar dateToday = Calendar.getInstance();
-	WeatherScreenModel model;
+	private WeatherScreenModel model;
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
 	private Text windNumerics;
@@ -97,6 +94,7 @@ public class WeatherScreenView {
 			Label temps = new Label(model.getHighTemps().get(i).getText() + " / " + model.getLowTemps().get(i).getText());
 			tempSevenDays.add(temps);
 			bottomPanel.add(temps,	 i, 2);
+			bottomPanel.setMargin(temps, new Insets(0,0,0,25));
 		}
 	}
 	
@@ -132,43 +130,43 @@ public class WeatherScreenView {
 		timeLabel.setFont(Font.font("Helvetica",  15));
 
 		
-    	WeatherScreenController wController = new WeatherScreenController(this, model);
-    	Button searchButton = new Button("Search");
-    	searchButton.setOnAction(wController.getBackListener(stage, scene));
+		WeatherScreenController wController = new WeatherScreenController(this, model);
+		Button searchButton = new Button("Search");
+		searchButton.setOnAction(wController.getBackListener(stage, scene));
 
-    	WeatherScreenController weatherScreenController = new WeatherScreenController(this, this.model);
-    	searchButton.setOnAction(weatherScreenController.getSearchListener(stage));
+		WeatherScreenController weatherScreenController = new WeatherScreenController(this, this.model);
+		searchButton.setOnAction(weatherScreenController.getSearchListener(stage));
 
 		settingsButton.setText("Settings");
 		settingsButton.setOnAction(weatherScreenController.getSettingsListener(stage));
-    	Button radarButton = new Button("Radar");
-    	radarButton.setOnAction(wController.getRadarListener());
-    	Button exitButton = new Button("Exit");
-    	exitButton.setOnAction(wController.getExitListener());
+		Button radarButton = new Button("Radar");
+		radarButton.setOnAction(wController.getRadarListener());
+		Button exitButton = new Button("Exit");
+		exitButton.setOnAction(wController.getExitListener());
 		//Code for importing background image.
 		BckGimg = model.getBckGImg();
 		//imports background img into image
 		String image = WeatherScreenView.class.getResource(BckGimg).toExternalForm();
-		
-		
-		
-		
-    	topGrid = new GridPane();
-    	topGrid.setPadding(new Insets(10, 10, 10, 10));
-    	topGrid.setHgap(10);
-    	topGrid.setVgap(10);
-    	topGrid.setGridLinesVisible(false);
-    	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(searchField, 0, 1);
-    	topGrid.add(searchButton, 1, 1);
-    	topGrid.add(settingsButton, 4, 0);
-    	model.setTodayIcon();
-    	ImageView todayIcon = ImageViewBuilder.create()
-                .image(new Image(model.getTodayIcon()))
-                .build();
-    	todayIcon.setFitHeight(200);
-    	todayIcon.setFitWidth(200);
-    	topGrid.add(todayIcon, 1, 0);
+
+
+
+
+		topGrid = new GridPane();
+		topGrid.setPadding(new Insets(10, 10, 10, 10));
+		topGrid.setHgap(10);
+		topGrid.setVgap(10);
+		topGrid.setGridLinesVisible(false);
+		topGrid.setAlignment(Pos.TOP_LEFT);
+		topGrid.add(searchField, 0, 1);
+		topGrid.add(searchButton, 1, 1);
+		topGrid.add(settingsButton, 4, 0);
+		model.setTodayIcon();
+		ImageView todayIcon = ImageViewBuilder.create()
+				.image(new Image(model.getTodayIcon()))
+				.build();
+		todayIcon.setFitHeight(200);
+		todayIcon.setFitWidth(200);
+		topGrid.add(todayIcon, 1, 0);
 
 		toggleCF.setText("Toggle C/F");
 		toggleCF.setOnAction(wController.getTempSettingListener());
@@ -186,15 +184,15 @@ public class WeatherScreenView {
 		border.setPadding(new Insets(25, 100, 100, 100));
 		//set background img to border
 		border.setStyle("-fx-background-image: url('" + image + "'); " +
-		           "-fx-background-position: center center; " +
-		           "-fx-background-repeat: stretch;");
-		
+				"-fx-background-position: center center; " +
+				"-fx-background-repeat: stretch;");
+
 		//topGrid.add(iv1, 2, 0);
 		topGrid.add(headerText, 2, 0);
-		
+
 		bottomPanel.setHgap(15);
 		bottomPanel.setVgap(15);
-		
+
 		topPanel.getChildren().add(topGrid);
 		//topPanel.getChildren().add(iv1);
 		//topPanel.getChildren().add(headerText);
@@ -202,7 +200,7 @@ public class WeatherScreenView {
 		//topPanel.getChildren().add(imageView);
 		//topPanel.getChildren().add(headerText);
 		topPanel.setAlignment(Pos.TOP_LEFT);
-		
+
 		rightPanel.getChildren().add(radarButton);
 		rightPanel.getChildren().add(toggleCF);
 		rightPanel.getChildren().add(toggleHW);
@@ -219,19 +217,16 @@ public class WeatherScreenView {
 		cityLabel.getStyleClass().add("readable-text");
 		stateLabel.getStyleClass().add("readable-text");
 		timeLabel.getStyleClass().add("readable-text");
-		
-		
-		
-		
+
+
+
+
 		leftPanel.getChildren().add(cityLabel);
 		leftPanel.getChildren().add(stateLabel);
 		leftPanel.getChildren().add(timeLabel);
 		leftPanel.setAlignment(Pos.BOTTOM_LEFT);
 		
 		
-        
-
-        
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
         	ImageView temp = ImageViewBuilder.create()
@@ -249,9 +244,12 @@ public class WeatherScreenView {
 	        	dayLabel.setText(model.getForecastDay(p+1));
 	        	sevenDaysWeather.add(p, dayLabel);
 	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
+	        	bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,25));
 	        	Label temps = new Label(model.getHighTemps().get(p).getText() + " / " + model.getLowTemps().get(p).getText());
+	        	
 	        	tempSevenDays.add(temps);
 	        	bottomPanel.add(temps, p, 2);
+	        	bottomPanel.setMargin(temps, new Insets(0,0,0,25));
 	        	p++;
 	        }
 		bottomPanel.setAlignment(Pos.CENTER);

@@ -351,7 +351,7 @@ public class WeatherScreenModel {
 	
 	public void setWindSpeed(int n) {
 
-		if (this.windSetting.equals("MPH"))
+		if (this.windSetting.equalsIgnoreCase("mph"))
 			this.windSpeed = data.getForecastWindMPH(n);
 		else 
 			this.windSpeed = getData().getForecastWindKPH(n);
