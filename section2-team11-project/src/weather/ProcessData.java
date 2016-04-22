@@ -381,7 +381,8 @@ public class ProcessData {
 		String XPath = "/response/forecast/simpleforecast/forecastdays/forecastday["+index+"]/icon_url/text()";
 		String url = getNode(XPath, "data-forecast-xml.txt");
 		String imageType = "i";
-		url = url.substring(0, 26) + imageType + url.substring(27);
+		url = url.substring(0, 7) + "teamrocket.website" + url.substring(21, 26) + imageType + url.substring(27);
+		url = url.replace("gif", "png");
 		return url;
 	}
 	
@@ -397,7 +398,7 @@ public class ProcessData {
 	 * Gets the URL of the weather icon
 	 */
 	public String getIconURL() {
-		return "http://icons.wxug.com/i/c/i/" + getIconName() + ".gif";
+		return "http://teamrocket.website/i/c/i/" + getIconName() + ".png";
 	}
 	
 	/*
