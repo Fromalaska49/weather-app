@@ -122,7 +122,7 @@ public class OptionsScreenView {
     	
 
     	
-    	Scene Optscene = new Scene(border, 1080, 700);
+    	Scene Optscene = new Scene(border, 1080, 800);
 
     	Optscene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
     	

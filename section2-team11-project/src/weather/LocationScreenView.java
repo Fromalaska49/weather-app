@@ -128,7 +128,7 @@ public class LocationScreenView extends Application  {
 		border.setAlignment(headerText, Pos.CENTER);
 		border.setAlignment(okBtn, Pos.CENTER_RIGHT);
 		border.setAlignment(setBtn, Pos.CENTER_LEFT);
-		Scene scene = new Scene(border, 1080, 700);
+		Scene scene = new Scene(border, 1080, 800);
 
 
 		primaryStage.setTitle("Weather App");
