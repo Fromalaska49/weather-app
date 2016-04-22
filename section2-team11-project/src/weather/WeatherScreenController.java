@@ -74,6 +74,8 @@ public class WeatherScreenController {
 				model.setHighTemps();
 				model.setLowTemps();
 				view.getWeatherNumerics().setText(model.getTemp() + Character.toString((char) 176) + model.getTempSetting());
+				view.clearBottomPanel();
+				view.setBottomPanel();
 				tempSettingBtn = !tempSettingBtn;
 				
 			}
@@ -91,18 +93,18 @@ public class WeatherScreenController {
 
 			public void handle(Event event){
 				if(windSettingBtn == false) {
-					model.setWindSettings("KmPH");
+					model.setWindSettings("km/h");
 					model.getWindSettings();
 					model.setWindSpeed(0);
 					view.getWindNumerics().setText(model.getWindSpeed() +  " " + model.getWindSettings());
-					System.out.println("Change to KPH");
+					System.out.println("Change to km/h");
 				}
 				else {
-					model.setWindSettings("MPH");
+					model.setWindSettings("mph");
 					model.getWindSettings();
 					model.setWindSpeed(0);
 					view.getWindNumerics().setText(model.getWindSpeed() + " " + model.getWindSettings());
-					System.out.println("Change back to MPH");
+					System.out.println("Change back to mph");
 				}
 				windSettingBtn = ! windSettingBtn;
 				

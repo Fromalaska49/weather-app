@@ -300,10 +300,10 @@ public class WeatherScreenModel {
 			
 			Label temp = new Label();
 			if(this.tempSetting.equals("F"))  {
-				temp.setText(data.getForecastHighF(i+1));
+				temp.setText("	"+data.getForecastHighF(i+1));
 			}
 			else
-				temp.setText(data.getForecastHighC(i+1));
+				temp.setText("	"+data.getForecastHighC(i+1));
         		highTemps.add(i,temp);
         }
 	}
@@ -318,10 +318,10 @@ public class WeatherScreenModel {
 			
 			Label temp = new Label();
 			if(this.tempSetting.equals("F"))  {
-				temp.setText(data.getForecastLowF(i+1));
+				temp.setText(" | "+data.getForecastLowF(i+1));
 			}
 			else
-				temp.setText(data.getForecastLowC(i+1));
+				temp.setText(" | "+data.getForecastLowC(i+1));
         		lowTemps.add(i,temp);
         }
 	}	
@@ -351,7 +351,7 @@ public class WeatherScreenModel {
 	
 	public void setWindSpeed(int n) {
 
-		if (this.windSetting.equals("MPH"))
+		if (this.windSetting.equals("mph"))
 			this.windSpeed = data.getForecastWindMPH(n);
 		else 
 			this.windSpeed = getData().getForecastWindKPH(n);
