@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
-import java.util.stream.Stream;
 
 import javafx.scene.image.Image;
 
@@ -70,7 +69,7 @@ public class WeatherScreenView {
 	private Button toggleMI = new Button();
 	private Text weatherNumerics;
 	private Calendar dateToday = Calendar.getInstance();
-	WeatherScreenModel model;
+	private WeatherScreenModel model;
 	private TextField searchField = new TextField();
 	private Button settingsButton = new Button();
 	private Text windNumerics;
@@ -107,11 +106,10 @@ public class WeatherScreenView {
 		
 		headerText =  TextBuilder.create().text(model.getWeatherCondition()).build();
 
-		headerText.setFont(Font.font ("Helvetica",  55));
+		headerText.setFont(Font.font ("Helvetica",  40));
 		
 		setWeatherNumerics((TextBuilder.create().text( model.getTemp()+ Character.toString((char) 176) + model.getTempSetting()).build()));
-		getWeatherNumerics().setFont(Font.font ("Calibri",  125));
-		model.setWindSpeed(1);
+		getWeatherNumerics().setFont(Font.font ("Helvetica",  100));
 		setWindNumerics((TextBuilder.create().text( model.getWindSpeed() + model.getWindSettings() ).build()));
 		getWindNumerics().setFont(Font.font ("Helvetica", 50));
 		
@@ -160,8 +158,8 @@ public class WeatherScreenView {
     	topGrid.setVgap(10);
     	topGrid.setGridLinesVisible(false);
     	topGrid.setAlignment(Pos.TOP_LEFT);
-    	topGrid.add(searchField, 2, 1);
-    	topGrid.add(searchButton, 4, 1);
+    	topGrid.add(searchField, 0, 1);
+    	topGrid.add(searchButton, 1, 1);
     	topGrid.add(settingsButton, 4, 0);
     	model.setTodayIcon();
     	ImageView todayIcon = ImageViewBuilder.create()
@@ -206,7 +204,7 @@ public class WeatherScreenView {
 		
 		rightPanel.getChildren().add(radarButton);
 		rightPanel.getChildren().add(toggleCF);
-		rightPanel.getChildren().add(toggleHW);
+		//rightPanel.getChildren().add(toggleHW);
 		rightPanel.getChildren().add(toggleMI);
 		rightPanel.getChildren().add(exitButton);
 		rightPanel.setAlignment(Pos.CENTER_LEFT);
@@ -232,10 +230,7 @@ public class WeatherScreenView {
 		
         
 
-        ArrayList<ImageView> imageViewArray = new ArrayList<>();
-        ArrayList<Label> sevenDaysWeather= new ArrayList<>();
-        ArrayList<Label> highLow= new ArrayList<>();
-
+        
         for(int i = 1; i <= 7; i++){
         	model.setIcon(i);
         	ImageView temp = ImageViewBuilder.create()
@@ -245,26 +240,17 @@ public class WeatherScreenView {
         }
         
         int p = 0;
-        
         for(ImageView iv : imageViewArray){
 	        	iv.setFitHeight(100);
 	        	iv.setFitWidth(100);
 	        	bottomPanel.add(iv, p, 1);
-	        	bottomPanel.setMargin(iv, new Insets(0,0,0,10));
 	        	Label dayLabel = new Label();
 	        	dayLabel.setText(model.getForecastDay(p+1));
-	        	dayLabel.setAlignment(Pos.CENTER);
 	        	sevenDaysWeather.add(p, dayLabel);
 	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
-	        	if(sevenDaysWeather.get(p).getText().length() >= 9)
-	        		bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,15));
-	        	else
-	        		bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,25));
-	        	
-	        	Label temps = new Label(model.getHighTemps().get(p).getText() + model.getLowTemps().get(p).getText());
+	        	Label temps = new Label(model.getHighTemps().get(p).getText() + " / " + model.getLowTemps().get(p).getText());
 	        	tempSevenDays.add(temps);
 	        	bottomPanel.add(temps, p, 2);
-
 	        	p++;
 	        }
 		bottomPanel.setAlignment(Pos.CENTER);

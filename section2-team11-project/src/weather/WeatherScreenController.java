@@ -11,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
@@ -34,7 +36,12 @@ public class WeatherScreenController {
 	public WeatherScreenController(WeatherScreenView wView, WeatherScreenModel wModel) {
 		this.view = wView;
 		this.model = wModel;
-		tempSettingBtn = false;
+		if("F".equals(wModel.getTempSetting())){
+			this.tempSettingBtn = false;
+		}
+		else{
+			this.tempSettingBtn = true;
+		}
 		windSettingBtn = false;
 		setVariables();
 	}
@@ -50,6 +57,7 @@ public class WeatherScreenController {
 		model.setState();
 		model.setTime();
 		model.setWindSettings(); // uses settings form OptionsScreenModel
+		model.setWindSpeed(0);
 		model.setHighTemps();
         model.setLowTemps();
 	}
@@ -64,10 +72,10 @@ public class WeatherScreenController {
 			public void handle(Event event){
 				if(tempSettingBtn == false) {
 					model.setTempSetting("C");
-					System.out.println("Change to celcius");
+					//System.out.println("Change to celcius");
 				} else {
 					model.setTempSetting("F");
-					System.out.println("Change back to fahrenheit");
+					//System.out.println("Change back to fahrenheit");
 				}
 				model.getTempSetting();
 				model.setTemp();
@@ -96,14 +104,14 @@ public class WeatherScreenController {
 					model.setWindSettings("km/h");
 					model.getWindSettings();
 					model.setWindSpeed(0);
-					view.getWindNumerics().setText(model.getWindSpeed() +  " " + model.getWindSettings());
+					view.getWindNumerics().setText(model.getWindSpeed() + model.getWindSettings());
 					System.out.println("Change to km/h");
 				}
 				else {
 					model.setWindSettings("mph");
 					model.getWindSettings();
 					model.setWindSpeed(0);
-					view.getWindNumerics().setText(model.getWindSpeed() + " " + model.getWindSettings());
+					view.getWindNumerics().setText(model.getWindSpeed() + model.getWindSettings());
 					System.out.println("Change back to mph");
 				}
 				windSettingBtn = ! windSettingBtn;
@@ -196,11 +204,21 @@ public class WeatherScreenController {
 					}
 					else{
 						System.out.println("Error: unkown location: "+locationScreenModel.getLocation());
+						Alert alert = new Alert(AlertType.ERROR);
+						alert.setTitle("Error");
+		                	alert.setHeaderText("Error: unkown location");
+		                	alert.setContentText("Please enter in format : (city name, abb. state) or enter a five digit zip code");
+		                	alert.showAndWait();
 					}
 				}
 				else{ 
 					//invalid location
 					System.out.println("Error: invalid location detected: '"+location+"'");
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("Error: unkown location:");
+	                	alert.setHeaderText("Error: unkown location:");
+	                	alert.setContentText("Please enter in format : (city name, abb. state) or enter a five digit zip code");
+	                	alert.showAndWait();
 				}					
 			}
 	};
