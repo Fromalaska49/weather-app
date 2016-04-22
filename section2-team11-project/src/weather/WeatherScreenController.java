@@ -36,7 +36,12 @@ public class WeatherScreenController {
 	public WeatherScreenController(WeatherScreenView wView, WeatherScreenModel wModel) {
 		this.view = wView;
 		this.model = wModel;
-		tempSettingBtn = false;
+		if("F".equals(wModel.getTempSetting())){
+			this.tempSettingBtn = false;
+		}
+		else{
+			this.tempSettingBtn = true;
+		}
 		windSettingBtn = false;
 		setVariables();
 	}
@@ -67,10 +72,10 @@ public class WeatherScreenController {
 			public void handle(Event event){
 				if(tempSettingBtn == false) {
 					model.setTempSetting("C");
-					System.out.println("Change to celcius");
+					//System.out.println("Change to celcius");
 				} else {
 					model.setTempSetting("F");
-					System.out.println("Change back to fahrenheit");
+					//System.out.println("Change back to fahrenheit");
 				}
 				model.getTempSetting();
 				model.setTemp();
