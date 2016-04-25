@@ -172,7 +172,7 @@ public class WeatherScreenView {
 		toggleCF.setText("Toggle C/F");
 		toggleCF.setOnAction(wController.getTempSettingListener());
 		toggleHW.setText("Toggle Hourly/Weekly");
-		toggleMI.setText("Toggle kilometers/miles");
+		toggleMI.setText("Toggle Kilometers/Miles");
 		toggleMI.setOnAction(wController.getWindSettingListener());
 
 		topPanel = new HBox();
