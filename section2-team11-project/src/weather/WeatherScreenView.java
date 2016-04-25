@@ -184,9 +184,7 @@ public class WeatherScreenView {
 		border = new BorderPane();
 		border.setPadding(new Insets(25, 100, 100, 100));
 		//set background img to border
-		border.setStyle("-fx-background-image: url('" + image + "'); " +
-		           "-fx-background-position: center center; " +
-		           "-fx-background-repeat: stretch;");
+		border.setStyle("-fx-background-image: url('" + image + "'); -fx-background-position: center center; -fx-background-repeat: stretch; -fx-background-size: 1600, 2160;");
 		
 		//topGrid.add(iv1, 2, 0);
 		topGrid.add(headerText, 2, 0);
