@@ -359,7 +359,7 @@ public class WeatherScreenModel {
 		else {
 			this.windSpeed = data.getForecastWindMPH(n);
 			System.out.println("in mph of model" + this.windSpeed);
-			}
+		}
 	}
 	
 	public String getWindSettings() {
