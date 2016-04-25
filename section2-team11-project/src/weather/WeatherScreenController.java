@@ -203,7 +203,7 @@ public class WeatherScreenController {
 						sController.showWeatherScreen(stage, locationScreenModel.getLocation());
 					}
 					else{
-						System.out.println("Error: unkown location: "+locationScreenModel.getLocation());
+						System.out.println("Error: unkown location: " + locationScreenModel.getLocation());
 						Alert alert = new Alert(AlertType.ERROR);
 						alert.setTitle("Error");
 		                	alert.setHeaderText("Error: unkown location");
@@ -213,7 +213,7 @@ public class WeatherScreenController {
 				}
 				else{ 
 					//invalid location
-					System.out.println("Error: invalid location detected: '"+location+"'");
+					System.out.println("Error: invalid location detected: '" + location + "'");
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Error: unkown location:");
 	                	alert.setHeaderText("Error: unkown location:");
@@ -243,11 +243,12 @@ public class WeatherScreenController {
 			
 			public void handle(Event event){
 				URL url = null;
+				String resource = "radar.gif";
 				try {
 					//url = new URL("radar.gif");
-					url = getClass().getResource("radar.gif");
+					url = getClass().getResource(resource);
 				} catch (Exception e) {
-					System.out.println("Well, Shit.");
+					System.out.println("Error: failed to load resource " + resource);
 					e.printStackTrace();
 				}
 			    Icon icon = new ImageIcon(url);

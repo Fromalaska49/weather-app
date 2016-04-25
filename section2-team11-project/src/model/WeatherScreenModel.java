@@ -354,11 +354,11 @@ public class WeatherScreenModel {
 
 		if (this.windSetting.equalsIgnoreCase("km/h")) {
 			this.windSpeed = data.getForecastWindKPH(n);
-			System.out.println("in kph of model" + this.windSpeed);
+			//System.out.println("in kph of model" + this.windSpeed);
 		}
 		else {
 			this.windSpeed = data.getForecastWindMPH(n);
-			System.out.println("in mph of model" + this.windSpeed);
+			//System.out.println("in mph of model" + this.windSpeed);
 		}
 	}
 	
