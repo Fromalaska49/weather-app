@@ -1,5 +1,5 @@
 Temperature Setting: F
-City: Honolulu
-State: HI
-Zip: 96818
+City: San Antonio
+State: TX
+Zip: 78254
 Wind Speed: mph
