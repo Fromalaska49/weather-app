@@ -112,7 +112,7 @@ public class WeatherScreenController {
 					model.getWindSettings();
 					model.setWindSpeed(0);
 					view.getWindNumerics().setText(model.getWindSpeed() + model.getWindSettings());
-					System.out.println("Change back to mph");
+					System.out.println("Change to mph");
 				}
 				windSettingBtn = ! windSettingBtn;
 				
@@ -242,23 +242,22 @@ public class WeatherScreenController {
 		EventHandler handler = new EventHandler<Event>(){
 			
 			public void handle(Event event){
-				URL url;
+				URL url = null;
 				try {
 					//url = new URL("radar.gif");
-				
-				url = WeatherScreenController.class.getResource("radar.gif");
+					url = getClass().getResource("radar.gif");
+				} catch (Exception e) {
+					System.out.println("Well, Shit.");
+					e.printStackTrace();
+				}
 			    Icon icon = new ImageIcon(url);
 			    JLabel label = new JLabel(icon);
 
-			    JFrame f = new JFrame("Animation");
+			    JFrame f = new JFrame("Radar");
 			    f.getContentPane().add(label);
 			    f.pack();
 			    f.setLocationRelativeTo(null);
 			    f.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-					System.out.println("Well, Shit.");
-				}
 			}
 		};
 		return handler;

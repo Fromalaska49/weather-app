@@ -275,6 +275,8 @@ public class LoadAPI{
 		
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif?width=" + width + "&height=" + height + "&newmaps=" + newmaps + "&rainsnow=" + rainsnow + "&timelabel=" + timelabel + "&timelabel.x=" + timelabelx + "&timelabel.y=" + timelabely + "&num=" + num + "&delay=" + delay;
 		
+		System.out.println(targetURL);
+		
 		URL url = null;
 		try {
 			url = new URL(targetURL);
@@ -309,7 +311,6 @@ public class LoadAPI{
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return false;
 		}
 		
 		try {
@@ -317,7 +318,6 @@ public class LoadAPI{
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return false;
 		}
 		
 		try {
