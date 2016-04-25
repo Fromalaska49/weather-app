@@ -275,13 +275,12 @@ public class LoadAPI{
 		
 		String targetURL = "http://api.wunderground.com/api/d1b960fa65c6eccc/animatedradar/q/" + location + ".gif?width=" + width + "&height=" + height + "&newmaps=" + newmaps + "&rainsnow=" + rainsnow + "&timelabel=" + timelabel + "&timelabel.x=" + timelabelx + "&timelabel.y=" + timelabely + "&num=" + num + "&delay=" + delay;
 		
-		System.out.println(targetURL);
-		
 		URL url = null;
 		try {
 			url = new URL(targetURL);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error opening URL " + targetURL);
 			e.printStackTrace();
 			return false;
 		}
@@ -291,6 +290,7 @@ public class LoadAPI{
 			in = new BufferedInputStream(url.openStream());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error opening input stream");
 			e.printStackTrace();
 			return false;
 		}
@@ -300,6 +300,7 @@ public class LoadAPI{
 			out = new BufferedOutputStream(new FileOutputStream("bin/weather/radar.gif"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error opening output stream");
 			e.printStackTrace();
 			return false;
 		}
@@ -310,6 +311,7 @@ public class LoadAPI{
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error writing to output stream from input stream");
 			e.printStackTrace();
 		}
 		
@@ -317,6 +319,7 @@ public class LoadAPI{
 			in.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error closing input stream from url");
 			e.printStackTrace();
 		}
 		
@@ -324,6 +327,7 @@ public class LoadAPI{
 			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error closing output stream");
 			e.printStackTrace();
 			return false;
 		}

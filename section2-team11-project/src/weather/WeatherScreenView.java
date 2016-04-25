@@ -147,7 +147,7 @@ public class WeatherScreenView {
 		//Code for importing background image.
 		BckGimg = model.getBckGImg();
 		//imports background img into image
-		String image = WeatherScreenView.class.getResource(BckGimg).toExternalForm();
+		String image = getClass().getResource(BckGimg).toExternalForm();
 		
 		
 		
@@ -172,7 +172,7 @@ public class WeatherScreenView {
 		toggleCF.setText("Toggle C/F");
 		toggleCF.setOnAction(wController.getTempSettingListener());
 		toggleHW.setText("Toggle Hourly/Weekly");
-		toggleMI.setText("Toggle Meters/Imperial");
+		toggleMI.setText("Toggle kilometers/miles");
 		toggleMI.setOnAction(wController.getWindSettingListener());
 
 		topPanel = new HBox();

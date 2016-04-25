@@ -70,7 +70,7 @@ public class ScreenController {
 		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
 		WeatherScreenView wView = new WeatherScreenView(wModel);
 		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
-		System.out.println("Display Weather Screen");
+		//System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
 
@@ -86,7 +86,7 @@ public class ScreenController {
 		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
 		WeatherScreenView wView = new WeatherScreenView(wModel);
 		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
-		System.out.println("Display Weather Screen");
+		//System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
 	
@@ -102,7 +102,7 @@ public class ScreenController {
 		WeatherScreenModel wModel = new WeatherScreenModel(api, data);
 		WeatherScreenView wView = new WeatherScreenView(wModel);
 		WeatherScreenController wController = new WeatherScreenController(wView, wModel);
-		System.out.println("Display Weather Screen");
+		//System.out.println("Display Weather Screen");
 		wView.start(primaryStage, scene);
 	}
 	
