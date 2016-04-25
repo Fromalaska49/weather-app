@@ -246,9 +246,15 @@ public class WeatherScreenView {
 	        	dayLabel.setText(model.getForecastDay(p+1));
 	        	sevenDaysWeather.add(p, dayLabel);
 	        	bottomPanel.add(sevenDaysWeather.get(p), p, 0);
-	        	Label temps = new Label(model.getHighTemps().get(p).getText() + " / " + model.getLowTemps().get(p).getText());
+	        	Label temps = new Label(model.getHighTemps().get(p).getText() + model.getLowTemps().get(p).getText());
 	        	tempSevenDays.add(temps);
 	        	bottomPanel.add(temps, p, 2);
+	        	if(sevenDaysWeather.get(p).getText().length() >= 9){
+	                bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,15));
+	        	}
+	            else{
+	                bottomPanel.setMargin(sevenDaysWeather.get(p), new Insets(0,0,0,30));
+	            }
 	        	p++;
 	        }
 		bottomPanel.setAlignment(Pos.CENTER);
