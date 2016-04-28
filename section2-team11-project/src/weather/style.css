@@ -70,6 +70,7 @@
 	-fx-border-width: 0;
 	-fx-border-style: none;
 	-fx-background-color: rgba(0,0,0,0.2);
+	-fx-cursor:hand;
 }
 .button:hover{
 	-fx-background-color: rgba(0,0,0,0.25);
